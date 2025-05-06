@@ -247,43 +247,7 @@ const addNodeFromLibrary = (factor: Factor) => {
     >
       <div>
         <h3>新增因子</h3>
-
-        <!-- 欄位中文 -->
-        <label>欄位中文</label>
-        <input v-model="newNodeData.label" placeholder="例如：疾病症狀 是否已知？" />
-
-        <!-- 欄位名稱 -->
-        <label>欄位變數名</label>
-        <input v-model="newNodeData.variableName" placeholder="例如：var_1" />
-
-        <!-- 欄位類型 -->
-        <label>欄位類型</label>
-        <select v-model="newNodeData.fieldCategory">
-          <option value="string">文字</option>
-          <option value="number">數值</option>
-          <option value="boolean">布林</option>
-          <!-- <option value="date">日期</option> -->
-        </select>
-
-        <!-- 欄位名稱 -->
-        <label>欄位名稱</label>
-        <input v-model="newNodeData.variableName" placeholder="例如：var_1" />
-
-        <!-- 型態 -->
-        <!-- <label>型態</label>
-        <select v-model="newNodeData.type">
-          <option value="default">普通節點</option>
-          <option value="input">輸入節點</option>
-          <option value="output">輸出節點</option>
-        </select> -->
-
-        <button @click="addNewNode" style="margin-top: 10px">➕ 新增節點</button>
-      </div>
-      <div style="margin-top: 50px; border-top: 2px solid #ddd">
-        <h3>因子庫</h3>
         <div
-          v-for="factor in factorLibrary"
-          :key="factor.id"
           style="
             margin: 10px 0;
             background-color: #ffb6c1;
@@ -293,32 +257,76 @@ const addNodeFromLibrary = (factor: Factor) => {
             overflow: hidden;
           "
         >
-          <!-- 標題部分 -->
-          <div
-            style="
-              padding: 10px;
-              cursor: pointer;
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            "
-            @click="toggleFactor(factor)"
-          >
-            <div style="font-weight: bold">{{ factor.label }}</div>
-            <div style="font-size: 20px">{{ factor.isExpanded ? '▼' : '▶' }}</div>
-          </div>
+          <div style="padding: 10px; background-color: #fff; border-bottom: 1px solid #ddd">
+            <!-- 欄位中文 -->
+            <div style="display: flex; align-items: center; margin: 0px 0">
+              <label style="width: 80px; margin-right: 0px">欄位中文</label>
+              <input v-model="newNodeData.label" placeholder="例如：疾病症狀 是否已知？" style="flex: 1" />
+            </div>
 
-          <!-- 展開的詳細內容 -->
+            <!-- 欄位名稱 -->
+            <div style="display: flex; align-items: center; margin: 0px 0">
+              <label style="width: 80px; margin-right: 0px">欄位變數名</label>
+              <input v-model="newNodeData.variableName" placeholder="例如：var_1" style="flex: 1" />
+            </div>
+
+            <!-- 欄位類型 -->
+            <div style="display: flex; align-items: center; margin: 0px 0">
+              <label style="width: 80px; margin-right: 0px">欄位類型</label>
+              <select v-model="newNodeData.fieldCategory" style="flex: 1">
+                <option value="string">文字</option>
+                <option value="number">數值</option>
+                <option value="boolean">布林</option>
+              </select>
+            </div>
+
+            <button @click="addNewNode" style="margin-top: 10px; width: 100%">新增因子</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 50px; border-top: 2px solid #ddd">
+        <h3>因子庫</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
           <div
-            v-if="factor.isExpanded"
-            style="padding: 10px; background-color: #fff; border-top: 1px solid #ddd"
+            v-for="factor in factorLibrary"
+            :key="factor.id"
+            style="
+              flex: 0 0 calc(50% - 5px);
+              margin: 0;
+              background-color: #ffb6c1;
+              color: #000000;
+              border: 1px solid #333;
+              border-radius: 4px;
+              overflow: hidden;
+            "
           >
-            <div style="margin: 5px 0"><strong>欄位名稱：</strong>{{ factor.variableName }}</div>
-            <div style="margin: 5px 0"><strong>欄位類型：</strong>{{ factor.fieldCategory }}</div>
-            <div style="margin: 5px 0"><strong>型態：</strong>{{ factor.type }}</div>
-            <button @click.stop="addNodeFromLibrary(factor)" style="margin-top: 10px; width: 100%">
-              添加到圖表
-            </button>
+            <!-- 標題部分 -->
+            <div
+              style="
+                padding: 10px;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+             
+            >
+              <div style="font-weight: bold">{{ factor.label }}</div>
+              <div style="font-size: 10px" @click="toggleFactor(factor)">{{ factor.isExpanded ? '▼' : '▶' }}</div>
+            </div>
+
+            <!-- 展開的詳細內容 -->
+            <div
+              v-if="factor.isExpanded"
+              style="padding: 10px; background-color: #fff; border-top: 1px solid #ddd"
+            >
+              <div style="margin: 5px 0"><strong>欄位名稱：</strong>{{ factor.variableName }}</div>
+              <div style="margin: 5px 0"><strong>欄位類型：</strong>{{ factor.fieldCategory }}</div>
+              <div style="margin: 5px 0"><strong>型態：</strong>{{ factor.type }}</div>
+              <button @click.stop="addNodeFromLibrary(factor)" style="margin-top: 10px; width: 100%">
+                添加到圖表
+              </button>
+            </div>
           </div>
         </div>
       </div>
