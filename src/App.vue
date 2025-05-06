@@ -10,6 +10,7 @@ import {
   type NodeChange,
   type EdgeChange,
   type Connection,
+  getConnectedEdges,
 } from '@vue-flow/core'
 import { Background } from '@vue-flow/background'
 import { Controls } from '@vue-flow/controls'
@@ -101,7 +102,7 @@ const initialEdges = [
 const nodes = ref<Node[]>([...initialNodes])
 const edges = ref<Edge[]>([...initialEdges])
 
-const { onConnect, addEdges, onNodesChange, onEdgesChange } = useVueFlow()
+const { onConnect, addEdges, onNodesChange, onEdgesChange, project } = useVueFlow()
 
 onNodesChange((changes: NodeChange[]) => {
   nodes.value = applyNodeChanges(changes, nodes.value)
@@ -237,6 +238,49 @@ const addNodeFromLibrary = (factor: Factor) => {
   }
   nodes.value = [...nodes.value, newNode]
 }
+
+// 新增拖拉相關函數
+const onDragStart = (event: DragEvent, factor: Factor) => {
+  if (event.dataTransfer) {
+    event.dataTransfer.setData('application/vueflow', JSON.stringify(factor))
+    event.dataTransfer.effectAllowed = 'move'
+  }
+}
+
+const onDrop = (event: DragEvent) => {
+  if (!event.dataTransfer) return
+
+  const factor = JSON.parse(event.dataTransfer.getData('application/vueflow'))
+  
+  // 獲取滑鼠放置的位置
+  const bounds = (event.target as HTMLElement).getBoundingClientRect()
+  const position = project({
+    x: event.clientX - bounds.left,
+    y: event.clientY - bounds.top,
+  })
+
+  // 創建新節點
+  const newNode: Node = {
+    id: `${nodeIdCounter++}`,
+    label: factor.label,
+    position,
+    type: 'default',
+    style: { backgroundColor: '#FFB6C1', color: '#000000', border: '1px solid #333' },
+    data: {
+      fieldCategory: factor.fieldCategory,
+      variableName: factor.variableName,
+    },
+  }
+
+  nodes.value = [...nodes.value, newNode]
+}
+
+const onDragOver = (event: DragEvent) => {
+  event.preventDefault()
+  if (event.dataTransfer) {
+    event.dataTransfer.dropEffect = 'move'
+  }
+}
 </script>
 
 <template>
@@ -290,6 +334,8 @@ const addNodeFromLibrary = (factor: Factor) => {
           <div
             v-for="factor in factorLibrary"
             :key="factor.id"
+            draggable="true"
+            @dragstart="onDragStart($event, factor)"
             style="
               flex: 0 0 calc(50% - 5px);
               margin: 0;
@@ -298,6 +344,7 @@ const addNodeFromLibrary = (factor: Factor) => {
               border: 1px solid #333;
               border-radius: 4px;
               overflow: hidden;
+              cursor: move;
             "
           >
             <!-- 標題部分 -->
@@ -339,6 +386,8 @@ const addNodeFromLibrary = (factor: Factor) => {
         v-model:edges="edges"
         class="h-full w-full"
         :fit-view-on-init="true"
+        @drop="onDrop"
+        @dragover="onDragOver"
       >
         <Background />
         <Controls />
