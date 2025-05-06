@@ -10,6 +10,7 @@ import {
   type NodeChange,
   type EdgeChange,
   type Connection,
+  type EdgeMouseEvent,
   getConnectedEdges,
 } from '@vue-flow/core'
 import { Background } from '@vue-flow/background'
@@ -104,6 +105,52 @@ const edges = ref<Edge[]>([...initialEdges])
 
 const { onConnect, addEdges, onNodesChange, onEdgesChange, project } = useVueFlow()
 
+// 新增連接線文字相關的狀態
+const edgeUpdateText = ref('')
+const selectedEdge = ref<Edge | null>(null)
+const isEditing = ref(false)
+
+// 處理新增連接
+const onConnectHandler = (params: Connection) => {
+  const newEdge = {
+    ...params,
+    id: `e${edges.value.length + 1}`,
+    label: '',
+    labelStyle: { fill: '#000000' },
+  }
+  selectedEdge.value = newEdge
+  isEditing.value = true
+  edges.value = [...edges.value, newEdge]
+}
+
+// 處理點擊連接線
+const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
+  selectedEdge.value = edge
+  edgeUpdateText.value = edge.label as string || ''
+  isEditing.value = true
+}
+
+// 更新連接線文字
+const updateEdgeLabel = () => {
+  if (selectedEdge.value && edgeUpdateText.value) {
+    edges.value = edges.value.map(edge => 
+      edge.id === selectedEdge.value?.id 
+        ? { ...edge, label: edgeUpdateText.value }
+        : edge
+    )
+  }
+  isEditing.value = false
+  selectedEdge.value = null
+  edgeUpdateText.value = ''
+}
+
+// 取消編輯
+const cancelEditing = () => {
+  isEditing.value = false
+  selectedEdge.value = null
+  edgeUpdateText.value = ''
+}
+
 onNodesChange((changes: NodeChange[]) => {
   nodes.value = applyNodeChanges(changes, nodes.value)
 })
@@ -128,9 +175,7 @@ watch(
   { deep: true },
 )
 
-onConnect((params: Connection) => {
-  addEdges([params])
-})
+onConnect(onConnectHandler)
 
 // Clean node/edge
 const cleanNodeData = (node: any) => ({
@@ -268,6 +313,44 @@ const onDragOver = (event: DragEvent) => {
     event.dataTransfer.dropEffect = 'move'
   }
 }
+
+// 新增因子編輯相關的狀態
+const editingFactor = ref<Factor | null>(null)
+const editingFactorData = ref({
+  label: '',
+  variableName: '',
+  fieldCategory: 'string',
+})
+
+// 開始編輯因子
+const startEditFactor = (factor: Factor, event: Event) => {
+  event.stopPropagation()
+  editingFactor.value = factor
+  editingFactorData.value = {
+    label: factor.label,
+    variableName: factor.variableName,
+    fieldCategory: factor.fieldCategory,
+  }
+}
+
+// 保存因子編輯
+const saveFactorEdit = () => {
+  if (editingFactor.value) {
+    const index = factorLibrary.value.findIndex(f => f.id === editingFactor.value?.id)
+    if (index !== -1) {
+      factorLibrary.value[index] = {
+        ...factorLibrary.value[index],
+        ...editingFactorData.value
+      }
+    }
+  }
+  editingFactor.value = null
+}
+
+// 取消因子編輯
+const cancelFactorEdit = () => {
+  editingFactor.value = null
+}
 </script>
 
 <template>
@@ -354,12 +437,58 @@ const onDragOver = (event: DragEvent) => {
               v-if="factor.isExpanded"
               style="padding:5px 10px; background-color: #fff; border-top: 1px solid #ddd"
             >
-              <div style="margin: 5px 0; font-size: 10px;"><strong>欄位名稱：</strong>{{ factor.variableName }}</div>
-              <div style="margin: 5px 0; font-size: 10px;"><strong>欄位類型：</strong>{{ factor.fieldCategory }}</div>
-              <div style="margin: 5px 0; font-size: 10px;"><strong>型態：</strong>{{ factor.type }}</div>
-              <!-- <button @click.stop="addNodeFromLibrary(factor)" style="margin-top: 10px; width: 100%">
-                添加到圖表
-              </button> -->
+              <template v-if="editingFactor?.id === factor.id">
+                <div style="margin: 5px 0">
+                  <strong>欄位中文：</strong>
+                  <input
+                    v-model="editingFactorData.label"
+                    style="width: 100%; font-size: 10px; margin-top: 2px"
+                  />
+                </div>
+                <div style="margin: 5px 0">
+                  <strong>欄位名稱：</strong>
+                  <input
+                    v-model="editingFactorData.variableName"
+                    style="width: 100%; font-size: 10px; margin-top: 2px"
+                  />
+                </div>
+                <div style="margin: 5px 0">
+                  <strong>欄位類型：</strong>
+                  <select
+                    v-model="editingFactorData.fieldCategory"
+                    style="width: 100%; font-size: 10px; margin-top: 2px"
+                  >
+                    <option value="string">文字</option>
+                    <option value="number">數值</option>
+                    <option value="boolean">布林</option>
+                  </select>
+                </div>
+                <div style="display: flex; gap: 5px; margin-top: 5px">
+                  <button
+                    @click="saveFactorEdit"
+                    style="flex: 1; font-size: 10px; padding: 2px"
+                  >
+                    保存
+                  </button>
+                  <button
+                    @click="cancelFactorEdit"
+                    style="flex: 1; font-size: 10px; padding: 2px; background: #ccc"
+                  >
+                    取消
+                  </button>
+                </div>
+              </template>
+              <template v-else>
+                <div style="margin: 5px 0; font-size: 10px;"><strong>欄位名稱：</strong>{{ factor.variableName }}</div>
+                <div style="margin: 5px 0; font-size: 10px;"><strong>欄位類型：</strong>{{ factor.fieldCategory }}</div>
+                <div style="margin: 5px 0; font-size: 10px;"><strong>型態：</strong>{{ factor.type }}</div>
+                <button
+                  @click="startEditFactor(factor, $event)"
+                  style="width: 100%; font-size: 10px; padding: 2px 5px; margin-top: 5px"
+                >
+                  編輯
+                </button>
+              </template>
             </div>
           </div>
         </div>
@@ -375,11 +504,40 @@ const onDragOver = (event: DragEvent) => {
         :fit-view-on-init="true"
         @drop="onDrop"
         @dragover="onDragOver"
+        @edge-click="onEdgeClick"
       >
         <Background />
         <Controls />
         <MiniMap />
       </VueFlow>
+
+      <!-- 連接線文字編輯對話框 -->
+      <div
+        v-if="isEditing"
+        style="
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          z-index: 1000;
+        "
+      >
+        <div style="margin-bottom: 10px">請輸入連接線文字：</div>
+        <input
+          v-model="edgeUpdateText"
+          type="text"
+          style="width: 200px; margin-bottom: 10px"
+          @keyup.enter="updateEdgeLabel"
+        />
+        <div style="display: flex; justify-content: flex-end; gap: 10px">
+          <button @click="cancelEditing" style="background: #ccc">取消</button>
+          <button @click="updateEdgeLabel">確定</button>
+        </div>
+      </div>
 
       <div style="position: absolute; top: 10px; left: 10px; z-index: 999">
         <button @click="logCurrentState">📝 輸出目前狀態</button>
