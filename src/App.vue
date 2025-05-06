@@ -194,21 +194,8 @@ const addNewNode = () => {
     isExpanded: false,
   }
 
-  // 添加到因子庫
+  // 只添加到因子庫
   factorLibrary.value.push(newFactor)
-
-  // 添加到圖表
-  const newNode: Node = {
-    id: `${nodeIdCounter++}`,
-    label,
-    position: { x: 0, y: 0 },
-    type,
-    data: {
-      fieldCategory,
-      variableName,
-    },
-  }
-  nodes.value = [...nodes.value, newNode]
 
   // 重置表單
   newNodeData.value = {
