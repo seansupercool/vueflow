@@ -1,0 +1,440 @@
+[
+    {
+        "prodCat": "1",
+        "children": [
+            {
+                "prodClassify": "002",
+                "children": [
+                    {
+                        "customerType": "1",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_TERM",
+                                        "withinTotAmt": 6000000,
+                                        "peersTotAmt": 6000000,
+                                        "maxAmtWithin": 6000000,
+                                        "maxAmtAll": 6000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "2",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_TERM",
+                                        "withinTotAmt": 6000000,
+                                        "peersTotAmt": 6000000,
+                                        "maxAmtWithin": 6000000,
+                                        "maxAmtAll": 6000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "3",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_TERM",
+                                        "withinTotAmt": 3000000,
+                                        "peersTotAmt": 3000000,
+                                        "maxAmtWithin": 3000000,
+                                        "maxAmtAll": 3000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "4",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_TERM",
+                                        "withinTotAmt": 6000000,
+                                        "peersTotAmt": 6000000,
+                                        "maxAmtWithin": 6000000,
+                                        "maxAmtAll": 6000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "5",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_TERM",
+                                        "withinTotAmt": 3000000,
+                                        "peersTotAmt": 3000000,
+                                        "maxAmtWithin": 3000000,
+                                        "maxAmtAll": 3000000
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "prodCat": "2",
+        "children": [
+            {
+                "prodClassify": "017",
+                "children": [
+                    {
+                        "customerType": "1",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_ACC",
+                                        "withinTotAmt": 6000000,
+                                        "peersTotAmt": 6000000,
+                                        "maxAmtWithin": 6000000,
+                                        "maxAmtAll": 6000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "2",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_ACC",
+                                        "withinTotAmt": 6000000,
+                                        "peersTotAmt": 6000000,
+                                        "maxAmtWithin": 6000000,
+                                        "maxAmtAll": 6000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "3",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_ACC",
+                                        "withinTotAmt": 3000000,
+                                        "peersTotAmt": 3000000,
+                                        "maxAmtWithin": 3000000,
+                                        "maxAmtAll": 3000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "4",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_ACC",
+                                        "withinTotAmt": 6000000,
+                                        "peersTotAmt": 6000000,
+                                        "maxAmtWithin": 6000000,
+                                        "maxAmtAll": 6000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "5",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_ACC",
+                                        "withinTotAmt": 3000000,
+                                        "peersTotAmt": 3000000,
+                                        "maxAmtWithin": 3000000,
+                                        "maxAmtAll": 3000000
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "prodCat": "3",
+        "children": [
+            {
+                "prodClassify": "005",
+                "children": [
+                    {
+                        "customerType": "1",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_IDEMN",
+                                        "withinTotAmt": 200000,
+                                        "peersTotAmt": 200000,
+                                        "maxAmtWithin": 200000,
+                                        "maxAmtAll": 200000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "2",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_IDEMN",
+                                        "withinTotAmt": 200000,
+                                        "peersTotAmt": 200000,
+                                        "maxAmtWithin": 200000,
+                                        "maxAmtAll": 200000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "3",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_IDEMN",
+                                        "withinTotAmt": 100000,
+                                        "peersTotAmt": 100000,
+                                        "maxAmtWithin": 100000,
+                                        "maxAmtAll": 100000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "4",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_IDEMN",
+                                        "withinTotAmt": 200000,
+                                        "peersTotAmt": 200000,
+                                        "maxAmtWithin": 200000,
+                                        "maxAmtAll": 200000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "5",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_IDEMN",
+                                        "withinTotAmt": 100000,
+                                        "peersTotAmt": 100000,
+                                        "maxAmtWithin": 100000,
+                                        "maxAmtAll": 100000
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "prodCat": "4",
+        "children": [
+            {
+                "prodClassify": "016",
+                "children": [
+                    {
+                        "customerType": "1",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_DD",
+                                        "withinTotAmt": 1000000,
+                                        "peersTotAmt": 1000000,
+                                        "maxAmtWithin": 1000000,
+                                        "maxAmtAll": 1000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "2",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_DD",
+                                        "withinTotAmt": 1000000,
+                                        "peersTotAmt": 1000000,
+                                        "maxAmtWithin": 1000000,
+                                        "maxAmtAll": 1000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "3",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_DD",
+                                        "withinTotAmt": 1000000,
+                                        "peersTotAmt": 1000000,
+                                        "maxAmtWithin": 1000000,
+                                        "maxAmtAll": 1000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "4",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_DD",
+                                        "withinTotAmt": 1000000,
+                                        "peersTotAmt": 1000000,
+                                        "maxAmtWithin": 1000000,
+                                        "maxAmtAll": 1000000
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "5",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "E_DD",
+                                        "withinTotAmt": 1000000,
+                                        "peersTotAmt": 1000000,
+                                        "maxAmtWithin": 1000000,
+                                        "maxAmtAll": 1000000
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "prodCat": "5",
+        "children": [
+            {
+                "prodClassify": "005",
+                "children": [
+                    {
+                        "customerType": "in 0,3",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "B1H2_E",
+                                        "withinTotAmt": 2000,
+                                        "peersTotAmt": 0,
+                                        "maxAmtWithin": 0,
+                                        "maxAmtAll": 0
+                                    },
+                                    {
+                                        "healthInsType": "B1H2_E",
+                                        "withinTotAmt": 0,
+                                        "peersTotAmt": 4000,
+                                        "maxAmtWithin": 0,
+                                        "maxAmtAll": 0
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "customerType": "in 1,2,4",
+                        "children": [
+                            {
+                                "peersChannel": "N",
+                                "answerList": [
+                                    {
+                                        "healthInsType": "B1H2_E",
+                                        "withinTotAmt": 4000,
+                                        "peersTotAmt": 0,
+                                        "maxAmtWithin": 0,
+                                        "maxAmtAll": 0
+                                    },
+                                    {
+                                        "healthInsType": "B1H2_E",
+                                        "withinTotAmt": 0,
+                                        "peersTotAmt": 6000,
+                                        "maxAmtWithin": 0,
+                                        "maxAmtAll": 0
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

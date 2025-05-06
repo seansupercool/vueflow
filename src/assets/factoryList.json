@@ -1,0 +1,63 @@
+{
+    "factorList": [
+        {
+            "id": "1",
+            "label": "年齡",
+            "variableName": "age",
+            "variableType": "number",
+            "conditions": [
+                {
+                    "operator": "<",
+                    "value": 18,
+                    "label": "小於 18 歲"
+                },
+                {
+                    "operator": ">=",
+                    "value": 18,
+                    "label": "大於等於 18 歲"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "label": "是否已知疾病症狀",
+            "variableName": "isDiseaseKnown",
+            "variableType": "boolean",
+            "conditions": [
+                {
+                    "operator": "==",
+                    "value": true,
+                    "label": "已知疾病"
+                },
+                {
+                    "operator": "==",
+                    "value": false,
+                    "label": "未知疾病"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "label": "手術狀態",
+            "variableName": "surgeryStatus",
+            "variableType": "string",
+            "conditions": [
+                {
+                    "operator": "==",
+                    "value": "scheduled",
+                    "label": "已排程"
+                },
+                {
+                    "operator": "==",
+                    "value": "completed",
+                    "label": "已完成"
+                },
+                {
+                    "operator": "!=",
+                    "value": "cancelled",
+                    "label": "非取消狀態"
+                }
+            ]
+        }
+    ]
+}
