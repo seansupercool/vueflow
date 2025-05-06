@@ -352,14 +352,14 @@ const onDragOver = (event: DragEvent) => {
             <!-- 展開的詳細內容 -->
             <div
               v-if="factor.isExpanded"
-              style="padding: 10px; background-color: #fff; border-top: 1px solid #ddd"
+              style="padding:5px 10px; background-color: #fff; border-top: 1px solid #ddd"
             >
-              <div style="margin: 5px 0"><strong>欄位名稱：</strong>{{ factor.variableName }}</div>
-              <div style="margin: 5px 0"><strong>欄位類型：</strong>{{ factor.fieldCategory }}</div>
-              <div style="margin: 5px 0"><strong>型態：</strong>{{ factor.type }}</div>
-              <button @click.stop="addNodeFromLibrary(factor)" style="margin-top: 10px; width: 100%">
+              <div style="margin: 5px 0; font-size: 10px;"><strong>欄位名稱：</strong>{{ factor.variableName }}</div>
+              <div style="margin: 5px 0; font-size: 10px;"><strong>欄位類型：</strong>{{ factor.fieldCategory }}</div>
+              <div style="margin: 5px 0; font-size: 10px;"><strong>型態：</strong>{{ factor.type }}</div>
+              <!-- <button @click.stop="addNodeFromLibrary(factor)" style="margin-top: 10px; width: 100%">
                 添加到圖表
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
