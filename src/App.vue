@@ -16,6 +16,7 @@ import {
 import { Background } from '@vue-flow/background'
 import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
+import UnderwritingFlow from './components/UnderwritingFlow.vue'
 
 const initialNodes = [
   {
@@ -37,18 +38,9 @@ const initialNodes = [
     position: { x: -83, y: 187 },
     style: { backgroundColor: '#FFB6C1', color: '#000000', border: '1px solid #333' },
   },
-  { id: '4', label: '已知病因？', position: { x: -13, y: 273 } },
   { id: '5', label: '診斷期間 >= 1 年？', position: { x: 350, y: 187 } },
-  { id: '6', label: '是否復發？', position: { x: 140, y: 390 } },
-  { id: '7', label: '有無併發症？', position: { x: 50, y: 580 } },
-  { id: '8', label: '癒後期間 >= 6 月？', position: { x: -252, y: 771 } },
-  { id: '9', label: '結果：依病因評估', position: { x: 500, y: 275 } },
+  { id: '9', label: '依病因評估', position: { x: 500, y: 275 } },
   { id: 'r1', label: '結果：P', position: { x: -450, y: 130 }, type: 'output' },
-  { id: 'r2', label: '結果：依病因評估', position: { x: -277, y: 401 }, type: 'output' },
-  { id: 'r3', label: '結果：P', position: { x: -510, y: 970 }, type: 'output' },
-  { id: 'r4', label: '結果：分數', position: { x: -150, y: 950 }, type: 'output' },
-  { id: 'r5', label: '結果：CMO', position: { x: 370, y: 590 }, type: 'output' },
-  { id: 'r6', label: '結果：CMO', position: { x: 270, y: 960 }, type: 'output' },
   {
     id: 'r7',
     label: '結果：依肺癌標準評估',
@@ -77,15 +69,6 @@ const initialEdges = [
     label: '已手術(完全切除)',
     style: { stroke: '#f00', strokeWidth: 2 },
   },
-  { id: 'e3-4_2', source: '3', target: '4', label: '良性' },
-  { id: 'e4-r2', source: '4', target: 'r2', label: '有病因' },
-  { id: 'e4-6_3', source: '4', target: '6', label: '無病因' },
-  { id: 'e6-7_3', source: '6', target: '7', label: '否' },
-  { id: 'e7-8_3', source: '7', target: '8', label: '無併發症' },
-  { id: 'e8-r3', source: '8', target: 'r3', label: '<6月' },
-  { id: 'e8-r4', source: '8', target: 'r4', label: '>=6月' },
-  { id: 'e6-r5', source: '6', target: 'r5', label: '是' },
-  { id: 'e7-r6', source: '7', target: 'r6', label: '有併發症' },
   {
     id: 'e3-r7',
     source: '3',
@@ -100,10 +83,13 @@ const initialEdges = [
   { id: 'e9-r10', source: '9', target: 'r10', label: '>=1' },
 ]
 
+// const nodes = ref<Node[]>([...initialNodes])
+// const edges = ref<Edge[]>([...initialEdges])
+
 const nodes = ref<Node[]>([...initialNodes])
 const edges = ref<Edge[]>([...initialEdges])
 
-const { onConnect, addEdges, onNodesChange, onEdgesChange, project } = useVueFlow()
+const { onConnect, addEdges, onNodesChange, onEdgesChange, project, getNodes, getEdges } = useVueFlow()
 
 // 新增連接線文字相關的狀態
 const edgeUpdateText = ref('')
@@ -351,225 +337,61 @@ const saveFactorEdit = () => {
 const cancelFactorEdit = () => {
   editingFactor.value = null
 }
+
+function logAllNodePositions() {
+  const currentNodes = getNodes.value
+  const currentEdges = getEdges.value
+  console.log("currentNodes", JSON.stringify(currentNodes))
+  // console.log("currentEdges", JSON.stringify(currentEdges))
+
+
+  // 取得畫完圖後的edge初始資料使用
+  const vueFlowEdges = convertToVueFlowEdges(getEdges.value);
+  console.log(JSON.stringify(vueFlowEdges));
+  
+  // 取得畫完圖後的node初始資料使用
+  const currentNodesInit = transformNodesForStorage(currentNodes);
+  console.log(JSON.stringify(currentNodesInit, null, 2)); // 可以存起來用
+  // currentNodes.forEach((node) => {
+  //   console.log(`節點 ${node.id} 的位置是 x=${node.position.x}, y=${node.position.y}`)
+  // })
+
+
+}
+
+function transformNodesForStorage(nodes) {
+  return nodes.map((node) => {
+    const { id, data, position, type, style, label } = node;
+    return {
+      id,
+      label: label || data?.label || '',
+      position,
+      ...(type && { type }),
+      ...(style && { style }),
+    };
+  });
+}
+function convertToVueFlowEdges(getEdges) {
+  return getEdges.map((edge, index) => ({
+    id: `e${index + 1}`, // 設定 id，這裡假設 id 是 "e" + 索引
+    source: edge.sourceNode.id, // 來自 sourceNode.id
+    target: edge.targetNode.id, // 來自 targetNode.id
+    label: edge.data.label, // 從 data.label 取得標籤
+    animated: false, // 設定是否動畫
+    style: { stroke: '#000' }, // 設定預設的邊線樣式
+  }));
+}
+
 </script>
 
 <template>
-  <div style="flex: 1; height: 100vh; display: flex">
-    <!-- 左側為新增節點區域 -->
-    <div
-      style="width: 250px; padding: 10px; background-color: #f4f4f4; border-right: 2px solid #ddd"
-    >
-      <div>
-        <h3>新增因子</h3>
-        <div
-          style="
-            margin: 10px 0;
-            background-color: #ffb6c1;
-            color: #000000;
-            border: 1px solid #333;
-            border-radius: 4px;
-            overflow: hidden;
-          "
-        >
-          <div style="padding: 10px; background-color: #fff; border-bottom: 1px solid #ddd">
-            <!-- 欄位中文 -->
-            <div style="display: flex; align-items: center; margin: 0px 0">
-              <label style="width: 80px; margin-right: 0px">欄位中文</label>
-              <input v-model="newNodeData.label" placeholder="例如：疾病症狀 是否已知？" style="flex: 1" />
-            </div>
-
-            <!-- 欄位名稱 -->
-            <div style="display: flex; align-items: center; margin: 0px 0">
-              <label style="width: 80px; margin-right: 0px">欄位變數名</label>
-              <input v-model="newNodeData.variableName" placeholder="例如：var_1" style="flex: 1" />
-            </div>
-
-            <!-- 欄位類型 -->
-            <div style="display: flex; align-items: center; margin: 0px 0">
-              <label style="width: 80px; margin-right: 0px">欄位類型</label>
-              <select v-model="newNodeData.fieldCategory" style="flex: 1">
-                <option value="string">文字</option>
-                <option value="number">數值</option>
-                <option value="boolean">布林</option>
-              </select>
-            </div>
-
-            <button @click="addNewNode" style="margin-top: 10px; width: 100%">新增因子</button>
-          </div>
-        </div>
-      </div>
-      <div style="margin-top: 50px; border-top: 2px solid #ddd">
-        <h3>因子庫</h3>
-        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-          <div
-            v-for="factor in factorLibrary"
-            :key="factor.id"
-            draggable="true"
-            @dragstart="onDragStart($event, factor)"
-            style="
-              flex: 0 0 calc(50% - 5px);
-              margin: 0;
-              background-color: #ffb6c1;
-              color: #000000;
-              border: 1px solid #333;
-              border-radius: 4px;
-              overflow: hidden;
-              cursor: move;
-            "
-          >
-            <!-- 標題部分 -->
-            <div
-              style="
-                padding: 10px;
-                cursor: pointer;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-              "
-             
-            >
-              <div style="font-weight: bold">{{ factor.label }}</div>
-              <div style="font-size: 10px" @click="toggleFactor(factor)">{{ factor.isExpanded ? '▼' : '▶' }}</div>
-            </div>
-
-            <!-- 展開的詳細內容 -->
-            <div
-              v-if="factor.isExpanded"
-              style="padding:5px 10px; background-color: #fff; border-top: 1px solid #ddd"
-            >
-              <template v-if="editingFactor?.id === factor.id">
-                <div style="margin: 5px 0">
-                  <strong>欄位中文：</strong>
-                  <input
-                    v-model="editingFactorData.label"
-                    style="width: 100%; font-size: 10px; margin-top: 2px"
-                  />
-                </div>
-                <div style="margin: 5px 0">
-                  <strong>欄位名稱：</strong>
-                  <input
-                    v-model="editingFactorData.variableName"
-                    style="width: 100%; font-size: 10px; margin-top: 2px"
-                  />
-                </div>
-                <div style="margin: 5px 0">
-                  <strong>欄位類型：</strong>
-                  <select
-                    v-model="editingFactorData.fieldCategory"
-                    style="width: 100%; font-size: 10px; margin-top: 2px"
-                  >
-                    <option value="string">文字</option>
-                    <option value="number">數值</option>
-                    <option value="boolean">布林</option>
-                  </select>
-                </div>
-                <div style="display: flex; gap: 5px; margin-top: 5px">
-                  <button
-                    @click="saveFactorEdit"
-                    style="flex: 1; font-size: 10px; padding: 2px"
-                  >
-                    保存
-                  </button>
-                  <button
-                    @click="cancelFactorEdit"
-                    style="flex: 1; font-size: 10px; padding: 2px; background: #ccc"
-                  >
-                    取消
-                  </button>
-                </div>
-              </template>
-              <template v-else>
-                <div style="margin: 5px 0; font-size: 10px;"><strong>欄位名稱：</strong>{{ factor.variableName }}</div>
-                <div style="margin: 5px 0; font-size: 10px;"><strong>欄位類型：</strong>{{ factor.fieldCategory }}</div>
-                <div style="margin: 5px 0; font-size: 10px;"><strong>型態：</strong>{{ factor.type }}</div>
-                <button
-                  @click="startEditFactor(factor, $event)"
-                  style="width: 100%; font-size: 10px; padding: 2px 5px; margin-top: 5px"
-                >
-                  編輯
-                </button>
-              </template>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 右側為 VueFlow 節點場景 -->
-    <div style="flex: 1; height: 100%; position: relative">
-      <VueFlow
-        v-model:nodes="nodes"
-        v-model:edges="edges"
-        class="h-full w-full"
-        :fit-view-on-init="true"
-        @drop="onDrop"
-        @dragover="onDragOver"
-        @edge-click="onEdgeClick"
-      >
-        <Background />
-        <Controls />
-        <MiniMap />
-      </VueFlow>
-
-      <!-- 連接線文字編輯對話框 -->
-      <div
-        v-if="isEditing"
-        style="
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: white;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          z-index: 1000;
-        "
-      >
-        <div style="margin-bottom: 10px">請輸入連接線文字：</div>
-        <input
-          v-model="edgeUpdateText"
-          type="text"
-          style="width: 200px; margin-bottom: 10px"
-          @keyup.enter="updateEdgeLabel"
-        />
-        <div style="display: flex; justify-content: flex-end; gap: 10px">
-          <button @click="cancelEditing" style="background: #ccc">取消</button>
-          <button @click="updateEdgeLabel">確定</button>
-        </div>
-      </div>
-
-      <div style="position: absolute; top: 10px; left: 10px; z-index: 999">
-        <button @click="logCurrentState">📝 輸出目前狀態</button>
-      </div>
-    </div>
-  </div>
+  <UnderwritingFlow />
+  <button @click="logAllNodePositions">列出所有節點位置</button>
 </template>
 
-<style scoped>
-.h-full {
-  height: 100%;
-}
-.w-full {
-  width: 100%;
-}
-button {
-  margin: 4px;
-  padding: 6px 12px;
-  background: #4f46e5;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-button:hover {
-  background: #4338ca;
-}
-input,
-select {
-  margin: 10px 0;
-  width: 100%;
-  padding: 6px;
-  border-radius: 6px;
+<style>
+body {
+  margin: 0;
+  padding: 0;
 }
 </style>

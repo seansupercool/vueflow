@@ -1,0 +1,752 @@
+{
+  "nodes": [
+    {
+      "id": "node-0",
+      "label": "糖尿病 (100A)",
+      "position": {
+        "y": -196,
+        "x": -88
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-1",
+      "label": "險種: 壽險",
+      "position": {
+        "x": -837,
+        "y": -118
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-2",
+      "label": "有無併發症及共病: 無併發症、無共病",
+      "position": {
+        "x": -3054.440697585391,
+        "y": 276.72650310920784
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-3",
+      "label": "投保年齡: ～19歲",
+      "position": {
+        "x": -3456.864600794549,
+        "y": 390.3628930860003
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-4",
+      "label": "結果: D",
+      "position": {
+        "x": -3458.875,
+        "y": 451
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-5",
+      "label": "投保年齡: 20～29歲",
+      "position": {
+        "x": -3298.6929693754623,
+        "y": 388.1834738143432
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-6",
+      "label": "結果: 150",
+      "position": {
+        "x": -3298.5,
+        "y": 450
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-7",
+      "label": "投保年齡: 30～39歲",
+      "position": {
+        "x": -3143.68687990372,
+        "y": 387.3190849597431
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-8",
+      "label": "結果: 145",
+      "position": {
+        "x": -3142.5,
+        "y": 449
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-9",
+      "label": "投保年齡: 40～49歲",
+      "position": {
+        "x": -2981.2320546382516,
+        "y": 386.8947241704293
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-10",
+      "label": "結果: 90",
+      "position": {
+        "x": -2980.25,
+        "y": 450.875
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-11",
+      "label": "投保年齡: 50～64歲",
+      "position": {
+        "x": -2820.645289471027,
+        "y": 384.5962616952527
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-12",
+      "label": "結果: 35",
+      "position": {
+        "x": -2823,
+        "y": 452
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-13",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": -2653.2534199617403,
+        "y": 384.7821797609514
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-14",
+      "label": "結果: 25",
+      "position": {
+        "x": -2653,
+        "y": 448.5
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-15",
+      "label": "有無併發症及共病: 有併發症",
+      "position": {
+        "x": -806.9022535454667,
+        "y": 31.23713577405519
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-16",
+      "label": "併發症類型: 增值性視網膜病變",
+      "position": {
+        "x": -1941.2186620534449,
+        "y": 286.1528167673617
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-17",
+      "label": "投保年齡: ～49歲",
+      "position": {
+        "x": -2100.75,
+        "y": 385
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-18",
+      "label": "結果: D",
+      "position": {
+        "x": -2100.5,
+        "y": 440
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-19",
+      "label": "投保年齡: 50～64歲",
+      "position": {
+        "x": -1940.875,
+        "y": 385
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-20",
+      "label": "結果: 185",
+      "position": {
+        "x": -1938.3516482123405,
+        "y": 438.7466586864174
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-21",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": -1781.375,
+        "y": 386
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-22",
+      "label": "結果: 100",
+      "position": {
+        "x": -1781.25,
+        "y": 442
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-23",
+      "label": "併發症類型: 神經性病變",
+      "position": {
+        "x": -2390.7265922000433,
+        "y": 281.9616377851937
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-24",
+      "label": "投保年齡: ～64歲",
+      "position": {
+        "x": -2474.75,
+        "y": 387.00000000000006
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-25",
+      "label": "結果: D",
+      "position": {
+        "x": -2474.75,
+        "y": 450
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-26",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": -2274.185061795978,
+        "y": 387.6600015585611
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-27",
+      "label": "結果: 70",
+      "position": {
+        "x": -2273.5,
+        "y": 444
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-28",
+      "label": "併發症類型: 肢端壞疽",
+      "position": {
+        "x": -585.5243140465222,
+        "y": 259.4726690469037
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-29",
+      "label": "投保年齡: ～64歲",
+      "position": {
+        "x": -686.4430352000097,
+        "y": 312.0403608270488
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-30",
+      "label": "結果: D",
+      "position": {
+        "x": -682.602077487023,
+        "y": 371.435663621237
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-31",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": -524.4141732494527,
+        "y": 312.1556976741939
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-32",
+      "label": "結果: 125",
+      "position": {
+        "x": -523.966576463582,
+        "y": 370.23652370744577
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-33",
+      "label": "併發症類型: 蜂窩組織炎及膿瘍",
+      "position": {
+        "x": -1550.2233209721767,
+        "y": 297.8855367703988
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-34",
+      "label": "投保年齡: ～64歲",
+      "position": {
+        "x": -1622.8404012161122,
+        "y": 387.5938352695679
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-35",
+      "label": "結果: D",
+      "position": {
+        "x": -1623.7940068367675,
+        "y": 441.39529948228335
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-36",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": -1468.9377826502994,
+        "y": 385.9200482451714
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-37",
+      "label": "結果: 100",
+      "position": {
+        "x": -1469.3065980158053,
+        "y": 440.21261620634505
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-38",
+      "label": "併發症類型: 蛋白尿(2＋)以上",
+      "position": {
+        "x": -1086.9499724048082,
+        "y": 294.76086701974725
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-39",
+      "label": "投保年齡: ～39歲",
+      "position": {
+        "x": -1313.6840940985526,
+        "y": 385.02574376554196
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-40",
+      "label": "結果: D",
+      "position": {
+        "x": -1312.714968878126,
+        "y": 440.0572256893237
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-41",
+      "label": "投保年齡: 40～49歲",
+      "position": {
+        "x": -1161.1892071150028,
+        "y": 380.78613206535647
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-42",
+      "label": "結果: 245",
+      "position": {
+        "x": -1160.8786727575261,
+        "y": 440.3350934476607
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-43",
+      "label": "投保年齡: 50～64歲",
+      "position": {
+        "x": -999,
+        "y": 383
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-44",
+      "label": "結果: 115",
+      "position": {
+        "x": -999.3826856888603,
+        "y": 441.38239818914985
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-45",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": -842.5615940653081,
+        "y": 383.60950828365515
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-46",
+      "label": "結果: 75",
+      "position": {
+        "x": -841.9962236811234,
+        "y": 443.10039978684824
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-47",
+      "label": "有無併發症及共病: 有共病",
+      "position": {
+        "x": 791,
+        "y": 40
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-48",
+      "label": "共病類型: 高血壓",
+      "position": {
+        "x": 800.1793119354002,
+        "y": 132.14132641451897
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-49",
+      "label": "投保年齡: ～39歲",
+      "position": {
+        "x": 914.5410914206414,
+        "y": 198.22567797080274
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-50",
+      "label": "結果: D",
+      "position": {
+        "x": 919.5792977086186,
+        "y": 284.02487839710625
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-51",
+      "label": "投保年齡: 40～49歲",
+      "position": {
+        "x": 431.2687683256852,
+        "y": 208.01332789087087
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-52",
+      "label": "結果: 225",
+      "position": {
+        "x": 430.1968017052141,
+        "y": 272.40204411702524
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-53",
+      "label": "投保年齡: 50～64歲",
+      "position": {
+        "x": 597.6374933390073,
+        "y": 206.38205290419282
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-54",
+      "label": "結果: 110",
+      "position": {
+        "x": 596.5868503463715,
+        "y": 270.9746785036822
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-55",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": 757.5486402508487,
+        "y": 204.75077791751494
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-56",
+      "label": "結果: 60",
+      "position": {
+        "x": 758.0830740274951,
+        "y": 270.9746785036822
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-57",
+      "label": "共病類型: 高血脂",
+      "position": {
+        "x": -13.401156048181448,
+        "y": 198.57130197165384
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-58",
+      "label": "投保年齡: ～29歲",
+      "position": {
+        "x": -359.7022217761288,
+        "y": 264.22381668125075
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-59",
+      "label": "結果: D",
+      "position": {
+        "x": -360.01584640493184,
+        "y": 308.3570066972532
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-60",
+      "label": "投保年齡: 30～39歲",
+      "position": {
+        "x": -206.4021450682955,
+        "y": 265.4130237962534
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-61",
+      "label": "結果: 190",
+      "position": {
+        "x": -205.97407056628077,
+        "y": 312.663225298601
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-62",
+      "label": "投保年齡: 40～49歲",
+      "position": {
+        "x": -50.767337520173086,
+        "y": 266.6726166484493
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-63",
+      "label": "結果: 100",
+      "position": {
+        "x": -45.872926093531945,
+        "y": 322.3861378841146
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-64",
+      "label": "投保年齡: 50～64歲",
+      "position": {
+        "x": 108.51124908146775,
+        "y": 268.5030448783622
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-65",
+      "label": "結果: 35",
+      "position": {
+        "x": 111.55145162769642,
+        "y": 323.6949023554407
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-66",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": 269.1413499354877,
+        "y": 272.0739547733698
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-67",
+      "label": "結果: 25",
+      "position": {
+        "x": 268.7695513524233,
+        "y": 321.3131903664842
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-68",
+      "label": "共病類型: 腦中風",
+      "position": {
+        "x": 1160.3984375,
+        "y": 134
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-69",
+      "label": "投保年齡: ～64歲",
+      "position": {
+        "x": 1252,
+        "y": 202
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-70",
+      "label": "結果: D",
+      "position": {
+        "x": 1260.140625,
+        "y": 288
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-71",
+      "label": "投保年齡: 65歲～",
+      "position": {
+        "x": 1083.7768932468125,
+        "y": 196.5419616791709
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-72",
+      "label": "結果: 155",
+      "position": {
+        "x": 1090.2734536653445,
+        "y": 287.8806877286527
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-73",
+      "label": "險種: 重大疾病險",
+      "position": {
+        "x": 1197,
+        "y": -44
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-74",
+      "label": "結果: D",
+      "position": {
+        "x": 1195,
+        "y": 16
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-75",
+      "label": "險種: 醫療險",
+      "position": {
+        "x": 1381,
+        "y": -44
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-76",
+      "label": "結果: D",
+      "position": {
+        "x": 1375,
+        "y": 18
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-77",
+      "label": "險種: 長期照顧險",
+      "position": {
+        "x": 1543,
+        "y": -44
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-78",
+      "label": "結果: 無標準",
+      "position": {
+        "x": 1547,
+        "y": 22
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-79",
+      "label": "險種: 防癌險",
+      "position": {
+        "x": 1715,
+        "y": -46
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-80",
+      "label": "結果: 0",
+      "position": {
+        "x": 1715,
+        "y": 20
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-81",
+      "label": "險種: 傷害險",
+      "position": {
+        "x": 1885,
+        "y": -48
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-82",
+      "label": "結果: D",
+      "position": {
+        "x": 1885.8203125,
+        "y": 16
+      },
+      "type": "default"
+    }
+  ],
+  "edges": [{"id":"e1","source":"node-0","target":"node-1","animated":false,"style":{"stroke":"#000"}},{"id":"e2","source":"node-1","target":"node-2","animated":false,"style":{"stroke":"#000"}},{"id":"e3","source":"node-2","target":"node-3","animated":false,"style":{"stroke":"#000"}},{"id":"e4","source":"node-3","target":"node-4","animated":false,"style":{"stroke":"#000"}},{"id":"e5","source":"node-2","target":"node-5","animated":false,"style":{"stroke":"#000"}},{"id":"e6","source":"node-5","target":"node-6","animated":false,"style":{"stroke":"#000"}},{"id":"e7","source":"node-2","target":"node-7","animated":false,"style":{"stroke":"#000"}},{"id":"e8","source":"node-7","target":"node-8","animated":false,"style":{"stroke":"#000"}},{"id":"e9","source":"node-2","target":"node-9","animated":false,"style":{"stroke":"#000"}},{"id":"e10","source":"node-9","target":"node-10","animated":false,"style":{"stroke":"#000"}},{"id":"e11","source":"node-2","target":"node-11","animated":false,"style":{"stroke":"#000"}},{"id":"e12","source":"node-11","target":"node-12","animated":false,"style":{"stroke":"#000"}},{"id":"e13","source":"node-2","target":"node-13","animated":false,"style":{"stroke":"#000"}},{"id":"e14","source":"node-13","target":"node-14","animated":false,"style":{"stroke":"#000"}},{"id":"e15","source":"node-1","target":"node-15","animated":false,"style":{"stroke":"#000"}},{"id":"e16","source":"node-15","target":"node-16","animated":false,"style":{"stroke":"#000"}},{"id":"e17","source":"node-16","target":"node-17","animated":false,"style":{"stroke":"#000"}},{"id":"e18","source":"node-17","target":"node-18","animated":false,"style":{"stroke":"#000"}},{"id":"e19","source":"node-16","target":"node-19","animated":false,"style":{"stroke":"#000"}},{"id":"e20","source":"node-19","target":"node-20","animated":false,"style":{"stroke":"#000"}},{"id":"e21","source":"node-16","target":"node-21","animated":false,"style":{"stroke":"#000"}},{"id":"e22","source":"node-21","target":"node-22","animated":false,"style":{"stroke":"#000"}},{"id":"e23","source":"node-15","target":"node-23","animated":false,"style":{"stroke":"#000"}},{"id":"e24","source":"node-23","target":"node-24","animated":false,"style":{"stroke":"#000"}},{"id":"e25","source":"node-24","target":"node-25","animated":false,"style":{"stroke":"#000"}},{"id":"e26","source":"node-23","target":"node-26","animated":false,"style":{"stroke":"#000"}},{"id":"e27","source":"node-26","target":"node-27","animated":false,"style":{"stroke":"#000"}},{"id":"e28","source":"node-15","target":"node-28","animated":false,"style":{"stroke":"#000"}},{"id":"e29","source":"node-28","target":"node-29","animated":false,"style":{"stroke":"#000"}},{"id":"e30","source":"node-29","target":"node-30","animated":false,"style":{"stroke":"#000"}},{"id":"e31","source":"node-28","target":"node-31","animated":false,"style":{"stroke":"#000"}},{"id":"e32","source":"node-31","target":"node-32","animated":false,"style":{"stroke":"#000"}},{"id":"e33","source":"node-15","target":"node-33","animated":false,"style":{"stroke":"#000"}},{"id":"e34","source":"node-33","target":"node-34","animated":false,"style":{"stroke":"#000"}},{"id":"e35","source":"node-34","target":"node-35","animated":false,"style":{"stroke":"#000"}},{"id":"e36","source":"node-33","target":"node-36","animated":false,"style":{"stroke":"#000"}},{"id":"e37","source":"node-36","target":"node-37","animated":false,"style":{"stroke":"#000"}},{"id":"e38","source":"node-15","target":"node-38","animated":false,"style":{"stroke":"#000"}},{"id":"e39","source":"node-38","target":"node-39","animated":false,"style":{"stroke":"#000"}},{"id":"e40","source":"node-39","target":"node-40","animated":false,"style":{"stroke":"#000"}},{"id":"e41","source":"node-38","target":"node-41","animated":false,"style":{"stroke":"#000"}},{"id":"e42","source":"node-41","target":"node-42","animated":false,"style":{"stroke":"#000"}},{"id":"e43","source":"node-38","target":"node-43","animated":false,"style":{"stroke":"#000"}},{"id":"e44","source":"node-43","target":"node-44","animated":false,"style":{"stroke":"#000"}},{"id":"e45","source":"node-38","target":"node-45","animated":false,"style":{"stroke":"#000"}},{"id":"e46","source":"node-45","target":"node-46","animated":false,"style":{"stroke":"#000"}},{"id":"e47","source":"node-1","target":"node-47","animated":false,"style":{"stroke":"#000"}},{"id":"e48","source":"node-47","target":"node-48","animated":false,"style":{"stroke":"#000"}},{"id":"e49","source":"node-48","target":"node-49","animated":false,"style":{"stroke":"#000"}},{"id":"e50","source":"node-49","target":"node-50","animated":false,"style":{"stroke":"#000"}},{"id":"e51","source":"node-48","target":"node-51","animated":false,"style":{"stroke":"#000"}},{"id":"e52","source":"node-51","target":"node-52","animated":false,"style":{"stroke":"#000"}},{"id":"e53","source":"node-48","target":"node-53","animated":false,"style":{"stroke":"#000"}},{"id":"e54","source":"node-53","target":"node-54","animated":false,"style":{"stroke":"#000"}},{"id":"e55","source":"node-48","target":"node-55","animated":false,"style":{"stroke":"#000"}},{"id":"e56","source":"node-55","target":"node-56","animated":false,"style":{"stroke":"#000"}},{"id":"e57","source":"node-47","target":"node-57","animated":false,"style":{"stroke":"#000"}},{"id":"e58","source":"node-57","target":"node-58","animated":false,"style":{"stroke":"#000"}},{"id":"e59","source":"node-58","target":"node-59","animated":false,"style":{"stroke":"#000"}},{"id":"e60","source":"node-57","target":"node-60","animated":false,"style":{"stroke":"#000"}},{"id":"e61","source":"node-60","target":"node-61","animated":false,"style":{"stroke":"#000"}},{"id":"e62","source":"node-57","target":"node-62","animated":false,"style":{"stroke":"#000"}},{"id":"e63","source":"node-62","target":"node-63","animated":false,"style":{"stroke":"#000"}},{"id":"e64","source":"node-57","target":"node-64","animated":false,"style":{"stroke":"#000"}},{"id":"e65","source":"node-64","target":"node-65","animated":false,"style":{"stroke":"#000"}},{"id":"e66","source":"node-57","target":"node-66","animated":false,"style":{"stroke":"#000"}},{"id":"e67","source":"node-66","target":"node-67","animated":false,"style":{"stroke":"#000"}},{"id":"e68","source":"node-47","target":"node-68","animated":false,"style":{"stroke":"#000"}},{"id":"e69","source":"node-68","target":"node-69","animated":false,"style":{"stroke":"#000"}},{"id":"e70","source":"node-69","target":"node-70","animated":false,"style":{"stroke":"#000"}},{"id":"e71","source":"node-68","target":"node-71","animated":false,"style":{"stroke":"#000"}},{"id":"e72","source":"node-71","target":"node-72","animated":false,"style":{"stroke":"#000"}},{"id":"e73","source":"node-0","target":"node-73","animated":false,"style":{"stroke":"#000"}},{"id":"e74","source":"node-73","target":"node-74","animated":false,"style":{"stroke":"#000"}},{"id":"e75","source":"node-0","target":"node-75","animated":false,"style":{"stroke":"#000"}},{"id":"e76","source":"node-75","target":"node-76","animated":false,"style":{"stroke":"#000"}},{"id":"e77","source":"node-0","target":"node-77","animated":false,"style":{"stroke":"#000"}},{"id":"e78","source":"node-77","target":"node-78","animated":false,"style":{"stroke":"#000"}},{"id":"e79","source":"node-0","target":"node-79","animated":false,"style":{"stroke":"#000"}},{"id":"e80","source":"node-79","target":"node-80","animated":false,"style":{"stroke":"#000"}},{"id":"e81","source":"node-0","target":"node-81","animated":false,"style":{"stroke":"#000"}},{"id":"e82","source":"node-81","target":"node-82","animated":false,"style":{"stroke":"#000"}}]
+}

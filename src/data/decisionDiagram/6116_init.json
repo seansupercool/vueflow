@@ -1,0 +1,3139 @@
+{
+  "nodes": [
+    {
+      "id": "node-0",
+      "label": "脫肛（Proctoptosis）、痔瘡（Hemorrhoid）、肛裂(Anal Fissure)、肛門膿瘍(Anal Abscess) (6116)",
+      "position": {
+        "y": -196,
+        "x": -88
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-1",
+      "label": "險種: 壽險",
+      "position": {
+        "y": 150,
+        "x": -1003
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-2",
+      "label": "有無肛裂或肛門膿瘍: 有肛裂或肛門膿瘍",
+      "position": {
+        "x": -1133.2091556758332,
+        "y": 280.7908443241667
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-3",
+      "label": "結果: 依病因評分",
+      "position": {
+        "x": -1133.231347103344,
+        "y": 408.56195242833275
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-4",
+      "label": "有無肛裂或肛門膿瘍: 無肛裂或肛門膿瘍",
+      "position": {
+        "x": -883.6337729666658,
+        "y": 282
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-5",
+      "label": "結果: 0",
+      "position": {
+        "x": -884.5888129900023,
+        "y": 406.1436410766661
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-6",
+      "label": "險種: 重大疾病險",
+      "position": {
+        "y": 150,
+        "x": -629
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-7",
+      "label": "有無肛裂或肛門膿瘍: 有肛裂或肛門膿瘍",
+      "position": {
+        "x": -717.2596031891592,
+        "y": 280.79084432416664
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-8",
+      "label": "結果: 依病因評分",
+      "position": {
+        "x": -717.0931935633403,
+        "y": 404.9344854008327
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-9",
+      "label": "有無肛裂或肛門膿瘍: 無肛裂或肛門膿瘍",
+      "position": {
+        "x": -535.3969383266594,
+        "y": 278.3725329724999
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-10",
+      "label": "結果: 0",
+      "position": {
+        "x": -535.719842188337,
+        "y": 404.9344854008327
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-11",
+      "label": "險種: 醫療險",
+      "position": {
+        "x": -88.12390485666552,
+        "y": 152
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-12",
+      "label": "現症既往症: 現症",
+      "position": {
+        "x": 47.33324149314467,
+        "y": 276.3725329724999
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-13",
+      "label": "結果: 0",
+      "position": {
+        "x": 47.19736220000527,
+        "y": 398.516174049166
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-14",
+      "label": "現症既往症: 既往症",
+      "position": {
+        "x": -229.14749180832177,
+        "y": 279.5816886483333
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-15",
+      "label": "手術後經過時間: ~5年",
+      "position": {
+        "x": -148.59978806332708,
+        "y": 401.7253297249993
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-16",
+      "label": "結果: 0",
+      "position": {
+        "x": -148.92187352250124,
+        "y": 511.21546161499907
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-17",
+      "label": "手術後經過時間: 5年以上",
+      "position": {
+        "x": -331.5342734641598,
+        "y": 401.72532972499937
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-18",
+      "label": "結果: 0",
+      "position": {
+        "x": -333.1175989174998,
+        "y": 514.4246172908324
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-19",
+      "label": "險種: 長期照顧險",
+      "position": {
+        "x": 271.3141427150017,
+        "y": 150
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-20",
+      "label": "結果: 無標準",
+      "position": {
+        "x": 271.7815060558486,
+        "y": 283.1633772966666
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-21",
+      "label": "險種: 防癌險",
+      "position": {
+        "x": 583,
+        "y": 150
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-22",
+      "label": "結果: 0",
+      "position": {
+        "x": 583.8873114975202,
+        "y": 275.5359102691666
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-23",
+      "label": "險種: 傷害險",
+      "position": {
+        "y": 150,
+        "x": 867
+      },
+      "type": "default"
+    },
+    {
+      "id": "node-24",
+      "label": "結果: 0",
+      "position": {
+        "x": 867.8871908570898,
+        "y": 271.2990756291602
+      },
+      "type": "default"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-0",
+      "type": "smoothstep",
+      "source": "node-0",
+      "target": "node-1",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-0",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 156
+        },
+        "computedPosition": {
+          "x": -88,
+          "y": -196,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-0",
+              "type": "source",
+              "x": 72,
+              "y": 152.3671875,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-0",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": -196,
+          "x": -88
+        },
+        "data": {
+          "label": "脫肛（Proctoptosis）、痔瘡（Hemorrhoid）、肛裂(Anal Fissure)、肛門膿瘍(Anal Abscess) (6116)"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-1",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -1003,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-1",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-1",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -1003
+        },
+        "data": {
+          "label": "險種: 壽險"
+        },
+        "events": {}
+      },
+      "sourceX": -13,
+      "sourceY": -37.6328125,
+      "targetX": -928,
+      "targetY": 148
+    },
+    {
+      "id": "edge-1",
+      "type": "smoothstep",
+      "source": "node-1",
+      "target": "node-2",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-1",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -1003,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-1",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-1",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -1003
+        },
+        "data": {
+          "label": "險種: 壽險"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-2",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -1132,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-2",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-2",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -1132
+        },
+        "data": {
+          "label": "有無肛裂或肛門膿瘍: 有肛裂或肛門膿瘍",
+          "note": "（註）告知有肛裂、肛門膿瘍者，核保須排除性病或愛滋病可能性。",
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -928,
+      "sourceY": 193.1953125,
+      "targetX": -1057,
+      "targetY": 280
+    },
+    {
+      "id": "edge-2",
+      "type": "smoothstep",
+      "source": "node-2",
+      "target": "node-3",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-2",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -1132,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-2",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-2",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -1132
+        },
+        "data": {
+          "label": "有無肛裂或肛門膿瘍: 有肛裂或肛門膿瘍",
+          "note": "（註）告知有肛裂、肛門膿瘍者，核保須排除性病或愛滋病可能性。",
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-3",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -548,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-3",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-3",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -548
+        },
+        "data": {
+          "label": "結果: 依病因評分"
+        },
+        "events": {}
+      },
+      "sourceX": -1057,
+      "sourceY": 344.390625,
+      "targetX": -473,
+      "targetY": 438
+    },
+    {
+      "id": "edge-3",
+      "type": "smoothstep",
+      "source": "node-1",
+      "target": "node-4",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-1",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -1003,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-1",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-1",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -1003
+        },
+        "data": {
+          "label": "險種: 壽險"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-4",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -932,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-4",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-4",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -932
+        },
+        "data": {
+          "label": "有無肛裂或肛門膿瘍: 無肛裂或肛門膿瘍",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -928,
+      "sourceY": 193.1953125,
+      "targetX": -857,
+      "targetY": 280
+    },
+    {
+      "id": "edge-4",
+      "type": "smoothstep",
+      "source": "node-4",
+      "target": "node-5",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-4",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -932,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-4",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-4",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -932
+        },
+        "data": {
+          "label": "有無肛裂或肛門膿瘍: 無肛裂或肛門膿瘍",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-5",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -754,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-5",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-5",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -754
+        },
+        "data": {
+          "label": "結果: 0"
+        },
+        "events": {}
+      },
+      "sourceX": -857,
+      "sourceY": 344.390625,
+      "targetX": -679,
+      "targetY": 438
+    },
+    {
+      "id": "edge-5",
+      "type": "smoothstep",
+      "source": "node-0",
+      "target": "node-6",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-0",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 156
+        },
+        "computedPosition": {
+          "x": -88,
+          "y": -196,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-0",
+              "type": "source",
+              "x": 72,
+              "y": 152.3671875,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-0",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": -196,
+          "x": -88
+        },
+        "data": {
+          "label": "脫肛（Proctoptosis）、痔瘡（Hemorrhoid）、肛裂(Anal Fissure)、肛門膿瘍(Anal Abscess) (6116)"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-6",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -629,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-6",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-6",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -629
+        },
+        "data": {
+          "label": "險種: 重大疾病險"
+        },
+        "events": {}
+      },
+      "sourceX": -13,
+      "sourceY": -37.6328125,
+      "targetX": -554,
+      "targetY": 148
+    },
+    {
+      "id": "edge-6",
+      "type": "smoothstep",
+      "source": "node-6",
+      "target": "node-7",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-6",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -629,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-6",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-6",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -629
+        },
+        "data": {
+          "label": "險種: 重大疾病險"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-7",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -1132,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-7",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-7",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -1132
+        },
+        "data": {
+          "label": "有無肛裂或肛門膿瘍: 有肛裂或肛門膿瘍",
+          "note": "（註）告知有肛裂、肛門膿瘍者，核保須排除性病或愛滋病可能性。",
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -554,
+      "sourceY": 193.1953125,
+      "targetX": -1057,
+      "targetY": 280
+    },
+    {
+      "id": "edge-7",
+      "type": "smoothstep",
+      "source": "node-7",
+      "target": "node-8",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-7",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -1132,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-7",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-7",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -1132
+        },
+        "data": {
+          "label": "有無肛裂或肛門膿瘍: 有肛裂或肛門膿瘍",
+          "note": "（註）告知有肛裂、肛門膿瘍者，核保須排除性病或愛滋病可能性。",
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-8",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -335,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-8",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-8",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -335
+        },
+        "data": {
+          "label": "結果: 依病因評分"
+        },
+        "events": {}
+      },
+      "sourceX": -1057,
+      "sourceY": 344.390625,
+      "targetX": -260,
+      "targetY": 438
+    },
+    {
+      "id": "edge-8",
+      "type": "smoothstep",
+      "source": "node-6",
+      "target": "node-9",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-6",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -629,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-6",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-6",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -629
+        },
+        "data": {
+          "label": "險種: 重大疾病險"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-9",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -932,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-9",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-9",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -932
+        },
+        "data": {
+          "label": "有無肛裂或肛門膿瘍: 無肛裂或肛門膿瘍",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -554,
+      "sourceY": 193.1953125,
+      "targetX": -857,
+      "targetY": 280
+    },
+    {
+      "id": "edge-9",
+      "type": "smoothstep",
+      "source": "node-9",
+      "target": "node-10",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-9",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -932,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-9",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-9",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -932
+        },
+        "data": {
+          "label": "有無肛裂或肛門膿瘍: 無肛裂或肛門膿瘍",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-10",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -335,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-10",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-10",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -335
+        },
+        "data": {
+          "label": "結果: 0"
+        },
+        "events": {}
+      },
+      "sourceX": -857,
+      "sourceY": 344.390625,
+      "targetX": -260,
+      "targetY": 438
+    },
+    {
+      "id": "edge-10",
+      "type": "smoothstep",
+      "source": "node-0",
+      "target": "node-11",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-0",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 156
+        },
+        "computedPosition": {
+          "x": -88,
+          "y": -196,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-0",
+              "type": "source",
+              "x": 72,
+              "y": 152.3671875,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-0",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": -196,
+          "x": -88
+        },
+        "data": {
+          "label": "脫肛（Proctoptosis）、痔瘡（Hemorrhoid）、肛裂(Anal Fissure)、肛門膿瘍(Anal Abscess) (6116)"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-11",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -255,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-11",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-11",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -255
+        },
+        "data": {
+          "label": "險種: 醫療險"
+        },
+        "events": {}
+      },
+      "sourceX": -13,
+      "sourceY": -37.6328125,
+      "targetX": -180,
+      "targetY": 148
+    },
+    {
+      "id": "edge-11",
+      "type": "smoothstep",
+      "source": "node-11",
+      "target": "node-12",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-11",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -255,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-11",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-11",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -255
+        },
+        "data": {
+          "label": "險種: 醫療險"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-12",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -1132,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-12",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-12",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -1132
+        },
+        "data": {
+          "label": "現症既往症: 現症",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": "痔瘡",
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -180,
+      "sourceY": 193.1953125,
+      "targetX": -1057,
+      "targetY": 280
+    },
+    {
+      "id": "edge-12",
+      "type": "smoothstep",
+      "source": "node-12",
+      "target": "node-13",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-12",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -1132,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-12",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-12",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -1132
+        },
+        "data": {
+          "label": "現症既往症: 現症",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": "痔瘡",
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-13",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -335,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-13",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-13",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -335
+        },
+        "data": {
+          "label": "結果: 0"
+        },
+        "events": {}
+      },
+      "sourceX": -1057,
+      "sourceY": 325.1953125,
+      "targetX": -260,
+      "targetY": 438
+    },
+    {
+      "id": "edge-13",
+      "type": "smoothstep",
+      "source": "node-11",
+      "target": "node-14",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-11",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -255,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-11",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-11",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": -255
+        },
+        "data": {
+          "label": "險種: 醫療險"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-14",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -932,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-14",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-14",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -932
+        },
+        "data": {
+          "label": "現症既往症: 既往症"
+        },
+        "events": {}
+      },
+      "sourceX": -180,
+      "sourceY": 193.1953125,
+      "targetX": -857,
+      "targetY": 280
+    },
+    {
+      "id": "edge-14",
+      "type": "smoothstep",
+      "source": "node-14",
+      "target": "node-15",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-14",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -932,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-14",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-14",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -932
+        },
+        "data": {
+          "label": "現症既往症: 既往症"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-15",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -548,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-15",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-15",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -548
+        },
+        "data": {
+          "label": "手術後經過時間: ~5年",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": "痔瘡",
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -857,
+      "sourceY": 325.1953125,
+      "targetX": -473,
+      "targetY": 438
+    },
+    {
+      "id": "edge-15",
+      "type": "smoothstep",
+      "source": "node-15",
+      "target": "node-16",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-15",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -548,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-15",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-15",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -548
+        },
+        "data": {
+          "label": "手術後經過時間: ~5年",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": "痔瘡",
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-16",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -136,
+          "y": 562,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-16",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-16",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 562,
+          "x": -136
+        },
+        "data": {
+          "label": "結果: 0"
+        },
+        "events": {}
+      },
+      "sourceX": -473,
+      "sourceY": 483.1953125,
+      "targetX": -61,
+      "targetY": 560
+    },
+    {
+      "id": "edge-16",
+      "type": "smoothstep",
+      "source": "node-14",
+      "target": "node-17",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-14",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -932,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-14",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-14",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -932
+        },
+        "data": {
+          "label": "現症既往症: 既往症"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-17",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -754,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-17",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-17",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -754
+        },
+        "data": {
+          "label": "手術後經過時間: 5年以上",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -857,
+      "sourceY": 325.1953125,
+      "targetX": -679,
+      "targetY": 438
+    },
+    {
+      "id": "edge-17",
+      "type": "smoothstep",
+      "source": "node-17",
+      "target": "node-18",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-17",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 60
+        },
+        "computedPosition": {
+          "x": -754,
+          "y": 440,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-17",
+              "type": "source",
+              "x": 72,
+              "y": 56.390625,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-17",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 440,
+          "x": -754
+        },
+        "data": {
+          "label": "手術後經過時間: 5年以上",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-18",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -386,
+          "y": 562,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-18",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-18",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 562,
+          "x": -386
+        },
+        "data": {
+          "label": "結果: 0"
+        },
+        "events": {}
+      },
+      "sourceX": -679,
+      "sourceY": 502.390625,
+      "targetX": -311,
+      "targetY": 560
+    },
+    {
+      "id": "edge-18",
+      "type": "smoothstep",
+      "source": "node-0",
+      "target": "node-19",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-0",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 156
+        },
+        "computedPosition": {
+          "x": -88,
+          "y": -196,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-0",
+              "type": "source",
+              "x": 72,
+              "y": 152.3671875,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-0",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": -196,
+          "x": -88
+        },
+        "data": {
+          "label": "脫肛（Proctoptosis）、痔瘡（Hemorrhoid）、肛裂(Anal Fissure)、肛門膿瘍(Anal Abscess) (6116)"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-19",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": 119,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-19",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-19",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": 119
+        },
+        "data": {
+          "label": "險種: 長期照顧險",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -13,
+      "sourceY": -37.6328125,
+      "targetX": 194,
+      "targetY": 148
+    },
+    {
+      "id": "edge-19",
+      "type": "smoothstep",
+      "source": "node-19",
+      "target": "node-20",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-19",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": 119,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-19",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-19",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": 119
+        },
+        "data": {
+          "label": "險種: 長期照顧險",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-20",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -629,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-20",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-20",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -629
+        },
+        "data": {
+          "label": "結果: 無標準"
+        },
+        "events": {}
+      },
+      "sourceX": 194,
+      "sourceY": 193.1953125,
+      "targetX": -554,
+      "targetY": 280
+    },
+    {
+      "id": "edge-20",
+      "type": "smoothstep",
+      "source": "node-0",
+      "target": "node-21",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-0",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 156
+        },
+        "computedPosition": {
+          "x": -88,
+          "y": -196,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-0",
+              "type": "source",
+              "x": 72,
+              "y": 152.3671875,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-0",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": -196,
+          "x": -88
+        },
+        "data": {
+          "label": "脫肛（Proctoptosis）、痔瘡（Hemorrhoid）、肛裂(Anal Fissure)、肛門膿瘍(Anal Abscess) (6116)"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-21",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": 493,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-21",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-21",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": 493
+        },
+        "data": {
+          "label": "險種: 防癌險",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -13,
+      "sourceY": -37.6328125,
+      "targetX": 568,
+      "targetY": 148
+    },
+    {
+      "id": "edge-21",
+      "type": "smoothstep",
+      "source": "node-21",
+      "target": "node-22",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-21",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": 493,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-21",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-21",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": 493
+        },
+        "data": {
+          "label": "險種: 防癌險",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-22",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -629,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-22",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-22",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -629
+        },
+        "data": {
+          "label": "結果: 0"
+        },
+        "events": {}
+      },
+      "sourceX": 568,
+      "sourceY": 193.1953125,
+      "targetX": -554,
+      "targetY": 280
+    },
+    {
+      "id": "edge-22",
+      "type": "smoothstep",
+      "source": "node-0",
+      "target": "node-23",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-0",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 156
+        },
+        "computedPosition": {
+          "x": -88,
+          "y": -196,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-0",
+              "type": "source",
+              "x": 72,
+              "y": 152.3671875,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-0",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": -196,
+          "x": -88
+        },
+        "data": {
+          "label": "脫肛（Proctoptosis）、痔瘡（Hemorrhoid）、肛裂(Anal Fissure)、肛門膿瘍(Anal Abscess) (6116)"
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-23",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": 867,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-23",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-23",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": 867
+        },
+        "data": {
+          "label": "險種: 傷害險",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "sourceX": -13,
+      "sourceY": -37.6328125,
+      "targetX": 942,
+      "targetY": 148
+    },
+    {
+      "id": "edge-23",
+      "type": "smoothstep",
+      "source": "node-23",
+      "target": "node-24",
+      "data": {},
+      "events": {},
+      "label": "",
+      "sourceNode": {
+        "id": "node-23",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": 867,
+          "y": 150,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-23",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-23",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 150,
+          "x": 867
+        },
+        "data": {
+          "label": "險種: 傷害險",
+          "note": null,
+          "med_exam": null,
+          "med_record": "N",
+          "exclusion": null,
+          "ref_disease": null
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node-24",
+        "type": "default",
+        "dimensions": {
+          "width": 150,
+          "height": 41
+        },
+        "computedPosition": {
+          "x": -629,
+          "y": 282,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node-24",
+              "type": "source",
+              "x": 72,
+              "y": 37.1953125,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node-24",
+              "type": "target",
+              "x": 72,
+              "y": -2,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "y": 282,
+          "x": -629
+        },
+        "data": {
+          "label": "結果: 0"
+        },
+        "events": {}
+      },
+      "sourceX": 942,
+      "sourceY": 193.1953125,
+      "targetX": -554,
+      "targetY": 280
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+{
+    "審標中文": "骨折",
+    "審標代碼": "0112",
+    "next": [
+        {
+            "factor": "險種",
+            "ans": "壽險",
+            "next": [
+                {
+                    "factor": "骨折類型",
+                    "ans": "脊椎骨折",
+                    "next": [
+                        {
+                            "factor": "診斷時間",
+                            "ans": "~六個月",
+                            "next": "P",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "診斷時間",
+                            "ans": "六個月~",
+                            "next": [
+                                {
+                                    "factor": "有無神經損傷",
+                                    "ans": "無神經損傷",
+                                    "next": "0",
+                                    "note": null,
+                                    "med_exam": null,
+                                    "med_record": null,
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "有無神經損傷",
+                                    "ans": "有神經損傷",
+                                    "next": "依神經損傷程度評估",
+                                    "note": null,
+                                    "med_exam": null,
+                                    "med_record": null,
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "factor": "骨折類型",
+                    "ans": "單純尾椎骨折",
+                    "next": "0",
+                    "note": null,
+                    "med_exam": null,
+                    "med_record": null,
+                    "exclusion": null,
+                    "ref_disease": null
+                },
+                {
+                    "factor": "骨折類型",
+                    "ans": "其他部位骨折（外傷性）",
+                    "next": [
+                        {
+                            "factor": "現症或既往症",
+                            "ans": "現症",
+                            "next": "P",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "現症或既往症",
+                            "ans": "既往症",
+                            "next": "0",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "factor": "險種",
+            "ans": "重大疾病險",
+            "next": [
+                {
+                    "factor": "骨折類型",
+                    "ans": "脊椎骨折",
+                    "next": [
+                        {
+                            "factor": "診斷時間",
+                            "ans": "~六個月",
+                            "next": "P",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "診斷時間",
+                            "ans": "六個月~",
+                            "next": [
+                                {
+                                    "factor": "有無神經損傷",
+                                    "ans": "無神經損傷",
+                                    "next": "0",
+                                    "note": null,
+                                    "med_exam": null,
+                                    "med_record": null,
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "有無神經損傷",
+                                    "ans": "有神經損傷",
+                                    "next": "依神經損傷程度評估",
+                                    "note": null,
+                                    "med_exam": null,
+                                    "med_record": null,
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "factor": "骨折類型",
+                    "ans": "單純尾椎骨折",
+                    "next": "0",
+                    "note": null,
+                    "med_exam": null,
+                    "med_record": null,
+                    "exclusion": null,
+                    "ref_disease": null
+                },
+                {
+                    "factor": "骨折類型",
+                    "ans": "其他部位骨折（外傷性）",
+                    "next": [
+                        {
+                            "factor": "現症或既往症",
+                            "ans": "現症",
+                            "next": "P",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "現症或既往症",
+                            "ans": "既往症",
+                            "next": "0",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "factor": "險種",
+            "ans": "醫療險",
+            "next": [
+                {
+                    "factor": "現症或既往症",
+                    "ans": "現症",
+                    "next": "除外",
+                    "note": null,
+                    "med_exam": null,
+                    "med_record": null,
+                    "exclusion": "骨折",
+                    "ref_disease": null
+                },
+                {
+                    "factor": "現症或既往症",
+                    "ans": "既往症",
+                    "next": [
+                        {
+                            "factor": "有無後遺症",
+                            "ans": "有後遺症",
+                            "next": "依後遺症除外",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": "依後遺症除外",
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "有無後遺症",
+                            "ans": "無後遺症",
+                            "next": "0",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "factor": "險種",
+            "ans": "長期照顧險",
+            "next": "無標準",
+            "note": null,
+            "med_exam": null,
+            "med_record": null,
+            "exclusion": null,
+            "ref_disease": null
+        },
+        {
+            "factor": "險種",
+            "ans": "防癌險",
+            "next": "依病因評估",
+            "note": "應注意惡性骨癌之好發部位（如脛骨之近心端或股骨之遠心端）。",
+            "med_exam": null,
+            "med_record": null,
+            "exclusion": null,
+            "ref_disease": null
+        },
+        {
+            "factor": "險種",
+            "ans": "傷害險",
+            "next": [
+                {
+                    "factor": "是否病理性骨折",
+                    "ans": "是病理性骨折",
+                    "next": "D",
+                    "note": null,
+                    "med_exam": null,
+                    "med_record": null,
+                    "exclusion": null,
+                    "ref_disease": null
+                },
+                {
+                    "factor": "是否病理性骨折",
+                    "ans": "非病理性骨折",
+                    "next": [
+                        {
+                            "factor": "是否受虐",
+                            "ans": "受虐",
+                            "next": "D",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "是否受虐",
+                            "ans": "非受虐",
+                            "next": "0",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": null,
+                            "exclusion": null,
+                            "ref_disease": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,428 @@
+{
+    "審標中文": "糖尿病",
+    "審標代碼": "100A",
+    "next": [
+        {
+            "factor": "險種",
+            "ans": "壽險",
+            "next": [
+                {
+                    "factor": "有無併發症及共病",
+                    "ans": "無併發症、無共病",
+                    "next": [
+                        {
+                            "factor": "投保年齡",
+                            "ans": "～19歲",
+                            "next": "D",
+                            "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                            "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                            "med_record": "N",
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "投保年齡",
+                            "ans": "20～29歲",
+                            "next": "150",
+                            "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                            "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                            "med_record": "N",
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "投保年齡",
+                            "ans": "30～39歲",
+                            "next": "145",
+                            "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                            "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                            "med_record": "N",
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "投保年齡",
+                            "ans": "40～49歲",
+                            "next": "90",
+                            "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                            "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                            "med_record": "N",
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "投保年齡",
+                            "ans": "50～64歲",
+                            "next": "35",
+                            "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                            "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                            "med_record": "N",
+                            "exclusion": null,
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "投保年齡",
+                            "ans": "65歲～",
+                            "next": "25",
+                            "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                            "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                            "med_record": "N",
+                            "exclusion": null,
+                            "ref_disease": null
+                        }
+                    ]
+                },
+                {
+                    "factor": "有無併發症及共病",
+                    "ans": "有併發症",
+                    "next": [
+                        {
+                            "factor": "併發症類型",
+                            "ans": "增值性視網膜病變",
+                            "next": [
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "～49歲",
+                                    "next": "D",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "50～64歲",
+                                    "next": "185",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": "雙眼除外",
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "65歲～",
+                                    "next": "100",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": "雙眼除外",
+                                    "ref_disease": null
+                                }
+                            ]
+                        },
+                        {
+                            "factor": "併發症類型",
+                            "ans": "神經性病變",
+                            "next": [
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "～64歲",
+                                    "next": "D",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "65歲～",
+                                    "next": "70",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": "除外",
+                                    "ref_disease": null
+                                }
+                            ]
+                        },
+                        {
+                            "factor": "併發症類型",
+                            "ans": "肢端壞疽",
+                            "next": [
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "～64歲",
+                                    "next": "D",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "65歲～",
+                                    "next": "125",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                }
+                            ]
+                        },
+                        {
+                            "factor": "併發症類型",
+                            "ans": "蜂窩組織炎及膿瘍",
+                            "next": [
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "～64歲",
+                                    "next": "D",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "65歲～",
+                                    "next": "100",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                }
+                            ]
+                        },
+                        {
+                            "factor": "併發症類型",
+                            "ans": "蛋白尿(2＋)以上",
+                            "next": [
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "～39歲",
+                                    "next": "D",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "40～49歲",
+                                    "next": "245",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "50～64歲",
+                                    "next": "115",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "65歲～",
+                                    "next": "75",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "factor": "有無併發症及共病",
+                    "ans": "有共病",
+                    "next": [
+                        {
+                            "factor": "共病類型",
+                            "ans": "高血壓",
+                            "next": [
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "～39歲",
+                                    "next": "D",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "40～49歲",
+                                    "next": "225",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "50～64歲",
+                                    "next": "110",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "65歲～",
+                                    "next": "60",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                }
+                            ]
+                        },
+                        {
+                            "factor": "共病類型",
+                            "ans": "高血脂",
+                            "next": [
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "～29歲",
+                                    "next": "D",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "30～39歲",
+                                    "next": "190",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "40～49歲",
+                                    "next": "100",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "50～64歲",
+                                    "next": "35",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "65歲～",
+                                    "next": "25",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                }
+                            ]
+                        },
+                        {
+                            "factor": "共病類型",
+                            "ans": "腦中風",
+                            "next": [
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "～64歲",
+                                    "next": "D",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                },
+                                {
+                                    "factor": "投保年齡",
+                                    "ans": "65歲～",
+                                    "next": "155",
+                                    "note": "（註1）若為肌萎縮症，必要時附除外同意書。（註2）糖尿病者尿糖多價可能係因客戶使用之藥物影響（排糖藥），如為此情形，得以血糖數值為準評估，且AC及HbA1c應同時評估。",
+                                    "med_exam": "一般體檢、X光、心電圖、肝功能、腎功能、AC血糖、HbA1c",
+                                    "med_record": "N",
+                                    "exclusion": null,
+                                    "ref_disease": null
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "factor": "險種",
+            "ans": "重大疾病險",
+            "next": "D",
+            "note": null,
+            "med_exam": null,
+            "med_record": "N",
+            "exclusion": null,
+            "ref_disease": null
+        },
+        {
+            "factor": "險種",
+            "ans": "醫療險",
+            "next": "D",
+            "note": null,
+            "med_exam": null,
+            "med_record": "N",
+            "exclusion": null,
+            "ref_disease": null
+        },
+        {
+            "factor": "險種",
+            "ans": "長期照顧險",
+            "next": "無標準",
+            "note": null,
+            "med_exam": null,
+            "med_record": null,
+            "exclusion": null,
+            "ref_disease": null
+        },
+        {
+            "factor": "險種",
+            "ans": "防癌險",
+            "next": "0",
+            "note": null,
+            "med_exam": null,
+            "med_record": "N",
+            "exclusion": null,
+            "ref_disease": null
+        },
+        {
+            "factor": "險種",
+            "ans": "傷害險",
+            "next": "D",
+            "note": "（註）未診斷糖尿病者，但HbA1c已超過標準、高血糖或高尿糖且無法排除糖尿病風險者，個案評估是否承保。",
+            "med_exam": null,
+            "med_record": "N",
+            "exclusion": null,
+            "ref_disease": null
+        }
+    ]
+}

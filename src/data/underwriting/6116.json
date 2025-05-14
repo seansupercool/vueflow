@@ -1,0 +1,130 @@
+{
+    "審標中文": "脫肛（Proctoptosis）、痔瘡（Hemorrhoid）、肛裂(Anal Fissure)、肛門膿瘍(Anal Abscess)",
+    "審標代碼": "6116",
+    "next": [
+        {
+            "factor": "險種",
+            "ans": "壽險",
+            "next": [
+                {
+                    "factor": "有無肛裂或肛門膿瘍",
+                    "ans": "有肛裂或肛門膿瘍",
+                    "next": "依病因評分",
+                    "note": "（註）告知有肛裂、肛門膿瘍者，核保須排除性病或愛滋病可能性。",
+                    "med_exam": null,
+                    "med_record": "N",
+                    "exclusion": null,
+                    "ref_disease": null
+                },
+                {
+                    "factor": "有無肛裂或肛門膿瘍",
+                    "ans": "無肛裂或肛門膿瘍",
+                    "next": "0",
+                    "note": null,
+                    "med_exam": null,
+                    "med_record": "N",
+                    "exclusion": null,
+                    "ref_disease": null
+                }
+            ]
+        },
+        {
+            "factor": "險種",
+            "ans": "重大疾病險",
+            "next": [
+                {
+                    "factor": "有無肛裂或肛門膿瘍",
+                    "ans": "有肛裂或肛門膿瘍",
+                    "next": "依病因評分",
+                    "note": "（註）告知有肛裂、肛門膿瘍者，核保須排除性病或愛滋病可能性。",
+                    "med_exam": null,
+                    "med_record": "N",
+                    "exclusion": null,
+                    "ref_disease": null
+                },
+                {
+                    "factor": "有無肛裂或肛門膿瘍",
+                    "ans": "無肛裂或肛門膿瘍",
+                    "next": "0",
+                    "note": null,
+                    "med_exam": null,
+                    "med_record": "N",
+                    "exclusion": null,
+                    "ref_disease": null
+                }
+            ]
+        },
+        {
+            "factor": "險種",
+            "ans": "醫療險",
+            "next": [
+                {
+                    "factor": "現症既往症",
+                    "ans": "現症",
+                    "next": "0",
+                    "note": null,
+                    "med_exam": null,
+                    "med_record": "N",
+                    "exclusion": "痔瘡",
+                    "ref_disease": null
+                },
+                {
+                    "factor": "現症既往症",
+                    "ans": "既往症",
+                    "next": [
+                        {
+                            "factor": "手術後經過時間",
+                            "ans": "~5年",
+                            "next": "0",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": "N",
+                            "exclusion": "痔瘡",
+                            "ref_disease": null
+                        },
+                        {
+                            "factor": "手術後經過時間",
+                            "ans": "5年以上",
+                            "next": "0",
+                            "note": null,
+                            "med_exam": null,
+                            "med_record": "N",
+                            "exclusion": null,
+                            "ref_disease": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "factor": "險種",
+            "ans": "長期照顧險",
+            "next": "無標準",
+            "note": null,
+            "med_exam": null,
+            "med_record": "N",
+            "exclusion": null,
+            "ref_disease": null
+        },
+        {
+            "factor": "險種",
+            "ans": "防癌險",
+            "next": "0",
+            "note": null,
+            "med_exam": null,
+            "med_record": "N",
+            "exclusion": null,
+            "ref_disease": null
+        },
+        {
+            "factor": "險種",
+            "ans": "傷害險",
+            "next": "0",
+            "note": null,
+            "med_exam": null,
+            "med_record": "N",
+            "exclusion": null,
+            "ref_disease": null
+        }
+    ]
+} 
