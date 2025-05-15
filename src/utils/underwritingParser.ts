@@ -65,9 +65,7 @@ export function parseUnderwritingData(data: UnderwritingData): { nodes: Node[]; 
   nodeId = 0
   edgeId = 0
 
-  // 用於追蹤每層的節點數量
   const levelNodeCounts = new Map<number, number>()
-  // 用於追蹤已創建的節點
   const nodeMap = new Map<string, Node>()
 
   // 創建根節點
@@ -83,20 +81,14 @@ export function parseUnderwritingData(data: UnderwritingData): { nodes: Node[]; 
   levelNodeCounts.set(0, 1)
 
   function processNode(node: UnderwritingNode, parentId: string, level: number, index: number) {
-    // 更新當前層級的節點計數
     const currentLevelCount = levelNodeCounts.get(level) || 0
     levelNodeCounts.set(level, currentLevelCount + 1)
 
-    // 為每個節點創建唯一的標識符
     const nodeKey = `${node.factor}-${node.ans}-${parentId}`
-    
-    // 計算節點位置
     const position = calculateNodePosition(level, index)
-    
-    // 檢查是否已經存在相同的節點
+
     let currentNode: Node
     if (nodeMap.has(nodeKey)) {
-      // 如果節點已存在，創建一個新的副本
       const existingNode = nodeMap.get(nodeKey)!
       currentNode = {
         ...existingNode,
@@ -104,19 +96,26 @@ export function parseUnderwritingData(data: UnderwritingData): { nodes: Node[]; 
         position
       }
     } else {
-      // 創建新節點
-      currentNode = createNode(node, position)
+      currentNode = {
+        id: generateId(),
+        type: 'default',
+        position,
+        data: {
+          label: node.factor
+        }
+      }
       nodeMap.set(nodeKey, currentNode)
     }
-    
+
     nodes.push(currentNode)
 
-    // 創建邊
+    // 邊上加上 ans 作為 label
     edges.push({
       id: generateEdgeId(),
       source: parentId,
       target: currentNode.id,
-      type: 'smoothstep'
+      type: 'smoothstep',
+      label: node.ans
     })
 
     if (Array.isArray(node.next)) {
@@ -124,17 +123,15 @@ export function parseUnderwritingData(data: UnderwritingData): { nodes: Node[]; 
         processNode(child, currentNode.id, level + 1, idx)
       })
     } else {
-      // 處理終點節點
       const endNodeKey = `end-${node.next}-${currentNode.id}`
       let endNode: Node
-      
-      // 更新下一層級的節點計數
+
       const nextLevel = level + 1
       const nextLevelCount = levelNodeCounts.get(nextLevel) || 0
       levelNodeCounts.set(nextLevel, nextLevelCount + 1)
-      
+
       const endPosition = calculateNodePosition(nextLevel, nextLevelCount)
-      
+
       if (nodeMap.has(endNodeKey)) {
         const existingEndNode = nodeMap.get(endNodeKey)!
         endNode = {
@@ -153,21 +150,21 @@ export function parseUnderwritingData(data: UnderwritingData): { nodes: Node[]; 
         }
         nodeMap.set(endNodeKey, endNode)
       }
-      
+
       nodes.push(endNode)
       edges.push({
         id: generateEdgeId(),
         source: currentNode.id,
         target: endNode.id,
-        type: 'smoothstep'
+        type: 'smoothstep',
+        label: node.ans // ➤ 終點邊也加上 label
       })
     }
   }
 
-  // 處理所有頂層節點
   data.next.forEach((node, index) => {
     processNode(node, rootNode.id, 1, index)
   })
 
   return { nodes, edges }
-} 
+}

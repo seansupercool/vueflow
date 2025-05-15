@@ -372,14 +372,18 @@ function transformNodesForStorage(nodes) {
   });
 }
 function convertToVueFlowEdges(getEdges) {
-  return getEdges.map((edge, index) => ({
-    id: `e${index + 1}`, // 設定 id，這裡假設 id 是 "e" + 索引
-    source: edge.sourceNode.id, // 來自 sourceNode.id
-    target: edge.targetNode.id, // 來自 targetNode.id
-    label: edge.data.label, // 從 data.label 取得標籤
-    animated: false, // 設定是否動畫
-    style: { stroke: '#000' }, // 設定預設的邊線樣式
-  }));
+  return getEdges.map((edge, index) => {
+    const { sourceNode, targetNode, data, label, style } = edge;
+    return {
+      id: `e${index + 1}`, // 設定 id，這裡假設 id 是 "e" + 索引
+      source: sourceNode.id, // 來自 sourceNode.id
+      target: targetNode.id, // 來自 targetNode.id
+      label: label || data?.label || '', // 從 data.label 取得標籤
+      animated: false, // 設定是否動畫
+      style: { stroke: '#000' }, // 設定預設的邊線樣式
+      type: 'step'
+    };
+  });
 }
 
 </script>
