@@ -8,8 +8,8 @@ import initData from '../data/decisionDiagram/100A_init.json'
 import { ref } from 'vue'
 import CustomNode from './CustomNode.vue' // <== 這裡！
 
-const { nodes: initialNodes, edges: initialEdges } = parseUnderwritingData(underwritingData)
-// const { nodes: initialNodes, edges: initialEdges } = initData
+// const { nodes: initialNodes, edges: initialEdges } = parseUnderwritingData(underwritingData)
+const { nodes: initialNodes, edges: initialEdges } = initData
 
 const nodes = ref(initialNodes.map(node => ({
   id: node.id,
