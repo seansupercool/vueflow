@@ -5,20 +5,21 @@ import '@vue-flow/core/dist/theme-default.css'
 import { parseUnderwritingData } from '../utils/underwritingParser'
 import underwritingData from '../data/underwriting/100A.json'
 import initData from '../data/decisionDiagram/100A_init.json'
-import { ref } from 'vue'
+import { ref, markRaw, shallowRef } from 'vue'
 import CustomNode from './CustomNode.vue' // <== 這裡！
 
 // const { nodes: initialNodes, edges: initialEdges } = parseUnderwritingData(underwritingData)
 const { nodes: initialNodes, edges: initialEdges } = initData
-
-const nodes = ref(initialNodes.map(node => ({
+// const nodes = ref(initialNodes)
+const nodes = ref(shallowRef(initialNodes.map(node => ({
   id: node.id,
   type: 'custom',
   position: node.position,
   data: {
-    label: node.label
+    label: node.label,
+    forBE: node.forBE
   }
-})))
+}))))
 const edges = ref(initialEdges)
 
 const { onInit, fitView } = useVueFlow()

@@ -351,7 +351,8 @@ function logAllNodePositions() {
   
   // 取得畫完圖後的node初始資料使用
   const currentNodesInit = transformNodesForStorage(currentNodes);
-  console.log(JSON.stringify(currentNodesInit, null, 2)); // 可以存起來用
+  console.log(JSON.stringify(currentNodesInit, null, 2));
+   // 可以存起來用
   // currentNodes.forEach((node) => {
   //   console.log(`節點 ${node.id} 的位置是 x=${node.position.x}, y=${node.position.y}`)
   // })
@@ -362,12 +363,16 @@ function logAllNodePositions() {
 function transformNodesForStorage(nodes) {
   return nodes.map((node) => {
     const { id, data, position, type, style, label } = node;
+    if(id =="node-0"){
+      console.log("node", JSON.stringify(node))
+    }
     return {
       id,
       label: label || data?.label || '',
       position,
       ...(type && { type }),
       ...(style && { style }),
+      ...(data && { data }),
     };
   });
 }

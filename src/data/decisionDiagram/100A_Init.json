@@ -2,39 +2,63 @@
   "nodes": [
     {
       "id": "node-0",
-      "label": "糖尿病 (100A)",
+      "label": "險種",
       "position": {
         "x": 464.5771452822362,
         "y": -355.3196878733455
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-1",
-      "label": "險種: 壽險",
+      "label": "有無併發症及共病",
       "position": {
-        "x": -825.0577729336244,
-        "y": -61.27442143471575
+        "x": -1414.2115873146372,
+        "y": -101.31400105284283
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-2",
-      "label": "有無併發症及共病: 無併發症、無共病",
+      "label": "投保年齡:",
       "position": {
         "x": -3018.6140163862638,
         "y": 100.57865388016728
       },
-      "type": "default"
-    },
-    {
-      "id": "node-3",
-      "label": "投保年齡: ～19歲",
-      "position": {
-        "x": -3464.60797573726,
-        "y": 290.98958132121345
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-4",
@@ -43,16 +67,18 @@
         "x": -3466.618374942711,
         "y": 391.6341254392182
       },
-      "type": "default"
-    },
-    {
-      "id": "node-5",
-      "label": "投保年齡: 20～29歲",
-      "position": {
-        "x": -3306.4363443181733,
-        "y": 288.8101620495563
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-6",
@@ -61,16 +87,18 @@
         "x": -3306.243374942711,
         "y": 390.6341254392182
       },
-      "type": "default"
-    },
-    {
-      "id": "node-7",
-      "label": "投保年齡: 30～39歲",
-      "position": {
-        "x": -3151.430254846431,
-        "y": 287.94577319495625
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-8",
@@ -79,16 +107,18 @@
         "x": -3150.243374942711,
         "y": 389.6341254392182
       },
-      "type": "default"
-    },
-    {
-      "id": "node-9",
-      "label": "投保年齡: 40～49歲",
-      "position": {
-        "x": -2988.9754295809626,
-        "y": 287.5214124056424
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-10",
@@ -97,16 +127,18 @@
         "x": -2987.993374942711,
         "y": 391.5091254392182
       },
-      "type": "default"
-    },
-    {
-      "id": "node-11",
-      "label": "投保年齡: 50～64歲",
-      "position": {
-        "x": -2828.388664413738,
-        "y": 285.2229499304658
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-12",
@@ -115,16 +147,18 @@
         "x": -2826.871687471356,
         "y": 390.0530004583146
       },
-      "type": "default"
-    },
-    {
-      "id": "node-13",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": -2660.9967949044512,
-        "y": 285.40886799616453
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-14",
@@ -133,34 +167,58 @@
         "x": -2660.743374942711,
         "y": 389.1341254392182
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-15",
-      "label": "有無併發症及共病: 有併發症",
+      "label": "併發症類型",
       "position": {
-        "x": -830.0680599968895,
-        "y": 31.23713577405519
+        "x": -1399.202084568839,
+        "y": 34.09710574677855
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-16",
-      "label": "併發症類型: 增值性視網膜病變",
+      "label": "投保年齡:",
       "position": {
         "x": -1941.2186620534449,
         "y": 279.6551214550845
       },
-      "type": "default"
-    },
-    {
-      "id": "node-17",
-      "label": "投保年齡: ～49歲",
-      "position": {
-        "x": -2100.75,
-        "y": 385
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-18",
@@ -169,16 +227,18 @@
         "x": -2100.5,
         "y": 440
       },
-      "type": "default"
-    },
-    {
-      "id": "node-19",
-      "label": "投保年齡: 50～64歲",
-      "position": {
-        "x": -1940.875,
-        "y": 385
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-20",
@@ -187,16 +247,18 @@
         "x": -1938.3516482123405,
         "y": 438.7466586864174
       },
-      "type": "default"
-    },
-    {
-      "id": "node-21",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": -1781.375,
-        "y": 386
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-22",
@@ -205,25 +267,38 @@
         "x": -1781.25,
         "y": 442
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-23",
-      "label": "併發症類型: 神經性病變",
+      "label": "投保年齡:",
       "position": {
         "x": -2390.7265922000433,
         "y": 281.9616377851937
       },
-      "type": "default"
-    },
-    {
-      "id": "node-24",
-      "label": "投保年齡: ～64歲",
-      "position": {
-        "x": -2474.75,
-        "y": 387.00000000000006
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-25",
@@ -232,16 +307,18 @@
         "x": -2474.75,
         "y": 450
       },
-      "type": "default"
-    },
-    {
-      "id": "node-26",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": -2274.185061795978,
-        "y": 387.6600015585611
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-27",
@@ -250,25 +327,38 @@
         "x": -2273.5,
         "y": 444
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-28",
-      "label": "併發症類型: 肢端壞疽",
+      "label": "投保年齡:",
       "position": {
         "x": -590.6722710357274,
         "y": 264.62062603610883
       },
-      "type": "default"
-    },
-    {
-      "id": "node-29",
-      "label": "投保年齡: ～64歲",
-      "position": {
-        "x": -677.4341104689008,
-        "y": 381.53778018131743
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-30",
@@ -277,16 +367,18 @@
         "x": -676.1671312505166,
         "y": 439.64609372820433
       },
-      "type": "default"
-    },
-    {
-      "id": "node-31",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": -511.54428077644,
-        "y": 382.9401062757638
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-32",
@@ -295,25 +387,38 @@
         "x": -514.9576517324731,
         "y": 439.7339430617144
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-33",
-      "label": "併發症類型: 蜂窩組織炎及膿瘍",
+      "label": "投保年齡:",
       "position": {
         "x": -1550.2233209721767,
         "y": 277.29370881357846
       },
-      "type": "default"
-    },
-    {
-      "id": "node-34",
-      "label": "投保年齡: ～64歲",
-      "position": {
-        "x": -1622.8404012161122,
-        "y": 387.5938352695679
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-35",
@@ -322,16 +427,18 @@
         "x": -1623.7940068367675,
         "y": 441.39529948228335
       },
-      "type": "default"
-    },
-    {
-      "id": "node-36",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": -1468.9377826502994,
-        "y": 385.9200482451714
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-37",
@@ -340,25 +447,38 @@
         "x": -1469.3065980158053,
         "y": 440.21261620634505
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-38",
-      "label": "併發症類型: 蛋白尿(2＋)以上",
+      "label": "投保年齡:",
       "position": {
         "x": -1088.2369616521096,
         "y": 271.5950605683244
       },
-      "type": "default"
-    },
-    {
-      "id": "node-39",
-      "label": "投保年齡: ～39歲",
-      "position": {
-        "x": -1313.6840940985526,
-        "y": 385.02574376554196
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-40",
@@ -367,16 +487,18 @@
         "x": -1312.714968878126,
         "y": 440.0572256893237
       },
-      "type": "default"
-    },
-    {
-      "id": "node-41",
-      "label": "投保年齡: 40～49歲",
-      "position": {
-        "x": -1161.1892071150028,
-        "y": 380.78613206535647
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-42",
@@ -385,16 +507,18 @@
         "x": -1160.8786727575261,
         "y": 440.3350934476607
       },
-      "type": "default"
-    },
-    {
-      "id": "node-43",
-      "label": "投保年齡: 50～64歲",
-      "position": {
-        "x": -999,
-        "y": 383
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-44",
@@ -403,16 +527,18 @@
         "x": -999.3826856888603,
         "y": 441.38239818914985
       },
-      "type": "default"
-    },
-    {
-      "id": "node-45",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": -842.5615940653081,
-        "y": 383.60950828365515
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-46",
@@ -421,34 +547,58 @@
         "x": -841.9962236811234,
         "y": 443.10039978684824
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-47",
-      "label": "有無併發症及共病: 有共病",
+      "label": "共病類型",
       "position": {
-        "x": 791,
-        "y": 40
+        "x": 710.9208407637458,
+        "y": 60.01978980906354
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-48",
-      "label": "共病類型: 高血壓",
+      "label": "投保年齡:",
       "position": {
-        "x": 804.939314994547,
-        "y": 249.55473520680803
+        "x": 716.2802458401227,
+        "y": 252.4147051795314
       },
-      "type": "default"
-    },
-    {
-      "id": "node-49",
-      "label": "投保年齡: ～39歲",
-      "position": {
-        "x": 950.1676614491046,
-        "y": 378.66995946866365
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-50",
@@ -457,16 +607,18 @@
         "x": 951.3126514362642,
         "y": 437.2166457892444
       },
-      "type": "default"
-    },
-    {
-      "id": "node-51",
-      "label": "投保年齡: 40～49歲",
-      "position": {
-        "x": 463.0021220533308,
-        "y": 379.37343802015755
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-52",
@@ -475,16 +627,18 @@
         "x": 461.9301554328597,
         "y": 437.27346041161604
       },
-      "type": "default"
-    },
-    {
-      "id": "node-53",
-      "label": "投保年齡: 50～64歲",
-      "position": {
-        "x": 629.3708470666529,
-        "y": 379.0399018004187
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-54",
@@ -493,16 +647,18 @@
         "x": 628.3202040740172,
         "y": 437.1438335652121
       },
-      "type": "default"
-    },
-    {
-      "id": "node-55",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": 790.5797327454336,
-        "y": 378.70636558068
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-56",
@@ -511,25 +667,38 @@
         "x": 789.8164277551407,
         "y": 437.14383356521216
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-57",
-      "label": "共病類型: 高血脂",
+      "label": "投保年齡:",
       "position": {
         "x": -10.82717755357892,
         "y": 255.1988288529097
       },
-      "type": "default"
-    },
-    {
-      "id": "node-58",
-      "label": "投保年齡: ～29歲",
-      "position": {
-        "x": -340.3973830666098,
-        "y": 381.3398381856663
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-59",
@@ -538,16 +707,18 @@
         "x": -340.71100769541283,
         "y": 438.34292067468147
       },
-      "type": "default"
-    },
-    {
-      "id": "node-60",
-      "label": "投保年齡: 30～39歲",
-      "position": {
-        "x": -184.5233278641739,
-        "y": 381.24205605336766
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-61",
@@ -556,16 +727,18 @@
         "x": -184.09525336215916,
         "y": 437.5011822868242
       },
-      "type": "default"
-    },
-    {
-      "id": "node-62",
-      "label": "投保年齡: 40～49歲",
-      "position": {
-        "x": -27.601531068750248,
-        "y": 381.2146596582624
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-63",
@@ -574,16 +747,18 @@
         "x": -26.568087384012955,
         "y": 438.21517014122884
       },
-      "type": "default"
-    },
-    {
-      "id": "node-64",
-      "label": "投保年齡: 50～64歲",
-      "position": {
-        "x": 129.10307703828806,
-        "y": 379.18412014627137
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-65",
@@ -592,16 +767,18 @@
         "x": 130.85629033721546,
         "y": 438.23694536525375
       },
-      "type": "default"
-    },
-    {
-      "id": "node-66",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": 288.44618864500677,
-        "y": 378.89406229937526
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-67",
@@ -610,25 +787,38 @@
         "x": 288.0743900619423,
         "y": 437.14222262359846
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-68",
-      "label": "共病類型: 腦中風",
+      "label": "投保年齡:",
       "position": {
         "x": 1200.6283392751145,
         "y": 250.21771640043707
       },
-      "type": "default"
-    },
-    {
-      "id": "node-69",
-      "label": "投保年齡: ～64歲",
-      "position": {
-        "x": 1302.3134263240604,
-        "y": 376.70215878432344
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "C",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-70",
@@ -637,16 +827,18 @@
         "x": 1302.3872316849038,
         "y": 436.48499495706403
       },
-      "type": "default"
-    },
-    {
-      "id": "node-71",
-      "label": "投保年齡: 65歲～",
-      "position": {
-        "x": 1134.090319570873,
-        "y": 377.29423519286183
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-72",
@@ -655,16 +847,18 @@
         "x": 1132.5200603502483,
         "y": 436.3656826857167
       },
-      "type": "default"
-    },
-    {
-      "id": "node-73",
-      "label": "險種: 重大疾病險",
-      "position": {
-        "x": 1483.3720971900636,
-        "y": 36.668196391567335
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-74",
@@ -673,16 +867,18 @@
         "x": 1477.3386873704853,
         "y": 243.88765480617772
       },
-      "type": "default"
-    },
-    {
-      "id": "node-75",
-      "label": "險種: 醫療險",
-      "position": {
-        "x": 1667.3720971900636,
-        "y": 36.668196391567335
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-76",
@@ -691,16 +887,18 @@
         "x": 1665.405507009642,
         "y": 245.88765480617772
       },
-      "type": "default"
-    },
-    {
-      "id": "node-77",
-      "label": "險種: 長期照顧險",
-      "position": {
-        "x": 1829.3720971900636,
-        "y": 36.668196391567335
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-78",
@@ -709,16 +907,18 @@
         "x": 1831.3553922802744,
         "y": 243.83754007681017
       },
-      "type": "default"
-    },
-    {
-      "id": "node-79",
-      "label": "險種: 防癌險",
-      "position": {
-        "x": 2001.3720971900636,
-        "y": 34.668196391567335
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-80",
@@ -727,16 +927,18 @@
         "x": 1999.3553922802746,
         "y": 241.83754007681014
       },
-      "type": "default"
-    },
-    {
-      "id": "node-81",
-      "label": "險種: 傷害險",
-      "position": {
-        "x": 2171.372097190064,
-        "y": 32.668196391567335
-      },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     },
     {
       "id": "node-82",
@@ -745,7 +947,18 @@
         "x": 2175.288102233087,
         "y": 239.85424498659935
       },
-      "type": "default"
+      "type": "custom",
+      "forBE": {
+        "index": 0,
+        "columnType": "R",
+        "label": "商品種類",
+        "desc": "定義比照",
+        "columnName": "PROD_CAT",
+        "dataType": "7",
+        "mandatory": true,
+        "codeId": "PROC_CAT_CSR",
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+      }
     }
   ],
   "edges": [
@@ -758,7 +971,12 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e2",
@@ -769,139 +987,108 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e3",
-      "source": "node-2",
-      "target": "node-3",
-      "label": "～19歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e4",
-      "source": "node-3",
+      "source": "node-2",
       "target": "node-4",
       "label": "～19歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e5",
       "source": "node-2",
-      "target": "node-5",
-      "label": "20～29歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e6",
-      "source": "node-5",
       "target": "node-6",
       "label": "20～29歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e7",
-      "source": "node-2",
-      "target": "node-7",
-      "label": "30～39歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e8",
-      "source": "node-7",
+      "source": "node-2",
       "target": "node-8",
       "label": "30～39歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e9",
-      "source": "node-2",
-      "target": "node-9",
-      "label": "40～49歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e10",
-      "source": "node-9",
+      "source": "node-2",
       "target": "node-10",
       "label": "40～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e11",
-      "source": "node-2",
-      "target": "node-11",
-      "label": "50～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e12",
-      "source": "node-11",
+      "source": "node-2",
       "target": "node-12",
       "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e13",
-      "source": "node-2",
-      "target": "node-13",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e14",
-      "source": "node-13",
+      "source": "node-2",
       "target": "node-14",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e15",
@@ -912,7 +1099,12 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e16",
@@ -923,73 +1115,60 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e17",
-      "source": "node-16",
-      "target": "node-17",
-      "label": "～49歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e18",
-      "source": "node-17",
+      "source": "node-16",
       "target": "node-18",
       "label": "～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e19",
-      "source": "node-16",
-      "target": "node-19",
-      "label": "50～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e20",
-      "source": "node-19",
+      "source": "node-16",
       "target": "node-20",
       "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e21",
-      "source": "node-16",
-      "target": "node-21",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e22",
-      "source": "node-21",
+      "source": "node-16",
       "target": "node-22",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e23",
@@ -1000,51 +1179,44 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e24",
-      "source": "node-23",
-      "target": "node-24",
-      "label": "～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e25",
-      "source": "node-24",
+      "source": "node-23",
       "target": "node-25",
       "label": "～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e26",
-      "source": "node-23",
-      "target": "node-26",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e27",
-      "source": "node-26",
+      "source": "node-23",
       "target": "node-27",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e28",
@@ -1055,51 +1227,44 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e29",
-      "source": "node-28",
-      "target": "node-29",
-      "label": "～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e30",
-      "source": "node-29",
+      "source": "node-28",
       "target": "node-30",
       "label": "～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e31",
       "source": "node-28",
-      "target": "node-31",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e32",
-      "source": "node-31",
       "target": "node-32",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e33",
@@ -1110,51 +1275,44 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e34",
-      "source": "node-33",
-      "target": "node-34",
-      "label": "～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e35",
-      "source": "node-34",
+      "source": "node-33",
       "target": "node-35",
       "label": "～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e36",
-      "source": "node-33",
-      "target": "node-36",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e37",
-      "source": "node-36",
+      "source": "node-33",
       "target": "node-37",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e38",
@@ -1165,95 +1323,76 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e39",
-      "source": "node-38",
-      "target": "node-39",
-      "label": "～39歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e40",
-      "source": "node-39",
+      "source": "node-38",
       "target": "node-40",
       "label": "～39歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e41",
-      "source": "node-38",
-      "target": "node-41",
-      "label": "40～49歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e42",
-      "source": "node-41",
+      "source": "node-38",
       "target": "node-42",
       "label": "40～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e43",
-      "source": "node-38",
-      "target": "node-43",
-      "label": "50～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e44",
-      "source": "node-43",
+      "source": "node-38",
       "target": "node-44",
       "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
-    },
-    {
-      "id": "e45",
-      "source": "node-38",
-      "target": "node-45",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e46",
-      "source": "node-45",
+      "source": "node-38",
       "target": "node-46",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e47",
@@ -1264,7 +1403,12 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e48",
@@ -1275,95 +1419,76 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e49",
       "source": "node-48",
-      "target": "node-49",
-      "label": "～39歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e50",
-      "source": "node-49",
       "target": "node-50",
       "label": "～39歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e51",
       "source": "node-48",
-      "target": "node-51",
-      "label": "40～49歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e52",
-      "source": "node-51",
       "target": "node-52",
       "label": "40～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e53",
       "source": "node-48",
-      "target": "node-53",
-      "label": "50～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e54",
-      "source": "node-53",
       "target": "node-54",
       "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e55",
       "source": "node-48",
-      "target": "node-55",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e56",
-      "source": "node-55",
       "target": "node-56",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e57",
@@ -1374,117 +1499,92 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e58",
       "source": "node-57",
-      "target": "node-58",
-      "label": "～29歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e59",
-      "source": "node-58",
       "target": "node-59",
       "label": "～29歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e60",
       "source": "node-57",
-      "target": "node-60",
-      "label": "30～39歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e61",
-      "source": "node-60",
       "target": "node-61",
       "label": "30～39歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e62",
       "source": "node-57",
-      "target": "node-62",
-      "label": "40～49歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e63",
-      "source": "node-62",
       "target": "node-63",
       "label": "40～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e64",
       "source": "node-57",
-      "target": "node-64",
-      "label": "50～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e65",
-      "source": "node-64",
       "target": "node-65",
       "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e66",
       "source": "node-57",
-      "target": "node-66",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e67",
-      "source": "node-66",
       "target": "node-67",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e68",
@@ -1495,161 +1595,124 @@
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e69",
       "source": "node-68",
-      "target": "node-69",
-      "label": "～64歲",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e70",
-      "source": "node-69",
       "target": "node-70",
       "label": "～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e71",
       "source": "node-68",
-      "target": "node-71",
-      "label": "65歲～",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e72",
-      "source": "node-71",
       "target": "node-72",
       "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e73",
       "source": "node-0",
-      "target": "node-73",
-      "label": "重大疾病險",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e74",
-      "source": "node-73",
       "target": "node-74",
       "label": "重大疾病險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e75",
       "source": "node-0",
-      "target": "node-75",
-      "label": "醫療險",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e76",
-      "source": "node-75",
       "target": "node-76",
       "label": "醫療險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e77",
       "source": "node-0",
-      "target": "node-77",
-      "label": "長期照顧險",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e78",
-      "source": "node-77",
       "target": "node-78",
       "label": "長期照顧險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e79",
       "source": "node-0",
-      "target": "node-79",
-      "label": "防癌險",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e80",
-      "source": "node-79",
       "target": "node-80",
       "label": "防癌險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     },
     {
       "id": "e81",
       "source": "node-0",
-      "target": "node-81",
-      "label": "傷害險",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default"
-    },
-    {
-      "id": "e82",
-      "source": "node-81",
       "target": "node-82",
       "label": "傷害險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
-      "type": "default"
+      "type": "default",
+      "forBE": {
+        "columnName": "PROD_CAT",
+        "expressionType": "1",
+        "entryText": "1"
+      }
     }
   ]
 }
