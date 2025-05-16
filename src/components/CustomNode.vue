@@ -1,29 +1,40 @@
 <script setup lang="ts">
-import { computed } from 'vue'
-import { Handle } from '@vue-flow/core'
+import type { NodeProps } from '@vue-flow/core'
 
-const props = defineProps<{
-  id: string
-  data?: { label?: string }
-  selected?: boolean
-}>()
+interface CustomNodeData {
+  label: string
+  forBE?: {
+    columnType: string
+    label: string
+    desc: string
+    columnName: string
+    dataType: string
+    mandatory: boolean
+  }
+}
 
-const nodeStyle = computed(() => ({
-  padding: '5px',
-  border: '2px solid',
-  borderColor: props.selected ? 'red' : '#555',
-  backgroundColor: '#fff',
-  borderRadius: '6px',
-  minWidth: '100px',
-  textAlign: 'center',
-  userSelect: 'none'
-}))
+defineProps<NodeProps<CustomNodeData>>()
 </script>
 
 <template>
-  <div :style="nodeStyle">
-    {{ data?.label || 'No label' }}
-    <Handle type="target" position="top" />
-    <Handle type="source" position="bottom" />
+  <div class="custom-node">
+    <div class="node-content">
+      {{ data.label }}
+    </div>
   </div>
 </template>
+
+<style scoped>
+.custom-node {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid #ddd;
+  min-width: 150px;
+}
+
+.node-content {
+  text-align: center;
+  font-size: 14px;
+}
+</style>
