@@ -2,37 +2,62 @@
   <div class="node-library">
     <div class="node-library-header">
       <h3>元件庫</h3>
-      <button @click="showForm = true" class="add-node-btn">新增節點</button>
     </div>
     <div class="node-library-content">
-      <div v-if="showForm" class="node-form">
-        <div class="form-group">
-          <label>是否為結果：</label>
-          <select v-model="newNodeData.columnType">
-            <option value="C">否</option>
-            <option value="R">是</option>
-          </select>
+      <div class="node-form">
+        <div class="form-header" @click="toggleForm">
+          <h3>{{ editingNode ? '編輯元件' : '新增元件' }}</h3>
         </div>
-        <div class="form-group">
-          <label>顯示名稱：</label>
-          <input v-model="newNodeData.label" type="text" placeholder="請輸入顯示名稱">
+        <div class="form-content" :class="{ 'expanded': isFormExpanded }">
+          <div class="tab-group">
+            <button 
+              :class="['tab-btn', { active: newNodeData.columnType === 'C' }]"
+              @click="newNodeData.columnType = 'C'"
+            >
+              決策元件
+            </button>
+            <button 
+              :class="['tab-btn', { active: newNodeData.columnType === 'R' }]"
+              @click="newNodeData.columnType = 'R'"
+            >
+              結果元件
+            </button>
+          </div>
+          <div class="form-group">
+            <label>中文名稱：</label>
+            <input v-model="newNodeData.label" type="text" placeholder="請輸入顯示名稱">
+          </div>
+          <div class="form-group">
+            <label>欄位名稱：</label>
+            <input v-model="newNodeData.columnName" type="text" placeholder="請輸入欄位名">
+          </div>
+          <div class="form-group">
+            <label>資料格式：</label>
+            <select v-model="newNodeData.dataType" class="form-select">
+              <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
+                {{ option.label }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>詳細內容：</label>
+            <textarea 
+              v-model="newNodeData.desc" 
+              class="form-textarea" 
+              placeholder="請輸入詳細內容"
+              rows="4"
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button @click="handleSubmit" class="submit-btn">確定</button>
+            <button v-if="editingNode" @click="cancelEdit" class="cancel-btn">取消</button>
+            <button v-if="editingNode" @click="deleteNode" class="delete-btn">刪除</button>
+          </div>
         </div>
-        <div class="form-group">
-          <label>詳細內容：</label>
-          <input v-model="newNodeData.desc" type="text" placeholder="請輸入詳細內容">
-        </div>
-        <div class="form-group">
-          <label>欄位名：</label>
-          <input v-model="newNodeData.columnName" type="text" placeholder="請輸入欄位名">
-        </div>
-        <div class="form-group">
-          <label>資料格式：</label>
-          <input v-model="newNodeData.dataType" type="text" placeholder="請輸入資料格式">
-        </div>
-        <div class="form-actions">
-          <button @click="handleSubmit" class="submit-btn">確定</button>
-          <button @click="showForm = false" class="cancel-btn">取消</button>
-          <button v-if="editingNode" @click="deleteNode" class="delete-btn">刪除</button>
+        <div class="toggle-container">
+          <button class="toggle-btn" @click="toggleForm">
+            <div class="arrow-icon" :class="{ 'up': isFormExpanded }"></div>
+          </button>
         </div>
       </div>
       <div class="node-list">
@@ -77,9 +102,32 @@
 import { ref } from 'vue'
 import type { Node } from '@vue-flow/core'
 
+enum DataType {
+  STRING = '1',
+  INTEGER = '2',
+  DECIMAL = '3',
+  DATE = '4',
+  TIME = '5',
+  BOOLEAN = '6',
+  CODE = '7',
+  VARIABLE = '8'
+}
+
+const dataTypeOptions = [
+  { value: DataType.STRING, label: '字串' },
+  { value: DataType.INTEGER, label: '整數' },
+  { value: DataType.DECIMAL, label: '小數' },
+  { value: DataType.DATE, label: '日期' },
+  { value: DataType.TIME, label: '時間' },
+  { value: DataType.BOOLEAN, label: '布林' },
+  { value: DataType.CODE, label: '代碼' },
+  { value: DataType.VARIABLE, label: '變數' }
+]
+
 const nodes = ref<Node[]>([])
 const showForm = ref(false)
 const editingNode = ref<Node | null>(null)
+const isFormExpanded = ref(true)
 
 interface NodeFormData {
   label: string
@@ -173,6 +221,21 @@ const handleSubmit = () => {
     dataType: '7'
   }
 }
+
+const toggleForm = () => {
+  isFormExpanded.value = !isFormExpanded.value
+}
+
+const cancelEdit = () => {
+  editingNode.value = null
+  newNodeData.value = {
+    label: '',
+    columnType: 'C',
+    desc: '',
+    columnName: '',
+    dataType: '7'
+  }
+}
 </script>
 
 <style scoped>
@@ -198,19 +261,6 @@ const handleSubmit = () => {
   font-size: 16px;
 }
 
-.add-node-btn {
-  padding: 6px 12px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.add-node-btn:hover {
-  background-color: #45a049;
-}
-
 .node-library-content {
   flex: 1;
   overflow-y: auto;
@@ -221,12 +271,98 @@ const handleSubmit = () => {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 16px;
   margin-bottom: 16px;
+  overflow: visible;
+  transition: margin-bottom 0.3s ease;
+}
+
+.form-header {
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+
+.form-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.toggle-container {
+  position: relative;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  margin-top: -12px;
+  margin-bottom: -12px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.form-content.expanded + .toggle-container {
+  opacity: 1;
+}
+
+.toggle-btn {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.toggle-btn:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.arrow-icon {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.up {
+  transform: rotate(-135deg);
+}
+
+.form-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  border-bottom: 1px solid transparent;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.form-content.expanded {
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease-in;
+  border-bottom: 1px solid #ddd;
 }
 
 .form-group {
   margin-bottom: 12px;
+  padding: 0 16px;
 }
 
 .form-group label {
@@ -283,6 +419,7 @@ const handleSubmit = () => {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 12px;
   padding: 8px;
+  transition: transform 0.3s ease;
 }
 
 .node-item {
@@ -385,5 +522,51 @@ const handleSubmit = () => {
 
 .delete-btn:hover {
   background-color: #c82333;
+}
+
+.tab-group {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px;
+  border: 0px solid #ddd;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background-color: #e9ecef;
+}
+
+.tab-btn.active {
+  background-color: #4CAF50;
+  color: white;
+  border-color: #4CAF50;
+}
+
+.form-select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
 }
 </style> 
