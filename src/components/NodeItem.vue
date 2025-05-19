@@ -1,135 +1,101 @@
 <template>
-  <div class="node-library">
-    <div class="node-library-header">
-      <h3>元件庫</h3>
+  <div class="node-form" :class="{ 'expanded': showForm }">
+    <div class="form-header" style="background-color: #26a862;" @click="toggleForm">
+      <h3>新增</h3>
+      <div class="arrow-icon" :class="{ 'up': showForm }"></div>
     </div>
-    <div class="node-library-content">
-      <NodeItem></NodeItem>
-      <div class="node-form" :class="{ 'expanded': showForm }">
-        <div class="form-header" style="background-color: #26a862;" @click="toggleForm">
-          <h3>新增</h3>
-          <div class="arrow-icon" :class="{ 'up': showForm }"></div>
-        </div>
-        <div class="form-content">
-          <div class="tab-group">
-            <button 
-              :class="['tab-btn', { active: newNodeData.columnType === 'C' }]"
-              @click="newNodeData.columnType = 'C'"
-            >
-              決策元件
-            </button>
-            <button 
-              :class="['tab-btn', { active: newNodeData.columnType === 'R' }]"
-              @click="newNodeData.columnType = 'R'"
-            >
-              結果元件
-            </button>
+    <div class="form-content">
+      <div class="tab-group">
+        <button :class="['tab-btn', { active: newNodeData.columnType === 'C' }]" @click="newNodeData.columnType = 'C'">
+          決策元件
+        </button>
+        <button :class="['tab-btn', { active: newNodeData.columnType === 'R' }]" @click="newNodeData.columnType = 'R'">
+          結果元件
+        </button>
+      </div>
+      <div class="form-group">
+        <label>中文名稱：</label>
+        <input v-model="newNodeData.label" type="text" placeholder="請輸入顯示名稱">
+      </div>
+      <div class="form-group">
+        <label>欄位名稱：</label>
+        <input v-model="newNodeData.columnName" type="text" placeholder="請輸入欄位名">
+      </div>
+      <div class="form-group">
+        <label>資料格式：</label>
+        <select v-model="newNodeData.dataType" class="form-select">
+          <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
+            {{ option.label }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>詳細內容：</label>
+        <textarea v-model="newNodeData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
+      </div>
+      <div class="form-actions">
+        <button @click="handleSubmit" class="submit-btn">確定</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="node-list">
+    <div v-for="(node, index) in nodes" :key="index" class="node-form"
+      :class="{ 'expanded': expandedNodeId === node.id }" draggable="true" @dragstart="onDragStart($event, node)"
+      @dragend="onDragEnd">
+      <div class="form-header" @click="toggleNodeForm(node)">
+        <h3>{{ node.data.label || '新節點' }}</h3>
+        <div class="arrow-icon" :class="{ 'up': expandedNodeId === node.id }"></div>
+      </div>
+      <div class="node-popup">
+        <div class="popup-content">
+          <div class="popup-item">
+            <span class="popup-label">類型：</span>
+            <span class="popup-value">{{ node.data.forBE?.columnType === 'R' ? '結果元件' : '決策元件' }}</span>
           </div>
-          <div class="form-group">
-            <label>中文名稱：</label>
-            <input v-model="newNodeData.label" type="text" placeholder="請輸入顯示名稱">
+          <div class="popup-item">
+            <span class="popup-label">欄位名：</span>
+            <span class="popup-value">{{ node.data.forBE?.columnName }}</span>
           </div>
-          <div class="form-group">
-            <label>欄位名稱：</label>
-            <input v-model="newNodeData.columnName" type="text" placeholder="請輸入欄位名">
-          </div>
-          <div class="form-group">
-            <label>資料格式：</label>
-            <select v-model="newNodeData.dataType" class="form-select">
-              <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
-                {{ option.label }}
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>詳細內容：</label>
-            <textarea 
-              v-model="newNodeData.desc" 
-              class="form-textarea" 
-              placeholder="請輸入詳細內容"
-              rows="4"
-            ></textarea>
-          </div>
-          <div class="form-actions">
-            <button @click="handleSubmit" class="submit-btn">確定</button>
+          <div class="popup-item">
+            <span class="popup-label">資料格式：</span>
+            <span class="popup-value">{{ getDataTypeLabel(node.data.forBE?.dataType) }}</span>
           </div>
         </div>
       </div>
-
-      <div class="node-list">
-        <div 
-          v-for="(node, index) in nodes" 
-          :key="index" 
-          class="node-form"
-          :class="{ 'expanded': expandedNodeId === node.id }"
-          draggable="true"
-          @dragstart="onDragStart($event, node)"
-          @dragend="onDragEnd"
-        >
-          <div class="form-header" @click="toggleNodeForm(node)">
-            <h3>{{ node.data.label || '新節點' }}</h3>
-            <div class="arrow-icon" :class="{ 'up': expandedNodeId === node.id }"></div>
-          </div>
-          <div class="node-popup">
-            <div class="popup-content">
-              <div class="popup-item">
-                <span class="popup-label">類型：</span>
-                <span class="popup-value">{{ node.data.forBE?.columnType === 'R' ? '結果元件' : '決策元件' }}</span>
-              </div>
-              <div class="popup-item">
-                <span class="popup-label">欄位名：</span>
-                <span class="popup-value">{{ node.data.forBE?.columnName }}</span>
-              </div>
-              <div class="popup-item">
-                <span class="popup-label">資料格式：</span>
-                <span class="popup-value">{{ getDataTypeLabel(node.data.forBE?.dataType) }}</span>
-              </div>
-            </div>
-          </div>
-          <div class="form-content">
-            <div class="tab-group">
-              <button 
-                :class="['tab-btn', { active: node.data.forBE?.columnType === 'C' }]"
-                @click="updateNodeType(node, 'C')"
-              >
-                決策元件
-              </button>
-              <button 
-                :class="['tab-btn', { active: node.data.forBE?.columnType === 'R' }]"
-                @click="updateNodeType(node, 'R')"
-              >
-                結果元件
-              </button>
-            </div>
-            <div class="form-group">
-              <label>中文名稱：</label>
-              <input v-model="node.data.label" type="text" placeholder="請輸入顯示名稱">
-            </div>
-            <div class="form-group">
-              <label>欄位名稱：</label>
-              <input v-model="node.data.forBE.columnName" type="text" placeholder="請輸入欄位名">
-            </div>
-            <div class="form-group">
-              <label>資料格式：</label>
-              <select v-model="node.data.forBE.dataType" class="form-select">
-                <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
-                  {{ option.label }}
-                </option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>詳細內容：</label>
-              <textarea 
-                v-model="node.data.forBE.desc" 
-                class="form-textarea" 
-                placeholder="請輸入詳細內容"
-                rows="4"
-              ></textarea>
-            </div>
-            <div class="form-actions">
-              <button @click="deleteNode(node)" class="delete-btn">刪除</button>
-            </div>
-          </div>
+      <div class="form-content">
+        <div class="tab-group">
+          <button :class="['tab-btn', { active: node.data.forBE?.columnType === 'C' }]"
+            @click="updateNodeType(node, 'C')">
+            決策元件
+          </button>
+          <button :class="['tab-btn', { active: node.data.forBE?.columnType === 'R' }]"
+            @click="updateNodeType(node, 'R')">
+            結果元件
+          </button>
+        </div>
+        <div class="form-group">
+          <label>中文名稱：</label>
+          <input v-model="node.data.label" type="text" placeholder="請輸入顯示名稱">
+        </div>
+        <div class="form-group">
+          <label>欄位名稱：</label>
+          <input v-model="node.data.forBE.columnName" type="text" placeholder="請輸入欄位名">
+        </div>
+        <div class="form-group">
+          <label>資料格式：</label>
+          <select v-model="node.data.forBE.dataType" class="form-select">
+            <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
+              {{ option.label }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>詳細內容：</label>
+          <textarea v-model="node.data.forBE.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
+        </div>
+        <div class="form-actions">
+          <button @click="deleteNode(node)" class="delete-btn">刪除</button>
         </div>
       </div>
     </div>
@@ -139,7 +105,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Node } from '@vue-flow/core'
-import NodeItem from './NodeItem.vue'
 
 enum DataType {
   STRING = '1',
@@ -275,7 +240,7 @@ const onDragStart = (event: DragEvent, node: Node) => {
     }
     event.dataTransfer.setData('application/json', JSON.stringify(nodeData))
     event.dataTransfer.effectAllowed = 'move'
-    
+
     if (event.target instanceof HTMLElement) {
       const dragImage = event.target.cloneNode(true) as HTMLElement
       dragImage.style.width = '200px'
@@ -323,7 +288,7 @@ const onDragEnd = (event: DragEvent) => {
 .node-library-content {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  /* padding: 16px; */
 }
 
 .node-list {
@@ -508,12 +473,13 @@ const onDragEnd = (event: DragEvent) => {
 }
 
 .submit-btn:hover {
-  transform: scale(1.05); /* 放大 1.2 倍 */
-  
+  transform: scale(1.05);
+  /* 放大 1.2 倍 */
+
   /* background-color: #45a049; */
 }
 
 .form-group {
   padding: 0 16px;
 }
-</style> 
+</style>
