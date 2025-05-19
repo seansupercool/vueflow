@@ -137,6 +137,8 @@ const onDrop = (event: DragEvent) => {
         :default-viewport="{ x: 0, y: 0, zoom: 1.5 }"
         :min-zoom="0.2"
         :max-zoom="4"
+        :auto-connect="false"
+        :connect-on-click="false"
         class="vue-flow"
         @connect="onConnectHandler"
         @edge-click="onEdgeClick"
