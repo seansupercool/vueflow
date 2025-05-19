@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { NodeProps } from '@vue-flow/core'
+import { Handle, Position } from '@vue-flow/core'
 
 interface CustomNodeData {
   label: string
@@ -18,9 +19,11 @@ defineProps<NodeProps<CustomNodeData>>()
 
 <template>
   <div class="custom-node">
+    <Handle type="target" :position="Position.Top" />
     <div class="node-content">
       {{ data.label }}
     </div>
+    <Handle type="source" :position="Position.Bottom" />
   </div>
 </template>
 
@@ -31,10 +34,12 @@ defineProps<NodeProps<CustomNodeData>>()
   background-color: white;
   border: 1px solid #ddd;
   min-width: 150px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .node-content {
   text-align: center;
   font-size: 14px;
+  color: #333;
 }
 </style>

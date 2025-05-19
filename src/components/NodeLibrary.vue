@@ -4,11 +4,12 @@
       <h3>元件庫</h3>
     </div>
     <div class="node-library-content">
-      <div class="node-form">
-        <div class="form-header" @click="toggleForm">
-          <h3>{{ editingNode ? '編輯元件' : '新增元件' }}</h3>
+      <div class="node-form" :class="{ 'expanded': showForm }">
+        <div class="form-header" style="background-color: #26a862;" @click="toggleForm">
+          <h3>新增</h3>
+          <div class="arrow-icon" :class="{ 'up': showForm }"></div>
         </div>
-        <div class="form-content" :class="{ 'expanded': isFormExpanded }">
+        <div class="form-content">
           <div class="tab-group">
             <button 
               :class="['tab-btn', { active: newNodeData.columnType === 'C' }]"
@@ -50,46 +51,82 @@
           </div>
           <div class="form-actions">
             <button @click="handleSubmit" class="submit-btn">確定</button>
-            <button v-if="editingNode" @click="cancelEdit" class="cancel-btn">取消</button>
-            <button v-if="editingNode" @click="deleteNode" class="delete-btn">刪除</button>
           </div>
         </div>
-        <div class="toggle-container">
-          <button class="toggle-btn" @click="toggleForm">
-            <div class="arrow-icon" :class="{ 'up': isFormExpanded }"></div>
-          </button>
-        </div>
       </div>
+
       <div class="node-list">
-        <div v-for="(node, index) in nodes" :key="index" class="node-item">
-          <div class="node-preview">
-            <div class="custom-node">
-              <div class="node-header">
-                <div class="node-content">
-                  {{ node.data.label || '新節點' }}
-                </div>
-                <button class="edit-btn" @click.stop="editNode(node)">
-                  <i class="fas fa-cog"></i>
-                </button>
+        <div 
+          v-for="(node, index) in nodes" 
+          :key="index" 
+          class="node-form"
+          :class="{ 'expanded': expandedNodeId === node.id }"
+          draggable="true"
+          @dragstart="onDragStart($event, node)"
+          @dragend="onDragEnd"
+        >
+          <div class="form-header" @click="toggleNodeForm(node)">
+            <h3>{{ node.data.label || '新節點' }}</h3>
+            <div class="arrow-icon" :class="{ 'up': expandedNodeId === node.id }"></div>
+          </div>
+          <div class="node-popup">
+            <div class="popup-content">
+              <div class="popup-item">
+                <span class="popup-label">類型：</span>
+                <span class="popup-value">{{ node.data.forBE?.columnType === 'R' ? '結果元件' : '決策元件' }}</span>
               </div>
-              <div class="node-details">
-                <div class="detail-item">
-                  <span class="detail-label">是否為結果：</span>
-                  <span class="detail-value">{{ node.data.forBE?.columnType === 'R' ? '是' : '否' }}</span>
-                </div>
-                <div class="detail-item">
-                  <span class="detail-label">詳細內容：</span>
-                  <span class="detail-value">{{ node.data.forBE?.desc }}</span>
-                </div>
-                <div class="detail-item">
-                  <span class="detail-label">欄位名：</span>
-                  <span class="detail-value">{{ node.data.forBE?.columnName }}</span>
-                </div>
-                <div class="detail-item">
-                  <span class="detail-label">資料格式：</span>
-                  <span class="detail-value">{{ node.data.forBE?.dataType }}</span>
-                </div>
+              <div class="popup-item">
+                <span class="popup-label">欄位名：</span>
+                <span class="popup-value">{{ node.data.forBE?.columnName }}</span>
               </div>
+              <div class="popup-item">
+                <span class="popup-label">資料格式：</span>
+                <span class="popup-value">{{ getDataTypeLabel(node.data.forBE?.dataType) }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-content">
+            <div class="tab-group">
+              <button 
+                :class="['tab-btn', { active: node.data.forBE?.columnType === 'C' }]"
+                @click="updateNodeType(node, 'C')"
+              >
+                決策元件
+              </button>
+              <button 
+                :class="['tab-btn', { active: node.data.forBE?.columnType === 'R' }]"
+                @click="updateNodeType(node, 'R')"
+              >
+                結果元件
+              </button>
+            </div>
+            <div class="form-group">
+              <label>中文名稱：</label>
+              <input v-model="node.data.label" type="text" placeholder="請輸入顯示名稱">
+            </div>
+            <div class="form-group">
+              <label>欄位名稱：</label>
+              <input v-model="node.data.forBE.columnName" type="text" placeholder="請輸入欄位名">
+            </div>
+            <div class="form-group">
+              <label>資料格式：</label>
+              <select v-model="node.data.forBE.dataType" class="form-select">
+                <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
+                  {{ option.label }}
+                </option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>詳細內容：</label>
+              <textarea 
+                v-model="node.data.forBE.desc" 
+                class="form-textarea" 
+                placeholder="請輸入詳細內容"
+                rows="4"
+              ></textarea>
+            </div>
+            <div class="form-actions">
+              <button @click="deleteNode(node)" class="delete-btn">刪除</button>
             </div>
           </div>
         </div>
@@ -126,8 +163,7 @@ const dataTypeOptions = [
 
 const nodes = ref<Node[]>([])
 const showForm = ref(false)
-const editingNode = ref<Node | null>(null)
-const isFormExpanded = ref(true)
+const expandedNodeId = ref<string | null>(null)
 
 interface NodeFormData {
   label: string
@@ -145,95 +181,116 @@ const newNodeData = ref<NodeFormData>({
   dataType: '7'
 })
 
-const editNode = (node: Node) => {
-  editingNode.value = node
-  // 將節點資料填入表單
-  newNodeData.value = {
-    label: node.data.label,
-    columnType: node.data.forBE?.columnType || 'C',
-    desc: node.data.forBE?.desc || '',
-    columnName: node.data.forBE?.columnName || '',
-    dataType: node.data.forBE?.dataType || '7'
-  }
-  showForm.value = true
-}
-
-const deleteNode = () => {
-  if (editingNode.value) {
-    const index = nodes.value.findIndex(n => n.id === editingNode.value?.id)
-    if (index !== -1) {
-      nodes.value.splice(index, 1)
-    }
+const toggleForm = () => {
+  if (showForm.value) {
     showForm.value = false
-    editingNode.value = null
+    newNodeData.value = {
+      label: '',
+      columnType: 'C',
+      desc: '',
+      columnName: '',
+      dataType: '7'
+    }
+  } else {
+    expandedNodeId.value = null
+    showForm.value = true
   }
 }
 
 const handleSubmit = () => {
-  if (editingNode.value) {
-    // 更新現有節點
-    const index = nodes.value.findIndex(n => n.id === editingNode.value?.id)
-    if (index !== -1) {
-      nodes.value[index] = {
-        ...nodes.value[index],
-        data: {
-          label: newNodeData.value.label,
-          forBE: {
-            columnType: newNodeData.value.columnType,
-            label: newNodeData.value.label,
-            desc: newNodeData.value.desc,
-            columnName: newNodeData.value.columnName,
-            dataType: newNodeData.value.dataType,
-            mandatory: true
-          }
-        }
-      }
-    }
-  } else {
-    // 新增節點
-    const newNode: Node = {
-      id: `node-${nodes.value.length}`,
-      type: 'custom',
-      position: { x: 0, y: 0 },
-      data: {
+  const newNode: Node = {
+    id: `node-${nodes.value.length}`,
+    type: 'custom',
+    position: { x: 0, y: 0 },
+    data: {
+      label: newNodeData.value.label,
+      forBE: {
+        columnType: newNodeData.value.columnType,
         label: newNodeData.value.label,
+        desc: newNodeData.value.desc,
+        columnName: newNodeData.value.columnName,
+        dataType: newNodeData.value.dataType,
+        mandatory: true
+      }
+    }
+  }
+  nodes.value.push(newNode)
+  showForm.value = false
+  newNodeData.value = {
+    label: '',
+    columnType: 'C',
+    desc: '',
+    columnName: '',
+    dataType: '7'
+  }
+}
+
+const toggleNodeForm = (node: Node) => {
+  if (expandedNodeId.value === node.id) {
+    expandedNodeId.value = null
+  } else {
+    showForm.value = false
+    expandedNodeId.value = node.id
+  }
+}
+
+const updateNodeType = (node: Node, type: string) => {
+  if (node.data.forBE) {
+    node.data.forBE.columnType = type
+  }
+}
+
+const deleteNode = (node: Node) => {
+  const index = nodes.value.findIndex(n => n.id === node.id)
+  if (index !== -1) {
+    nodes.value.splice(index, 1)
+    if (expandedNodeId.value === node.id) {
+      expandedNodeId.value = null
+    }
+  }
+}
+
+const getDataTypeLabel = (type: string) => {
+  const option = dataTypeOptions.find(opt => opt.value === type)
+  return option ? option.label : '未知'
+}
+
+const onDragStart = (event: DragEvent, node: Node) => {
+  if (event.dataTransfer) {
+    const nodeData = {
+      type: 'custom',
+      data: {
+        label: node.data.label,
         forBE: {
-          columnType: newNodeData.value.columnType,
-          label: newNodeData.value.label,
-          desc: newNodeData.value.desc,
-          columnName: newNodeData.value.columnName,
-          dataType: newNodeData.value.dataType,
-          mandatory: true
+          columnType: node.data.forBE.columnType,
+          label: node.data.forBE.label,
+          desc: node.data.forBE.desc,
+          columnName: node.data.forBE.columnName,
+          dataType: node.data.forBE.dataType,
+          mandatory: node.data.forBE.mandatory
         }
       }
     }
-    nodes.value.push(newNode)
-  }
-  
-  // 重置表單和編輯狀態
-  showForm.value = false
-  editingNode.value = null
-  newNodeData.value = {
-    label: '',
-    columnType: 'C',
-    desc: '',
-    columnName: '',
-    dataType: '7'
+    event.dataTransfer.setData('application/json', JSON.stringify(nodeData))
+    event.dataTransfer.effectAllowed = 'move'
+    
+    if (event.target instanceof HTMLElement) {
+      const dragImage = event.target.cloneNode(true) as HTMLElement
+      dragImage.style.width = '200px'
+      dragImage.style.position = 'absolute'
+      dragImage.style.top = '-1000px'
+      document.body.appendChild(dragImage)
+      event.dataTransfer.setDragImage(dragImage, 100, 20)
+      setTimeout(() => {
+        document.body.removeChild(dragImage)
+      }, 0)
+    }
   }
 }
 
-const toggleForm = () => {
-  isFormExpanded.value = !isFormExpanded.value
-}
-
-const cancelEdit = () => {
-  editingNode.value = null
-  newNodeData.value = {
-    label: '',
-    columnType: 'C',
-    desc: '',
-    columnName: '',
-    dataType: '7'
+const onDragEnd = (event: DragEvent) => {
+  if (event.dataTransfer) {
+    event.dataTransfer.clearData()
   }
 }
 </script>
@@ -267,67 +324,37 @@ const cancelEdit = () => {
   padding: 16px;
 }
 
+.node-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .node-form {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
   margin-bottom: 16px;
-  overflow: visible;
-  transition: margin-bottom 0.3s ease;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: move;
+  user-select: none;
 }
 
 .form-header {
   padding: 12px 16px;
   background-color: #f8f9fa;
-  border-bottom: 1px solid #ddd;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  border-radius: 4px 4px 0 0;
+  user-select: none;
 }
 
 .form-header h3 {
   margin: 0;
   font-size: 16px;
   color: #333;
-}
-
-.toggle-container {
-  position: relative;
-  height: 24px;
-  display: flex;
-  justify-content: center;
-  margin-top: -12px;
-  margin-bottom: -12px;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.form-content.expanded + .toggle-container {
-  opacity: 1;
-}
-
-.toggle-btn {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.2s ease;
-  padding: 0;
-}
-
-.toggle-btn:hover {
-  background-color: #f8f9fa;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .arrow-icon {
@@ -346,170 +373,57 @@ const cancelEdit = () => {
 .form-content {
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3s ease-out;
-  border-bottom: 1px solid transparent;
-  opacity: 0;
-  transform: translateY(-10px);
+  transition: max-height 0.3s ease-out;
 }
 
-.form-content.expanded {
+.node-form.expanded .form-content {
   max-height: 1000px;
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.3s ease-in;
-  border-bottom: 1px solid #ddd;
+  transition: max-height 0.5s ease-in;
 }
 
-.form-group {
-  margin-bottom: 12px;
-  padding: 0 16px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 4px;
-  font-size: 14px;
-  color: #666;
-}
-
-.form-group input,
-.form-group select {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.form-actions {
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  gap: 8px;
-  margin: 16px;
-}
-
-.submit-btn,
-.cancel-btn {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.submit-btn {
-  background-color: #4CAF50;
-  color: white;
-}
-
-.submit-btn:hover {
-  background-color: #45a049;
-}
-
-.cancel-btn {
-  background-color: #f44336;
-  color: white;
-}
-
-.cancel-btn:hover {
-  background-color: #da190b;
-}
-
-.node-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 12px;
-  padding: 8px;
-  transition: transform 0.3s ease;
-}
-
-.node-item {
-  background-color: transparent;
-  border: none;
-  padding: 4px;
-  cursor: move;
-  width: 100%;
-}
-
-.node-item:hover .custom-node {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transform: translateY(-1px);
-  transition: all 0.2s ease;
-}
-
-.node-preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 40px;
-  padding: 8px;
-}
-
-.custom-node {
-  padding: 0;
-  border-radius: 5px;
+.node-popup {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: white;
   border: 1px solid #ddd;
-  min-width: 150px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.node-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-}
-
-.edit-btn {
-  background: none;
-  border: none;
-  color: #666;
-  cursor: pointer;
-  padding: 4px;
   border-radius: 4px;
-  transition: all 0.2s ease;
-}
-
-.edit-btn:hover {
-  background-color: #f0f0f0;
-  color: #333;
-}
-
-.node-details {
-  display: none;
   padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 200px;
+  margin-top: 8px;
+}
+
+.node-form:hover .node-popup {
+  display: block;
+}
+
+.popup-content {
   font-size: 12px;
 }
 
-.custom-node:hover .node-details {
-  display: block;
-}
-
-.detail-item {
+.popup-item {
   margin-bottom: 4px;
   display: flex;
   justify-content: space-between;
 }
 
-.detail-label {
+.popup-label {
   color: #666;
   margin-right: 8px;
 }
 
-.detail-value {
+.popup-value {
   color: #333;
   font-weight: 500;
 }
 
 .node-content {
-  text-align: left;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
-  flex: 1;
 }
 
 .delete-btn {
@@ -545,9 +459,9 @@ const cancelEdit = () => {
 }
 
 .tab-btn.active {
-  background-color: #4CAF50;
+  background-color: #26a862;
   color: white;
-  border-color: #4CAF50;
+  border-color: #26a862;
 }
 
 .form-select {
@@ -570,5 +484,25 @@ const cancelEdit = () => {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
+}
+
+.form-actions {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin: 16px;
+}
+
+.submit-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
 }
 </style> 

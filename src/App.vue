@@ -92,6 +92,38 @@ const getStructure = () => {
 }
 
 onConnect(onConnectHandler)
+
+const onDragOver = (event: DragEvent) => {
+  event.preventDefault()
+  if (event.dataTransfer) {
+    event.dataTransfer.dropEffect = 'move'
+  }
+}
+
+const onDrop = (event: DragEvent) => {
+  event.preventDefault()
+  
+  if (!event.dataTransfer) return
+  
+  try {
+    const nodeData = JSON.parse(event.dataTransfer.getData('application/json'))
+    const position = project({
+      x: event.clientX,
+      y: event.clientY,
+    })
+
+    const newNode: Node = {
+      id: `node-${nodes.value.length + 1}`,
+      type: nodeData.type,
+      position,
+      data: nodeData.data
+    }
+
+    nodes.value = [...nodes.value, newNode]
+  } catch (error) {
+    console.error('Error dropping node:', error)
+  }
+}
 </script>
 
 <template>
@@ -108,6 +140,8 @@ onConnect(onConnectHandler)
         class="vue-flow"
         @connect="onConnectHandler"
         @edge-click="onEdgeClick"
+        @dragover="onDragOver"
+        @drop="onDrop"
       >
         <Background />
         <Controls />
@@ -133,6 +167,11 @@ onConnect(onConnectHandler)
 .vue-flow {
   width: 100%;
   height: 100%;
+  background-color: #f8f8f8;
+}
+
+.vue-flow__drop-target {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
