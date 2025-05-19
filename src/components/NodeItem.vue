@@ -189,8 +189,8 @@ const toggleNodeForm = (node: CustomNode) => {
 .arrow-icon {
   width: 8px;
   height: 8px;
-  border-right: 2px solid #666;
-  border-bottom: 2px solid #666;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
   transform: rotate(45deg);
   transition: transform 0.3s ease;
 }
