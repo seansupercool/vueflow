@@ -34,69 +34,9 @@
         <textarea v-model="newNodeData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
       </div>
       <div class="form-actions">
-        <button @click="handleSubmit" class="submit-btn">確定</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="node-list">
-    <div v-for="(node, index) in nodes" :key="index" class="node-form"
-      :class="{ 'expanded': expandedNodeId === node.id }" draggable="true" @dragstart="onDragStart($event, node)"
-      @dragend="onDragEnd">
-      <div class="form-header" @click="toggleNodeForm(node)">
-        <h3>{{ node.data.label || '新節點' }}</h3>
-        <div class="arrow-icon" :class="{ 'up': expandedNodeId === node.id }"></div>
-      </div>
-      <div class="node-popup">
-        <div class="popup-content">
-          <div class="popup-item">
-            <span class="popup-label">類型：</span>
-            <span class="popup-value">{{ node.data.forBE?.columnType === 'R' ? '結果元件' : '決策元件' }}</span>
-          </div>
-          <div class="popup-item">
-            <span class="popup-label">欄位名：</span>
-            <span class="popup-value">{{ node.data.forBE?.columnName }}</span>
-          </div>
-          <div class="popup-item">
-            <span class="popup-label">資料格式：</span>
-            <span class="popup-value">{{ getDataTypeLabel(node.data.forBE?.dataType) }}</span>
-          </div>
-        </div>
-      </div>
-      <div class="form-content">
-        <div class="tab-group">
-          <button :class="['tab-btn', { active: node.data.forBE?.columnType === 'C' }]"
-            @click="updateNodeType(node, 'C')">
-            決策元件
-          </button>
-          <button :class="['tab-btn', { active: node.data.forBE?.columnType === 'R' }]"
-            @click="updateNodeType(node, 'R')">
-            結果元件
-          </button>
-        </div>
-        <div class="form-group">
-          <label>中文名稱：</label>
-          <input v-model="node.data.label" type="text" placeholder="請輸入顯示名稱">
-        </div>
-        <div class="form-group">
-          <label>欄位名稱：</label>
-          <input v-model="node.data.forBE.columnName" type="text" placeholder="請輸入欄位名">
-        </div>
-        <div class="form-group">
-          <label>資料格式：</label>
-          <select v-model="node.data.forBE.dataType" class="form-select">
-            <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
-              {{ option.label }}
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>詳細內容：</label>
-          <textarea v-model="node.data.forBE.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
-        </div>
-        <div class="form-actions">
-          <button @click="deleteNode(node)" class="delete-btn">刪除</button>
-        </div>
+        <button @click="handleSubmit" class="btn submit-btn">確定</button>
+        <button @click="handleCancel" class="btn cancel-btn">取消</button>
+        <button @click="handleDelete" class="btn delete-btn">刪除</button>
       </div>
     </div>
   </div>
@@ -104,7 +44,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { Node } from '@vue-flow/core'
 
 enum DataType {
   STRING = '1',
@@ -128,7 +67,7 @@ const dataTypeOptions = [
   { value: DataType.VARIABLE, label: '變數' }
 ]
 
-const nodes = ref<Node[]>([])
+const nodes = ref<CustomNode[]>([])
 const showForm = ref(false)
 const expandedNodeId = ref<string | null>(null)
 
@@ -138,6 +77,8 @@ interface NodeFormData {
   desc: string
   columnName: string
   dataType: string
+  codeId?: string
+  codeUid?: string
 }
 
 const newNodeData = ref<NodeFormData>({
@@ -145,7 +86,9 @@ const newNodeData = ref<NodeFormData>({
   columnType: 'C',
   desc: '',
   columnName: '',
-  dataType: '7'
+  dataType: '7',
+  codeId: '',
+  codeUid: ''
 })
 
 const toggleForm = () => {
@@ -156,7 +99,9 @@ const toggleForm = () => {
       columnType: 'C',
       desc: '',
       columnName: '',
-      dataType: '7'
+      dataType: '7',
+      codeId: '',
+      codeUid: ''
     }
   } else {
     expandedNodeId.value = null
@@ -165,20 +110,20 @@ const toggleForm = () => {
 }
 
 const handleSubmit = () => {
-  const newNode: Node = {
+  const newNode: CustomNode = {
     id: `node-${nodes.value.length}`,
     type: 'custom',
     position: { x: 0, y: 0 },
     data: {
+      index: nodes.value.length,
+      columnType: newNodeData.value.columnType,
       label: newNodeData.value.label,
-      forBE: {
-        columnType: newNodeData.value.columnType,
-        label: newNodeData.value.label,
-        desc: newNodeData.value.desc,
-        columnName: newNodeData.value.columnName,
-        dataType: newNodeData.value.dataType,
-        mandatory: true
-      }
+      desc: newNodeData.value.desc,
+      columnName: newNodeData.value.columnName,
+      dataType: newNodeData.value.dataType,
+      mandatory: true,
+      codeId: newNodeData.value.codeId,
+      codeUid: newNodeData.value.codeUid
     }
   }
   nodes.value.push(newNode)
@@ -188,11 +133,21 @@ const handleSubmit = () => {
     columnType: 'C',
     desc: '',
     columnName: '',
-    dataType: '7'
+    dataType: '7',
+    codeId: '',
+    codeUid: ''
   }
 }
 
-const toggleNodeForm = (node: Node) => {
+const handleCancel = () => {
+  showForm.value = false
+}
+
+const handleDelete = () => {
+  
+}
+
+const toggleNodeForm = (node: CustomNode) => {
   if (expandedNodeId.value === node.id) {
     expandedNodeId.value = null
   } else {
@@ -200,103 +155,9 @@ const toggleNodeForm = (node: Node) => {
     expandedNodeId.value = node.id
   }
 }
-
-const updateNodeType = (node: Node, type: string) => {
-  if (node.data.forBE) {
-    node.data.forBE.columnType = type
-  }
-}
-
-const deleteNode = (node: Node) => {
-  const index = nodes.value.findIndex(n => n.id === node.id)
-  if (index !== -1) {
-    nodes.value.splice(index, 1)
-    if (expandedNodeId.value === node.id) {
-      expandedNodeId.value = null
-    }
-  }
-}
-
-const getDataTypeLabel = (type: string) => {
-  const option = dataTypeOptions.find(opt => opt.value === type)
-  return option ? option.label : '未知'
-}
-
-const onDragStart = (event: DragEvent, node: Node) => {
-  if (event.dataTransfer) {
-    const nodeData = {
-      type: 'custom',
-      data: {
-        label: node.data.label,
-        forBE: {
-          columnType: node.data.forBE.columnType,
-          label: node.data.forBE.label,
-          desc: node.data.forBE.desc,
-          columnName: node.data.forBE.columnName,
-          dataType: node.data.forBE.dataType,
-          mandatory: node.data.forBE.mandatory
-        }
-      }
-    }
-    event.dataTransfer.setData('application/json', JSON.stringify(nodeData))
-    event.dataTransfer.effectAllowed = 'move'
-
-    if (event.target instanceof HTMLElement) {
-      const dragImage = event.target.cloneNode(true) as HTMLElement
-      dragImage.style.width = '200px'
-      dragImage.style.position = 'absolute'
-      dragImage.style.top = '-1000px'
-      document.body.appendChild(dragImage)
-      event.dataTransfer.setDragImage(dragImage, 100, 20)
-      setTimeout(() => {
-        document.body.removeChild(dragImage)
-      }, 0)
-    }
-  }
-}
-
-const onDragEnd = (event: DragEvent) => {
-  if (event.dataTransfer) {
-    event.dataTransfer.clearData()
-  }
-}
 </script>
 
 <style scoped>
-.node-library {
-  width: 250px;
-  height: 100%;
-  border-right: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  background-color: #f8f9fa;
-}
-
-.node-library-header {
-  padding: 16px;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.node-library-header h3 {
-  margin: 0;
-  font-size: 16px;
-}
-
-.node-library-content {
-  flex: 1;
-  overflow-y: auto;
-  /* padding: 16px; */
-}
-
-.node-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
 .node-form {
   background-color: white;
   border: 1px solid #ddd;
@@ -347,65 +208,6 @@ const onDragEnd = (event: DragEvent) => {
 .node-form.expanded .form-content {
   max-height: 1000px;
   transition: max-height 0.5s ease-in;
-}
-
-.node-popup {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-  min-width: 200px;
-  margin-top: 8px;
-}
-
-.node-form:hover .node-popup {
-  display: block;
-}
-
-.popup-content {
-  font-size: 12px;
-}
-
-.popup-item {
-  margin-bottom: 4px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.popup-label {
-  color: #666;
-  margin-right: 8px;
-}
-
-.popup-value {
-  color: #333;
-  font-weight: 500;
-}
-
-.node-content {
-  font-size: 16px;
-  color: #333;
-}
-
-.delete-btn {
-  padding: 6px 12px;
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.delete-btn:hover {
-  background-color: #c82333;
 }
 
 .tab-group {
@@ -463,20 +265,39 @@ const onDragEnd = (event: DragEvent) => {
   margin: 5px;
 }
 
-.submit-btn {
+.btn {
   padding: 6px 12px;
   border: none;
   border-radius: 4px;
+  color: white;
   cursor: pointer;
   font-size: 14px;
+}
+
+.submit-btn {
   background-color: #26a862;
 }
 
 .submit-btn:hover {
-  transform: scale(1.05);
-  /* 放大 1.2 倍 */
+  background-color: #229357;
+}
 
-  /* background-color: #45a049; */
+.cancel-btn {
+  background-color: #ffffff;
+  color: black;
+  border: 2px solid #ddd;
+}
+
+.cancel-btn:hover {
+  background-color: #efefef;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
 }
 
 .form-group {
