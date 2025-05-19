@@ -382,9 +382,11 @@ const cancelEdit = () => {
 }
 
 .form-actions {
+  justify-content: center;
+  align-items: center;
   display: flex;
   gap: 8px;
-  margin-top: 16px;
+  margin: 16px;
 }
 
 .submit-btn,
