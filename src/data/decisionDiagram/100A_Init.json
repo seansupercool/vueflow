@@ -2,19 +2,18 @@
   "nodes": [
     {
       "id": "node-0",
-      "label": "險種",
       "position": {
         "x": 464.5771452822362,
         "y": -355.3196878733455
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "險種",
+        "desc": "此欄位代表「險種」的值",
+        "columnName": "險種",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -22,19 +21,18 @@
     },
     {
       "id": "node-1",
-      "label": "有無併發症及共病",
       "position": {
         "x": -1414.2115873146372,
         "y": -101.31400105284283
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "有無併發症及共病",
+        "desc": "此欄位代表「有無併發症及共病」的值",
+        "columnName": "有無併發症及共病",
+        "dataType": "3",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -42,19 +40,18 @@
     },
     {
       "id": "node-2",
-      "label": "投保年齡:",
       "position": {
         "x": -3018.6140163862638,
         "y": 100.57865388016728
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -62,19 +59,18 @@
     },
     {
       "id": "node-4",
-      "label": "結果: D",
       "position": {
         "x": -3466.618374942711,
         "y": 391.6341254392182
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -82,19 +78,18 @@
     },
     {
       "id": "node-6",
-      "label": "結果: 150",
       "position": {
         "x": -3306.243374942711,
         "y": 390.6341254392182
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 150",
+        "desc": "此欄位代表「結果: 150」的值",
+        "columnName": "結果150",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -102,19 +97,18 @@
     },
     {
       "id": "node-8",
-      "label": "結果: 145",
       "position": {
         "x": -3150.243374942711,
         "y": 389.6341254392182
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 145",
+        "desc": "此欄位代表「結果: 145」的值",
+        "columnName": "結果145",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -122,19 +116,18 @@
     },
     {
       "id": "node-10",
-      "label": "結果: 90",
       "position": {
         "x": -2987.993374942711,
         "y": 391.5091254392182
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 90",
+        "desc": "此欄位代表「結果: 90」的值",
+        "columnName": "結果90",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -142,19 +135,18 @@
     },
     {
       "id": "node-12",
-      "label": "結果: 35",
       "position": {
         "x": -2826.871687471356,
         "y": 390.0530004583146
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 35",
+        "desc": "此欄位代表「結果: 35」的值",
+        "columnName": "結果35",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -162,19 +154,18 @@
     },
     {
       "id": "node-14",
-      "label": "結果: 25",
       "position": {
         "x": -2660.743374942711,
         "y": 389.1341254392182
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 25",
+        "desc": "此欄位代表「結果: 25」的值",
+        "columnName": "結果25",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -182,19 +173,18 @@
     },
     {
       "id": "node-15",
-      "label": "併發症類型",
       "position": {
         "x": -1399.202084568839,
         "y": 34.09710574677855
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "併發症類型",
+        "desc": "此欄位代表「併發症類型」的值",
+        "columnName": "併發症類型",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -202,19 +192,18 @@
     },
     {
       "id": "node-16",
-      "label": "投保年齡:",
       "position": {
         "x": -1941.2186620534449,
         "y": 279.6551214550845
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -222,19 +211,18 @@
     },
     {
       "id": "node-18",
-      "label": "結果: D",
       "position": {
         "x": -2100.5,
         "y": 440
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -242,19 +230,18 @@
     },
     {
       "id": "node-20",
-      "label": "結果: 185",
       "position": {
         "x": -1938.3516482123405,
         "y": 438.7466586864174
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 185",
+        "desc": "此欄位代表「結果: 185」的值",
+        "columnName": "結果185",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -262,19 +249,18 @@
     },
     {
       "id": "node-22",
-      "label": "結果: 100",
       "position": {
         "x": -1781.25,
         "y": 442
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 100",
+        "desc": "此欄位代表「結果: 100」的值",
+        "columnName": "結果100",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -282,19 +268,18 @@
     },
     {
       "id": "node-23",
-      "label": "投保年齡:",
       "position": {
         "x": -2390.7265922000433,
         "y": 281.9616377851937
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -302,19 +287,18 @@
     },
     {
       "id": "node-25",
-      "label": "結果: D",
       "position": {
         "x": -2474.75,
         "y": 450
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -322,19 +306,18 @@
     },
     {
       "id": "node-27",
-      "label": "結果: 70",
       "position": {
         "x": -2273.5,
         "y": 444
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 70",
+        "desc": "此欄位代表「結果: 70」的值",
+        "columnName": "結果70",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -342,19 +325,18 @@
     },
     {
       "id": "node-28",
-      "label": "投保年齡:",
       "position": {
         "x": -590.6722710357274,
         "y": 264.62062603610883
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -362,19 +344,18 @@
     },
     {
       "id": "node-30",
-      "label": "結果: D",
       "position": {
         "x": -676.1671312505166,
         "y": 439.64609372820433
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -382,19 +363,18 @@
     },
     {
       "id": "node-32",
-      "label": "結果: 125",
       "position": {
         "x": -514.9576517324731,
         "y": 439.7339430617144
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 125",
+        "desc": "此欄位代表「結果: 125」的值",
+        "columnName": "結果125",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -402,19 +382,18 @@
     },
     {
       "id": "node-33",
-      "label": "投保年齡:",
       "position": {
         "x": -1550.2233209721767,
         "y": 277.29370881357846
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -422,19 +401,18 @@
     },
     {
       "id": "node-35",
-      "label": "結果: D",
       "position": {
         "x": -1623.7940068367675,
         "y": 441.39529948228335
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -442,19 +420,18 @@
     },
     {
       "id": "node-37",
-      "label": "結果: 100",
       "position": {
         "x": -1469.3065980158053,
         "y": 440.21261620634505
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 100",
+        "desc": "此欄位代表「結果: 100」的值",
+        "columnName": "結果100",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -462,19 +439,18 @@
     },
     {
       "id": "node-38",
-      "label": "投保年齡:",
       "position": {
         "x": -1088.2369616521096,
         "y": 271.5950605683244
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -482,19 +458,18 @@
     },
     {
       "id": "node-40",
-      "label": "結果: D",
       "position": {
         "x": -1312.714968878126,
         "y": 440.0572256893237
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -502,19 +477,18 @@
     },
     {
       "id": "node-42",
-      "label": "結果: 245",
       "position": {
         "x": -1160.8786727575261,
         "y": 440.3350934476607
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 245",
+        "desc": "此欄位代表「結果: 245」的值",
+        "columnName": "結果245",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -522,19 +496,18 @@
     },
     {
       "id": "node-44",
-      "label": "結果: 115",
       "position": {
         "x": -999.3826856888603,
         "y": 441.38239818914985
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 115",
+        "desc": "此欄位代表「結果: 115」的值",
+        "columnName": "結果115",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -542,19 +515,18 @@
     },
     {
       "id": "node-46",
-      "label": "結果: 75",
       "position": {
         "x": -841.9962236811234,
         "y": 443.10039978684824
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 75",
+        "desc": "此欄位代表「結果: 75」的值",
+        "columnName": "結果75",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -562,19 +534,18 @@
     },
     {
       "id": "node-47",
-      "label": "共病類型",
       "position": {
         "x": 710.9208407637458,
         "y": 60.01978980906354
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "共病類型",
+        "desc": "此欄位代表「共病類型」的值",
+        "columnName": "共病類型",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -582,19 +553,18 @@
     },
     {
       "id": "node-48",
-      "label": "投保年齡:",
       "position": {
         "x": 716.2802458401227,
         "y": 252.4147051795314
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -602,19 +572,18 @@
     },
     {
       "id": "node-50",
-      "label": "結果: D",
       "position": {
         "x": 951.3126514362642,
         "y": 437.2166457892444
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -622,19 +591,18 @@
     },
     {
       "id": "node-52",
-      "label": "結果: 225",
       "position": {
         "x": 461.9301554328597,
         "y": 437.27346041161604
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 225",
+        "desc": "此欄位代表「結果: 225」的值",
+        "columnName": "結果225",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -642,19 +610,18 @@
     },
     {
       "id": "node-54",
-      "label": "結果: 110",
       "position": {
         "x": 628.3202040740172,
         "y": 437.1438335652121
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 110",
+        "desc": "此欄位代表「結果: 110」的值",
+        "columnName": "結果110",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -662,19 +629,18 @@
     },
     {
       "id": "node-56",
-      "label": "結果: 60",
       "position": {
         "x": 789.8164277551407,
         "y": 437.14383356521216
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 60",
+        "desc": "此欄位代表「結果: 60」的值",
+        "columnName": "結果60",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -682,19 +648,18 @@
     },
     {
       "id": "node-57",
-      "label": "投保年齡:",
       "position": {
         "x": -10.82717755357892,
         "y": 255.1988288529097
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -702,19 +667,18 @@
     },
     {
       "id": "node-59",
-      "label": "結果: D",
       "position": {
         "x": -340.71100769541283,
         "y": 438.34292067468147
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -722,19 +686,18 @@
     },
     {
       "id": "node-61",
-      "label": "結果: 190",
       "position": {
         "x": -184.09525336215916,
         "y": 437.5011822868242
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 190",
+        "desc": "此欄位代表「結果: 190」的值",
+        "columnName": "結果190",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -742,19 +705,18 @@
     },
     {
       "id": "node-63",
-      "label": "結果: 100",
       "position": {
         "x": -26.568087384012955,
         "y": 438.21517014122884
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 100",
+        "desc": "此欄位代表「結果: 100」的值",
+        "columnName": "結果100",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -762,19 +724,18 @@
     },
     {
       "id": "node-65",
-      "label": "結果: 35",
       "position": {
         "x": 130.85629033721546,
         "y": 438.23694536525375
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 35",
+        "desc": "此欄位代表「結果: 35」的值",
+        "columnName": "結果35",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -782,19 +743,18 @@
     },
     {
       "id": "node-67",
-      "label": "結果: 25",
       "position": {
         "x": 288.0743900619423,
         "y": 437.14222262359846
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 25",
+        "desc": "此欄位代表「結果: 25」的值",
+        "columnName": "結果25",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -802,19 +762,18 @@
     },
     {
       "id": "node-68",
-      "label": "投保年齡:",
       "position": {
         "x": 1200.6283392751145,
         "y": 250.21771640043707
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "C",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "投保年齡:",
+        "desc": "此欄位代表「投保年齡:」的值",
+        "columnName": "投保年齡",
+        "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -822,19 +781,18 @@
     },
     {
       "id": "node-70",
-      "label": "結果: D",
       "position": {
         "x": 1302.3872316849038,
         "y": 436.48499495706403
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -842,19 +800,18 @@
     },
     {
       "id": "node-72",
-      "label": "結果: 155",
       "position": {
         "x": 1132.5200603502483,
         "y": 436.3656826857167
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 155",
+        "desc": "此欄位代表「結果: 155」的值",
+        "columnName": "結果155",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -862,19 +819,18 @@
     },
     {
       "id": "node-74",
-      "label": "結果: D",
       "position": {
         "x": 1477.3386873704853,
         "y": 243.88765480617772
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -882,19 +838,18 @@
     },
     {
       "id": "node-76",
-      "label": "結果: D",
       "position": {
         "x": 1665.405507009642,
         "y": 245.88765480617772
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -902,19 +857,18 @@
     },
     {
       "id": "node-78",
-      "label": "結果: 無標準",
       "position": {
         "x": 1831.3553922802744,
         "y": 243.83754007681017
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 無標準",
+        "desc": "此欄位代表「結果: 無標準」的值",
+        "columnName": "結果無標準",
+        "dataType": "3",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -922,19 +876,18 @@
     },
     {
       "id": "node-80",
-      "label": "結果: 0",
       "position": {
         "x": 1999.3553922802746,
         "y": 241.83754007681014
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: 0",
+        "desc": "此欄位代表「結果: 0」的值",
+        "columnName": "結果0",
+        "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -942,19 +895,18 @@
     },
     {
       "id": "node-82",
-      "label": "結果: D",
       "position": {
         "x": 2175.288102233087,
         "y": 239.85424498659935
       },
       "type": "custom",
-      "forBE": {
+      "metadata": {
         "index": 0,
         "columnType": "R",
-        "label": "商品種類",
-        "desc": "定義比照",
-        "columnName": "PROD_CAT",
-        "dataType": "7",
+        "label": "結果: D",
+        "desc": "此欄位代表「結果: D」的值",
+        "columnName": "結果d",
+        "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
         "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
@@ -966,13 +918,12 @@
       "id": "e1",
       "source": "node-0",
       "target": "node-1",
-      "label": "壽險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -982,13 +933,12 @@
       "id": "e2",
       "source": "node-1",
       "target": "node-2",
-      "label": "無併發症、無共病",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -998,13 +948,12 @@
       "id": "e4",
       "source": "node-2",
       "target": "node-4",
-      "label": "～19歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1014,13 +963,12 @@
       "id": "e5",
       "source": "node-2",
       "target": "node-6",
-      "label": "20～29歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1030,13 +978,12 @@
       "id": "e8",
       "source": "node-2",
       "target": "node-8",
-      "label": "30～39歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1046,13 +993,12 @@
       "id": "e10",
       "source": "node-2",
       "target": "node-10",
-      "label": "40～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1062,13 +1008,12 @@
       "id": "e12",
       "source": "node-2",
       "target": "node-12",
-      "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1078,13 +1023,12 @@
       "id": "e14",
       "source": "node-2",
       "target": "node-14",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1094,13 +1038,12 @@
       "id": "e15",
       "source": "node-1",
       "target": "node-15",
-      "label": "有併發症",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1110,13 +1053,12 @@
       "id": "e16",
       "source": "node-15",
       "target": "node-16",
-      "label": "增值性視網膜病變",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1126,13 +1068,12 @@
       "id": "e18",
       "source": "node-16",
       "target": "node-18",
-      "label": "～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1142,13 +1083,12 @@
       "id": "e20",
       "source": "node-16",
       "target": "node-20",
-      "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1158,13 +1098,12 @@
       "id": "e22",
       "source": "node-16",
       "target": "node-22",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1174,13 +1113,12 @@
       "id": "e23",
       "source": "node-15",
       "target": "node-23",
-      "label": "神經性病變",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1190,13 +1128,12 @@
       "id": "e25",
       "source": "node-23",
       "target": "node-25",
-      "label": "～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1206,13 +1143,12 @@
       "id": "e27",
       "source": "node-23",
       "target": "node-27",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1222,13 +1158,12 @@
       "id": "e28",
       "source": "node-15",
       "target": "node-28",
-      "label": "肢端壞疽",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1238,13 +1173,12 @@
       "id": "e30",
       "source": "node-28",
       "target": "node-30",
-      "label": "～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1254,13 +1188,12 @@
       "id": "e31",
       "source": "node-28",
       "target": "node-32",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1270,13 +1203,12 @@
       "id": "e33",
       "source": "node-15",
       "target": "node-33",
-      "label": "蜂窩組織炎及膿瘍",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1286,13 +1218,12 @@
       "id": "e35",
       "source": "node-33",
       "target": "node-35",
-      "label": "～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1302,13 +1233,12 @@
       "id": "e37",
       "source": "node-33",
       "target": "node-37",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1318,13 +1248,12 @@
       "id": "e38",
       "source": "node-15",
       "target": "node-38",
-      "label": "蛋白尿(2＋)以上",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1334,13 +1263,12 @@
       "id": "e40",
       "source": "node-38",
       "target": "node-40",
-      "label": "～39歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1350,13 +1278,12 @@
       "id": "e42",
       "source": "node-38",
       "target": "node-42",
-      "label": "40～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1366,13 +1293,12 @@
       "id": "e44",
       "source": "node-38",
       "target": "node-44",
-      "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1382,13 +1308,12 @@
       "id": "e46",
       "source": "node-38",
       "target": "node-46",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1398,13 +1323,12 @@
       "id": "e47",
       "source": "node-1",
       "target": "node-47",
-      "label": "有共病",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1414,13 +1338,12 @@
       "id": "e48",
       "source": "node-47",
       "target": "node-48",
-      "label": "高血壓",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1430,13 +1353,12 @@
       "id": "e49",
       "source": "node-48",
       "target": "node-50",
-      "label": "～39歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1446,13 +1368,12 @@
       "id": "e51",
       "source": "node-48",
       "target": "node-52",
-      "label": "40～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1462,13 +1383,12 @@
       "id": "e53",
       "source": "node-48",
       "target": "node-54",
-      "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1478,13 +1398,12 @@
       "id": "e55",
       "source": "node-48",
       "target": "node-56",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1494,13 +1413,12 @@
       "id": "e57",
       "source": "node-47",
       "target": "node-57",
-      "label": "高血脂",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1510,13 +1428,12 @@
       "id": "e58",
       "source": "node-57",
       "target": "node-59",
-      "label": "～29歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1526,13 +1443,12 @@
       "id": "e60",
       "source": "node-57",
       "target": "node-61",
-      "label": "30～39歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1542,13 +1458,12 @@
       "id": "e62",
       "source": "node-57",
       "target": "node-63",
-      "label": "40～49歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1558,13 +1473,12 @@
       "id": "e64",
       "source": "node-57",
       "target": "node-65",
-      "label": "50～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1574,13 +1488,12 @@
       "id": "e66",
       "source": "node-57",
       "target": "node-67",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1590,13 +1503,12 @@
       "id": "e68",
       "source": "node-47",
       "target": "node-68",
-      "label": "腦中風",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1606,13 +1518,12 @@
       "id": "e69",
       "source": "node-68",
       "target": "node-70",
-      "label": "～64歲",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1622,13 +1533,12 @@
       "id": "e71",
       "source": "node-68",
       "target": "node-72",
-      "label": "65歲～",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1638,13 +1548,12 @@
       "id": "e73",
       "source": "node-0",
       "target": "node-74",
-      "label": "重大疾病險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1654,13 +1563,12 @@
       "id": "e75",
       "source": "node-0",
       "target": "node-76",
-      "label": "醫療險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1670,13 +1578,12 @@
       "id": "e77",
       "source": "node-0",
       "target": "node-78",
-      "label": "長期照顧險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1686,13 +1593,12 @@
       "id": "e79",
       "source": "node-0",
       "target": "node-80",
-      "label": "防癌險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"
@@ -1702,13 +1608,12 @@
       "id": "e81",
       "source": "node-0",
       "target": "node-82",
-      "label": "傷害險",
       "animated": false,
       "style": {
         "stroke": "#000"
       },
       "type": "default",
-      "forBE": {
+      "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "1"

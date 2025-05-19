@@ -25,8 +25,8 @@ import initData from './data/decisionDiagram/100A_Init.json'
   type: 'custom',
   position: node.position,
   data: {
-    label: node.label,
-    forBE: node.forBE
+    label: node.metadata.label,
+    metadata: node.metadata
   }
 })))
 const edges = ref<Edge[]>(initData.edges)
@@ -86,6 +86,11 @@ watch(
   { deep: true },
 )
 
+const getStructure = () => {
+  console.log('🟢 nodes:', nodes.value)
+  console.log('🟠 edges:', edges.value)
+}
+
 onConnect(onConnectHandler)
 </script>
 
@@ -108,6 +113,7 @@ onConnect(onConnectHandler)
         <Controls />
         <MiniMap />
       </VueFlow>
+      <button @click="getStructure" class="submit-btn">取得結構</button>
     </div>
   </div>
 </template>
