@@ -6,24 +6,24 @@
     </div>
     <div class="form-content">
       <div class="tab-group">
-        <button :class="['tab-btn', { active: newNodeData.columnType === 'C' }]" @click="newNodeData.columnType = 'C'">
+        <button :class="['tab-btn', { active: nodeData.columnType === 'C' }]" @click="nodeData.columnType = 'C'">
           決策元件
         </button>
-        <button :class="['tab-btn', { active: newNodeData.columnType === 'R' }]" @click="newNodeData.columnType = 'R'">
+        <button :class="['tab-btn', { active: nodeData.columnType === 'R' }]" @click="nodeData.columnType = 'R'">
           結果元件
         </button>
       </div>
       <div class="form-group">
         <label>中文名稱：</label>
-        <input v-model="newNodeData.label" type="text" placeholder="請輸入顯示名稱">
+        <input v-model="nodeData.label" type="text" placeholder="請輸入顯示名稱">
       </div>
       <div class="form-group">
         <label>欄位名稱：</label>
-        <input v-model="newNodeData.columnName" type="text" placeholder="請輸入欄位名">
+        <input v-model="nodeData.columnName" type="text" placeholder="請輸入欄位名">
       </div>
       <div class="form-group">
         <label>資料格式：</label>
-        <select v-model="newNodeData.dataType" class="form-select">
+        <select v-model="nodeData.dataType" class="form-select">
           <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
             {{ option.label }}
           </option>
@@ -31,7 +31,7 @@
       </div>
       <div class="form-group">
         <label>詳細內容：</label>
-        <textarea v-model="newNodeData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
+        <textarea v-model="nodeData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
       </div>
       <div class="form-actions">
         <button @click="handleSubmit" class="btn submit-btn">確定</button>
@@ -44,17 +44,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import type { Node } from '@vue-flow/core'
+import { DataType } from '../core/enums'
 
-enum DataType {
-  STRING = '1',
-  INTEGER = '2',
-  DECIMAL = '3',
-  DATE = '4',
-  TIME = '5',
-  BOOLEAN = '6',
-  CODE = '7',
-  VARIABLE = '8'
-}
+defineProps<{
+  node: CustomNode
+}>()
 
 const dataTypeOptions = [
   { value: DataType.STRING, label: '字串' },
@@ -67,7 +62,6 @@ const dataTypeOptions = [
   { value: DataType.VARIABLE, label: '變數' }
 ]
 
-const nodes = ref<CustomNode[]>([])
 const showForm = ref(false)
 const expandedNodeId = ref<string | null>(null)
 
@@ -81,7 +75,7 @@ interface NodeFormData {
   codeUid?: string
 }
 
-const newNodeData = ref<NodeFormData>({
+const nodeData = ref<NodeFormData>({
   label: '',
   columnType: 'C',
   desc: '',
@@ -94,7 +88,7 @@ const newNodeData = ref<NodeFormData>({
 const toggleForm = () => {
   if (showForm.value) {
     showForm.value = false
-    newNodeData.value = {
+    nodeData.value = {
       label: '',
       columnType: 'C',
       desc: '',
@@ -110,25 +104,8 @@ const toggleForm = () => {
 }
 
 const handleSubmit = () => {
-  const newNode: CustomNode = {
-    id: `node-${nodes.value.length}`,
-    type: 'custom',
-    position: { x: 0, y: 0 },
-    data: {
-      index: nodes.value.length,
-      columnType: newNodeData.value.columnType,
-      label: newNodeData.value.label,
-      desc: newNodeData.value.desc,
-      columnName: newNodeData.value.columnName,
-      dataType: newNodeData.value.dataType,
-      mandatory: true,
-      codeId: newNodeData.value.codeId,
-      codeUid: newNodeData.value.codeUid
-    }
-  }
-  nodes.value.push(newNode)
   showForm.value = false
-  newNodeData.value = {
+  nodeData.value = {
     label: '',
     columnType: 'C',
     desc: '',
