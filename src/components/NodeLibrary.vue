@@ -4,57 +4,27 @@
       <h3>元件庫</h3>
     </div>
     <div class="node-library-content">
-      <NodeItem></NodeItem>
-      <div class="node-form" :class="{ 'expanded': showForm }">
-        <div class="form-header" style="background-color: #26a862;" @click="toggleForm">
-          <h3>新增</h3>
-          <div class="arrow-icon" :class="{ 'up': showForm }"></div>
-        </div>
-        <div class="form-content">
-          <div class="tab-group">
-            <button 
-              :class="['tab-btn', { active: newNodeData.columnType === 'C' }]"
-              @click="newNodeData.columnType = 'C'"
-            >
-              決策元件
-            </button>
-            <button 
-              :class="['tab-btn', { active: newNodeData.columnType === 'R' }]"
-              @click="newNodeData.columnType = 'R'"
-            >
-              結果元件
-            </button>
-          </div>
-          <div class="form-group">
-            <label>中文名稱：</label>
-            <input v-model="newNodeData.label" type="text" placeholder="請輸入顯示名稱">
-          </div>
-          <div class="form-group">
-            <label>欄位名稱：</label>
-            <input v-model="newNodeData.columnName" type="text" placeholder="請輸入欄位名">
-          </div>
-          <div class="form-group">
-            <label>資料格式：</label>
-            <select v-model="newNodeData.dataType" class="form-select">
-              <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
-                {{ option.label }}
-              </option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>詳細內容：</label>
-            <textarea 
-              v-model="newNodeData.desc" 
-              class="form-textarea" 
-              placeholder="請輸入詳細內容"
-              rows="4"
-            ></textarea>
-          </div>
-          <div class="form-actions">
-            <button @click="handleSubmit" class="submit-btn">確定</button>
-          </div>
-        </div>
-      </div>
+      <NodeItem
+        :is-new-node="true"
+        :node="{
+          id: '',
+          position: { x: 0, y: 0 },
+          type: '',
+          metadata: {
+            index: 0,
+            columnType: 'C',
+            label: '',
+            desc: '',
+            columnName: '',
+            dataType: '7',
+            mandatory: false,
+            codeId: '',
+            codeUid: ''
+          }
+        }"
+        :on-submit="handleSubmit"
+        :on-delete="() => {}"
+      ></NodeItem>
 
       <div class="node-list">
         <div 

@@ -46,9 +46,13 @@
 import { ref } from 'vue'
 import type { Node } from '@vue-flow/core'
 import { DataType } from '../core/enums'
+import type { GraphNode, NodeMetadata } from '../types/graph'
 
-defineProps<{
-  node: CustomNode
+const props = defineProps<{
+  isNewNode: boolean,
+  node: GraphNode,
+  onSubmit: (node: GraphNode) => void,
+  onDelete: () => void
 }>()
 
 const dataTypeOptions = [
@@ -65,55 +69,35 @@ const dataTypeOptions = [
 const showForm = ref(false)
 const expandedNodeId = ref<string | null>(null)
 
-interface NodeFormData {
-  label: string
-  columnType: string
-  desc: string
-  columnName: string
-  dataType: string
-  codeId?: string
-  codeUid?: string
-}
-
-const nodeData = ref<NodeFormData>({
+const nodeData = ref<NodeMetadata>({
   label: '',
   columnType: 'C',
   desc: '',
   columnName: '',
   dataType: '7',
   codeId: '',
-  codeUid: ''
+  codeUid: '',
+  index: 0,
+  mandatory: false
 })
 
 const toggleForm = () => {
   if (showForm.value) {
     showForm.value = false
-    nodeData.value = {
-      label: '',
-      columnType: 'C',
-      desc: '',
-      columnName: '',
-      dataType: '7',
-      codeId: '',
-      codeUid: ''
-    }
   } else {
-    expandedNodeId.value = null
     showForm.value = true
   }
 }
 
 const handleSubmit = () => {
   showForm.value = false
-  nodeData.value = {
-    label: '',
-    columnType: 'C',
-    desc: '',
-    columnName: '',
-    dataType: '7',
-    codeId: '',
-    codeUid: ''
+  const graphNode: GraphNode = {
+    id: "",
+    position: { x: 0, y: 0 },
+    type: "",
+    metadata: nodeData.value
   }
+  props.onSubmit(graphNode)
 }
 
 const handleCancel = () => {
@@ -121,16 +105,7 @@ const handleCancel = () => {
 }
 
 const handleDelete = () => {
-  
-}
-
-const toggleNodeForm = (node: CustomNode) => {
-  if (expandedNodeId.value === node.id) {
-    expandedNodeId.value = null
-  } else {
-    showForm.value = false
-    expandedNodeId.value = node.id
-  }
+  props.onDelete()
 }
 </script>
 

@@ -17,15 +17,18 @@ import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
 import NodeLibrary from './components/NodeLibrary.vue'
 import CustomNode from './components/CustomNode.vue'
-import initData from './data/decisionDiagram/100A_Init.json'
+import initData from './assets/data/decisionDiagram/100A_Init.json'
+import { useGraph } from './composable/useGraph'
+
+const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
 
 // const nodes = ref<Node[]>(initData.nodes)
-  const nodes = ref<Node[]>(initData.nodes.map(node => ({
+const nodes = ref<Node[]>(initData.nodes.map(node => ({
   id: node.id,
   type: 'custom',
   position: node.position,
+  label: node.metadata.label,
   data: {
-    label: node.metadata.label,
     metadata: node.metadata
   }
 })))
@@ -131,8 +134,8 @@ const onDrop = (event: DragEvent) => {
     <NodeLibrary class="node-library" />
     <div class="flow-container">
       <VueFlow
-        v-model:nodes="nodes"
-        v-model:edges="edges"
+        v-model:nodes="graphData.nodes"
+        v-model:edges="graphData.edges"
         :node-types="nodeTypes"
         :default-viewport="{ x: 0, y: 0, zoom: 1.5 }"
         :min-zoom="0.2"

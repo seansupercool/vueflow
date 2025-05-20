@@ -4,7 +4,7 @@ import '@vue-flow/core/dist/style.css'
 import '@vue-flow/core/dist/theme-default.css'
 import { parseUnderwritingData } from '../utils/underwritingParser'
 import underwritingData from '../data/underwriting/100A.json'
-import initData from '../data/decisionDiagram/100A_init.json'
+import initData from '../assets/data/decisionDiagram/100A_init.json'
 import { ref, markRaw, shallowRef } from 'vue'
 import CustomNode from './CustomNode.vue' // <== 這裡！
 

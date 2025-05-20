@@ -1,3 +1,5 @@
+import type { Node, Edge } from '@vue-flow/core'
+
 export interface NodePosition {
   x: number;
   y: number;
@@ -33,12 +35,12 @@ export interface GraphEdge {
   source: string;
   target: string;
   animated: boolean;
-  style: object;
+  style: Record<string, any>;
   type: string;
   metadata: EdgeMetadata;
 }
 
-export interface GraphData {
-  nodes: GraphNode[];
-  edges: GraphEdge[];
+export interface VueFlowData {
+  nodes: Node[];
+  edges: Edge[];
 }
