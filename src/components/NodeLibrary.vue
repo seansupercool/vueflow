@@ -5,30 +5,14 @@
     </div>
     <div class="node-library-content">
       <NodeItem
-        :is-new-node="true"
-        :node="{
-          id: '',
-          position: { x: 0, y: 0 },
-          type: '',
-          metadata: {
-            index: 0,
-            columnType: 'C',
-            label: '',
-            desc: '',
-            columnName: '',
-            dataType: '7',
-            mandatory: false,
-            codeId: '',
-            codeUid: ''
-          }
-        }"
-        :on-submit="handleSubmit"
-        :on-delete="() => {}"
+        :isNewNode="true"
+        :onSubmit="handleSubmit"
+        :onDelete="() => {}"
       ></NodeItem>
 
       <div class="node-list">
         <div 
-          v-for="(node, index) in nodes" 
+          v-for="(node, index) in graphNodes" 
           :key="index" 
           class="node-form"
           :class="{ 'expanded': expandedNodeId === node.id }"
@@ -37,35 +21,35 @@
           @dragend="onDragEnd"
         >
           <div class="form-header" @click="toggleNodeForm(node)">
-            <h3>{{ node.data.label || '新節點' }}</h3>
+            <h3>{{ node.metadata.label || '新節點' }}</h3>
             <div class="arrow-icon" :class="{ 'up': expandedNodeId === node.id }"></div>
           </div>
           <div class="node-popup">
             <div class="popup-content">
               <div class="popup-item">
                 <span class="popup-label">類型：</span>
-                <span class="popup-value">{{ node.data.forBE?.columnType === 'R' ? '結果元件' : '決策元件' }}</span>
+                <span class="popup-value">{{ node.metadata.columnType === 'R' ? '結果元件' : '決策元件' }}</span>
               </div>
               <div class="popup-item">
                 <span class="popup-label">欄位名：</span>
-                <span class="popup-value">{{ node.data.forBE?.columnName }}</span>
+                <span class="popup-value">{{ node.metadata.columnName }}</span>
               </div>
               <div class="popup-item">
                 <span class="popup-label">資料格式：</span>
-                <span class="popup-value">{{ getDataTypeLabel(node.data.forBE?.dataType) }}</span>
+                <span class="popup-value">{{ getDataTypeLabel(node.metadata.dataType) }}</span>
               </div>
             </div>
           </div>
           <div class="form-content">
             <div class="tab-group">
               <button 
-                :class="['tab-btn', { active: node.data.forBE?.columnType === 'C' }]"
+                :class="['tab-btn', { active: node.metadata.columnType === 'C' }]"
                 @click="updateNodeType(node, 'C')"
               >
                 決策元件
               </button>
               <button 
-                :class="['tab-btn', { active: node.data.forBE?.columnType === 'R' }]"
+                :class="['tab-btn', { active: node.metadata.columnType === 'R' }]"
                 @click="updateNodeType(node, 'R')"
               >
                 結果元件
@@ -73,15 +57,15 @@
             </div>
             <div class="form-group">
               <label>中文名稱：</label>
-              <input v-model="node.data.label" type="text" placeholder="請輸入顯示名稱">
+              <input v-model="node.metadata.label" type="text" placeholder="請輸入顯示名稱">
             </div>
             <div class="form-group">
               <label>欄位名稱：</label>
-              <input v-model="node.data.forBE.columnName" type="text" placeholder="請輸入欄位名">
+              <input v-model="node.metadata.columnName" type="text" placeholder="請輸入欄位名">
             </div>
             <div class="form-group">
               <label>資料格式：</label>
-              <select v-model="node.data.forBE.dataType" class="form-select">
+              <select v-model="node.metadata.dataType" class="form-select">
                 <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
                   {{ option.label }}
                 </option>
@@ -90,7 +74,7 @@
             <div class="form-group">
               <label>詳細內容：</label>
               <textarea 
-                v-model="node.data.forBE.desc" 
+                v-model="node.metadata.desc" 
                 class="form-textarea" 
                 placeholder="請輸入詳細內容"
                 rows="4"
@@ -111,6 +95,7 @@ import { ref } from 'vue'
 import type { Node } from '@vue-flow/core'
 import NodeItem from './NodeItem.vue'
 import { DataType } from '../core/enums'
+import type { GraphNode } from '../types/graph'
 
 const dataTypeOptions = [
   { value: DataType.STRING, label: '字串' },
@@ -123,68 +108,14 @@ const dataTypeOptions = [
   { value: DataType.VARIABLE, label: '變數' }
 ]
 
-const nodes = ref<Node[]>([])
+const graphNodes = ref<GraphNode[]>([])
 const showForm = ref(false)
 const expandedNodeId = ref<string | null>(null)
 
-interface NodeFormData {
-  label: string
-  columnType: string
-  desc: string
-  columnName: string
-  dataType: string
-}
 
-const newNodeData = ref<NodeFormData>({
-  label: '',
-  columnType: 'C',
-  desc: '',
-  columnName: '',
-  dataType: '7'
-})
-
-const toggleForm = () => {
-  if (showForm.value) {
-    showForm.value = false
-    newNodeData.value = {
-      label: '',
-      columnType: 'C',
-      desc: '',
-      columnName: '',
-      dataType: '7'
-    }
-  } else {
-    expandedNodeId.value = null
-    showForm.value = true
-  }
-}
-
-const handleSubmit = () => {
-  const newNode: Node = {
-    id: `node-${nodes.value.length}`,
-    type: 'custom',
-    position: { x: 0, y: 0 },
-    data: {
-      label: newNodeData.value.label,
-      forBE: {
-        columnType: newNodeData.value.columnType,
-        label: newNodeData.value.label,
-        desc: newNodeData.value.desc,
-        columnName: newNodeData.value.columnName,
-        dataType: newNodeData.value.dataType,
-        mandatory: true
-      }
-    }
-  }
-  nodes.value.push(newNode)
+const handleSubmit = (nodeData: GraphNode) => {
+  graphNodes.value.push(nodeData)
   showForm.value = false
-  newNodeData.value = {
-    label: '',
-    columnType: 'C',
-    desc: '',
-    columnName: '',
-    dataType: '7'
-  }
 }
 
 const toggleNodeForm = (node: Node) => {
@@ -197,8 +128,8 @@ const toggleNodeForm = (node: Node) => {
 }
 
 const updateNodeType = (node: Node, type: string) => {
-  if (node.data.forBE) {
-    node.data.forBE.columnType = type
+  if (node.metadata.columnType) {
+    node.metadata.columnType = type
   }
 }
 
@@ -222,14 +153,14 @@ const onDragStart = (event: DragEvent, node: Node) => {
     const nodeData = {
       type: 'custom',
       data: {
-        label: node.data.label,
+        label: node.metadata.label,
         forBE: {
-          columnType: node.data.forBE.columnType,
-          label: node.data.forBE.label,
-          desc: node.data.forBE.desc,
-          columnName: node.data.forBE.columnName,
-          dataType: node.data.forBE.dataType,
-          mandatory: node.data.forBE.mandatory
+          columnType: node.metadata.columnType,
+          label: node.metadata.label,
+          desc: node.metadata.desc,
+          columnName: node.metadata.columnName,
+          dataType: node.metadata.dataType,
+          mandatory: node.metadata.mandatory
         }
       }
     }

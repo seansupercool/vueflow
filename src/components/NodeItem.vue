@@ -1,29 +1,29 @@
 <template>
   <div class="node-form" :class="{ 'expanded': showForm }">
     <div class="form-header" style="background-color: #26a862;" @click="toggleForm">
-      <h3>新增</h3>
+      <h3>{{ isNewNode ? '新增' : formData.label }}</h3>
       <div class="arrow-icon" :class="{ 'up': showForm }"></div>
     </div>
     <div class="form-content">
       <div class="tab-group">
-        <button :class="['tab-btn', { active: nodeData.columnType === 'C' }]" @click="nodeData.columnType = 'C'">
+        <button :class="['tab-btn', { active: formData.columnType === 'C' }]" @click="formData.columnType = 'C'">
           決策元件
         </button>
-        <button :class="['tab-btn', { active: nodeData.columnType === 'R' }]" @click="nodeData.columnType = 'R'">
+        <button :class="['tab-btn', { active: formData.columnType === 'R' }]" @click="formData.columnType = 'R'">
           結果元件
         </button>
       </div>
       <div class="form-group">
         <label>中文名稱：</label>
-        <input v-model="nodeData.label" type="text" placeholder="請輸入顯示名稱">
+        <input v-model="formData.label" type="text" placeholder="請輸入顯示名稱">
       </div>
       <div class="form-group">
         <label>欄位名稱：</label>
-        <input v-model="nodeData.columnName" type="text" placeholder="請輸入欄位名">
+        <input v-model="formData.columnName" type="text" placeholder="請輸入欄位名">
       </div>
       <div class="form-group">
         <label>資料格式：</label>
-        <select v-model="nodeData.dataType" class="form-select">
+        <select v-model="formData.dataType" class="form-select">
           <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
             {{ option.label }}
           </option>
@@ -31,7 +31,7 @@
       </div>
       <div class="form-group">
         <label>詳細內容：</label>
-        <textarea v-model="nodeData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
+        <textarea v-model="formData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
       </div>
       <div class="form-actions">
         <button @click="handleSubmit" class="btn submit-btn">確定</button>
@@ -50,7 +50,7 @@ import type { GraphNode, NodeMetadata } from '../types/graph'
 
 const props = defineProps<{
   isNewNode: boolean,
-  node: GraphNode,
+  nodeData?: GraphNode,
   onSubmit: (node: GraphNode) => void,
   onDelete: () => void
 }>()
@@ -69,16 +69,17 @@ const dataTypeOptions = [
 const showForm = ref(false)
 const expandedNodeId = ref<string | null>(null)
 
-const nodeData = ref<NodeMetadata>({
-  label: '',
+const formData = ref<NodeMetadata>({
+  index: 0,
   columnType: 'C',
+  label: '',
   desc: '',
   columnName: '',
-  dataType: '7',
+  dataType: DataType.STRING,
+  mandatory: false,
   codeId: '',
   codeUid: '',
-  index: 0,
-  mandatory: false
+  ...(props.nodeData?.metadata || {})
 })
 
 const toggleForm = () => {
@@ -92,10 +93,8 @@ const toggleForm = () => {
 const handleSubmit = () => {
   showForm.value = false
   const graphNode: GraphNode = {
-    id: "",
-    position: { x: 0, y: 0 },
-    type: "",
-    metadata: nodeData.value
+    ...props.nodeData,
+    metadata: formData.value
   }
   props.onSubmit(graphNode)
 }
