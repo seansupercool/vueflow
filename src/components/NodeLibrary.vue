@@ -63,7 +63,11 @@ const handleSubmit = (nodeData: GraphNode) => {
 }
 
 const handleNewNodeSubmit = (nodeData: GraphNode) => {
-  emit('addNode', nodeData)
+  const newNodeData: GraphNode = {
+    ...nodeData,
+    type: 'custom'
+  }
+  emit('addNode', newNodeData)
   emit('closeNewNodeForm')
   expandedNodeId.value = null
 }
@@ -76,12 +80,17 @@ const deleteNode = (nodeData: GraphNode) => {
 
 <style scoped>
 .node-library {
+  position: fixed;
+  left: 0;
+  top: 0;
   width: 250px;
   height: 100%;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   background-color: #f8f9fa;
+  z-index: 1000;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .node-library-header {
@@ -268,26 +277,44 @@ const deleteNode = (nodeData: GraphNode) => {
 }
 
 .form-actions {
-  justify-content: center;
-  align-items: center;
   display: flex;
+  justify-content: flex-end;
   gap: 8px;
-  margin: 5px;
+  padding: 8px 16px;
+  border-top: 1px solid #ddd;
+  background-color: #f8f9fa;
 }
 
 .submit-btn {
   padding: 6px 12px;
+  background-color: #26a862;
+  color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  background-color: #26a862;
+  transition: all 0.2s ease;
 }
 
 .submit-btn:hover {
-  transform: scale(1.05); /* 放大 1.2 倍 */
-  
-  /* background-color: #45a049; */
+  background-color: #229357;
+  transform: translateY(-1px);
+}
+
+.cancel-btn {
+  padding: 6px 12px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+  transform: translateY(-1px);
 }
 
 .form-group {

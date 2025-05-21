@@ -237,9 +237,15 @@ const handleAddNode = (nodeData: GraphNode) => {
   
   const newNode: GraphNode = {
     ...nodeData,
-    position
+    position,
+    type: 'custom',
+    data: {
+      label: nodeData.metadata.label,
+      metadata: nodeData.metadata
+    }
   }
   
+  console.log('新增節點:', newNode)
   addNode(newNode)
   showNewNodeForm.value = false
 }
@@ -290,13 +296,13 @@ const handleAddNode = (nodeData: GraphNode) => {
 
 <style>
 .app-container {
-  display: flex;
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 .flow-container {
-  flex: 1;
+  width: 100%;
   height: 100%;
   position: relative;
 }
@@ -314,6 +320,7 @@ const handleAddNode = (nodeData: GraphNode) => {
 body {
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 .add-node-btn {
@@ -344,6 +351,27 @@ body {
 .plus-icon {
   font-size: 18px;
   font-weight: bold;
+}
+
+.submit-btn {
+  bottom: 20px;
+  right: 20px;
+  z-index: 5;
+  padding: 8px 16px;
+  background-color: #26a862;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #229357;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .node-form-overlay {
