@@ -36,7 +36,7 @@ const isEditing = ref(false)
 // 處理新增連接
 const onConnectHandler = (params: Connection) => {
   const newEdge: GraphEdge = {
-    id: `e${graphData.value.edges.length + 1}`,
+    id: `e${Date.now()}`,
     source: params.source,
     target: params.target,
     type: 'default',
