@@ -5,8 +5,11 @@ import '@vue-flow/core/dist/theme-default.css'
 import { parseUnderwritingData } from '../utils/underwritingParser'
 import underwritingData from '../data/underwriting/100A.json'
 import initData from '../assets/data/decisionDiagram/100A_init.json'
-import { ref, markRaw, shallowRef } from 'vue'
+import { ref, markRaw, shallowRef, provide } from 'vue'
 import CustomNode from './CustomNode.vue' // <== 這裡！
+
+const expandedNodeId = ref<string | null>(null)
+provide('expandedNodeId', expandedNodeId)
 
 // const { nodes: initialNodes, edges: initialEdges } = parseUnderwritingData(underwritingData)
 const { nodes: initialNodes, edges: initialEdges } = initData

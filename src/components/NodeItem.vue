@@ -1,10 +1,10 @@
 <template>
-  <div class="node-form" :class="{ 'expanded': showForm }">
-    <div class="form-header" :class="{ 'is-new': isNewNode }" @click="toggleForm">
+  <div class="node-form" :class="{ 'expanded': isExpanded }">
+    <div class="form-header" :class="{ 'is-new': isNewNode }" @click="$emit('toggle')">
       <h3>{{ isNewNode ? '新增' : formData.label }}</h3>
-      <div class="arrow-icon" :class="{ 'up': showForm }"></div>
+      <div class="arrow-icon" :class="{ 'up': isExpanded }"></div>
     </div>
-    <div class="form-content">
+    <div class="form-content" v-show="isExpanded">
       <div class="tab-group">
         <button :class="['tab-btn', { active: formData.columnType === 'C' }]" @click="formData.columnType = 'C'">
           決策元件
@@ -44,7 +44,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { Node } from '@vue-flow/core'
 import { DataType } from '../core/enums'
 import type { GraphNode, NodeMetadata } from '../types/graph'
 
@@ -52,8 +51,11 @@ const props = defineProps<{
   isNewNode: boolean,
   nodeData?: GraphNode,
   onSubmit?: (node: GraphNode) => void,
-  onDelete?: () => void
+  onDelete?: () => void,
+  isExpanded: boolean
 }>()
+
+defineEmits(['toggle'])
 
 const dataTypeOptions = [
   { value: DataType.STRING, label: '字串' },
@@ -65,9 +67,6 @@ const dataTypeOptions = [
   { value: DataType.CODE, label: '代碼' },
   { value: DataType.VARIABLE, label: '變數' }
 ]
-
-const showForm = ref(false)
-const expandedNodeId = ref<string | null>(null)
 
 const formData = ref<NodeMetadata>({
   index: 0,
@@ -82,21 +81,13 @@ const formData = ref<NodeMetadata>({
   ...(props.nodeData?.metadata || {})
 })
 
-const toggleForm = () => {
-  if (showForm.value) {
-    showForm.value = false
-  } else {
-    showForm.value = true
-  }
-}
-
 const handleSubmit = () => {
-  showForm.value = false
   const graphNode: GraphNode = {
     ...props.nodeData,
     metadata: formData.value
   }
-  props.onSubmit(graphNode)
+  console.log(JSON.stringify(graphNode))
+  props.onSubmit?.(graphNode)
   
   if (props.isNewNode) {
     formData.value = {
@@ -114,11 +105,11 @@ const handleSubmit = () => {
 }
 
 const handleCancel = () => {
-  showForm.value = false
+  // 不需要在這裡處理，由父組件控制
 }
 
 const handleDelete = () => {
-  props.onDelete()
+  props.onDelete?.()
 }
 </script>
 

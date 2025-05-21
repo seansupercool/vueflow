@@ -7,6 +7,8 @@
       <NodeItem
         :isNewNode="true"
         :onSubmit="handleSubmit"
+        :isExpanded="expandedNodeId === 'new'"
+        @toggle="handleToggle('new')"
       ></NodeItem>
 
       <div class="node-list">
@@ -17,6 +19,8 @@
           :nodeData="graphNode"
           :onSubmit="handleSubmit"
           :onDelete="() => deleteNode(graphNode)"
+          :isExpanded="expandedNodeId === graphNode.id"
+          @toggle="handleToggle(graphNode.id)"
         ></NodeItem>
       </div>
     </div>
@@ -42,13 +46,24 @@ const dataTypeOptions = [
 ]
 
 const graphNodes = ref<GraphNode[]>([])
-const showForm = ref(false)
 const expandedNodeId = ref<string | null>(null)
 
+const handleToggle = (nodeId: string) => {
+  if (expandedNodeId.value === nodeId) {
+    expandedNodeId.value = null
+  } else {
+    expandedNodeId.value = nodeId
+  }
+}
 
 const handleSubmit = (nodeData: GraphNode) => {
-  graphNodes.value.push(nodeData)
-  showForm.value = false
+  // 為新建的節點生成唯一 ID
+  const newNode = {
+    ...nodeData,
+    id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+  }
+  graphNodes.value.push(newNode)
+  expandedNodeId.value = null
 }
 
 const deleteNode = (nodeData: GraphNode) => {
