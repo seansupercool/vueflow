@@ -1,5 +1,5 @@
 <template>
-  <div class="node-library">
+  <div class="node-library" v-if="selectedNode">
     <div class="node-library-header">
       <h3>元件庫</h3>
     </div>
@@ -9,6 +9,7 @@
         :onSubmit="handleSubmit"
         :isExpanded="!selectedNode"
         @toggle="handleToggle('new')"
+        @cancel="handleCancel"
       ></NodeItem>
 
       <div class="node-list">
@@ -21,6 +22,7 @@
           :onDelete="() => deleteNode(selectedNode)"
           :isExpanded="true"
           @toggle="handleToggle(selectedNode.id)"
+          @cancel="handleCancel"
         ></NodeItem>
       </div>
     </div>
@@ -54,13 +56,18 @@ const handleToggle = (nodeId: string) => {
 
 const handleSubmit = (nodeData: GraphNode) => {
   emit('updateNode', nodeData)
-  emit('update:selectedNode', nodeData)
+  emit('update:selectedNode', null)
   expandedNodeId.value = null
 }
 
 const deleteNode = (nodeData: GraphNode) => {
   emit('deleteNode', nodeData.id)
   emit('update:selectedNode', null)
+}
+
+const handleCancel = () => {
+  emit('update:selectedNode', null)
+  expandedNodeId.value = null
 }
 </script>
 

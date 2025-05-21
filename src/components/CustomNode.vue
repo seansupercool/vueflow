@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { NodeProps } from '@vue-flow/core'
 import { Handle, Position } from '@vue-flow/core'
+import { computed } from 'vue'
 
 interface CustomNodeData {
   label: string
@@ -14,11 +15,28 @@ interface CustomNodeData {
   }
 }
 
-defineProps<NodeProps<CustomNodeData>>()
+const props = defineProps<NodeProps<CustomNodeData>>()
+
+// 計算屬性來判斷當前節點是否被選中
+const isSelected = computed(() => {
+  return props.selected
+})
+
+const handleClick = () => {
+  isSelected.value = true
+}
+
+const handlePaneClick = () => {
+  isSelected.value = false
+}
 </script>
 
 <template>
-  <div class="custom-node">
+  <div 
+    class="custom-node" 
+    :class="{ 'selected': isSelected }"
+    @click="handleClick"
+  >
     <Handle type="target" :position="Position.Top" />
     <div class="node-content" :class="{ 'result-node': data.metadata?.columnType === 'R' }">
       {{ data.metadata?.label || data.label }}
@@ -35,6 +53,12 @@ defineProps<NodeProps<CustomNodeData>>()
   border: 1px solid #ddd;
   min-width: 150px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.custom-node.selected {
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
 }
 
 .node-content {

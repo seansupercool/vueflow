@@ -64,7 +64,7 @@ const props = defineProps<{
   isExpanded: boolean
 }>()
 
-defineEmits(['toggle'])
+const emit = defineEmits(['toggle', 'cancel'])
 
 const dataTypeOptions = [
   { value: DataType.STRING, label: '字串' },
@@ -161,6 +161,8 @@ const handleCancel = () => {
   if (props.nodeData?.metadata) {
     formData.value = { ...props.nodeData.metadata }
   }
+  // 觸發取消事件，通知父組件關閉元件庫
+  emit('cancel')
 }
 
 const handleDelete = () => {

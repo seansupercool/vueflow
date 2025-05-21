@@ -57,6 +57,23 @@ const onNodeClick = (event: NodeMouseEvent) => {
     }
   }
   selectedNode.value = graphNode
+  
+  // 更新節點的選中狀態
+  graphData.value.nodes = graphData.value.nodes.map(n => ({
+    ...n,
+    selected: n.id === node.id
+  }))
+}
+
+// 處理點擊空白處
+const onPaneClick = () => {
+  selectedNode.value = null
+  
+  // 清除所有節點的選中狀態
+  graphData.value.nodes = graphData.value.nodes.map(n => ({
+    ...n,
+    selected: false
+  }))
 }
 
 // 處理新增連接
@@ -179,12 +196,24 @@ const handleNodeUpdate = (updatedNode: GraphNode) => {
     // 使用 updateNode 來更新節點
     updateNode(updatedNode.id, updatedData)
   }
+  
+  // 清除所有節點的選中狀態
+  graphData.value.nodes = graphData.value.nodes.map(n => ({
+    ...n,
+    selected: false
+  }))
 }
 
 // 處理節點刪除
 const handleNodeDelete = (nodeId: string) => {
   deleteNode(nodeId)
   selectedNode.value = null
+  
+  // 清除所有節點的選中狀態
+  graphData.value.nodes = graphData.value.nodes.map(n => ({
+    ...n,
+    selected: false
+  }))
 }
 </script>
 
@@ -211,6 +240,7 @@ const handleNodeDelete = (nodeId: string) => {
         @connect="onConnectHandler"
         @edge-click="onEdgeClick"
         @node-click="onNodeClick"
+        @pane-click="onPaneClick"
         @dragover="onDragOver"
         @drop="onDrop"
       >
