@@ -18,12 +18,13 @@ import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
 import NodeLibrary from './components/NodeLibrary.vue'
 import CustomNode from './components/CustomNode.vue'
+import EdgeForm from './components/EdgeForm.vue'
 import { useGraph } from './composable/useGraph'
 import type { GraphNode, GraphEdge } from './types/graph'
 import NodeItem from './components/NodeItem.vue'
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
-const { updateNode } = useVueFlow()
+const { updateNode, setEdges } = useVueFlow()
 
 const nodeTypes = {
   custom: CustomNode
@@ -102,9 +103,57 @@ const onConnectHandler = (params: Connection) => {
 
 // 處理點擊連接線
 const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
-  selectedEdge.value = edge
-  edgeUpdateText.value = edge.label as string || ''
+  console.log('🟢 edge:', edge.id)
+  const graphEdge: GraphEdge = {
+    id: edge.id,
+    source: edge.source,
+    target: edge.target,
+    type: edge.type || 'default',
+    animated: edge.animated || false,
+    style: edge.style || {},
+    metadata: {
+      columnName: edge.data?.metadata?.columnName || '',
+      expressionType: edge.data?.metadata?.expressionType || '',
+      entryText: edge.data?.metadata?.entryText || ''
+    }
+  }
+  selectedEdge.value = graphEdge
   isEditing.value = true
+}
+
+// 處理連接線更新
+const handleEdgeUpdate = (updatedEdge: GraphEdge) => {
+  const edgeIndex = graphData.value.edges.findIndex(e => e.id === updatedEdge.id)
+  if (edgeIndex !== -1) {
+    // 創建新的邊緣數據
+    const updatedEdgeData = {
+      ...graphData.value.edges[edgeIndex],
+      label: updatedEdge.metadata.entryText,
+      data: {
+        ...graphData.value.edges[edgeIndex].data,
+        label: updatedEdge.metadata.entryText,
+        metadata: {
+          columnName: updatedEdge.metadata.columnName,
+          expressionType: updatedEdge.metadata.expressionType,
+          entryText: updatedEdge.metadata.entryText
+        }
+      }
+    }
+    
+    // 更新邊緣數據
+    const newEdges = graphData.value.edges.map(edge => 
+      edge.id === updatedEdge.id ? updatedEdgeData : edge
+    )
+    setEdges(newEdges)
+  }
+  selectedEdge.value = null
+  isEditing.value = false
+}
+
+// 處理取消編輯連接線
+const handleEdgeCancel = () => {
+  selectedEdge.value = null
+  isEditing.value = false
 }
 
 onNodesChange((changes: NodeChange[]) => {
@@ -183,7 +232,6 @@ const onDrop = (event: DragEvent) => {
 // 處理節點更新
 const handleNodeUpdate = (updatedNode: GraphNode) => {
   const nodeIndex = graphData.value.nodes.findIndex(n => n.id === updatedNode.id)
-  console.log('🟢 nodeIndex:', nodeIndex)
   if (nodeIndex !== -1) {
     const updatedData = {
       ...graphData.value.nodes[nodeIndex],
@@ -263,6 +311,12 @@ const handleAddNode = (nodeData: GraphNode) => {
       @deleteNode="handleNodeDelete"
       @closeNewNodeForm="showNewNodeForm = false"
     />
+    <EdgeForm
+      v-if="isEditing"
+      :edge="selectedEdge"
+      @update="handleEdgeUpdate"
+      @cancel="handleEdgeCancel"
+    />
     <div class="flow-container">
       <button class="add-node-btn" @click="handleAddNodeClick">
         <span class="plus-icon">+</span>
@@ -288,6 +342,13 @@ const handleAddNode = (nodeData: GraphNode) => {
         <Background />
         <Controls />
         <MiniMap />
+        <template #edge-label="{ data }">
+          <div class="edge-label">
+            {{ data?.metadata?.columnName }}
+            {{ data?.metadata?.expressionType }}
+            {{ data?.metadata?.entryText }}
+          </div>
+        </template>
       </VueFlow>
       <button @click="getStructure" class="submit-btn">取得結構</button>
     </div>
@@ -395,5 +456,15 @@ body {
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.edge-label {
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
 }
 </style>
