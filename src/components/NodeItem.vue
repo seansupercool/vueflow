@@ -7,7 +7,10 @@
     @dragend="handleDragEnd"
   >
     <div class="form-header" :class="{ 'is-new': isNewNode }" @click="$emit('toggle')">
-      <h3>{{ isNewNode ? '新增' : formData.label }}</h3>
+      <h3 :class="{ 'decision-node': formData.columnType === 'C', 'result-node': formData.columnType === 'R' }">
+        <span v-if="!isNewNode" class="type-indicator">{{ formData.columnType === 'C' ? '條件:' : '結果:' }}</span>
+        {{ isNewNode ? '新增' : formData.label }}
+      </h3>
       <div class="arrow-icon" :class="{ 'up': isExpanded }"></div>
     </div>
     <div class="form-content" v-show="isExpanded">
@@ -154,4 +157,25 @@ const handleDelete = () => {
 
 <style lang="scss">
 @use '../styles/components/_node-item.scss';
+
+.form-header {
+  h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .type-indicator {
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+
+    &.decision-node {
+      color: #000000;
+    }
+    
+    &.result-node {
+      color: #26a862;
+    }
+  }
+}
 </style>
