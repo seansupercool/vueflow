@@ -21,7 +21,7 @@ defineProps<NodeProps<CustomNodeData>>()
   <div class="custom-node">
     <Handle type="target" :position="Position.Top" />
     <div class="node-content" :class="{ 'result-node': data.metadata?.columnType === 'R' }">
-      {{ data.label }}
+      {{ data.metadata?.label || data.label }}
     </div>
     <Handle type="source" :position="Position.Bottom" />
   </div>

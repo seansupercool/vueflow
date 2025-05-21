@@ -926,7 +926,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "壽險"
       }
     },
     {
@@ -941,7 +941,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "無併發症、無共病"
       }
     },
     {
@@ -956,7 +956,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～19歲"
       }
     },
     {
@@ -971,7 +971,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "20～29歲"
       }
     },
     {
@@ -986,7 +986,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "30～39歲"
       }
     },
     {
@@ -1001,7 +1001,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "40～49歲"
       }
     },
     {
@@ -1016,7 +1016,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "50～64歲"
       }
     },
     {
@@ -1031,7 +1031,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1046,7 +1046,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "有併發症"
       }
     },
     {
@@ -1061,7 +1061,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "增值性視網膜病變"
       }
     },
     {
@@ -1076,7 +1076,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～49歲"
       }
     },
     {
@@ -1091,7 +1091,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "50～64歲"
       }
     },
     {
@@ -1106,7 +1106,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1121,7 +1121,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "神經性病變"
       }
     },
     {
@@ -1136,7 +1136,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～64歲"
       }
     },
     {
@@ -1151,7 +1151,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1166,7 +1166,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "肢端壞疽"
       }
     },
     {
@@ -1181,7 +1181,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～64歲"
       }
     },
     {
@@ -1196,7 +1196,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1211,7 +1211,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "蜂窩組織炎及膿瘍"
       }
     },
     {
@@ -1226,7 +1226,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～64歲"
       }
     },
     {
@@ -1241,7 +1241,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1256,7 +1256,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "蛋白尿(2＋)以上"
       }
     },
     {
@@ -1271,7 +1271,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～39歲"
       }
     },
     {
@@ -1286,7 +1286,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "40～49歲"
       }
     },
     {
@@ -1301,7 +1301,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "50～64歲"
       }
     },
     {
@@ -1316,7 +1316,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1331,7 +1331,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "有共病"
       }
     },
     {
@@ -1346,7 +1346,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "高血壓"
       }
     },
     {
@@ -1361,7 +1361,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～39歲"
       }
     },
     {
@@ -1376,7 +1376,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "40～49歲"
       }
     },
     {
@@ -1391,7 +1391,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "50～64歲"
       }
     },
     {
@@ -1406,7 +1406,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1421,7 +1421,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "高血脂"
       }
     },
     {
@@ -1436,7 +1436,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～29歲"
       }
     },
     {
@@ -1451,7 +1451,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "30～39歲"
       }
     },
     {
@@ -1466,7 +1466,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "40～49歲"
       }
     },
     {
@@ -1481,7 +1481,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "50～64歲"
       }
     },
     {
@@ -1496,7 +1496,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1511,7 +1511,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "腦中風"
       }
     },
     {
@@ -1526,7 +1526,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "～64歲"
       }
     },
     {
@@ -1541,7 +1541,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "65歲～"
       }
     },
     {
@@ -1556,7 +1556,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "重大疾病險"
       }
     },
     {
@@ -1571,7 +1571,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "醫療險"
       }
     },
     {
@@ -1586,7 +1586,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "長期照顧險"
       }
     },
     {
@@ -1601,7 +1601,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "防癌險"
       }
     },
     {
@@ -1616,7 +1616,7 @@
       "metadata": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
-        "entryText": "1"
+        "entryText": "傷害險"
       }
     }
   ]

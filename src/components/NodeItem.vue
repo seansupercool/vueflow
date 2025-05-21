@@ -126,9 +126,19 @@ const handleSubmit = () => {
     id: props.nodeData?.id || `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
     type: 'custom',
     position: props.nodeData?.position || { x: 0, y: 0 },
-    metadata: formData.value
+    metadata: {
+      index: formData.value.index,
+      columnType: formData.value.columnType,
+      label: formData.value.label,
+      desc: formData.value.desc,
+      columnName: formData.value.columnName,
+      dataType: formData.value.dataType,
+      mandatory: formData.value.mandatory,
+      codeId: formData.value.codeId,
+      codeUid: formData.value.codeUid
+    }
   }
-  console.log(JSON.stringify(graphNode))
+  console.log('🟢 Submitting node:', graphNode)
   props.onSubmit?.(graphNode)
   
   if (props.isNewNode) {
@@ -147,7 +157,10 @@ const handleSubmit = () => {
 }
 
 const handleCancel = () => {
-  // 不需要在這裡處理，由父組件控制
+  // 重置表單數據到原始值
+  if (props.nodeData?.metadata) {
+    formData.value = { ...props.nodeData.metadata }
+  }
 }
 
 const handleDelete = () => {

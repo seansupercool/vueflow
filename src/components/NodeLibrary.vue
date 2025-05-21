@@ -7,20 +7,20 @@
       <NodeItem
         :isNewNode="true"
         :onSubmit="handleSubmit"
-        :isExpanded="expandedNodeId === 'new'"
+        :isExpanded="!selectedNode"
         @toggle="handleToggle('new')"
       ></NodeItem>
 
       <div class="node-list">
         <NodeItem
-          v-for="graphNode in graphNodes"
-          :key="graphNode.id"
+          v-if="selectedNode"
+          :key="selectedNode.id"
           :isNewNode="false"
-          :nodeData="graphNode"
+          :nodeData="selectedNode"
           :onSubmit="handleSubmit"
-          :onDelete="() => deleteNode(graphNode)"
-          :isExpanded="expandedNodeId === graphNode.id"
-          @toggle="handleToggle(graphNode.id)"
+          :onDelete="() => deleteNode(selectedNode)"
+          :isExpanded="true"
+          @toggle="handleToggle(selectedNode.id)"
         ></NodeItem>
       </div>
     </div>
@@ -32,8 +32,16 @@ import { ref } from 'vue'
 import NodeItem from './NodeItem.vue'
 import type { GraphNode } from '../types/graph'
 
+const props = defineProps<{
+  selectedNode: GraphNode | null
+}>()
 
-const graphNodes = ref<GraphNode[]>([])
+const emit = defineEmits<{
+  (e: 'update:selectedNode', node: GraphNode | null): void
+  (e: 'updateNode', node: GraphNode): void
+  (e: 'deleteNode', nodeId: string): void
+}>()
+
 const expandedNodeId = ref<string | null>(null)
 
 const handleToggle = (nodeId: string) => {
@@ -45,18 +53,14 @@ const handleToggle = (nodeId: string) => {
 }
 
 const handleSubmit = (nodeData: GraphNode) => {
-  graphNodes.value.push(nodeData)
+  emit('updateNode', nodeData)
+  emit('update:selectedNode', nodeData)
   expandedNodeId.value = null
 }
 
 const deleteNode = (nodeData: GraphNode) => {
-  const index = graphNodes.value.findIndex(n => n.id === nodeData.id)
-  if (index !== -1) {
-    graphNodes.value.splice(index, 1)
-    if (expandedNodeId.value === nodeData.id) {
-      expandedNodeId.value = null
-    }
-  }
+  emit('deleteNode', nodeData.id)
+  emit('update:selectedNode', null)
 }
 </script>
 

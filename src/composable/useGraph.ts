@@ -21,6 +21,7 @@ const convertToVueFlowEdge = (edge: GraphEdge): Edge => ({
   animated: edge.animated,
   type: edge.type,
   style: edge.style,
+  label: edge.metadata.entryText,
   data: {
     metadata: edge.metadata
   }

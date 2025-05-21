@@ -11,6 +11,7 @@ import {
   type EdgeChange,
   type Connection,
   type EdgeMouseEvent,
+  type NodeMouseEvent,
 } from '@vue-flow/core'
 import { Background } from '@vue-flow/background'
 import { Controls } from '@vue-flow/controls'
@@ -21,6 +22,7 @@ import { useGraph } from './composable/useGraph'
 import type { GraphNode, GraphEdge } from './types/graph'
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
+const { updateNode } = useVueFlow()
 
 const nodeTypes = {
   custom: CustomNode
@@ -32,6 +34,30 @@ const { onConnect, onNodesChange, onEdgesChange, project } = useVueFlow()
 const edgeUpdateText = ref('')
 const selectedEdge = ref<Edge | null>(null)
 const isEditing = ref(false)
+const selectedNode = ref<GraphNode | null>(null)
+
+// 處理節點點擊
+const onNodeClick = (event: NodeMouseEvent) => {
+  const node = event.node
+  // 從節點數據中提取必要的信息
+  const graphNode: GraphNode = {
+    id: node.id,
+    type: node.type || 'custom',
+    position: node.position,
+    metadata: {
+      index: 0,
+      columnType: node.data?.metadata?.columnType || 'C',
+      label: node.data?.label || '',
+      desc: node.data?.metadata?.desc || '',
+      columnName: node.data?.metadata?.columnName || '',
+      dataType: node.data?.metadata?.dataType || 'STRING',
+      mandatory: node.data?.metadata?.mandatory || false,
+      codeId: node.data?.metadata?.codeId || '',
+      codeUid: node.data?.metadata?.codeUid || ''
+    }
+  }
+  selectedNode.value = graphNode
+}
 
 // 處理新增連接
 const onConnectHandler = (params: Connection) => {
@@ -132,11 +158,45 @@ const onDrop = (event: DragEvent) => {
     console.error('拖拽節點時發生錯誤:', error)
   }
 }
+
+// 處理節點更新
+const handleNodeUpdate = (updatedNode: GraphNode) => {
+  const nodeIndex = graphData.value.nodes.findIndex(n => n.id === updatedNode.id)
+  console.log('🟢 nodeIndex:', nodeIndex)
+  if (nodeIndex !== -1) {
+    const updatedData = {
+      ...graphData.value.nodes[nodeIndex],
+      label: updatedNode.metadata.label,
+      data: {
+        ...graphData.value.nodes[nodeIndex].data,
+        label: updatedNode.metadata.label,
+        metadata: updatedNode.metadata
+      }
+    }
+    console.log('🟢 updatedData:', updatedData)
+    console.log('🟢 graphData.value.nodes:', graphData.value.nodes)
+    
+    // 使用 updateNode 來更新節點
+    updateNode(updatedNode.id, updatedData)
+  }
+}
+
+// 處理節點刪除
+const handleNodeDelete = (nodeId: string) => {
+  deleteNode(nodeId)
+  selectedNode.value = null
+}
 </script>
 
 <template>
   <div class="app-container">
-    <NodeLibrary class="node-library" />
+    <NodeLibrary 
+      class="node-library" 
+      :selectedNode="selectedNode"
+      @update:selectedNode="selectedNode = $event"
+      @updateNode="handleNodeUpdate"
+      @deleteNode="handleNodeDelete"
+    />
     <div class="flow-container">
       <VueFlow
         v-model:nodes="graphData.nodes"
@@ -150,6 +210,7 @@ const onDrop = (event: DragEvent) => {
         class="vue-flow"
         @connect="onConnectHandler"
         @edge-click="onEdgeClick"
+        @node-click="onNodeClick"
         @dragover="onDragOver"
         @drop="onDrop"
       >
