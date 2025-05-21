@@ -174,7 +174,7 @@ const handleDelete = () => {
     }
     
     &.result-node {
-      color: #26a862;
+      color: #a82626;
     }
   }
 }

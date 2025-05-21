@@ -4,7 +4,7 @@ import { Handle, Position } from '@vue-flow/core'
 
 interface CustomNodeData {
   label: string
-  forBE?: {
+  metadata?: {
     columnType: string
     label: string
     desc: string
@@ -20,7 +20,7 @@ defineProps<NodeProps<CustomNodeData>>()
 <template>
   <div class="custom-node">
     <Handle type="target" :position="Position.Top" />
-    <div class="node-content">
+    <div class="node-content" :class="{ 'result-node': data.metadata?.columnType === 'R' }">
       {{ data.label }}
     </div>
     <Handle type="source" :position="Position.Bottom" />
@@ -41,5 +41,9 @@ defineProps<NodeProps<CustomNodeData>>()
   text-align: center;
   font-size: 14px;
   color: #333;
+}
+
+.node-content.result-node {
+  color: #b91e1e;
 }
 </style>
