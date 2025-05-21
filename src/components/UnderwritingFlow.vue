@@ -38,8 +38,8 @@ const nodeTypes = { custom: CustomNode }
 <template>
   <div style="width: 100vw; height: 100vh">
     <!-- <VueFlow v-model="nodes" v-model:edges="edges"> -->
-      <VueFlow :min-zoom="0.01"
-      :max-zoom="2" :nodes="nodes" :edges="edges" @update:nodes="nodes = $event" @update:edges="edges = $event"
+      <VueFlow :min-zoom="0.0001" :max-zoom="2" 
+      :nodes="nodes" :edges="edges" @update:nodes="nodes = $event" @update:edges="edges = $event"
       :elements-selectable="true"
       :selection-on-drag="true"
       :node-types="nodeTypes">

@@ -7,84 +7,17 @@
       <NodeItem
         :isNewNode="true"
         :onSubmit="handleSubmit"
-        :onDelete="() => {}"
       ></NodeItem>
 
       <div class="node-list">
-        <div 
-          v-for="(node, index) in graphNodes" 
-          :key="index" 
-          class="node-form"
-          :class="{ 'expanded': expandedNodeId === node.id }"
-          draggable="true"
-          @dragstart="onDragStart($event, node)"
-          @dragend="onDragEnd"
-        >
-          <div class="form-header" @click="toggleNodeForm(node)">
-            <h3>{{ node.metadata.label || '新節點' }}</h3>
-            <div class="arrow-icon" :class="{ 'up': expandedNodeId === node.id }"></div>
-          </div>
-          <div class="node-popup">
-            <div class="popup-content">
-              <div class="popup-item">
-                <span class="popup-label">類型：</span>
-                <span class="popup-value">{{ node.metadata.columnType === 'R' ? '結果元件' : '決策元件' }}</span>
-              </div>
-              <div class="popup-item">
-                <span class="popup-label">欄位名：</span>
-                <span class="popup-value">{{ node.metadata.columnName }}</span>
-              </div>
-              <div class="popup-item">
-                <span class="popup-label">資料格式：</span>
-                <span class="popup-value">{{ getDataTypeLabel(node.metadata.dataType) }}</span>
-              </div>
-            </div>
-          </div>
-          <div class="form-content">
-            <div class="tab-group">
-              <button 
-                :class="['tab-btn', { active: node.metadata.columnType === 'C' }]"
-                @click="updateNodeType(node, 'C')"
-              >
-                決策元件
-              </button>
-              <button 
-                :class="['tab-btn', { active: node.metadata.columnType === 'R' }]"
-                @click="updateNodeType(node, 'R')"
-              >
-                結果元件
-              </button>
-            </div>
-            <div class="form-group">
-              <label>中文名稱：</label>
-              <input v-model="node.metadata.label" type="text" placeholder="請輸入顯示名稱">
-            </div>
-            <div class="form-group">
-              <label>欄位名稱：</label>
-              <input v-model="node.metadata.columnName" type="text" placeholder="請輸入欄位名">
-            </div>
-            <div class="form-group">
-              <label>資料格式：</label>
-              <select v-model="node.metadata.dataType" class="form-select">
-                <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
-                  {{ option.label }}
-                </option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>詳細內容：</label>
-              <textarea 
-                v-model="node.metadata.desc" 
-                class="form-textarea" 
-                placeholder="請輸入詳細內容"
-                rows="4"
-              ></textarea>
-            </div>
-            <div class="form-actions">
-              <button @click="deleteNode(node)" class="delete-btn">刪除</button>
-            </div>
-          </div>
-        </div>
+        <NodeItem
+          v-for="graphNode in graphNodes"
+          :key="graphNode.id"
+          :isNewNode="false"
+          :nodeData="graphNode"
+          :onSubmit="handleSubmit"
+          :onDelete="() => deleteNode(graphNode)"
+        ></NodeItem>
       </div>
     </div>
   </div>
@@ -118,26 +51,11 @@ const handleSubmit = (nodeData: GraphNode) => {
   showForm.value = false
 }
 
-const toggleNodeForm = (node: Node) => {
-  if (expandedNodeId.value === node.id) {
-    expandedNodeId.value = null
-  } else {
-    showForm.value = false
-    expandedNodeId.value = node.id
-  }
-}
-
-const updateNodeType = (node: Node, type: string) => {
-  if (node.metadata.columnType) {
-    node.metadata.columnType = type
-  }
-}
-
-const deleteNode = (node: Node) => {
-  const index = nodes.value.findIndex(n => n.id === node.id)
+const deleteNode = (nodeData: GraphNode) => {
+  const index = graphNodes.value.findIndex(n => n.id === nodeData.id)
   if (index !== -1) {
-    nodes.value.splice(index, 1)
-    if (expandedNodeId.value === node.id) {
+    graphNodes.value.splice(index, 1)
+    if (expandedNodeId.value === nodeData.id) {
       expandedNodeId.value = null
     }
   }

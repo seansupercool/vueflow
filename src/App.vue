@@ -138,7 +138,7 @@ const onDrop = (event: DragEvent) => {
         v-model:edges="graphData.edges"
         :node-types="nodeTypes"
         :default-viewport="{ x: 0, y: 0, zoom: 1.5 }"
-        :min-zoom="0.2"
+        :min-zoom="0.01"
         :max-zoom="4"
         :auto-connect="false"
         :connect-on-click="false"
