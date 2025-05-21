@@ -1,20 +1,19 @@
 <template>
-  <div class="node-library" v-if="selectedNode">
+  <div class="node-library" v-if="selectedNode || showNewNodeForm">
     <div class="node-library-header">
-      <h3>元件庫</h3>
+      <h3>{{ showNewNodeForm ? '新增元件' : '元件庫' }}</h3>
     </div>
     <div class="node-library-content">
       <NodeItem
+        v-if="showNewNodeForm"
         :isNewNode="true"
-        :onSubmit="handleSubmit"
-        :isExpanded="!selectedNode"
-        @toggle="handleToggle('new')"
-        @cancel="handleCancel"
+        :onSubmit="handleNewNodeSubmit"
+        :isExpanded="true"
+        @cancel="$emit('closeNewNodeForm')"
       ></NodeItem>
 
-      <div class="node-list">
+      <div v-if="selectedNode" class="node-list">
         <NodeItem
-          v-if="selectedNode"
           :key="selectedNode.id"
           :isNewNode="false"
           :nodeData="selectedNode"
@@ -22,7 +21,7 @@
           :onDelete="() => deleteNode(selectedNode)"
           :isExpanded="true"
           @toggle="handleToggle(selectedNode.id)"
-          @cancel="handleCancel"
+          @cancel="$emit('update:selectedNode', null)"
         ></NodeItem>
       </div>
     </div>
@@ -36,12 +35,15 @@ import type { GraphNode } from '../types/graph'
 
 const props = defineProps<{
   selectedNode: GraphNode | null
+  showNewNodeForm: boolean
 }>()
 
 const emit = defineEmits<{
   (e: 'update:selectedNode', node: GraphNode | null): void
   (e: 'updateNode', node: GraphNode): void
+  (e: 'addNode', node: GraphNode): void
   (e: 'deleteNode', nodeId: string): void
+  (e: 'closeNewNodeForm'): void
 }>()
 
 const expandedNodeId = ref<string | null>(null)
@@ -60,14 +62,15 @@ const handleSubmit = (nodeData: GraphNode) => {
   expandedNodeId.value = null
 }
 
+const handleNewNodeSubmit = (nodeData: GraphNode) => {
+  emit('addNode', nodeData)
+  emit('closeNewNodeForm')
+  expandedNodeId.value = null
+}
+
 const deleteNode = (nodeData: GraphNode) => {
   emit('deleteNode', nodeData.id)
   emit('update:selectedNode', null)
-}
-
-const handleCancel = () => {
-  emit('update:selectedNode', null)
-  expandedNodeId.value = null
 }
 </script>
 
