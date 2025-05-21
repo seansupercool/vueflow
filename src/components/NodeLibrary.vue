@@ -29,21 +29,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { Node } from '@vue-flow/core'
 import NodeItem from './NodeItem.vue'
-import { DataType } from '../core/enums'
 import type { GraphNode } from '../types/graph'
 
-const dataTypeOptions = [
-  { value: DataType.STRING, label: '字串' },
-  { value: DataType.INTEGER, label: '整數' },
-  { value: DataType.DECIMAL, label: '小數' },
-  { value: DataType.DATE, label: '日期' },
-  { value: DataType.TIME, label: '時間' },
-  { value: DataType.BOOLEAN, label: '布林' },
-  { value: DataType.CODE, label: '代碼' },
-  { value: DataType.VARIABLE, label: '變數' }
-]
 
 const graphNodes = ref<GraphNode[]>([])
 const expandedNodeId = ref<string | null>(null)
@@ -57,12 +45,7 @@ const handleToggle = (nodeId: string) => {
 }
 
 const handleSubmit = (nodeData: GraphNode) => {
-  // 為新建的節點生成唯一 ID
-  const newNode = {
-    ...nodeData,
-    id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
-  }
-  graphNodes.value.push(newNode)
+  graphNodes.value.push(nodeData)
   expandedNodeId.value = null
 }
 
@@ -73,50 +56,6 @@ const deleteNode = (nodeData: GraphNode) => {
     if (expandedNodeId.value === nodeData.id) {
       expandedNodeId.value = null
     }
-  }
-}
-
-const getDataTypeLabel = (type: string) => {
-  const option = dataTypeOptions.find(opt => opt.value === type)
-  return option ? option.label : '未知'
-}
-
-const onDragStart = (event: DragEvent, node: Node) => {
-  if (event.dataTransfer) {
-    const nodeData = {
-      type: 'custom',
-      data: {
-        label: node.metadata.label,
-        forBE: {
-          columnType: node.metadata.columnType,
-          label: node.metadata.label,
-          desc: node.metadata.desc,
-          columnName: node.metadata.columnName,
-          dataType: node.metadata.dataType,
-          mandatory: node.metadata.mandatory
-        }
-      }
-    }
-    event.dataTransfer.setData('application/json', JSON.stringify(nodeData))
-    event.dataTransfer.effectAllowed = 'move'
-    
-    if (event.target instanceof HTMLElement) {
-      const dragImage = event.target.cloneNode(true) as HTMLElement
-      dragImage.style.width = '200px'
-      dragImage.style.position = 'absolute'
-      dragImage.style.top = '-1000px'
-      document.body.appendChild(dragImage)
-      event.dataTransfer.setDragImage(dragImage, 100, 20)
-      setTimeout(() => {
-        document.body.removeChild(dragImage)
-      }, 0)
-    }
-  }
-}
-
-const onDragEnd = (event: DragEvent) => {
-  if (event.dataTransfer) {
-    event.dataTransfer.clearData()
   }
 }
 </script>

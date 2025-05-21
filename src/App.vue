@@ -17,22 +17,10 @@ import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
 import NodeLibrary from './components/NodeLibrary.vue'
 import CustomNode from './components/CustomNode.vue'
-import initData from './assets/data/decisionDiagram/100A_Init.json'
 import { useGraph } from './composable/useGraph'
+import type { GraphNode, GraphEdge } from './types/graph'
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
-
-// const nodes = ref<Node[]>(initData.nodes)
-const nodes = ref<Node[]>(initData.nodes.map(node => ({
-  id: node.id,
-  type: 'custom',
-  position: node.position,
-  label: node.metadata.label,
-  data: {
-    metadata: node.metadata
-  }
-})))
-const edges = ref<Edge[]>(initData.edges)
 
 const nodeTypes = {
   custom: CustomNode
@@ -47,15 +35,22 @@ const isEditing = ref(false)
 
 // 處理新增連接
 const onConnectHandler = (params: Connection) => {
-  const newEdge = {
-    ...params,
-    id: `e${edges.value.length + 1}`,
-    label: '',
-    labelStyle: { fill: '#000000' },
+  const newEdge: GraphEdge = {
+    id: `e${graphData.value.edges.length + 1}`,
+    source: params.source,
+    target: params.target,
+    type: 'default',
+    animated: false,
+    style: {},
+    metadata: {
+      columnName: '',
+      expressionType: '',
+      entryText: ''
+    }
   }
   selectedEdge.value = newEdge
   isEditing.value = true
-  edges.value = [...edges.value, newEdge]
+  addEdge(newEdge)
 }
 
 // 處理點擊連接線
@@ -66,15 +61,15 @@ const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
 }
 
 onNodesChange((changes: NodeChange[]) => {
-  nodes.value = applyNodeChanges(changes, nodes.value)
+  graphData.value.nodes = applyNodeChanges(changes, graphData.value.nodes)
 })
 
 onEdgesChange((changes: EdgeChange[]) => {
-  edges.value = applyEdgeChanges(changes, edges.value)
+  graphData.value.edges = applyEdgeChanges(changes, graphData.value.edges)
 })
 
 watch(
-  nodes,
+  () => graphData.value.nodes,
   (val) => {
     console.log('🟢 nodes updated:', val)
   },
@@ -82,7 +77,7 @@ watch(
 )
 
 watch(
-  edges,
+  () => graphData.value.edges,
   (val) => {
     console.log('🟠 edges updated:', val)
   },
@@ -90,8 +85,8 @@ watch(
 )
 
 const getStructure = () => {
-  console.log('🟢 nodes:', nodes.value)
-  console.log('🟠 edges:', edges.value)
+  console.log('🟢 nodes:', graphData.value.nodes)
+  console.log('🟠 edges:', graphData.value.edges)
 }
 
 onConnect(onConnectHandler)
@@ -115,16 +110,26 @@ const onDrop = (event: DragEvent) => {
       y: event.clientY,
     })
 
-    const newNode: Node = {
-      id: `node-${nodes.value.length + 1}`,
-      type: nodeData.type,
+    const newNode: GraphNode = {
+      id: `node-${Date.now()}`,
+      type: 'custom',
       position,
-      data: nodeData.data
+      metadata: {
+        index: 0,
+        columnType: nodeData.data.metadata.columnType || 'C',
+        label: nodeData.data.label || '新節點',
+        desc: nodeData.data.metadata.desc || '',
+        columnName: nodeData.data.metadata.columnName || '',
+        dataType: nodeData.data.metadata.dataType || 'STRING',
+        mandatory: nodeData.data.metadata.mandatory || false,
+        codeId: nodeData.data.metadata.codeId || '',
+        codeUid: nodeData.data.metadata.codeUid || ''
+      }
     }
 
-    nodes.value = [...nodes.value, newNode]
+    addNode(newNode)
   } catch (error) {
-    console.error('Error dropping node:', error)
+    console.error('拖拽節點時發生錯誤:', error)
   }
 }
 </script>

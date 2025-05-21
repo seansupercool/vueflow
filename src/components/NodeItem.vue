@@ -1,5 +1,11 @@
 <template>
-  <div class="node-form" :class="{ 'expanded': isExpanded }">
+  <div 
+    class="node-form" 
+    :class="{ 'expanded': isExpanded }"
+    draggable="true"
+    @dragstart="handleDragStart"
+    @dragend="handleDragEnd"
+  >
     <div class="form-header" :class="{ 'is-new': isNewNode }" @click="$emit('toggle')">
       <h3>{{ isNewNode ? '新增' : formData.label }}</h3>
       <div class="arrow-icon" :class="{ 'up': isExpanded }"></div>
@@ -81,9 +87,42 @@ const formData = ref<NodeMetadata>({
   ...(props.nodeData?.metadata || {})
 })
 
+const handleDragStart = (event: DragEvent) => {
+  if (!event.dataTransfer) return
+
+  const nodeData = {
+    type: 'custom',
+    position: { x: 0, y: 0 },
+    data: {
+      label: formData.value.label || '新節點',
+      metadata: {
+        columnType: formData.value.columnType,
+        label: formData.value.label || '新節點',
+        desc: formData.value.desc,
+        columnName: formData.value.columnName,
+        dataType: formData.value.dataType,
+        mandatory: formData.value.mandatory,
+        codeId: formData.value.codeId,
+        codeUid: formData.value.codeUid
+      }
+    }
+  }
+
+  event.dataTransfer.setData('application/json', JSON.stringify(nodeData))
+  event.dataTransfer.effectAllowed = 'move'
+}
+
+const handleDragEnd = (event: DragEvent) => {
+  if (event.dataTransfer) {
+    event.dataTransfer.clearData()
+  }
+}
+
 const handleSubmit = () => {
   const graphNode: GraphNode = {
-    ...props.nodeData,
+    id: props.nodeData?.id || `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+    type: 'custom',
+    position: props.nodeData?.position || { x: 0, y: 0 },
     metadata: formData.value
   }
   console.log(JSON.stringify(graphNode))
