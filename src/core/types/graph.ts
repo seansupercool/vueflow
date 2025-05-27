@@ -21,7 +21,7 @@ export interface GraphNode {
   id: string;
   position: NodePosition;
   type: string;
-  metadata: NodeMetadata;
+  metadataList: NodeMetadata[];
 }
 
 export interface EdgeMetadata {

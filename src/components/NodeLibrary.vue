@@ -31,7 +31,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import NodeItem from './NodeItem.vue'
-import type { GraphNode } from '../types/graph'
+import type { GraphNode } from '../core/types/graph'
 
 const props = defineProps<{
   selectedNode: GraphNode | null

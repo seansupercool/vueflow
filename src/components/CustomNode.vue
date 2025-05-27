@@ -2,17 +2,22 @@
 import type { NodeProps } from '@vue-flow/core'
 import { Handle, Position } from '@vue-flow/core'
 import { computed } from 'vue'
+import { DataType } from '../core/enums/DataType'
+
+interface NodeMetadata {
+  columnType: string
+  label: string
+  desc: string
+  columnName: string
+  dataType: DataType
+  mandatory: boolean
+  codeId: string
+  codeUid: string
+}
 
 interface CustomNodeData {
-  label: string
-  metadata?: {
-    columnType: string
-    label: string
-    desc: string
-    columnName: string
-    dataType: string
-    mandatory: boolean
-  }
+  label: string,
+  metadataList: NodeMetadata[]
 }
 
 const props = defineProps<NodeProps<CustomNodeData>>()
@@ -38,7 +43,7 @@ const handlePaneClick = () => {
     @click="handleClick"
   >
     <Handle type="target" :position="Position.Top" />
-    <div class="node-content" :class="{ 'result-node': data.metadata?.columnType === 'R' }">
+    <div class="node-content" :class="{ 'result-node': data.columnType === 'R' }">
       {{ data.metadata?.label || data.label }}
     </div>
     <Handle type="source" :position="Position.Bottom" />

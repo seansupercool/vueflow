@@ -20,7 +20,7 @@ import NodeLibrary from './components/NodeLibrary.vue'
 import CustomNode from './components/CustomNode.vue'
 import EdgeForm from './components/EdgeForm.vue'
 import { useGraph } from './composable/useGraph'
-import type { GraphNode, GraphEdge } from './types/graph'
+import type { GraphNode, GraphEdge } from './core/types/graph'
 import NodeItem from './components/NodeItem.vue'
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
@@ -73,11 +73,23 @@ const onNodeClick = (event: NodeMouseEvent) => {
 // 處理點擊空白處
 const onPaneClick = () => {
   selectedNode.value = null
+  selectedEdge.value = null
+  isEditing.value = false
   
   // 清除所有節點的選中狀態
   graphData.value.nodes = graphData.value.nodes.map(n => ({
     ...n,
     selected: false
+  }))
+
+  // 清除所有邊的選中狀態
+  graphData.value.edges = graphData.value.edges.map(e => ({
+    ...e,
+    style: {
+      ...e.style,
+      stroke: '#000',
+      strokeWidth: 1
+    }
   }))
 }
 
@@ -110,7 +122,11 @@ const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
     target: edge.target,
     type: edge.type || 'default',
     animated: edge.animated || false,
-    style: edge.style || {},
+    style: {
+      ...edge.style,
+      stroke: '#ff0000',
+      strokeWidth: 2
+    },
     metadata: {
       columnName: edge.data?.metadata?.columnName || '',
       expressionType: edge.data?.metadata?.expressionType || '',
@@ -119,6 +135,16 @@ const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
   }
   selectedEdge.value = graphEdge
   isEditing.value = true
+
+  // 更新所有邊的樣式
+  graphData.value.edges = graphData.value.edges.map(e => ({
+    ...e,
+    style: {
+      ...e.style,
+      stroke: e.id === edge.id ? '#ff0000' : '#000',
+      strokeWidth: e.id === edge.id ? 2 : 1
+    }
+  }))
 }
 
 // 處理連接線更新
@@ -154,6 +180,16 @@ const handleEdgeUpdate = (updatedEdge: GraphEdge) => {
 const handleEdgeCancel = () => {
   selectedEdge.value = null
   isEditing.value = false
+
+  // 清除所有邊的選中狀態
+  graphData.value.edges = graphData.value.edges.map(e => ({
+    ...e,
+    style: {
+      ...e.style,
+      stroke: '#000',
+      strokeWidth: 1
+    }
+  }))
 }
 
 onNodesChange((changes: NodeChange[]) => {
@@ -220,7 +256,8 @@ const onDrop = (event: DragEvent) => {
         mandatory: nodeData.data.metadata.mandatory || false,
         codeId: nodeData.data.metadata.codeId || '',
         codeUid: nodeData.data.metadata.codeUid || ''
-      }
+      },
+      metadataList: nodeData.metadataList
     }
 
     addNode(newNode)
@@ -287,10 +324,7 @@ const handleAddNode = (nodeData: GraphNode) => {
     ...nodeData,
     position,
     type: 'custom',
-    data: {
-      label: nodeData.metadata.label,
-      metadata: nodeData.metadata
-    }
+    // metadataList: nodeData.metadataList
   }
   
   console.log('新增節點:', newNode)

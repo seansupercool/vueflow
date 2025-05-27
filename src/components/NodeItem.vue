@@ -54,7 +54,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { DataType } from '../core/enums'
-import type { GraphNode, NodeMetadata } from '../types/graph'
+import type { GraphNode, NodeMetadata } from '../core/types/graph'
 
 const props = defineProps<{
   isNewNode: boolean,
@@ -126,7 +126,7 @@ const handleSubmit = () => {
     id: props.nodeData?.id || `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
     type: 'custom',
     position: props.nodeData?.position || { x: 0, y: 0 },
-    metadata: {
+    metadataList: [{
       index: formData.value.index,
       columnType: formData.value.columnType,
       label: formData.value.label,
@@ -136,7 +136,7 @@ const handleSubmit = () => {
       mandatory: formData.value.mandatory,
       codeId: formData.value.codeId,
       codeUid: formData.value.codeUid
-    }
+    }]
   }
   console.log('🟢 Submitting node:', graphNode)
   props.onSubmit?.(graphNode)

@@ -7,6 +7,7 @@
       <div class="form-group">
         <label>欄位名稱</label>
         <input 
+          disabled
           type="text" 
           v-model="edgeData.metadata.columnName" 
           class="form-input"
@@ -33,7 +34,7 @@
       </div>
       <div class="form-actions">
         <button class="submit-btn" @click="handleSubmit">確定</button>
-        <button class="cancel-btn" @click="$emit('cancel')">取消</button>
+        <button class="cancel-btn" @click="handleCancel">取消</button>
       </div>
     </div>
   </div>
@@ -41,7 +42,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import type { GraphEdge } from '../types/graph'
+import type { GraphEdge } from '../core/types/graph'
 import { expressionTypeOptions } from '@/constants/expressionTypeMapping'
 
 const props = defineProps<{
@@ -51,6 +52,7 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'update', edge: GraphEdge): void
   (e: 'cancel'): void
+  (e: 'select', edge: GraphEdge | null): void
 }>()
 
 const edgeData = ref<GraphEdge>({
@@ -70,11 +72,30 @@ const edgeData = ref<GraphEdge>({
 watch(() => props.edge, (newEdge) => {
   if (newEdge) {
     edgeData.value = { ...newEdge }
+    // 當邊被選取時，更新樣式
+    edgeData.value.style = {
+      ...edgeData.value.style,
+      stroke: '#ff0000',
+      strokeWidth: 2
+    }
+  } else {
+    // 當取消選取時，恢復預設樣式
+    edgeData.value.style = {
+      ...edgeData.value.style,
+      stroke: '#000',
+      strokeWidth: 1
+    }
   }
 }, { immediate: true })
 
 const handleSubmit = () => {
   emit('update', edgeData.value)
+}
+
+// 當表單關閉時，取消選取
+const handleCancel = () => {
+  emit('select', null)
+  emit('cancel')
 }
 </script>
 

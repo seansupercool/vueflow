@@ -1,6 +1,6 @@
 // composables/useGraph.ts
 import { ref } from 'vue'
-import type { GraphNode, GraphEdge, VueFlowData } from '@/types/graph'
+import type { GraphNode, GraphEdge, VueFlowData } from '@/core/types/graph'
 import { initialGraph } from '@/assets/data/initialGraph'
 import type { Node, Edge } from '@vue-flow/core'
 
@@ -9,8 +9,8 @@ const convertToVueFlowNode = (node: GraphNode): Node => ({
   type: 'custom',
   position: node.position,
   data: {
-    label: node.metadata.label,
-    metadata: node.metadata
+    label: node.metadataList[0].label,
+    metadataList: node.metadataList
   }
 })
 
