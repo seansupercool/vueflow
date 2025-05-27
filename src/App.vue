@@ -20,7 +20,7 @@ import NodeLibrary from './components/NodeLibrary.vue'
 import CustomNode from './components/CustomNode.vue'
 import EdgeForm from './components/EdgeForm.vue'
 import { useGraph } from './composable/useGraph'
-import type { GraphNode, GraphEdge } from './core/types/graph'
+import type { GraphNode, GraphEdge } from './core/interfaces/Graph'
 import NodeItem from './components/NodeItem.vue'
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()

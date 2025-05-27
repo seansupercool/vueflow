@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import type { GraphEdge } from '../core/types/graph'
+import type { GraphEdge } from '../core/interfaces/Graph'
 import { expressionTypeOptions } from '@/constants/expressionTypeMapping'
 
 const props = defineProps<{

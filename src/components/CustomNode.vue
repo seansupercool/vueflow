@@ -1,19 +1,8 @@
 <script setup lang="ts">
 import type { NodeProps } from '@vue-flow/core'
 import { Handle, Position } from '@vue-flow/core'
-import { computed } from 'vue'
-import { DataType } from '../core/enums/DataType'
-
-interface NodeMetadata {
-  columnType: string
-  label: string
-  desc: string
-  columnName: string
-  dataType: DataType
-  mandatory: boolean
-  codeId: string
-  codeUid: string
-}
+import { ref } from 'vue'
+import type { NodeMetadata } from '../core/interfaces/Graph'
 
 interface CustomNodeData {
   label: string,
@@ -23,16 +12,10 @@ interface CustomNodeData {
 const props = defineProps<NodeProps<CustomNodeData>>()
 
 // 計算屬性來判斷當前節點是否被選中
-const isSelected = computed(() => {
-  return props.selected
-})
+const isSelected = ref(false)
 
 const handleClick = () => {
   isSelected.value = true
-}
-
-const handlePaneClick = () => {
-  isSelected.value = false
 }
 </script>
 
@@ -43,8 +26,8 @@ const handlePaneClick = () => {
     @click="handleClick"
   >
     <Handle type="target" :position="Position.Top" />
-    <div class="node-content" :class="{ 'result-node': data.columnType === 'R' }">
-      {{ data.metadata?.label || data.label }}
+    <div class="node-content" :class="{ 'result-node': props.data.metadataList[0]?.columnType === 'R' }">
+      {{ props.data.metadataList[0]?.label || props.data.label }}
     </div>
     <Handle type="source" :position="Position.Bottom" />
   </div>

@@ -7,19 +7,21 @@
     @dragend="handleDragEnd"
   >
     <div class="form-header" :class="{ 'is-new': isNewNode }" @click="$emit('toggle')">
-      <h3 :class="{ 'decision-node': formData.columnType === 'C', 'result-node': formData.columnType === 'R' }">
-        <span v-if="!isNewNode" class="type-indicator">{{ formData.columnType === 'C' ? '條件:' : '結果:' }}</span>
-        {{ isNewNode ? '新增' : formData.label }}
+      <h3 :class="{ 'decision-node': formData.columnType === ColumnType.CONDITION, 'result-node': formData.columnType === ColumnType.RESULT }">
+        <span v-if="!isNewNode" class="type-indicator">{{ ColumnTypeLabel[formData.columnType] }}:</span>
+        {{ isNewNode ? '新增' : '修改' }}
       </h3>
       <div class="arrow-icon" :class="{ 'up': isExpanded }"></div>
     </div>
     <div class="form-content" v-show="isExpanded">
       <div class="tab-group">
-        <button :class="['tab-btn', { active: formData.columnType === 'C' }]" @click="formData.columnType = 'C'">
-          決策元件
-        </button>
-        <button :class="['tab-btn', { active: formData.columnType === 'R' }]" @click="formData.columnType = 'R'">
-          結果元件
+        <button 
+          v-for="type in Object.values(ColumnType)" 
+          :key="type"
+          :class="['tab-btn', { active: formData.columnType === type }]" 
+          @click="formData.columnType = type"
+        >
+          {{ ColumnTypeLabel[type] }}元件
         </button>
       </div>
       <div class="form-group">
@@ -33,8 +35,8 @@
       <div class="form-group">
         <label>資料格式：</label>
         <select v-model="formData.dataType" class="form-select">
-          <option v-for="option in dataTypeOptions" :key="option.value" :value="option.value">
-            {{ option.label }}
+          <option v-for="type in Object.values(MetaDataType)" :key="type" :value="type">
+            {{ MetaDataTypeLabel[type] }}
           </option>
         </select>
       </div>
@@ -53,8 +55,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { DataType } from '../core/enums'
-import type { GraphNode, NodeMetadata } from '../core/types/graph'
+import { MetaDataType, MetaDataTypeLabel, ColumnType, ColumnTypeLabel } from '../core/enums/Node'
+import type { GraphNode, NodeMetadata } from '../core/interfaces/graph'
 
 const props = defineProps<{
   isNewNode: boolean,
@@ -66,28 +68,17 @@ const props = defineProps<{
 
 const emit = defineEmits(['toggle', 'cancel'])
 
-const dataTypeOptions = [
-  { value: DataType.STRING, label: '字串' },
-  { value: DataType.INTEGER, label: '整數' },
-  { value: DataType.DECIMAL, label: '小數' },
-  { value: DataType.DATE, label: '日期' },
-  { value: DataType.TIME, label: '時間' },
-  { value: DataType.BOOLEAN, label: '布林' },
-  { value: DataType.CODE, label: '代碼' },
-  { value: DataType.VARIABLE, label: '變數' }
-]
-
 const formData = ref<NodeMetadata>({
   index: 0,
-  columnType: 'C',
+  columnType: ColumnType.CONDITION,
   label: '',
   desc: '',
   columnName: '',
-  dataType: DataType.STRING,
+  dataType: MetaDataType.STRING,
   mandatory: false,
   codeId: '',
   codeUid: '',
-  ...(props.nodeData?.metadata || {})
+  ...(props.nodeData?.metadataList?.[0] || {})
 })
 
 const handleDragStart = (event: DragEvent) => {
@@ -98,7 +89,7 @@ const handleDragStart = (event: DragEvent) => {
     position: { x: 0, y: 0 },
     data: {
       label: formData.value.label || '新節點',
-      metadata: {
+      metadataList: [{
         columnType: formData.value.columnType,
         label: formData.value.label || '新節點',
         desc: formData.value.desc,
@@ -107,7 +98,7 @@ const handleDragStart = (event: DragEvent) => {
         mandatory: formData.value.mandatory,
         codeId: formData.value.codeId,
         codeUid: formData.value.codeUid
-      }
+      }]
     }
   }
 
@@ -144,11 +135,11 @@ const handleSubmit = () => {
   if (props.isNewNode) {
     formData.value = {
       index: 0,
-      columnType: 'C',
+      columnType: ColumnType.CONDITION,
       label: '',
       desc: '',
       columnName: '',
-      dataType: DataType.STRING,
+      dataType: MetaDataType.STRING,
       mandatory: false,
       codeId: '',
       codeUid: ''
@@ -158,8 +149,8 @@ const handleSubmit = () => {
 
 const handleCancel = () => {
   // 重置表單數據到原始值
-  if (props.nodeData?.metadata) {
-    formData.value = { ...props.nodeData.metadata }
+  if (props.nodeData?.metadataList?.[0]) {
+    formData.value = { ...props.nodeData.metadataList[0] }
   }
   // 觸發取消事件，通知父組件關閉元件庫
   emit('cancel')

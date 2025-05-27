@@ -1,4 +1,5 @@
 import type { Node, Edge } from '@vue-flow/core'
+import { MetaDataType, ColumnType } from '../enums/Node'
 
 export interface NodePosition {
   x: number;
@@ -7,11 +8,11 @@ export interface NodePosition {
 
 export interface NodeMetadata {
   index: number;
-  columnType: string;
+  columnType: ColumnType;
   label: string;
   desc: string;
   columnName: string;
-  dataType: string;
+  dataType: MetaDataType;
   mandatory: boolean;
   codeId: string;
   codeUid: string;

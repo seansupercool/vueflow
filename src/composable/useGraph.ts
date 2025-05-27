@@ -1,6 +1,6 @@
 // composables/useGraph.ts
 import { ref } from 'vue'
-import type { GraphNode, GraphEdge, VueFlowData } from '@/core/types/graph'
+import type { GraphNode, GraphEdge, VueFlowData } from '@/core/interfaces/Graph'
 import { initialGraph } from '@/assets/data/initialGraph'
 import type { Node, Edge } from '@vue-flow/core'
 
