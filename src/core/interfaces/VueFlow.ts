@@ -18,7 +18,7 @@ export interface NodeMetadata {
   codeUid: string;
 }
 
-export interface GraphNode {
+export interface VueFlowNode {
   id: string;
   position: NodePosition;
   type: string;
@@ -31,7 +31,7 @@ export interface EdgeMetadata {
   entryText: string;
 }
 
-export interface GraphEdge {
+export interface VueFlowEdge {
   id: string;
   source: string;
   target: string;

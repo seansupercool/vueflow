@@ -1,10 +1,10 @@
 // composables/useGraph.ts
 import { ref } from 'vue'
-import type { GraphNode, GraphEdge, VueFlowData } from '@/core/interfaces/Graph'
-import { initialGraph } from '@/assets/data/initialGraph'
+import type { VueFlowNode, VueFlowEdge, VueFlowData } from '@/core/interfaces/VueFlow'
+import { initialGraph } from '@/assets/data/initialMock'
 import type { Node, Edge } from '@vue-flow/core'
 
-const convertToVueFlowNode = (node: GraphNode): Node => ({
+const convertToVueFlowNode = (node: VueFlowNode): Node => ({
   id: node.id,
   type: 'custom',
   position: node.position,
@@ -14,7 +14,7 @@ const convertToVueFlowNode = (node: GraphNode): Node => ({
   }
 })
 
-const convertToVueFlowEdge = (edge: GraphEdge): Edge => ({
+const convertToVueFlowEdge = (edge: VueFlowEdge): Edge => ({
   id: edge.id,
   source: edge.source,
   target: edge.target,
@@ -33,23 +33,23 @@ const graphData = ref<VueFlowData>({
 })
 
 export function useGraph() {
-  const addNode = (node: GraphNode) => {
+  const addNode = (node: VueFlowNode) => {
     graphData.value.nodes.push(convertToVueFlowNode(node))
   }
 
-  const addEdge = (edge: GraphEdge) => {
+  const addEdge = (edge: VueFlowEdge) => {
     graphData.value.edges.push(convertToVueFlowEdge(edge))
   }
 
   const deleteNode = (nodeId: string) => {
-    graphData.value.nodes = graphData.value.nodes.filter(node => node.id !== nodeId)
+    graphData.value.nodes = graphData.value.nodes.filter((node: Node) => node.id !== nodeId)
     graphData.value.edges = graphData.value.edges.filter(
-      edge => edge.source !== nodeId && edge.target !== nodeId
+      (edge: Edge) => edge.source !== nodeId && edge.target !== nodeId
     )
   }
 
   const deleteEdge = (edgeId: string) => {
-    graphData.value.edges = graphData.value.edges.filter(edge => edge.id !== edgeId)
+    graphData.value.edges = graphData.value.edges.filter((edge: Edge) => edge.id !== edgeId)
   }
 
   return {

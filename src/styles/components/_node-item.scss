@@ -1,19 +1,21 @@
 .node-form {
   background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid #eee;
+  border-radius: 8px;
   margin-bottom: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   cursor: move;
   user-select: none;
 
   .form-header {
-    padding: 12px 16px;
+    padding: 16px 20px;
     background-color: #f8f9fa;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px solid #eee;
     cursor: pointer;
     user-select: none;
 
@@ -32,8 +34,25 @@
     h3 {
       margin: 0;
       font-size: 16px;
-      color: #26a862;
-      font-weight: bold;
+      color: #333;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .type-indicator {
+        font-size: 0.9em;
+        opacity: 0.8;
+        color: #666;
+      }
+
+      &.decision-node {
+        color: #000000;
+      }
+
+      &.result-node {
+        color: #b91e1e;
+      }
     }
   }
 
@@ -51,6 +70,7 @@
   }
 
   .form-content {
+    padding: 20px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
@@ -108,50 +128,90 @@
     font-size: 14px;
   }
 
-  .form-actions {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    gap: 8px;
-    margin: 5px;
-  }
-
-  .btn {
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-  }
-
-  .submit-btn {
-    background-color: #26a862;
-
-    &:hover {
-      background-color: #229357;
-    }
-  }
-
-  .cancel-btn {
-    background-color: #ffffff;
-    color: black;
-    border: 2px solid #ddd;
-
-    &:hover {
-      background-color: #efefef;
-    }
-  }
-
-  .delete-btn {
-    background-color: #dc3545;
-
-    &:hover {
-      background-color: #c82333;
-    }
-  }
-
   .form-group {
-    padding: 0 16px;
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: #26a862;
+        box-shadow: 0 0 0 2px rgba(38, 168, 98, 0.1);
+      }
+
+      &::placeholder {
+        color: #999;
+      }
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+
+    button {
+      flex: 1;
+      padding: 8px 0px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+      }
+
+      &.submit-btn {
+        background-color: #26a862;
+        color: white;
+
+        &:hover {
+          background-color: #229357;
+        }
+      }
+
+      &.cancel-btn {
+        background-color: #f8f9fa;
+        color: #666;
+
+        &:hover {
+          background-color: #e9ecef;
+        }
+      }
+
+      &.delete-btn {
+        background-color: #dc3545;
+        color: white;
+
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
   }
 } 

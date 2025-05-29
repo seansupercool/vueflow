@@ -1,0 +1,172 @@
+[
+    {
+        "id": "874b2061-9791-4880-bd6c-5853dbf25af2",
+        "codeId": "CODE_UUJ1",
+        "name": "EDIT_CODE_NAME_CASE_1",
+        "description": "EDIT_CODE_DESCRIPTION_CASE_1",
+        "status": "INACTIVE",
+        "isI18n": false,
+        "customProperty": {
+            "system": "CB",
+            "platform": "N",
+            "subsystem": "ATC3"
+        },
+        "createdBy": "88888888",
+        "createdTime": "2025-05-16 18:22:54.419",
+        "modifiedBy": "88888888",
+        "modifiedTime": "2025-05-16 18:23:05.700"
+    },
+    {
+        "id": "ac3d9d42-4bf7-4cea-b977-81a79091facf",
+        "codeId": "CODE_BPIZ",
+        "name": "EDIT_CODE_NAME_CASE_1",
+        "description": "EDIT_CODE_DESCRIPTION_CASE_1",
+        "status": "INACTIVE",
+        "isI18n": true,
+        "customProperty": {
+            "system": "CB",
+            "platform": "N",
+            "subsystem": "ATC3"
+        },
+        "createdBy": "88888888",
+        "createdTime": "2025-05-16 18:09:26.083",
+        "modifiedBy": "88888888",
+        "modifiedTime": "2025-05-16 18:10:47.232"
+    },
+    {
+        "id": "598a2126-20ff-4b6f-90ea-a0675ad3aa77",
+        "codeId": "CODE_BMA3",
+        "name": "CODE_NAME_bma3",
+        "description": "CODE_DESCRIPTION_bma3",
+        "status": "ACTIVE",
+        "isI18n": true,
+        "customProperty": {
+            "system": "AT",
+            "platform": "C",
+            "subsystem": "ATB2"
+        },
+        "createdBy": "88888888",
+        "createdTime": "2025-05-16 18:10:20.149",
+        "modifiedBy": "88888888",
+        "modifiedTime": "2025-05-16 18:10:20.149"
+    },
+    {
+        "id": "33a864c6-054b-4dfe-8f2f-f82b5a446c52",
+        "codeId": "CODE_G319",
+        "name": "CODE_NAME_g319",
+        "description": "CODE_DESCRIPTION_g319",
+        "status": "ACTIVE",
+        "isI18n": false,
+        "customProperty": {
+            "system": "AT",
+            "platform": "C",
+            "subsystem": "ATB2"
+        },
+        "createdBy": "88888888",
+        "createdTime": "2025-05-16 18:09:42.023",
+        "modifiedBy": "88888888",
+        "modifiedTime": "2025-05-16 18:09:42.023"
+    },
+    {
+        "id": "0203cef1-ec10-4db0-b76a-9df50707a6c8",
+        "codeId": "CODE_2LM5",
+        "name": "CODE_NAME_2lm5",
+        "description": "CODE_DESCRIPTION_2lm5",
+        "status": "ACTIVE",
+        "isI18n": true,
+        "customProperty": {
+            "system": "AT",
+            "platform": "C",
+            "subsystem": "ATB2"
+        },
+        "createdBy": "88888888",
+        "createdTime": "2025-05-13 14:46:24.280",
+        "modifiedBy": "88888888",
+        "modifiedTime": "2025-05-13 14:46:24.280"
+    },
+    {
+        "id": "547fa9f4-cbd5-4e57-b3f1-0a1bb3b08849",
+        "codeId": "TEST_0507",
+        "name": "TEST_0507",
+        "description": "TEST_0507",
+        "status": "ACTIVE",
+        "isI18n": false,
+        "customProperty": {
+            "system": "IC",
+            "platform": "N",
+            "subsystem": "ICP0"
+        },
+        "createdBy": "12345678",
+        "createdTime": "2025-05-07 10:22:05.160",
+        "modifiedBy": "12345678",
+        "modifiedTime": "2025-05-07 10:22:05.160"
+    },
+    {
+        "id": "8c74441c-0b5e-442e-89e2-2096cd9238d2",
+        "codeId": "TEST",
+        "name": "TEST",
+        "description": "TEST",
+        "status": "ACTIVE",
+        "isI18n": false,
+        "customProperty": {
+            "system": "AT",
+            "platform": "C",
+            "subsystem": "ATB2"
+        },
+        "createdBy": "12345678",
+        "createdTime": "2025-05-07 10:16:01.060",
+        "modifiedBy": "12345678",
+        "modifiedTime": "2025-05-07 10:16:01.060"
+    },
+    {
+        "id": "e9934aff-8f8e-4160-b561-7a62ca4d1288",
+        "codeId": "PROD_CAT",
+        "name": "商品種類",
+        "description": "決策表範例 - 格式定義範例檔",
+        "status": "ACTIVE",
+        "isI18n": false,
+        "customProperty": {
+            "system": "AT",
+            "platform": "C",
+            "subsystem": "ATM0"
+        },
+        "createdBy": "30100003",
+        "createdTime": "2025-05-06 18:08:06.949",
+        "modifiedBy": "30100003",
+        "modifiedTime": "2025-05-06 18:08:06.949"
+    },
+    {
+        "id": "b8bf5a3c-5efe-4d39-8885-2360d2c34da3",
+        "codeId": "TEST_0430",
+        "name": "TEST_0430",
+        "description": "TEST_0430",
+        "status": "ACTIVE",
+        "isI18n": false,
+        "customProperty": {
+            "system": "AT",
+            "platform": "C",
+            "subsystem": "ATB2"
+        },
+        "createdBy": "12345678",
+        "createdTime": "2025-05-01 18:16:16.954",
+        "modifiedBy": "12345678",
+        "modifiedTime": "2025-05-01 18:16:16.954"
+    },
+    {
+        "id": "d78e2d91-6122-4e6c-ba1b-0a11d46f9117",
+        "codeId": "SYSTEM_CODE",
+        "name": "系統代碼",
+        "description": "1234",
+        "status": "ACTIVE",
+        "isI18n": true,
+        "customProperty": {
+            "system": "AT",
+            "platform": "C",
+            "subsystem": "ATB2"
+        },
+        "createdBy": "30100003",
+        "createdTime": "2025-04-24 10:25:21.147",
+        "modifiedBy": "12345678",
+        "modifiedTime": "2025-04-30 17:31:21.728"
+    }
+]

@@ -20,7 +20,7 @@ import NodeLibrary from './components/NodeLibrary.vue'
 import CustomNode from './components/CustomNode.vue'
 import EdgeForm from './components/EdgeForm.vue'
 import { useGraph } from './composable/useGraph'
-import type { GraphNode, GraphEdge } from './core/interfaces/Graph'
+import type { VueFlowNode, VueFlowEdge } from './core/interfaces/VueFlow'
 import NodeItem from './components/NodeItem.vue'
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
@@ -36,34 +36,49 @@ const { onConnect, onNodesChange, onEdgesChange, project } = useVueFlow()
 const edgeUpdateText = ref('')
 const selectedEdge = ref<Edge | null>(null)
 const isEditing = ref(false)
-const selectedNode = ref<GraphNode | null>(null)
 
-// 新增元件表單的顯示狀態
-const showNewNodeForm = ref(false)
+// 定義節點狀態枚舉
+enum NodeState {
+  NONE = 'none',
+  SELECT_NODE = 'selectNode',
+  NEW_NODE = 'newNode'
+}
+
+// 修改節點狀態相關的變數
+const nodeState = ref<NodeState>(NodeState.NONE)
+const selectedNode = ref<VueFlowNode | null>(null)
 
 // 處理節點點擊
 const onNodeClick = (event: NodeMouseEvent) => {
   const node = event.node
+  
+  // 先清除所有節點的選中狀態
+  graphData.value.nodes = graphData.value.nodes.map(n => ({
+    ...n,
+    selected: false
+  }))
+  
   // 從節點數據中提取必要的信息
-  const graphNode: GraphNode = {
+  const VueFlowNode: VueFlowNode = {
     id: node.id,
     type: node.type || 'custom',
     position: node.position,
-    metadata: {
+    metadataList: [{
       index: 0,
-      columnType: node.data?.metadata?.columnType || 'C',
+      columnType: node.data?.metadataList?.[0]?.columnType || 'C',
       label: node.data?.label || '',
-      desc: node.data?.metadata?.desc || '',
-      columnName: node.data?.metadata?.columnName || '',
-      dataType: node.data?.metadata?.dataType || 'STRING',
-      mandatory: node.data?.metadata?.mandatory || false,
-      codeId: node.data?.metadata?.codeId || '',
-      codeUid: node.data?.metadata?.codeUid || ''
-    }
+      desc: node.data?.metadataList?.[0]?.desc || '',
+      columnName: node.data?.metadataList?.[0]?.columnName || '',
+      dataType: node.data?.metadataList?.[0]?.dataType || 'STRING',
+      mandatory: node.data?.metadataList?.[0]?.mandatory || false,
+      codeId: node.data?.metadataList?.[0]?.codeId || '',
+      codeUid: node.data?.metadataList?.[0]?.codeUid || ''
+    }]
   }
-  selectedNode.value = graphNode
+  selectedNode.value = VueFlowNode
+  nodeState.value = NodeState.SELECT_NODE
   
-  // 更新節點的選中狀態
+  // 更新當前節點的選中狀態
   graphData.value.nodes = graphData.value.nodes.map(n => ({
     ...n,
     selected: n.id === node.id
@@ -75,6 +90,7 @@ const onPaneClick = () => {
   selectedNode.value = null
   selectedEdge.value = null
   isEditing.value = false
+  nodeState.value = NodeState.NONE
   
   // 清除所有節點的選中狀態
   graphData.value.nodes = graphData.value.nodes.map(n => ({
@@ -95,7 +111,7 @@ const onPaneClick = () => {
 
 // 處理新增連接
 const onConnectHandler = (params: Connection) => {
-  const newEdge: GraphEdge = {
+  const newEdge: VueFlowEdge = {
     id: `e${Date.now()}`,
     source: params.source,
     target: params.target,
@@ -116,7 +132,7 @@ const onConnectHandler = (params: Connection) => {
 // 處理點擊連接線
 const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
   console.log('🟢 edge:', edge.id)
-  const graphEdge: GraphEdge = {
+  const graphEdge: VueFlowEdge = {
     id: edge.id,
     source: edge.source,
     target: edge.target,
@@ -148,7 +164,7 @@ const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
 }
 
 // 處理連接線更新
-const handleEdgeUpdate = (updatedEdge: GraphEdge) => {
+const handleEdgeUpdate = (updatedEdge: VueFlowEdge) => {
   const edgeIndex = graphData.value.edges.findIndex(e => e.id === updatedEdge.id)
   if (edgeIndex !== -1) {
     // 創建新的邊緣數據
@@ -242,22 +258,21 @@ const onDrop = (event: DragEvent) => {
       y: event.clientY,
     })
 
-    const newNode: GraphNode = {
+    const newNode: VueFlowNode = {
       id: `node-${Date.now()}`,
       type: 'custom',
       position,
-      metadata: {
+      metadataList: [{
         index: 0,
-        columnType: nodeData.data.metadata.columnType || 'C',
+        columnType: nodeData.data.metadataList?.[0]?.columnType || 'C',
         label: nodeData.data.label || '新節點',
-        desc: nodeData.data.metadata.desc || '',
-        columnName: nodeData.data.metadata.columnName || '',
-        dataType: nodeData.data.metadata.dataType || 'STRING',
-        mandatory: nodeData.data.metadata.mandatory || false,
-        codeId: nodeData.data.metadata.codeId || '',
-        codeUid: nodeData.data.metadata.codeUid || ''
-      },
-      metadataList: nodeData.metadataList
+        desc: nodeData.data.metadataList?.[0]?.desc || '',
+        columnName: nodeData.data.metadataList?.[0]?.columnName || '',
+        dataType: nodeData.data.metadataList?.[0]?.dataType || 'STRING',
+        mandatory: nodeData.data.metadataList?.[0]?.mandatory || false,
+        codeId: nodeData.data.metadataList?.[0]?.codeId || '',
+        codeUid: nodeData.data.metadataList?.[0]?.codeUid || ''
+      }]
     }
 
     addNode(newNode)
@@ -267,21 +282,18 @@ const onDrop = (event: DragEvent) => {
 }
 
 // 處理節點更新
-const handleNodeUpdate = (updatedNode: GraphNode) => {
+const handleNodeUpdate = (updatedNode: VueFlowNode) => {
   const nodeIndex = graphData.value.nodes.findIndex(n => n.id === updatedNode.id)
   if (nodeIndex !== -1) {
     const updatedData = {
       ...graphData.value.nodes[nodeIndex],
-      label: updatedNode.metadata.label,
+      label: updatedNode.metadataList[0].label,
       data: {
         ...graphData.value.nodes[nodeIndex].data,
-        label: updatedNode.metadata.label,
-        metadata: updatedNode.metadata
+        label: updatedNode.metadataList[0].label,
+        metadataList: updatedNode.metadataList
       }
     }
-    console.log('🟢 updatedData:', updatedData)
-    console.log('🟢 graphData.value.nodes:', graphData.value.nodes)
-    
     // 使用 updateNode 來更新節點
     updateNode(updatedNode.id, updatedData)
   }
@@ -305,14 +317,25 @@ const handleNodeDelete = (nodeId: string) => {
   }))
 }
 
+const handleCloseNodeForm = () => {
+  console.log('🟢 handleCloseNodeForm') 
+  nodeState.value = NodeState.NONE
+  selectedNode.value = null
+  // 清除所有節點的選中狀態
+  graphData.value.nodes = graphData.value.nodes.map(n => ({
+    ...n,
+    selected: false
+  }))
+}
+
 // 處理點擊新增按鈕
 const handleAddNodeClick = () => {
   selectedNode.value = null
-  showNewNodeForm.value = true
+  nodeState.value = NodeState.NEW_NODE
 }
 
 // 處理新增元件
-const handleAddNode = (nodeData: GraphNode) => {
+const handleAddNode = (nodeData: VueFlowNode) => {
   // 設置新節點的位置在視圖中心
   const viewport = { x: 0, y: 0, zoom: 1.5 }
   const position = {
@@ -320,16 +343,15 @@ const handleAddNode = (nodeData: GraphNode) => {
     y: (window.innerHeight / 2 - 50) / viewport.zoom
   }
   
-  const newNode: GraphNode = {
+  const newNode: VueFlowNode = {
     ...nodeData,
     position,
     type: 'custom',
-    // metadataList: nodeData.metadataList
   }
   
   console.log('新增節點:', newNode)
   addNode(newNode)
-  showNewNodeForm.value = false
+  nodeState.value = NodeState.NONE
 }
 </script>
 
@@ -338,12 +360,11 @@ const handleAddNode = (nodeData: GraphNode) => {
     <NodeLibrary 
       class="node-library" 
       :selectedNode="selectedNode"
-      :showNewNodeForm="showNewNodeForm"
-      @update:selectedNode="selectedNode = $event"
+      :nodeState="nodeState"
       @updateNode="handleNodeUpdate"
       @addNode="handleAddNode"
       @deleteNode="handleNodeDelete"
-      @closeNewNodeForm="showNewNodeForm = false"
+      @closeNodeForm="handleCloseNodeForm"
     />
     <EdgeForm
       v-if="isEditing"

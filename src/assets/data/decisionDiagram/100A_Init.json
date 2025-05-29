@@ -1,5 +1,5 @@
 {
-  "nodes": [
+  "nodes": [  
     {
       "id": "node-0",
       "position": {
@@ -17,7 +17,8 @@
           "dataType": "1",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "INSURANCE_TYPE"
         }
       ]
     },
@@ -38,7 +39,8 @@
           "dataType": "3",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "COMPLICATION_STATUS"
         }
       ]
     },
@@ -59,7 +61,8 @@
           "dataType": "6",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
         }
       ]
     },
@@ -80,7 +83,8 @@
           "dataType": "1",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "B2C_DEATH"
         }
       ]
     },
@@ -101,7 +105,8 @@
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "B2C_150"
         }
       ]
     },
@@ -122,7 +127,8 @@
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "B2C_145"
         }
       ]
     },
@@ -143,7 +149,8 @@
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "B2C_90"
         }
       ]
     },
@@ -164,7 +171,8 @@
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "B2C_35"
         }
       ]
     },
@@ -185,7 +193,8 @@
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "B2C_25"
         }
       ]
     },
@@ -205,7 +214,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "COMPLICATION_TYPE"
       }]
     },
     {
@@ -224,7 +234,8 @@
         "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "AGE_RANGE"
       }]
     },
     {
@@ -243,7 +254,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -262,7 +274,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_185"
       }]
     },
     {
@@ -281,7 +294,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_100"
       }]
     },
     {
@@ -300,7 +314,8 @@
         "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "AGE_RANGE"
       }]
     },
     {
@@ -319,7 +334,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -338,7 +354,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_70"
       }]
     },
     {
@@ -357,7 +374,8 @@
         "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "AGE_RANGE"
       }]
     },
     {
@@ -376,7 +394,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -395,7 +414,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_125"
       }]
     },
     {
@@ -414,7 +434,8 @@
         "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "AGE_RANGE"
       }]
     },
     {
@@ -433,7 +454,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -452,7 +474,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_100"
       }]
     },
     {
@@ -471,7 +494,8 @@
         "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "AGE_RANGE"
       }]
     },
     {
@@ -490,7 +514,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -509,7 +534,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_245"
       }]
     },
     {
@@ -528,7 +554,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_115"
       }]
     },
     {
@@ -547,7 +574,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_75"
       }]
     },
     {
@@ -566,7 +594,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "COMORBIDITY_TYPE"
       }]
     },
     {
@@ -585,7 +614,8 @@
         "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "AGE_RANGE"
       }]
     },
     {
@@ -604,7 +634,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -623,7 +654,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_225"
       }]
     },
     {
@@ -642,7 +674,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_110"
       }]
     },
     {
@@ -661,7 +694,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_60"
       }]
     },
     {
@@ -680,7 +714,8 @@
         "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "AGE_RANGE"
       }]
     },
     {
@@ -699,7 +734,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -718,7 +754,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_190"
       }]
     },
     {
@@ -737,7 +774,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_100"
       }]
     },
     {
@@ -756,7 +794,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_35"
       }]
     },
     {
@@ -775,7 +814,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_25"
       }]
     },
     {
@@ -794,7 +834,8 @@
         "dataType": "6",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "AGE_RANGE"
       }]
     },
     {
@@ -813,7 +854,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -832,7 +874,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_155"
       }]
     },
     {
@@ -851,7 +894,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -870,7 +914,8 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     },
     {
@@ -889,7 +934,8 @@
         "dataType": "3",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_NO_STANDARD"
       }]
     },
     {
@@ -908,7 +954,8 @@
         "dataType": "2",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_0"
       }]
     },
     {
@@ -927,11 +974,12 @@
         "dataType": "1",
         "mandatory": true,
         "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27"
+        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+        "resultValue": "B2C_DEATH"
       }]
     }
   ],
-  "edges": [
+  "edges": [ 
     {
       "id": "e1",
       "source": "node-0",

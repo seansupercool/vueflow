@@ -6,13 +6,13 @@
     @dragstart="handleDragStart"
     @dragend="handleDragEnd"
   >
-    <div class="form-header" :class="{ 'is-new': isNewNode }" @click="$emit('toggle')">
+    <!-- <div class="form-header" :class="{ 'is-new': isNewNode }" @click="$emit('toggle')">
       <h3 :class="{ 'decision-node': formData.columnType === ColumnType.CONDITION, 'result-node': formData.columnType === ColumnType.RESULT }">
         <span v-if="!isNewNode" class="type-indicator">{{ ColumnTypeLabel[formData.columnType] }}:</span>
         {{ isNewNode ? '新增' : '修改' }}
       </h3>
       <div class="arrow-icon" :class="{ 'up': isExpanded }"></div>
-    </div>
+    </div> -->
     <div class="form-content" v-show="isExpanded">
       <div class="tab-group">
         <button 
@@ -54,14 +54,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import { MetaDataType, MetaDataTypeLabel, ColumnType, ColumnTypeLabel } from '../core/enums/Node'
-import type { GraphNode, NodeMetadata } from '../core/interfaces/graph'
+import type { VueFlowNode, NodeMetadata } from '../core/interfaces/VueFlow'
 
 const props = defineProps<{
   isNewNode: boolean,
-  nodeData?: GraphNode,
-  onSubmit?: (node: GraphNode) => void,
+  nodeData?: VueFlowNode,
+  onSubmit?: (node: VueFlowNode) => void,
   onDelete?: () => void,
   isExpanded: boolean
 }>()
@@ -80,6 +80,13 @@ const formData = ref<NodeMetadata>({
   codeUid: '',
   ...(props.nodeData?.metadataList?.[0] || {})
 })
+
+// 監聽 nodeData 的變化
+watch(() => props.nodeData, (newNodeData) => {
+  if (newNodeData?.metadataList?.[0]) {
+    formData.value = { ...newNodeData.metadataList[0] }
+  }
+}, { immediate: true })
 
 const handleDragStart = (event: DragEvent) => {
   if (!event.dataTransfer) return
@@ -113,7 +120,7 @@ const handleDragEnd = (event: DragEvent) => {
 }
 
 const handleSubmit = () => {
-  const graphNode: GraphNode = {
+  const VueFlowNode: VueFlowNode = {
     id: props.nodeData?.id || `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
     type: 'custom',
     position: props.nodeData?.position || { x: 0, y: 0 },
@@ -129,8 +136,8 @@ const handleSubmit = () => {
       codeUid: formData.value.codeUid
     }]
   }
-  console.log('🟢 Submitting node:', graphNode)
-  props.onSubmit?.(graphNode)
+  console.log('🟢 Submitting node:', VueFlowNode)
+  props.onSubmit?.(VueFlowNode)
   
   if (props.isNewNode) {
     formData.value = {

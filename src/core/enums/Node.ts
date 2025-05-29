@@ -17,10 +17,10 @@ export enum MetaDataType {
   INTEGER = '6',
   /** 映射類型 */
   MAP = '7',
-  /** 映射列表類型 */
-  LIST_MAP = '8',
-  /** 字串列表類型 */
-  LIST_STRING = '9'
+  // /** 映射列表類型 */
+  // LIST_MAP = '8',
+  // /** 字串列表類型 */
+  // LIST_STRING = '9'
 }
 
 /**
@@ -33,9 +33,9 @@ export const MetaDataTypeLabel: Record<MetaDataType, string> = {
   [MetaDataType.DATE]: '日期',
   [MetaDataType.TIMESTAMP]: '時間戳',
   [MetaDataType.INTEGER]: '整數',
-  [MetaDataType.MAP]: '映射',
-  [MetaDataType.LIST_MAP]: '映射列表',
-  [MetaDataType.LIST_STRING]: '字串列表'
+  [MetaDataType.MAP]: '靜態代碼表',
+  // [MetaDataType.LIST_MAP]: '映射列表',
+  // [MetaDataType.LIST_STRING]: '字串列表'
 }
 
 /**

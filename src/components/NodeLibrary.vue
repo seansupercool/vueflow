@@ -1,83 +1,120 @@
 <template>
-  <div class="node-library" v-if="selectedNode || showNewNodeForm">
+  <div class="node-library" v-if="selectedNode || nodeState === NodeState.NEW_NODE">
     <div class="node-library-header">
-      <h3>{{ showNewNodeForm ? '新增元件' : '元件庫' }}</h3>
+      <h3>{{ nodeState === NodeState.NEW_NODE ? '新增元件' : '修改元件' }}</h3>
+      <button class="close-btn" @click="handleClose">×</button>
     </div>
     <div class="node-library-content">
       <NodeItem
-        v-if="showNewNodeForm"
-        :isNewNode="true"
-        :onSubmit="handleNewNodeSubmit"
+        :isNewNode="nodeState === NodeState.NEW_NODE"
+        :nodeData="currentNode"
+        :onSubmit="handleSubmit"
+        :onDelete="handleDelete"
         :isExpanded="true"
-        @cancel="$emit('closeNewNodeForm')"
-      ></NodeItem>
-
-      <div v-if="selectedNode" class="node-list">
-        <NodeItem
-          :key="selectedNode.id"
-          :isNewNode="false"
-          :nodeData="selectedNode"
-          :onSubmit="handleSubmit"
-          :onDelete="() => deleteNode(selectedNode)"
-          :isExpanded="true"
-          @toggle="handleToggle(selectedNode.id)"
-          @cancel="$emit('update:selectedNode', null)"
-        ></NodeItem>
-      </div>
+        @toggle="handleToggle"
+        @cancel="handleCancel"
+      />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import NodeItem from './NodeItem.vue'
-import type { GraphNode } from '../core/interfaces/Graph'
+import type { VueFlowNode } from '../core/interfaces/VueFlow'
+
+enum NodeState {
+  NONE = 'none',
+  SELECT_NODE = 'selectNode',
+  NEW_NODE = 'newNode'
+}
 
 const props = defineProps<{
-  selectedNode: GraphNode | null
-  showNewNodeForm: boolean
+  selectedNode: VueFlowNode | null
+  nodeState: NodeState
 }>()
 
 const emit = defineEmits<{
-  (e: 'update:selectedNode', node: GraphNode | null): void
-  (e: 'updateNode', node: GraphNode): void
-  (e: 'addNode', node: GraphNode): void
+  (e: 'updateNode', node: VueFlowNode): void
+  (e: 'addNode', node: VueFlowNode): void
   (e: 'deleteNode', nodeId: string): void
-  (e: 'closeNewNodeForm'): void
+  (e: 'closeNodeForm'): void
 }>()
 
-const expandedNodeId = ref<string | null>(null)
-
-const handleToggle = (nodeId: string) => {
-  if (expandedNodeId.value === nodeId) {
-    expandedNodeId.value = null
-  } else {
-    expandedNodeId.value = nodeId
+// 計算當前顯示的節點數據
+const currentNode = computed(() => {
+  if (props.nodeState === NodeState.NEW_NODE) {
+    return undefined
   }
+  return props.selectedNode || undefined
+})
+
+const handleToggle = () => {
+  // 由於現在只有一個 NodeItem，不需要處理展開/收起的狀態
 }
 
-const handleSubmit = (nodeData: GraphNode) => {
-  emit('updateNode', nodeData)
-  emit('update:selectedNode', null)
-  expandedNodeId.value = null
-}
-
-const handleNewNodeSubmit = (nodeData: GraphNode) => {
-  const newNodeData: GraphNode = {
-    ...nodeData,
-    type: 'custom'
+const handleSubmit = (nodeData: VueFlowNode) => {
+  if (props.nodeState === NodeState.NEW_NODE) {
+    emit('addNode', { ...nodeData, type: 'custom' })
+  } else if (props.selectedNode) {
+    // 更新現有節點
+    const updatedNode: VueFlowNode = {
+      ...props.selectedNode,
+      ...nodeData,
+      metadataList: nodeData.metadataList
+    }
+    emit('updateNode', updatedNode)
   }
-  emit('addNode', newNodeData)
-  emit('closeNewNodeForm')
-  expandedNodeId.value = null
+  emit('closeNodeForm')
 }
 
-const deleteNode = (nodeData: GraphNode) => {
-  emit('deleteNode', nodeData.id)
-  emit('update:selectedNode', null)
+const handleCancel = () => {
+  emit('closeNodeForm')
+}
+
+const handleClose = () => {
+  emit('closeNodeForm')
+}
+
+const handleDelete = () => {
+  if (props.nodeState === NodeState.SELECT_NODE) {
+    emit('deleteNode', props.selectedNode?.id)
+  }
+  emit('closeNodeForm')
 }
 </script>
 
 <style lang="scss">
 @use '../styles/components/_node-library.scss';
+
+.node-library {
+  &-header {
+    position: relative;
+    
+    .close-btn {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #666;
+      cursor: pointer;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: #333;
+      }
+    }
+  }
+}
 </style> 

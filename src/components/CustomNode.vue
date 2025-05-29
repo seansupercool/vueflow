@@ -2,7 +2,7 @@
 import type { NodeProps } from '@vue-flow/core'
 import { Handle, Position } from '@vue-flow/core'
 import { ref } from 'vue'
-import type { NodeMetadata } from '../core/interfaces/Graph'
+import type { NodeMetadata } from '../core/interfaces/VueFlow'
 
 interface CustomNodeData {
   label: string,
@@ -11,19 +11,19 @@ interface CustomNodeData {
 
 const props = defineProps<NodeProps<CustomNodeData>>()
 
-// 計算屬性來判斷當前節點是否被選中
-const isSelected = ref(false)
+// 移除本地的 isSelected ref
+// const isSelected = ref(false)
 
-const handleClick = () => {
-  isSelected.value = true
-}
+// 移除本地的 handleClick 函數
+// const handleClick = () => {
+//   isSelected.value = true
+// }
 </script>
 
 <template>
   <div 
     class="custom-node" 
-    :class="{ 'selected': isSelected }"
-    @click="handleClick"
+    :class="{ 'selected': props.selected }"
   >
     <Handle type="target" :position="Position.Top" />
     <div class="node-content" :class="{ 'result-node': props.data.metadataList[0]?.columnType === 'R' }">
