@@ -1,7 +1,7 @@
 // composables/useGraph.ts
 import { ref } from 'vue'
 import type { VueFlowNode, VueFlowEdge, VueFlowData } from '@/core/interfaces/VueFlow'
-import { initialGraph } from '@/assets/data/initialMock'
+import { initialVueFlowData } from '@/assets/data/initialMock'
 import type { Node, Edge } from '@vue-flow/core'
 
 const convertToVueFlowNode = (node: VueFlowNode): Node => ({
@@ -10,6 +10,7 @@ const convertToVueFlowNode = (node: VueFlowNode): Node => ({
   position: node.position,
   data: {
     label: node.metadataList[0].label,
+    columnType: node.columnType,
     metadataList: node.metadataList
   }
 })
@@ -28,8 +29,8 @@ const convertToVueFlowEdge = (edge: VueFlowEdge): Edge => ({
 })
 
 const graphData = ref<VueFlowData>({
-  nodes: initialGraph.nodes.map(convertToVueFlowNode),
-  edges: initialGraph.edges.map(convertToVueFlowEdge)
+  nodes: initialVueFlowData.nodes.map(convertToVueFlowNode),
+  edges: initialVueFlowData.edges.map(convertToVueFlowEdge)
 })
 
 export function useGraph() {

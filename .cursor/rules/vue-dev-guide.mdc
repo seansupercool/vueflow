@@ -1,0 +1,28 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# File: vue-dev-guide.mpc
+
+## Vue 3 + TypeScript Coding Standard
+
+When writing Vue components:
+
+- Always use `<script setup lang="ts">` with TypeScript.
+- Organize code inside `<script setup>` in this order:
+  1. Imports
+  2. Type definitions / defineProps
+  3. defineEmits
+  4. Reactive refs
+  5. Computed properties
+  6. Methods
+  7. Lifecycle hooks
+
+- Use `<style scoped lang="scss">` for component styles.
+- Avoid global styles unless explicitly needed.
+
+## File and Folder Structure
+
+Follow this directory structure for organizing your Vue project:
+

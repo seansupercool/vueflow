@@ -1,0 +1,33 @@
+.custom-node {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid #ddd;
+  min-width: 150px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &.selected {
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+  }
+
+  .node-content {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+
+    &.result-node {
+      color: #b91e1e;
+    }
+
+    .metadata-item {
+      padding: 4px 0;
+      border-bottom: 1px solid #eee;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+} 

@@ -5,7 +5,7 @@
       <button class="close-btn" @click="handleClose">×</button>
     </div>
     <div class="node-library-content">
-      <NodeItem
+      <NodeForm
         :isNewNode="nodeState === NodeState.NEW_NODE"
         :nodeData="currentNode"
         :onSubmit="handleSubmit"
@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import NodeItem from './NodeItem.vue'
+import NodeForm from './NodeForm.vue'
 import type { VueFlowNode } from '../core/interfaces/VueFlow'
 
 enum NodeState {
@@ -85,36 +85,5 @@ const handleDelete = () => {
 </script>
 
 <style lang="scss">
-@use '../styles/components/_node-library.scss';
-
-.node-library {
-  &-header {
-    position: relative;
-    
-    .close-btn {
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #666;
-      cursor: pointer;
-      padding: 0;
-      width: 24px;
-      height: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: all 0.2s ease;
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        color: #333;
-      }
-    }
-  }
-}
+@use '../styles/components/NodeLibrary.scss';
 </style> 

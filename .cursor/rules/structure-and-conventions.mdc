@@ -1,0 +1,84 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## Project Folder Structure & File Placement Rules
+
+Use the following folder and file structure to organize the Vue project. Each directory has a specific responsibility:
+
+### 📁 src/assets/
+- Static files such as images, fonts, or icons.
+- Do NOT place logic or component code here.
+
+### 📁 src/components/
+- Reusable presentational components.
+- Should be UI-focused and have minimal business logic.
+- File naming: `PascalCase`, e.g., `UserCard.vue`.
+
+### 📁 src/pages/
+- Route-view components mapped to routes.
+- These are usually full pages and may contain layout wrappers or logic.
+- File naming: `PascalCase`, e.g., `DashboardPage.vue`.
+
+### 📁 src/layouts/
+- Shared layout components used in routing (e.g., `DefaultLayout.vue`, `AdminLayout.vue`).
+- May include navigation bars, sidebars, etc.
+
+### 📁 src/composables/
+- Reusable logic using the Composition API.
+- Each composable should be a function that starts with `use`.
+- File naming: `camelCase`, e.g., `useModal.ts`, `useAuth.ts`.
+
+### 📁 src/interfaces/
+- All global TypeScript interfaces and types.
+- Example: `User.ts`, `Product.ts`.
+
+### 📁 src/constants/
+- Constant values, enums, and configuration objects.
+- File naming: lowercase or snake_case, e.g., `api.ts`, `roles.ts`.
+
+### 📁 src/services/
+- API request and backend interaction logic.
+- Should isolate axios or fetch calls into clean functions.
+- One file per domain entity, e.g., `user.service.ts`.
+
+### 📁 src/router/
+- Vue Router configuration files.
+- Main file: `index.ts`.
+- Modularized route files go in `/router/modules/`, e.g., `admin.ts`, `user.ts`.
+
+### 📁 src/store/
+- If using state management (e.g., Pinia), put store modules here.
+- Each store should be in its own file and use `defineStore`.
+- Example: `user.ts`, `auth.ts`.
+
+### 📁 src/utils/
+- Pure utility/helper functions with no Vue dependencies.
+- Examples: `dateFormatter.ts`, `validators.ts`.
+
+### 📁 src/i18n/
+- Localization-related files (if using Vue I18n).
+- Include `index.ts` and per-language JSON files, e.g., `en.json`, `zh-TW.json`.
+
+### 📁 src/styles/
+- Global SCSS files like variables, mixins, base styles.
+- Should not contain component-specific styles.
+
+### 📄 src/main.ts
+- Entry point of the application.
+- Should set up the app, register plugins, and mount the Vue app.
+
+### 📄 src/App.vue
+- Root component that usually contains `<router-view />`.
+
+---
+
+## Naming Rules Summary
+
+- Vue components: `PascalCase.vue`
+- Composables: `useCamelCase.ts`
+- Interfaces/Types: `PascalCase.ts`
+- Services: `camelCase.service.ts`
+- Constants: `camelCase.ts` or `UPPER_CASE_ENUM.ts`
+- Store modules: `camelCase.ts`

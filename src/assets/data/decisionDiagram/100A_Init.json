@@ -1,5 +1,5 @@
 {
-  "nodes": [  
+  "nodes": [
     {
       "id": "node-0",
       "position": {
@@ -13,7 +13,7 @@
           "index": 0,
           "label": "險種",
           "desc": "此欄位代表「險種」的值",
-          "columnName": "PROC_CAT",
+          "columnName": "INSURANCE_TYPE",
           "dataType": "1",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
@@ -35,7 +35,7 @@
           "index": 0,
           "label": "有無併發症及共病",
           "desc": "此欄位代表「有無併發症及共病」的值",
-          "columnName": "有無併發症及共病",
+          "columnName": "COMPLICATION_STATUS",
           "dataType": "3",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
@@ -57,7 +57,7 @@
           "index": 0,
           "label": "投保年齡:",
           "desc": "此欄位代表「投保年齡:」的值",
-          "columnName": "投保年齡",
+          "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
@@ -77,14 +77,14 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "結果: D",
-          "desc": "此欄位代表「結果: D」的值",
-          "columnName": "結果d",
+          "label": "結果:",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "B2C_DEATH"
+          "resultValue": "D"
         }
       ]
     },
@@ -99,14 +99,14 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "結果: 150",
-          "desc": "此欄位代表「結果: 150」的值",
-          "columnName": "結果150",
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "B2C_150"
+          "resultValue": "150"
         }
       ]
     },
@@ -121,14 +121,36 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "結果: 145",
-          "desc": "此欄位代表「結果: 145」的值",
-          "columnName": "結果145",
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "B2C_145"
+          "resultValue": "145"
+        },
+        {
+          "index": 0,
+          "label": "投保上限(內)",
+          "desc": "",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "6000000"
+        },
+        {
+          "index": 0,
+          "label": "投保上限(內+外)",
+          "desc": "",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "6000000"
         }
       ]
     },
@@ -143,14 +165,14 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "結果: 90",
-          "desc": "此欄位代表「結果: 90」的值",
-          "columnName": "結果90",
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "B2C_90"
+          "resultValue": "90"
         }
       ]
     },
@@ -165,14 +187,14 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "結果: 35",
-          "desc": "此欄位代表「結果: 35」的值",
-          "columnName": "結果35",
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "B2C_35"
+          "resultValue": "35"
         }
       ]
     },
@@ -187,14 +209,14 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "結果: 25",
-          "desc": "此欄位代表「結果: 25」的值",
-          "columnName": "結果25",
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
           "codeId": "PROC_CAT_CSR",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "B2C_25"
+          "resultValue": "25"
         }
       ]
     },
@@ -206,17 +228,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "併發症類型",
-        "desc": "此欄位代表「併發症類型」的值",
-        "columnName": "併發症類型",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "COMPLICATION_TYPE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "併發症類型",
+          "desc": "此欄位代表「併發症類型」的值",
+          "columnName": "COMPLICATION_TYPE",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "COMPLICATION_TYPE"
+        }
+      ]
     },
     {
       "id": "node-16",
@@ -226,17 +250,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "投保年齡:",
-        "desc": "此欄位代表「投保年齡:」的值",
-        "columnName": "投保年齡",
-        "dataType": "6",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "AGE_RANGE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "投保年齡:",
+          "desc": "此欄位代表「投保年齡:」的值",
+          "columnName": "INSURANCE_AGE",
+          "dataType": "6",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
+        }
+      ]
     },
     {
       "id": "node-18",
@@ -246,17 +272,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-20",
@@ -266,17 +294,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 185",
-        "desc": "此欄位代表「結果: 185」的值",
-        "columnName": "結果185",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_185"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "185"
+        }
+      ]
     },
     {
       "id": "node-22",
@@ -286,17 +316,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 100",
-        "desc": "此欄位代表「結果: 100」的值",
-        "columnName": "結果100",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_100"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "100"
+        }
+      ]
     },
     {
       "id": "node-23",
@@ -306,17 +338,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "投保年齡:",
-        "desc": "此欄位代表「投保年齡:」的值",
-        "columnName": "投保年齡",
-        "dataType": "6",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "AGE_RANGE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "投保年齡:",
+          "desc": "此欄位代表「投保年齡:」的值",
+          "columnName": "INSURANCE_AGE",
+          "dataType": "6",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
+        }
+      ]
     },
     {
       "id": "node-25",
@@ -326,17 +360,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-27",
@@ -346,17 +382,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 70",
-        "desc": "此欄位代表「結果: 70」的值",
-        "columnName": "結果70",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_70"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "70"
+        }
+      ]
     },
     {
       "id": "node-28",
@@ -366,17 +404,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "投保年齡:",
-        "desc": "此欄位代表「投保年齡:」的值",
-        "columnName": "投保年齡",
-        "dataType": "6",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "AGE_RANGE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "投保年齡:",
+          "desc": "此欄位代表「投保年齡:」的值",
+          "columnName": "INSURANCE_AGE",
+          "dataType": "6",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
+        }
+      ]
     },
     {
       "id": "node-30",
@@ -386,17 +426,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-32",
@@ -406,17 +448,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 125",
-        "desc": "此欄位代表「結果: 125」的值",
-        "columnName": "結果125",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_125"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "125"
+        }
+      ]
     },
     {
       "id": "node-33",
@@ -426,17 +470,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "投保年齡:",
-        "desc": "此欄位代表「投保年齡:」的值",
-        "columnName": "投保年齡",
-        "dataType": "6",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "AGE_RANGE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "投保年齡:",
+          "desc": "此欄位代表「投保年齡:」的值",
+          "columnName": "INSURANCE_AGE",
+          "dataType": "6",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
+        }
+      ]
     },
     {
       "id": "node-35",
@@ -446,17 +492,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-37",
@@ -466,17 +514,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 100",
-        "desc": "此欄位代表「結果: 100」的值",
-        "columnName": "結果100",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_100"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "100"
+        }
+      ]
     },
     {
       "id": "node-38",
@@ -486,17 +536,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "投保年齡:",
-        "desc": "此欄位代表「投保年齡:」的值",
-        "columnName": "投保年齡",
-        "dataType": "6",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "AGE_RANGE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "投保年齡:",
+          "desc": "此欄位代表「投保年齡:」的值",
+          "columnName": "INSURANCE_AGE",
+          "dataType": "6",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
+        }
+      ]
     },
     {
       "id": "node-40",
@@ -506,17 +558,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-42",
@@ -526,17 +580,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 245",
-        "desc": "此欄位代表「結果: 245」的值",
-        "columnName": "結果245",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_245"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "245"
+        }
+      ]
     },
     {
       "id": "node-44",
@@ -546,17 +602,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 115",
-        "desc": "此欄位代表「結果: 115」的值",
-        "columnName": "結果115",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_115"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "115"
+        }
+      ]
     },
     {
       "id": "node-46",
@@ -566,17 +624,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 75",
-        "desc": "此欄位代表「結果: 75」的值",
-        "columnName": "結果75",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_75"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "75"
+        }
+      ]
     },
     {
       "id": "node-47",
@@ -586,17 +646,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "共病類型",
-        "desc": "此欄位代表「共病類型」的值",
-        "columnName": "共病類型",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "COMORBIDITY_TYPE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "共病類型",
+          "desc": "此欄位代表「共病類型」的值",
+          "columnName": "COMORBIDITY_TYPE",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "COMORBIDITY_TYPE"
+        }
+      ]
     },
     {
       "id": "node-48",
@@ -606,17 +668,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "投保年齡:",
-        "desc": "此欄位代表「投保年齡:」的值",
-        "columnName": "投保年齡",
-        "dataType": "6",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "AGE_RANGE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "投保年齡:",
+          "desc": "此欄位代表「投保年齡:」的值",
+          "columnName": "INSURANCE_AGE",
+          "dataType": "6",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
+        }
+      ]
     },
     {
       "id": "node-50",
@@ -626,17 +690,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-52",
@@ -646,17 +712,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 225",
-        "desc": "此欄位代表「結果: 225」的值",
-        "columnName": "結果225",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_225"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "225"
+        }
+      ]
     },
     {
       "id": "node-54",
@@ -666,17 +734,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 110",
-        "desc": "此欄位代表「結果: 110」的值",
-        "columnName": "結果110",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_110"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "110"
+        }
+      ]
     },
     {
       "id": "node-56",
@@ -686,17 +756,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 60",
-        "desc": "此欄位代表「結果: 60」的值",
-        "columnName": "結果60",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_60"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "60"
+        }
+      ]
     },
     {
       "id": "node-57",
@@ -706,17 +778,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "投保年齡:",
-        "desc": "此欄位代表「投保年齡:」的值",
-        "columnName": "投保年齡",
-        "dataType": "6",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "AGE_RANGE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "投保年齡:",
+          "desc": "此欄位代表「投保年齡:」的值",
+          "columnName": "INSURANCE_AGE",
+          "dataType": "6",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
+        }
+      ]
     },
     {
       "id": "node-59",
@@ -726,17 +800,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-61",
@@ -746,17 +822,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 190",
-        "desc": "此欄位代表「結果: 190」的值",
-        "columnName": "結果190",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_190"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "190"
+        }
+      ]
     },
     {
       "id": "node-63",
@@ -766,17 +844,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 100",
-        "desc": "此欄位代表「結果: 100」的值",
-        "columnName": "結果100",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_100"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "100"
+        }
+      ]
     },
     {
       "id": "node-65",
@@ -786,17 +866,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 35",
-        "desc": "此欄位代表「結果: 35」的值",
-        "columnName": "結果35",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_35"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "35"
+        }
+      ]
     },
     {
       "id": "node-67",
@@ -806,17 +888,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 25",
-        "desc": "此欄位代表「結果: 25」的值",
-        "columnName": "結果25",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_25"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "25"
+        }
+      ]
     },
     {
       "id": "node-68",
@@ -826,17 +910,19 @@
       },
       "type": "custom",
       "columnType": "C",
-      "metadataList": [{
-        "index": 0,
-        "label": "投保年齡:",
-        "desc": "此欄位代表「投保年齡:」的值",
-        "columnName": "投保年齡",
-        "dataType": "6",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "AGE_RANGE"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "投保年齡:",
+          "desc": "此欄位代表「投保年齡:」的值",
+          "columnName": "INSURANCE_AGE",
+          "dataType": "6",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "AGE_RANGE"
+        }
+      ]
     },
     {
       "id": "node-70",
@@ -846,17 +932,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-72",
@@ -866,17 +954,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 155",
-        "desc": "此欄位代表「結果: 155」的值",
-        "columnName": "結果155",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_155"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "155"
+        }
+      ]
     },
     {
       "id": "node-74",
@@ -886,17 +976,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-76",
@@ -906,17 +998,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     },
     {
       "id": "node-78",
@@ -926,17 +1020,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 無標準",
-        "desc": "此欄位代表「結果: 無標準」的值",
-        "columnName": "結果無標準",
-        "dataType": "3",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_NO_STANDARD"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "3",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "無標準"
+        }
+      ]
     },
     {
       "id": "node-80",
@@ -946,17 +1042,19 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: 0",
-        "desc": "此欄位代表「結果: 0」的值",
-        "columnName": "結果0",
-        "dataType": "2",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_0"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "2",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "0"
+        }
+      ]
     },
     {
       "id": "node-82",
@@ -966,20 +1064,22 @@
       },
       "type": "custom",
       "columnType": "R",
-      "metadataList": [{
-        "index": 0,
-        "label": "結果: D",
-        "desc": "此欄位代表「結果: D」的值",
-        "columnName": "結果d",
-        "dataType": "1",
-        "mandatory": true,
-        "codeId": "PROC_CAT_CSR",
-        "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-        "resultValue": "B2C_DEATH"
-      }]
+      "metadataList": [
+        {
+          "index": 0,
+          "label": "結果",
+          "desc": "此欄位代表「結果:」",
+          "columnName": "RESULT",
+          "dataType": "1",
+          "mandatory": true,
+          "codeId": "PROC_CAT_CSR",
+          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+          "resultValue": "D"
+        }
+      ]
     }
   ],
-  "edges": [ 
+  "edges": [
     {
       "id": "e1",
       "source": "node-0",

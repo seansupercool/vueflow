@@ -25,11 +25,11 @@
         </button>
       </div>
       <div class="form-group">
-        <label>中文名稱：</label>
+        <label>欄位中文名稱：</label>
         <input v-model="formData.label" type="text" placeholder="請輸入顯示名稱">
       </div>
       <div class="form-group">
-        <label>欄位名稱：</label>
+        <label>欄位變數名：</label>
         <input v-model="formData.columnName" type="text" placeholder="請輸入欄位名">
       </div>
       <div class="form-group">
@@ -42,7 +42,7 @@
       </div>
       <div class="form-group">
         <label>詳細內容：</label>
-        <textarea v-model="formData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="4"></textarea>
+        <textarea v-model="formData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="2"></textarea>
       </div>
       <div class="form-actions">
         <button @click="handleSubmit" class="btn submit-btn">確定</button>
@@ -55,7 +55,7 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { MetaDataType, MetaDataTypeLabel, ColumnType, ColumnTypeLabel } from '../core/enums/Node'
+import { MetaDataType, MetaDataTypeLabel, ColumnType, ColumnTypeLabel } from '../core/enums/VueFlow'
 import type { VueFlowNode, NodeMetadata } from '../core/interfaces/VueFlow'
 
 const props = defineProps<{
@@ -169,26 +169,5 @@ const handleDelete = () => {
 </script>
 
 <style lang="scss">
-@use '../styles/components/_node-item.scss';
-
-.form-header {
-  h3 {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    .type-indicator {
-      font-size: 0.9em;
-      opacity: 0.8;
-    }
-
-    &.decision-node {
-      color: #000000;
-    }
-    
-    &.result-node {
-      color: #a82626;
-    }
-  }
-}
+@use '../styles/components/NodeForm.scss';
 </style>
