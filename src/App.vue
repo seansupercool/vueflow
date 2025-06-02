@@ -404,7 +404,7 @@ const handleAddNode = (nodeData: VueFlowNode) => {
           </div>
         </template>
       </VueFlow>
-      <button @click="getStructure" class="submit-btn">取得結構</button>
+      <button @click="getStructure" class="structure-btn">取得結構</button>
     </div>
   </div>
 </template>

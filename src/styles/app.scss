@@ -2,22 +2,61 @@
     width: 100vw;
     height: 100vh;
     position: relative;
+    overflow: hidden;
+    display: flex;
   }
   
   .flow-container {
-    width: 100%;
-    height: 100%;
+    flex: 1;
     position: relative;
+    height: 100%;
   }
   
   .vue-flow {
     width: 100%;
     height: 100%;
-    background-color: #f8f8f8;
-  }
-  
-  .vue-flow__drop-target {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--color-background-soft);
+
+    &__drop-target {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &__node {
+      &.selected {
+        box-shadow: 0 0 0 2px var(--color-primary);
+      }
+    }
+
+    &__edge {
+      &.selected {
+        .vue-flow__edge-path {
+          stroke: var(--color-primary);
+          stroke-width: 2;
+        }
+      }
+    }
+
+    &__controls {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+
+      button {
+        background-color: var(--color-background);
+        border: 1px solid var(--color-border);
+        color: var(--color-text);
+
+        &:hover {
+          background-color: var(--color-background-soft);
+        }
+      }
+    }
+
+    &__minimap {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
   }
   
   body {
@@ -26,63 +65,48 @@
     overflow: hidden;
   }
   
-  .add-node-btn {
+  .add-node-btn,
+  .structure-btn {
     position: absolute;
-    top: 20px;
-    left: 20px;
     z-index: 5;
-    padding: 8px 16px;
-    background-color: #26a862;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.875rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: var(--color-primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  .add-node-btn {
+    top: 1rem;
+    left: 1rem;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    gap: 0.5rem;
+
+    .plus-icon {
+      font-size: 1.125rem;
+      font-weight: bold;
+    }
   }
   
-  .add-node-btn:hover {
-    background-color: #229357;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  }
-  
-  .plus-icon {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .submit-btn {
-    bottom: 20px;
-    right: 20px;
-    z-index: 5;
-    padding: 8px 16px;
-    background-color: #26a862;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .submit-btn:hover {
-    background-color: #229357;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  .structure-btn {
+    bottom: 1rem;
+    right: 1rem;
   }
   
   .node-form-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
@@ -91,9 +115,9 @@
   }
   
   .node-form-container {
-    background-color: white;
+    background-color: var(--color-background);
     border-radius: 8px;
-    padding: 20px;
+    padding: 1.25rem;
     width: 400px;
     max-height: 90vh;
     overflow-y: auto;
@@ -101,11 +125,18 @@
   }
   
   .edge-label {
-    background-color: white;
-    padding: 4px 8px;
+    background-color: var(--color-background);
+    padding: 0.25rem 0.5rem;
     border-radius: 4px;
-    font-size: 12px;
-    border: 1px solid #ddd;
+    font-size: 0.75rem;
+    border: 1px solid var(--color-border);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--color-primary);
+      box-shadow: 0 2px 4px rgba(var(--color-primary-rgb), 0.1);
+    }
   }

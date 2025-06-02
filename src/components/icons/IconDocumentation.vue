@@ -5,3 +5,7 @@
     />
   </svg>
 </template>
+
+<style lang="scss">
+@use '../../styles/components/_icons.scss';
+</style>

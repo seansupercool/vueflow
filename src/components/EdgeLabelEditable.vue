@@ -30,18 +30,6 @@ const updateLabel = (event: Event) => {
 }
 </script>
 
-<style scoped>
-.edge-label {
-  position: absolute;
-  transform: translate(-50%, -50%);
-}
-
-.edge-label-input {
-  width: 180px;
-  font-size: 12px;
-  padding: 2px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: white;
-}
+<style lang="scss">
+@use '../styles/components/EdgeLabelEditable.scss';
 </style>

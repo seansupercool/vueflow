@@ -55,8 +55,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
@@ -253,8 +253,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
@@ -341,8 +341,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
@@ -407,8 +407,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
@@ -473,8 +473,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
@@ -539,8 +539,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
@@ -671,8 +671,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
@@ -781,8 +781,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
@@ -913,8 +913,8 @@
       "metadataList": [
         {
           "index": 0,
-          "label": "投保年齡:",
-          "desc": "此欄位代表「投保年齡:」的值",
+          "label": "投保年齡",
+          "desc": "此欄位代表「投保年齡」的值",
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,

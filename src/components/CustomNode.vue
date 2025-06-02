@@ -24,13 +24,13 @@ const props = defineProps<NodeProps<VueFlowNode>>()
     <Handle type="target" :position="Position.Top" />
     <div class="node-content" :class="{ 'result-node': props.data?.columnType === ColumnType.RESULT }">
       <div v-for="(item, index) in props.data.metadataList" :key="index" class="metadata-item">
-        {{ item.label }}: {{ item.resultValue }}
+        {{ item.label }} {{ props.data?.columnType === ColumnType.RESULT?":" + item.resultValue:"" }}
       </div>
     </div>
-    <Handle type="source" :position="Position.Bottom" />
+    <Handle v-if="props.data?.columnType !== ColumnType.RESULT" type="source" :position="Position.Bottom" />
   </div>
 </template>
 
 <style lang="scss">
-@import '../styles/components/CustomNode.scss';
+@use '../styles/components/CustomNode.scss';
 </style>
