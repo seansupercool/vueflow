@@ -331,6 +331,21 @@ const handleAddNode = (nodeData: VueFlowNode) => {
   addNode(newNode)
   propertiesState.value = PropertiesState.NONE
 }
+
+const handleEdgeDelete = (edgeId: string) => {
+  deleteEdge(edgeId)
+  selectedEdge.value = null
+  
+  // 清除所有邊的選中狀態
+  graphData.value.edges = graphData.value.edges.map(e => ({
+    ...e,
+    style: {
+      ...e.style,
+      stroke: '#000',
+      strokeWidth: 1
+    }
+  }))
+}
 </script>
 
 <template>
@@ -345,6 +360,7 @@ const handleAddNode = (nodeData: VueFlowNode) => {
       @deleteNode="handleNodeDelete"
       @closeNodeForm="handleCloseNodeForm"
       @updateEdge="handleEdgeUpdate"
+      @deleteEdge="handleEdgeDelete"
       @cancelEdge="handleEdgeCancel"
     />
     <div class="flow-container">

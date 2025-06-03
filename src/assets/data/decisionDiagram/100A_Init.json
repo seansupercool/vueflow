@@ -16,7 +16,7 @@
           "columnName": "INSURANCE_TYPE",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "INS_SYSTEM_CODE",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "INSURANCE_TYPE"
         }
@@ -38,7 +38,7 @@
           "columnName": "COMPLICATION_STATUS",
           "dataType": "3",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "COMP_STATUS",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "COMPLICATION_STATUS"
         }
@@ -60,7 +60,7 @@
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "INSURANCE_PERIOD",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "AGE_RANGE"
         }
@@ -82,7 +82,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -104,7 +104,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "150"
         }
@@ -126,7 +126,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "145"
         },
@@ -137,7 +137,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "6000000"
         },
@@ -148,7 +148,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "6000000"
         }
@@ -170,7 +170,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "90"
         }
@@ -236,7 +236,7 @@
           "columnName": "COMPLICATION_TYPE",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "COMP_TYPE",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "COMPLICATION_TYPE"
         }
@@ -258,7 +258,7 @@
           "columnName": "INSURANCE_AGE",
           "dataType": "6",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "INSURANCE_PERIOD",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "AGE_RANGE"
         }
@@ -280,7 +280,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -302,7 +302,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "185"
         }
@@ -324,7 +324,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "100"
         }
@@ -390,7 +390,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "70"
         }
@@ -434,7 +434,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -456,7 +456,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "125"
         }
@@ -500,7 +500,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -522,7 +522,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "100"
         }
@@ -566,7 +566,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -588,7 +588,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "245"
         }
@@ -610,7 +610,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "115"
         }
@@ -632,7 +632,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "75"
         }
@@ -698,7 +698,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -720,7 +720,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "225"
         }
@@ -742,7 +742,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "110"
         }
@@ -764,7 +764,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "60"
         }
@@ -808,7 +808,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -830,7 +830,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "190"
         }
@@ -852,7 +852,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "100"
         }
@@ -874,7 +874,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "35"
         }
@@ -896,7 +896,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "25"
         }
@@ -984,7 +984,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -1006,7 +1006,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }
@@ -1028,7 +1028,7 @@
           "columnName": "RESULT",
           "dataType": "3",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "無標準"
         }
@@ -1050,7 +1050,7 @@
           "columnName": "RESULT",
           "dataType": "2",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "0"
         }
@@ -1072,7 +1072,7 @@
           "columnName": "RESULT",
           "dataType": "1",
           "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
+          "codeId": "RULE_EXECUTE_RESULT",
           "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
           "resultValue": "D"
         }

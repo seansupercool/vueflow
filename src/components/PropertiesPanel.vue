@@ -44,6 +44,7 @@ const emit = defineEmits<{
   (e: 'deleteNode', nodeId: string): void
   (e: 'closeNodeForm'): void
   (e: 'updateEdge', edge: VueFlowEdge): void
+  (e: 'deleteEdge', edgeId: string): void
   (e: 'cancelEdge'): void
 }>()
 
@@ -127,6 +128,13 @@ const handleClose = () => {
 const handleNodeDelete = () => {
   if (props.propertiesState === PropertiesState.SELECT_NODE) {
     emit('deleteNode', props.selectedNode?.id)
+  }
+  emit('closeNodeForm')
+}
+
+const handleEdgeDelete = () => {
+  if (props.selectedEdge) {
+    emit('deleteEdge', props.selectedEdge.id)
   }
   emit('closeNodeForm')
 }
