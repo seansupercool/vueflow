@@ -18,31 +18,33 @@
         <button 
           v-for="type in Object.values(ColumnType)" 
           :key="type"
-          :class="['tab-btn', { active: formData.columnType === type }]" 
-          @click="formData.columnType = type"
+          :class="['tab-btn', { active: editingFlowNode?.columnType === type }]" 
+          @click="editingFlowNode.columnType = type"
         >
           {{ ColumnTypeLabel[type] }}元件
         </button>
       </div>
-      <div class="form-group">
-        <label>欄位中文名稱：</label>
-        <input v-model="formData.label" type="text" placeholder="請輸入顯示名稱">
-      </div>
-      <div class="form-group">
-        <label>欄位變數名：</label>
-        <input v-model="formData.columnName" type="text" placeholder="請輸入欄位名">
-      </div>
-      <div class="form-group">
-        <label>資料格式：</label>
-        <select v-model="formData.dataType" class="form-select">
-          <option v-for="type in Object.values(MetaDataType)" :key="type" :value="type">
-            {{ MetaDataTypeLabel[type] }}
-          </option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>詳細內容：</label>
-        <textarea v-model="formData.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="2"></textarea>
+      <div v-for="(metadata, index) in editingFlowNode.metadataList" :key="index" class="metadata-section">
+        <div class="form-group">
+          <label>欄位中文名稱：</label>
+          <input v-model="metadata.label" type="text" placeholder="請輸入顯示名稱">
+        </div>
+        <div class="form-group">
+          <label>欄位變數名：</label>
+          <input v-model="metadata.columnName" type="text" placeholder="請輸入欄位名">
+        </div>
+        <div class="form-group">
+          <label>資料格式：</label>
+          <select v-model="metadata.dataType" class="form-select">
+            <option v-for="type in Object.values(MetaDataType)" :key="type" :value="type">
+              {{ MetaDataTypeLabel[type] }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>詳細內容：</label>
+          <textarea v-model="metadata.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="2"></textarea>
+        </div>
       </div>
       <div class="form-actions">
         <button @click="handleSubmit" class="btn submit-btn">確定</button>
@@ -60,7 +62,7 @@ import type { VueFlowNode, NodeMetadata } from '../core/interfaces/VueFlow'
 
 const props = defineProps<{
   isNewNode: boolean,
-  nodeData?: VueFlowNode,
+  vueflowNode?: VueFlowNode,
   onSubmit?: (node: VueFlowNode) => void,
   onDelete?: () => void,
   isExpanded: boolean
@@ -68,25 +70,25 @@ const props = defineProps<{
 
 const emit = defineEmits(['toggle', 'cancel'])
 
-const formData = ref<NodeMetadata>({
-  index: 0,
+const editingFlowNode = ref<VueFlowNode>({
+  id: '',
+  type: 'custom',
+  position: { x: 0, y: 0 },
   columnType: ColumnType.CONDITION,
-  label: '',
-  desc: '',
-  columnName: '',
-  dataType: MetaDataType.STRING,
-  mandatory: false,
-  codeId: '',
-  codeUid: '',
-  ...(props.nodeData?.metadataList?.[0] || {})
+  metadataList: []
 })
 
 // 監聽 nodeData 的變化
-watch(() => props.nodeData, (newNodeData) => {
-  if (newNodeData?.metadataList?.[0]) {
-    formData.value = { ...newNodeData.metadataList[0] }
-  }
-}, { immediate: true })
+watch(
+  () => props.vueflowNode,
+  (vueflowNode) => {
+    if (vueflowNode) {
+      editingFlowNode.value = { ...vueflowNode }
+    }
+  },
+  { immediate: true }
+)
+
 
 const handleDragStart = (event: DragEvent) => {
   if (!event.dataTransfer) return
@@ -121,11 +123,11 @@ const handleDragEnd = (event: DragEvent) => {
 
 const handleSubmit = () => {
   const VueFlowNode: VueFlowNode = {
-    id: props.nodeData?.id || `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+    id: props.vueflowNode?.id || `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
     type: 'custom',
-    position: props.nodeData?.position || { x: 0, y: 0 },
+    position: props.vueflowNode?.position || { x: 0, y: 0 },
     metadataList: [{
-      index: formData.value.index,
+      index: vueflowNode.value.index,
       columnType: formData.value.columnType,
       label: formData.value.label,
       desc: formData.value.desc,
@@ -136,7 +138,6 @@ const handleSubmit = () => {
       codeUid: formData.value.codeUid
     }]
   }
-  console.log('🟢 Submitting node:', VueFlowNode)
   props.onSubmit?.(VueFlowNode)
   
   if (props.isNewNode) {

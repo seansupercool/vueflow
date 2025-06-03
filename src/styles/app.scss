@@ -8,7 +8,12 @@
   
   .flow-container {
     flex: 1;
-    position: relative;
+    // position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 100%;
   }
   
@@ -23,15 +28,15 @@
 
     &__node {
       &.selected {
-        box-shadow: 0 0 0 2px var(--color-primary);
+        // box-shadow: 0 0 0 2px var(--color-primary);
       }
     }
 
     &__edge {
       &.selected {
         .vue-flow__edge-path {
-          stroke: var(--color-primary);
-          stroke-width: 2;
+          // stroke: var(--color-primary);
+          // stroke-width: 2;
         }
       }
     }
@@ -65,8 +70,7 @@
     overflow: hidden;
   }
   
-  .add-node-btn,
-  .structure-btn {
+  .btn-absolute {
     position: absolute;
     z-index: 5;
     padding: 0.5rem 1rem;
@@ -88,7 +92,7 @@
   
   .add-node-btn {
     top: 1rem;
-    left: 1rem;
+    right: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -102,26 +106,6 @@
   .structure-btn {
     bottom: 1rem;
     right: 1rem;
-  }
-  
-  .node-form-overlay {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  }
-  
-  .node-form-container {
-    background-color: var(--color-background);
-    border-radius: 8px;
-    padding: 1.25rem;
-    width: 400px;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
   
   .edge-label {

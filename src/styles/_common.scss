@@ -2,13 +2,6 @@
 .form {
   &-group {
     margin-bottom: 1rem;
-
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      color: var(--color-text);
-      font-weight: 500;
-    }
   }
 
   &-input,
@@ -41,14 +34,6 @@
   &-textarea {
     resize: vertical;
     min-height: 80px;
-  }
-
-  &-actions {
-    display: flex;
-    gap: 8px;
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--color-border);
   }
 }
 

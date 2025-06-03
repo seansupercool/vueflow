@@ -3,7 +3,6 @@
 .node-form {
   background-color: var(--color-background);
   border: 1px solid var(--color-border);
-  border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: move;
@@ -11,6 +10,11 @@
 
   &.expanded {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &.expanded .form-content {
+    max-height: 1000px;
+    transition: max-height 0.5s ease-in;
   }
 
   .form-header {
@@ -51,144 +55,61 @@
       }
     }
   }
-}
 
-.form-content {
-  padding: 1rem;
-}
-
-.tab-group {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 1rem;
-}
-
-.tab-btn {
-  flex: 1;
-  padding: 8px 16px;
-  border: 1px solid var(--color-border);
-  background-color: var(--color-background-soft);
-  color: var(--color-text);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  border-radius: 4px;
-  font-weight: 500;
-
-  &:hover {
-    background-color: var(--color-background);
+  .tab-group {
+    display: flex;
   }
 
-  &.active {
-    background-color: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
-  }
-}
 
-.form-select {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  background-color: white;
-
-  &:focus {
-    outline: none;
-    border-color: #4CAF50;
-  }
-}
-
-.form-textarea {
-  width: 100%;
-  padding: 6px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--color-text);
-    font-weight: 500;
-  }
-
-  input,
-  select,
-  textarea {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    background-color: var(--color-background);
-    color: var(--color-text);
-    transition: border-color 0.2s ease;
-
-    &:focus {
-      outline: none;
-      border-color: var(--color-primary);
-    }
-
-    &::placeholder {
-      color: var(--color-text-light);
-    }
-  }
-
-  textarea {
-    resize: vertical;
-    min-height: 80px;
-  }
-}
-
-.form-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid var(--color-border);
-
-  .btn {
+  .tab-btn {
     flex: 1;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s ease;
-
-    &:hover {
-      transform: translateY(-1px);
-    }
-  }
-
-  .submit-btn {
-    background-color: var(--color-primary);
-    color: white;
-
-    &:hover {
-      background-color: var(--color-primary-dark);
-    }
-  }
-
-  .cancel-btn {
+    padding: 8px;
+    border: 0px solid var(--color-background-soft);
+    font-weight: bold;
     background-color: var(--color-background-soft);
     color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
 
     &:hover {
       background-color: var(--color-background);
     }
-  }
 
-  .delete-btn {
-    background-color: var(--color-danger);
-    color: white;
-
-    &:hover {
-      background-color: var(--color-danger-dark);
+    &.active {
+      background-color: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
     }
   }
-} 
+
+  .metadata-section {
+    border-bottom: 1px solid var(--vt-c-divider-dark-2);
+  }
+
+  .form-select {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+
+    &:focus {
+      outline: none;
+      border-color: #4CAF50;
+    }
+  }
+
+  .form-textarea {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  
+
+  
+
+}

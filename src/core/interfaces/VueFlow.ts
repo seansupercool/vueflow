@@ -8,7 +8,6 @@ export interface NodePosition {
 
 export interface NodeMetadata {
   index: number;
-  columnType: ColumnType;
   label: string;
   desc: string;
   columnName: string;

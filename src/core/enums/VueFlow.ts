@@ -56,3 +56,11 @@ export const ColumnTypeLabel: Record<ColumnType, string> = {
   [ColumnType.CONDITION]: '條件',
   [ColumnType.RESULT]: '結果'
 } 
+
+export enum PropertiesState {
+  NONE = 'NONE',
+  SELECT_NODE = 'SELECT_NODE',
+  NEW_NODE = 'NEW_NODE',
+  SELECT_EDGE = 'SELECT_EDGE',
+  NEW_EDGE = 'NEW_EDGE'
+}

@@ -1,8 +1,5 @@
 <template>
   <div class="edge-form" v-if="edge">
-    <div class="edge-form-header">
-      <h3>連接線設定</h3>
-    </div>
     <div class="edge-form-content">
       <div class="form-group">
         <label>欄位名稱</label>
@@ -33,8 +30,8 @@
         />
       </div>
       <div class="form-actions">
-        <button class="submit-btn" @click="handleSubmit">確定</button>
-        <button class="cancel-btn" @click="handleCancel">取消</button>
+        <button class="btn submit-btn" @click="handleSubmit">確定</button>
+        <button class="btn cancel-btn" @click="handleCancel">取消</button>
       </div>
     </div>
   </div>
