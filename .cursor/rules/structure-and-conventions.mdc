@@ -9,76 +9,118 @@ Use the following folder and file structure to organize the Vue project. Each di
 
 ### 📁 src/assets/
 - Static files such as images, fonts, or icons.
-- Do NOT place logic or component code here.
+- Do **NOT** place logic or component code here.
 
 ### 📁 src/components/
 - Reusable presentational components.
 - Should be UI-focused and have minimal business logic.
-- File naming: `PascalCase`, e.g., `UserCard.vue`.
+- File naming: `PascalCase.vue`, e.g., `UserCard.vue`.
 
 ### 📁 src/pages/
 - Route-view components mapped to routes.
-- These are usually full pages and may contain layout wrappers or logic.
-- File naming: `PascalCase`, e.g., `DashboardPage.vue`.
+- Usually full pages, often containing layout wrappers or high-level logic.
+- File naming: `PascalCase.vue`, e.g., `DashboardPage.vue`.
 
 ### 📁 src/layouts/
-- Shared layout components used in routing (e.g., `DefaultLayout.vue`, `AdminLayout.vue`).
-- May include navigation bars, sidebars, etc.
+- Shared layout components used in routing.
+- May include navigation bars, sidebars, header/footer.
+- File naming: `PascalCase.vue`.
 
 ### 📁 src/composables/
 - Reusable logic using the Composition API.
-- Each composable should be a function that starts with `use`.
-- File naming: `camelCase`, e.g., `useModal.ts`, `useAuth.ts`.
+- Naming: `useCamelCase.ts`, e.g., `useModal.ts`, `useAuth.ts`.
 
 ### 📁 src/interfaces/
-- All global TypeScript interfaces and types.
+- Global TypeScript interfaces and types.
 - Example: `User.ts`, `Product.ts`.
 
 ### 📁 src/constants/
 - Constant values, enums, and configuration objects.
-- File naming: lowercase or snake_case, e.g., `api.ts`, `roles.ts`.
+- File naming: `camelCase.ts` or `UPPER_CASE_ENUM.ts`.
 
 ### 📁 src/services/
 - API request and backend interaction logic.
-- Should isolate axios or fetch calls into clean functions.
-- One file per domain entity, e.g., `user.service.ts`.
+- Use `axios` or `fetch`, abstracted per domain entity.
+- File naming: `camelCase.service.ts`, e.g., `user.service.ts`.
 
 ### 📁 src/router/
 - Vue Router configuration files.
 - Main file: `index.ts`.
-- Modularized route files go in `/router/modules/`, e.g., `admin.ts`, `user.ts`.
+- Modularized routes: `/modules/` (e.g., `admin.ts`, `user.ts`).
 
 ### 📁 src/store/
-- If using state management (e.g., Pinia), put store modules here.
-- Each store should be in its own file and use `defineStore`.
-- Example: `user.ts`, `auth.ts`.
+- Global state management using Redux Toolkit (via wrapper in `useRedux`).
+- One slice per domain in `slices/`, e.g., `user.slice.ts`.
+- `index.ts` should export a properly configured store using `configureStore`.
 
 ### 📁 src/utils/
 - Pure utility/helper functions with no Vue dependencies.
-- Examples: `dateFormatter.ts`, `validators.ts`.
+- Naming: `camelCase.ts`, e.g., `dateFormatter.ts`.
 
 ### 📁 src/i18n/
-- Localization-related files (if using Vue I18n).
-- Include `index.ts` and per-language JSON files, e.g., `en.json`, `zh-TW.json`.
+- Localization using Vue I18n.
+- Include `index.ts` and language JSON files (e.g., `en.json`, `zh-TW.json`).
 
 ### 📁 src/styles/
-- Global SCSS files like variables, mixins, base styles.
-- Should not contain component-specific styles.
+- SCSS files for global variables, mixins, resets, and base styles.
+- Do not place component-scoped styles here.
+
+### 📁 public/
+- Static public assets that will be copied as-is on build.
+- Ideal for `favicon.ico`, `robots.txt`, or static HTML templates.
 
 ### 📄 src/main.ts
-- Entry point of the application.
-- Should set up the app, register plugins, and mount the Vue app.
+- Main entry point.
+- Set up plugins, register global components, configure router/store, and mount the app.
 
 ### 📄 src/App.vue
-- Root component that usually contains `<router-view />`.
+- Root layout component containing `<router-view />` or layout switcher.
+
+---
+
+## Special Conventions & Helpers
+
+### ✅ Composables Redux Integration
+Use `useRedux.ts` composable to wrap Redux for Composition API:
+```ts
+// useDispatch returns store.dispatch
+const dispatch = useDispatch()
+// useSelector is typed and reactive
+const user = useSelector(state => state.auth.user)
+```
+
+### ✅ Vue Router Dynamic Imports
+Lazy-load route components for performance:
+```ts
+{
+  path: '/about',
+  name: 'about',
+  component: () => import('@/views/AboutView.vue')
+}
+```
+
+### ✅ Store Setup Example
+```ts
+// store/index.ts
+export const store = configureStore({
+  reducer: {
+    user: userReducer,
+    auth: authReducer
+  }
+})
+```
 
 ---
 
 ## Naming Rules Summary
 
-- Vue components: `PascalCase.vue`
-- Composables: `useCamelCase.ts`
-- Interfaces/Types: `PascalCase.ts`
-- Services: `camelCase.service.ts`
-- Constants: `camelCase.ts` or `UPPER_CASE_ENUM.ts`
-- Store modules: `camelCase.ts`
+| Type              | Naming Convention             | Example                   |
+|-------------------|-------------------------------|---------------------------|
+| Vue Component     | `PascalCase.vue`              | `UserCard.vue`            |
+| Composable        | `useCamelCase.ts`             | `useModal.ts`             |
+| Interface/Type    | `PascalCase.ts`               | `User.ts`                 |
+| Service           | `camelCase.service.ts`        | `user.service.ts`         |
+| Constants/Enums   | `camelCase.ts`, `UPPER_CASE`  | `api.ts`, `ROLES.ts`      |
+| Store Slice       | `camelCase.slice.ts`          | `user.slice.ts`           |
+| Router Module     | `camelCase.ts`                | `admin.ts`, `auth.ts`     |
+| Utils             | `camelCase.ts`                | `validators.ts`           |
