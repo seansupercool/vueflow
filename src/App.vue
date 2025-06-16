@@ -372,7 +372,7 @@ const handleEdgeDelete = (edgeId: string) => {
         v-model:nodes="graphData.nodes"
         v-model:edges="graphData.edges"
         :node-types="nodeTypes"
-        :default-viewport="{ x: 0, y: 0, zoom: 1.5 }"
+        :default-viewport="{ x:  1500, y: 300, zoom: 0.5 }"
         :min-zoom="0.01"
         :max-zoom="4"
         :auto-connect="false"

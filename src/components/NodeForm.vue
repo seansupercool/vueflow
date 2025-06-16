@@ -25,6 +25,17 @@
         </button>
       </div>
       <div v-for="(metadata, index) in editingFlowNode.metadataList" :key="index" class="metadata-section">
+        <div class="metadata-header">
+          <h4>Metadata {{ index + 1 }}</h4>
+          <button 
+            v-if="editingFlowNode.columnType === ColumnType.RESULT && editingFlowNode.metadataList.length > 1" 
+            type="button" 
+            class="btn btn-danger" 
+            @click="handleRemoveMetadata(index)"
+          >
+            刪除
+          </button>
+        </div>
         <div class="form-group">
           <label>欄位中文名稱：</label>
           <input v-model="metadata.label" type="text" placeholder="請輸入顯示名稱">
@@ -45,6 +56,15 @@
           <label>詳細內容：</label>
           <textarea v-model="metadata.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="2"></textarea>
         </div>
+        <div v-if="editingFlowNode.columnType === ColumnType.RESULT" class="form-group">
+          <label>結果值：</label>
+          <input v-model="metadata.resultValue" type="text" placeholder="請輸入結果值">
+        </div>
+      </div>
+      <div v-if="editingFlowNode.columnType === ColumnType.RESULT" class="form-group">
+        <button type="button" class="btn btn-secondary" @click="handleAddMetadata">
+          新增 Metadata
+        </button>
       </div>
       <div class="form-actions">
         <button @click="handleSubmit" class="btn submit-btn">確定</button>
@@ -56,6 +76,7 @@
 </template>
 
 <script setup lang="ts">
+import '../styles/components/NodeForm.scss'
 import { ref, watch } from 'vue'
 import { MetaDataType, MetaDataTypeLabel, ColumnType, ColumnTypeLabel } from '../core/enums/VueFlow'
 import type { VueFlowNode, NodeMetadata } from '../core/interfaces/VueFlow'
@@ -75,7 +96,17 @@ const editingFlowNode = ref<VueFlowNode>({
   type: 'custom',
   position: { x: 0, y: 0 },
   columnType: ColumnType.CONDITION,
-  metadataList: []
+  metadataList: [{
+    index: 0,
+    label: '',
+    desc: '',
+    columnName: '',
+    dataType: MetaDataType.STRING,
+    mandatory: false,
+    codeId: '',
+    codeUid: '',
+    resultValue: ''
+  }]
 })
 
 // 監聽 nodeData 的變化
@@ -89,6 +120,40 @@ watch(
   { immediate: true }
 )
 
+const handleAddMetadata = () => {
+  const newMetadata: NodeMetadata = {
+    index: editingFlowNode.value.metadataList.length,
+    label: '',
+    desc: '',
+    columnName: '',
+    dataType: MetaDataType.STRING,
+    mandatory: false,
+    codeId: '',
+    codeUid: '',
+    resultValue: ''
+  }
+  editingFlowNode.value.metadataList.push(newMetadata)
+}
+
+const handleRemoveMetadata = (index: number) => {
+  editingFlowNode.value.metadataList.splice(index, 1)
+  // 重新設置索引
+  editingFlowNode.value.metadataList.forEach((metadata, idx) => {
+    metadata.index = idx
+  })
+}
+
+const handleSubmit = () => {
+  props.onSubmit?.(editingFlowNode.value)
+}
+
+const handleCancel = () => {
+  emit('cancel')
+}
+
+const handleDelete = () => {
+  props.onDelete?.()
+}
 
 const handleDragStart = (event: DragEvent) => {
   if (!event.dataTransfer) return
@@ -97,17 +162,8 @@ const handleDragStart = (event: DragEvent) => {
     type: 'custom',
     position: { x: 0, y: 0 },
     data: {
-      label: formData.value.label || '新節點',
-      metadataList: [{
-        columnType: formData.value.columnType,
-        label: formData.value.label || '新節點',
-        desc: formData.value.desc,
-        columnName: formData.value.columnName,
-        dataType: formData.value.dataType,
-        mandatory: formData.value.mandatory,
-        codeId: formData.value.codeId,
-        codeUid: formData.value.codeUid
-      }]
+      label: editingFlowNode.value.metadataList[0].label || '新節點',
+      metadataList: editingFlowNode.value.metadataList
     }
   }
 
@@ -120,55 +176,4 @@ const handleDragEnd = (event: DragEvent) => {
     event.dataTransfer.clearData()
   }
 }
-
-const handleSubmit = () => {
-  const VueFlowNode: VueFlowNode = {
-    id: props.vueflowNode?.id || `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
-    type: 'custom',
-    position: props.vueflowNode?.position || { x: 0, y: 0 },
-    metadataList: [{
-      index: vueflowNode.value.index,
-      columnType: formData.value.columnType,
-      label: formData.value.label,
-      desc: formData.value.desc,
-      columnName: formData.value.columnName,
-      dataType: formData.value.dataType,
-      mandatory: formData.value.mandatory,
-      codeId: formData.value.codeId,
-      codeUid: formData.value.codeUid
-    }]
-  }
-  props.onSubmit?.(VueFlowNode)
-  
-  if (props.isNewNode) {
-    formData.value = {
-      index: 0,
-      columnType: ColumnType.CONDITION,
-      label: '',
-      desc: '',
-      columnName: '',
-      dataType: MetaDataType.STRING,
-      mandatory: false,
-      codeId: '',
-      codeUid: ''
-    }
-  }
-}
-
-const handleCancel = () => {
-  // 重置表單數據到原始值
-  if (props.nodeData?.metadataList?.[0]) {
-    formData.value = { ...props.nodeData.metadataList[0] }
-  }
-  // 觸發取消事件，通知父組件關閉元件庫
-  emit('cancel')
-}
-
-const handleDelete = () => {
-  props.onDelete?.()
-}
 </script>
-
-<style lang="scss">
-@use '../styles/components/NodeForm.scss';
-</style>
