@@ -17,9 +17,9 @@
       />
       <EdgeForm
         :edge="selectedEdge"
-        :onSubmit="handleEdgeSubmit"
-        :onDelete="handleEdgeDelete"
-        @cancel="handleCancelEdge"
+        @delete="handleEdgeDelete"
+        @confirm="handleEdgeConfirm"
+        @cancel="handleEdgeCancel"
       />
     </div>
   </div>
@@ -72,7 +72,6 @@ const currentNode = computed(() => {
       }]
     }
   }
-  console.log("props.selectedNode", props.selectedNode)
   return props.selectedNode || undefined
 })
 const title = computed(() => {
@@ -109,14 +108,6 @@ const handleNodeSubmit = (nodeData: VueFlowNode) => {
   emit('closeNodeForm')
 }
 
-const handleEdgeSubmit = (edgeData: VueFlowEdge) => {
-  emit('updateEdge', edgeData)
-}
-
-const handleCancelEdge = () => {
-  emit('cancelEdge')
-}
-
 const handleNodeCancel = () => {
   emit('closeNodeForm')
 }
@@ -126,17 +117,24 @@ const handleClose = () => {
 }
 
 const handleNodeDelete = () => {
-  if (props.propertiesState === PropertiesState.SELECT_NODE) {
-    emit('deleteNode', props.selectedNode?.id)
+  if (props.selectedNode) {
+    emit('deleteNode', props.selectedNode.id)
   }
-  emit('closeNodeForm')
+}
+
+// Edge Control Functions
+const handleEdgeConfirm = (edgeData: VueFlowEdge) => {
+  emit('updateEdge', edgeData)
+}
+
+const handleEdgeCancel = () => {
+  emit('cancelEdge')
 }
 
 const handleEdgeDelete = () => {
   if (props.selectedEdge) {
     emit('deleteEdge', props.selectedEdge.id)
   }
-  emit('closeNodeForm')
 }
 </script>
 
