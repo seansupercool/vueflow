@@ -4,7 +4,7 @@ import type { VueFlowNode, VueFlowEdge, VueFlowData } from '@/core/interfaces/Vu
 import { initialVueFlowData } from '@/assets/data/initialMock'
 import type { Node, Edge } from '@vue-flow/core'
 
-const convertToVueFlowNode = (node: VueFlowNode): Node => ({
+export const convertToVueFlowNode = (node: any): Node => ({
   id: node.id,
   type: 'custom',
   position: node.position,
@@ -15,7 +15,7 @@ const convertToVueFlowNode = (node: VueFlowNode): Node => ({
   }
 })
 
-const convertToVueFlowEdge = (edge: VueFlowEdge): Edge => ({
+export const convertToVueFlowEdge = (edge: VueFlowEdge): Edge => ({
   id: edge.id,
   source: edge.source,
   target: edge.target,

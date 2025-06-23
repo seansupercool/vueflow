@@ -16,9 +16,10 @@ import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
 import PropertiesPanel from './components/PropertiesPanel.vue'
 import CustomNode from './components/CustomNode.vue'
-import { useGraph } from './composable/useGraph'
+import { useGraph, convertToVueFlowNode, convertToVueFlowEdge } from './composable/useGraph'
 import type { VueFlowNode, VueFlowEdge } from './core/interfaces/VueFlow'
 import { PropertiesState } from './core/enums/VueFlow'
+import { downloadJson } from './utils/downloadJson'
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
 const { updateNode, setEdges } = useVueFlow()
@@ -209,9 +210,42 @@ watch(
   { deep: true },
 )
 
+const fileInput = ref<HTMLInputElement | null>(null)
+
+const setStructure = () => {
+  fileInput.value?.click()
+}
+
+const onFileChange = (event: Event) => {
+  const input = event.target as HTMLInputElement
+  if (!input.files || input.files.length === 0) return
+  const file = input.files[0]
+  const reader = new FileReader()
+  reader.onload = (e) => {
+    try {
+      const result = e.target?.result as string
+      const json = JSON.parse(result)
+      console.log('🟢 json:', json)
+      if (json.nodes && json.edges) {
+        console.log('1')
+        graphData.value.nodes = json.nodes.map(convertToVueFlowNode)
+        console.log('2')
+        graphData.value.edges = json.edges.map(convertToVueFlowEdge)
+        console.log('3')
+      } else {
+        alert('JSON 檔案格式錯誤，需包含 nodes 與 edges')
+      }
+    } catch (err) {
+      alert('解析 JSON 檔案失敗')
+    }
+  }
+  reader.readAsText(file)
+}
+
 const getStructure = () => {
-  console.log('🟢 nodes:', graphData.value.nodes)
-  console.log('🟠 edges:', graphData.value.edges)
+  console.log('🟢 nodes:', JSON.parse(JSON.stringify(graphData.value.nodes)))
+  console.log('🟠 edges:', JSON.parse(JSON.stringify(graphData.value.edges)))
+  downloadJson({ nodes: graphData.value.nodes, edges: graphData.value.edges }, 'structure.json')
 }
 
 onConnect(onConnectHandler)
@@ -396,7 +430,11 @@ const handleEdgeDelete = (edgeId: string) => {
           </div>
         </template>
       </VueFlow>
-      <button @click="getStructure" class="btn btn-absolute structure-btn">取得結構</button>
+      <div class="import-export-group" aria-label="匯入匯出按鈕群組">
+        <input ref="fileInput" type="file" accept="application/json" style="display:none" @change="onFileChange" />
+        <button @click="setStructure" class="btn structure-btn">匯入結構</button>
+        <button @click="getStructure" class="btn structure-btn">匯出結構</button>
+      </div>
     </div>
   </div>
 </template>
