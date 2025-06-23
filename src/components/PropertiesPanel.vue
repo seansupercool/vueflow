@@ -8,7 +8,7 @@
       <NodeForm
         v-if="propertiesState === PropertiesState.NEW_NODE || propertiesState === PropertiesState.SELECT_NODE"
         :isNewNode="propertiesState === PropertiesState.NEW_NODE"
-        :vueflowNode="currentNode"
+        :node="currentNode"
         :onSubmit="handleNodeSubmit"
         :onDelete="handleNodeDelete"
         :isExpanded="true"
@@ -30,7 +30,7 @@ import { computed } from 'vue'
 import NodeForm from './NodeForm.vue'
 import type { VueFlowNode, VueFlowEdge } from '../core/interfaces/VueFlow'
 import EdgeForm from './EdgeForm.vue'
-import { PropertiesState } from '../core/enums/VueFlow'
+import { PropertiesState, ColumnType, MetaDataType } from '../core/enums/VueFlow'
 
 const props = defineProps<{
   selectedNode: VueFlowNode | null
@@ -39,10 +39,13 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
+  (e: 'close'): void
+  // Node Control Functions
   (e: 'updateNode', node: VueFlowNode): void
   (e: 'addNode', node: VueFlowNode): void
   (e: 'deleteNode', nodeId: string): void
-  (e: 'closeNodeForm'): void
+  (e: 'cancelNode'): void
+  // Edge Control Functions
   (e: 'updateEdge', edge: VueFlowEdge): void
   (e: 'deleteEdge', edgeId: string): void
   (e: 'cancelEdge'): void
@@ -50,21 +53,18 @@ const emit = defineEmits<{
 
 // 計算當前顯示的節點數據
 const currentNode = computed(() => {
-  // if (props.propertiesState === PropertiesState.NEW_NODE) {
-  //   return undefined
-  // }
   if (props.propertiesState === PropertiesState.NEW_NODE) {
     return {
       id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       type: 'custom',
       position: { x: 0, y: 0 },
-      columnType: 'C',
+      columnType: ColumnType.CONDITION,
       metadataList: [{
         index: 0,
         label: '新節點',
         desc: '',
         columnName: '',
-        dataType: 'STRING',
+        dataType: MetaDataType.STRING,
         mandatory: false,
         codeId: '',
         codeUid: '',
@@ -105,15 +105,15 @@ const handleNodeSubmit = (nodeData: VueFlowNode) => {
     }
     emit('updateNode', updatedNode)
   }
-  emit('closeNodeForm')
+  emit('close')
 }
 
 const handleNodeCancel = () => {
-  emit('closeNodeForm')
+  emit('close')
 }
 
 const handleClose = () => {
-  emit('closeNodeForm')
+  emit('close')
 }
 
 const handleNodeDelete = () => {
