@@ -32,6 +32,7 @@
       <div class="form-actions">
         <button class="btn submit-btn" @click="handleSubmit">確定</button>
         <button class="btn cancel-btn" @click="handleCancel">取消</button>
+        <button class="btn delete-btn" @click="handleDelete">刪除</button>
       </div>
     </div>
   </div>
@@ -47,9 +48,9 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'update', edge: GraphEdge): void
+  (e: 'delete', edge: GraphEdge): void
+  (e: 'confirm', edge: GraphEdge): void
   (e: 'cancel'): void
-  (e: 'select', edge: GraphEdge | null): void
 }>()
 
 const edgeData = ref<GraphEdge>({
@@ -86,13 +87,16 @@ watch(() => props.edge, (newEdge) => {
 }, { immediate: true })
 
 const handleSubmit = () => {
-  emit('update', edgeData.value)
+  emit('confirm', edgeData.value)
 }
 
 // 當表單關閉時，取消選取
 const handleCancel = () => {
-  emit('select', null)
   emit('cancel')
+}
+
+const handleDelete = () => {
+  emit('delete', edgeData.value)
 }
 </script>
 

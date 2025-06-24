@@ -70,10 +70,8 @@
     overflow: hidden;
   }
   
-  .import-export-group {
+  .absolute-group {
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
     z-index: 5;
   }
   
@@ -90,7 +88,7 @@
     }
   }
   
-  .structure-btn {
+  .btn {
     background-color: var(--color-primary);
     color: white;
     margin: 0 0.5rem;

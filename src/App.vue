@@ -22,13 +22,11 @@ import { PropertiesState } from './core/enums/VueFlow'
 import { downloadJson } from './utils/downloadJson'
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
-const { updateNode, setEdges } = useVueFlow()
+const { updateNode, setEdges,  onConnect, onNodesChange, onEdgesChange, project } = useVueFlow()
 
 const nodeTypes = {
   custom: markRaw(CustomNode)
 }
-
-const { onConnect, onNodesChange, onEdgesChange, project } = useVueFlow()
 
 // 修改狀態相關的變數
 const propertiesState = ref<PropertiesState>(PropertiesState.NONE)
@@ -89,6 +87,8 @@ const onPaneClick = () => {
 
 // 處理新增連接
 const onConnectHandler = (params: Connection) => {
+  // 找到來源節點
+  const sourceNode = graphData.value.nodes.find(n => n.id === params.source)
   const newEdge: VueFlowEdge = {
     id: `e${Date.now()}`,
     source: params.source,
@@ -97,9 +97,9 @@ const onConnectHandler = (params: Connection) => {
     animated: false,
     style: {},
     metadata: {
-      columnName: '',
-      expressionType: '',
-      entryText: ''
+      columnName: sourceNode?.data?.metadataList?.[0]?.columnName || '',
+      expressionType: '等於',  // 預設值
+      entryText: '請輸入條件'  // 預設值
     }
   }
   selectedEdge.value = newEdge
@@ -129,7 +129,6 @@ const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
       entryText: edge.data?.metadata?.entryText || ''
     }
   }
-  console.log("selectedEdge", selectedEdge)
   selectedEdge.value = graphEdge
 
   // 更新所有邊的樣式
@@ -145,6 +144,7 @@ const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
 
 // 處理連接線更新
 const handleEdgeUpdate = (updatedEdge: VueFlowEdge) => {
+  console.log('🟢 updatedEdge:', updatedEdge)
   const edgeIndex = graphData.value.edges.findIndex(e => e.id === updatedEdge.id)
   if (edgeIndex !== -1) {
     // 創建新的邊緣數據
@@ -392,16 +392,18 @@ const handleEdgeDelete = (edgeId: string) => {
       @updateNode="handleNodeUpdate"
       @addNode="handleAddNode"
       @deleteNode="handleNodeDelete"
-      @closeNodeForm="handleCloseNodeForm"
+      @close="handleCloseNodeForm"
       @updateEdge="handleEdgeUpdate"
       @deleteEdge="handleEdgeDelete"
       @cancelEdge="handleEdgeCancel"
     />
     <div class="flow-container">
-      <button class="btn btn-absolute add-node-btn" @click="handleAddNodeClick">
-        <span class="plus-icon">+</span>
-        新增元件
-      </button>
+      <div class="absolute-group" style="top: 1rem; right: 1rem;" aria-label="匯入匯出按鈕群組">
+        <button class="btn add-node-btn" @click="handleAddNodeClick">
+          <span class="plus-icon">+</span>
+          新增元件
+        </button>
+      </div>
       <VueFlow
         v-model:nodes="graphData.nodes"
         v-model:edges="graphData.edges"
@@ -424,16 +426,16 @@ const handleEdgeDelete = (edgeId: string) => {
         <MiniMap />
         <template #edge-label="{ data }">
           <div class="edge-label">
-            {{ data?.metadata?.columnName }}
-            {{ data?.metadata?.expressionType }}
-            {{ data?.metadata?.entryText }}
+            <div>{{ data?.metadata?.columnName }}</div>
+            <div>{{ data?.metadata?.expressionType }}</div>
+            <div>{{ data?.metadata?.entryText }}</div>
           </div>
         </template>
       </VueFlow>
-      <div class="import-export-group" aria-label="匯入匯出按鈕群組">
+      <div class="absolute-group" style="bottom: 1rem; right: 1rem;" aria-label="匯入匯出按鈕群組">
         <input ref="fileInput" type="file" accept="application/json" style="display:none" @change="onFileChange" />
-        <button @click="setStructure" class="btn structure-btn">匯入結構</button>
-        <button @click="getStructure" class="btn structure-btn">匯出結構</button>
+        <button @click="setStructure" class="btn">匯入結構</button>
+        <button @click="getStructure" class="btn">匯出結構</button>
       </div>
     </div>
   </div>
@@ -442,4 +444,17 @@ const handleEdgeDelete = (edgeId: string) => {
 
 <style lang="scss">
 @use './styles/app.scss';
+
+.edge-label {
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  pointer-events: all;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
 </style>

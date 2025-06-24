@@ -26,15 +26,6 @@
       </div>
       <div v-for="(metadata, index) in editingFlowNode.metadataList" :key="index" class="metadata-section">
         <div class="metadata-header">
-          <h4>Metadata {{ index + 1 }}</h4>
-          <button 
-            v-if="editingFlowNode.columnType === ColumnType.RESULT && editingFlowNode.metadataList.length > 1" 
-            type="button" 
-            class="btn btn-danger" 
-            @click="handleRemoveMetadata(index)"
-          >
-            刪除
-          </button>
         </div>
         <div class="form-group">
           <label>欄位中文名稱：</label>
@@ -83,7 +74,7 @@ import type { VueFlowNode, NodeMetadata } from '../core/interfaces/VueFlow'
 
 const props = defineProps<{
   isNewNode: boolean,
-  vueflowNode?: VueFlowNode,
+  node?: VueFlowNode,
   onSubmit?: (node: VueFlowNode) => void,
   onDelete?: () => void,
   isExpanded: boolean
