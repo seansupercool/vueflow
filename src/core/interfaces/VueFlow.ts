@@ -27,6 +27,7 @@ export interface VueFlowNode {
 }
 
 export interface EdgeMetadata {
+  label: string;
   columnName: string;
   expressionType: string;
   entryText: string;

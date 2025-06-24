@@ -2,9 +2,6 @@
   <div 
     class="node-form" 
     :class="{ 'expanded': isExpanded }"
-    draggable="true"
-    @dragstart="handleDragStart"
-    @dragend="handleDragEnd"
   >
     <!-- <div class="form-header" :class="{ 'is-new': isNewNode }" @click="$emit('toggle')">
       <h3 :class="{ 'decision-node': formData.columnType === ColumnType.CONDITION, 'result-node': formData.columnType === ColumnType.RESULT }">
@@ -102,10 +99,10 @@ const editingFlowNode = ref<VueFlowNode>({
 
 // 監聽 nodeData 的變化
 watch(
-  () => props.vueflowNode,
-  (vueflowNode) => {
-    if (vueflowNode) {
-      editingFlowNode.value = { ...vueflowNode }
+  () => props.node,
+  (node) => {
+    if (node) {
+      editingFlowNode.value = { ...node }
     }
   },
   { immediate: true }
@@ -148,7 +145,7 @@ const handleDelete = () => {
 
 const handleDragStart = (event: DragEvent) => {
   if (!event.dataTransfer) return
-
+console.log("handleDragStart")
   const nodeData = {
     type: 'custom',
     position: { x: 0, y: 0 },

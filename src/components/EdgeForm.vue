@@ -6,7 +6,7 @@
         <input 
           disabled
           type="text" 
-          v-model="edgeData.metadata.columnName" 
+          v-model="edgeData.metadata.label" 
           class="form-input"
           placeholder="請輸入欄位名稱"
         />
@@ -21,7 +21,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label>輸入文字</label>
+        <label>條件</label>
         <input 
           type="text" 
           v-model="edgeData.metadata.entryText" 
@@ -68,6 +68,7 @@ const edgeData = ref<GraphEdge>({
 })
 
 watch(() => props.edge, (newEdge) => {
+  console.log("newEdge", newEdge)
   if (newEdge) {
     edgeData.value = { ...newEdge }
     // 當邊被選取時，更新樣式

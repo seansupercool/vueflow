@@ -97,9 +97,10 @@ const onConnectHandler = (params: Connection) => {
     animated: false,
     style: {},
     metadata: {
+      label: sourceNode?.data?.metadataList?.[0]?.label || '',
       columnName: sourceNode?.data?.metadataList?.[0]?.columnName || '',
-      expressionType: '等於',  // 預設值
-      entryText: '請輸入條件'  // 預設值
+      expressionType: "等於",  // 預設值
+      entryText: ''  // 預設值
     }
   }
   selectedEdge.value = newEdge
@@ -111,6 +112,7 @@ const onConnectHandler = (params: Connection) => {
 
 // 處理點擊連接線
 const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
+  console.log("onEdgeClick", edge)
   propertiesState.value = PropertiesState.SELECT_EDGE;
   const graphEdge: VueFlowEdge = {
     id: edge.id,
@@ -124,6 +126,7 @@ const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
       strokeWidth: 2
     },
     metadata: {
+      label: edge.data?.metadata?.label || '',
       columnName: edge.data?.metadata?.columnName || '',
       expressionType: edge.data?.metadata?.expressionType || '',
       entryText: edge.data?.metadata?.entryText || ''
@@ -227,11 +230,8 @@ const onFileChange = (event: Event) => {
       const json = JSON.parse(result)
       console.log('🟢 json:', json)
       if (json.nodes && json.edges) {
-        console.log('1')
         graphData.value.nodes = json.nodes.map(convertToVueFlowNode)
-        console.log('2')
         graphData.value.edges = json.edges.map(convertToVueFlowEdge)
-        console.log('3')
       } else {
         alert('JSON 檔案格式錯誤，需包含 nodes 與 edges')
       }

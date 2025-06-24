@@ -53,6 +53,7 @@ const emit = defineEmits<{
 
 // 計算當前顯示的節點數據
 const currentNode = computed(() => {
+  console.log("currentNode", props.selectedNode)
   if (props.propertiesState === PropertiesState.NEW_NODE) {
     return {
       id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -61,7 +62,7 @@ const currentNode = computed(() => {
       columnType: ColumnType.CONDITION,
       metadataList: [{
         index: 0,
-        label: '新節點',
+        label: '',
         desc: '',
         columnName: '',
         dataType: MetaDataType.STRING,
