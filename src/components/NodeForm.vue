@@ -12,14 +12,15 @@
     </div> -->
     <div class="form-content" v-show="isExpanded">
       <div class="tab-group">
-        <button 
+        <div 
           v-for="type in Object.values(ColumnType)" 
+          v-show="(isNewNode || editingFlowNode.columnType === type)"
           :key="type"
           :class="['tab-btn', { active: editingFlowNode?.columnType === type }]" 
           @click="editingFlowNode.columnType = type"
         >
           {{ ColumnTypeLabel[type] }}元件
-        </button>
+        </div>
       </div>
       <div v-for="(metadata, index) in editingFlowNode.metadataList" :key="index" class="metadata-section">
         <div class="metadata-header">
@@ -49,15 +50,17 @@
           <input v-model="metadata.resultValue" type="text" placeholder="請輸入結果值">
         </div>
       </div>
-      <div v-if="editingFlowNode.columnType === ColumnType.RESULT" class="form-group">
-        <button type="button" class="btn btn-secondary" @click="handleAddMetadata">
+      <!-- <div v-if="editingFlowNode.columnType === ColumnType.RESULT" class="form-group"> -->
+        <div v-if="editingFlowNode.columnType === ColumnType.RESULT" class="btn btn-secondary" @click="handleAddMetadata">
           新增 Metadata
-        </button>
-      </div>
+        </div>
+      <!-- </div> -->
       <div class="form-actions">
+        <div style="flex:1"></div>
         <button @click="handleSubmit" class="btn submit-btn">確定</button>
-        <button @click="handleCancel" class="btn cancel-btn">取消</button>
+        <button v-if="!isNewNode" @click="handleCopy" class="btn copy-btn">複製</button>
         <button v-if="!isNewNode" @click="handleDelete" class="btn delete-btn">刪除</button>
+        <button @click="handleCancel" class="btn cancel-btn">取消</button>
       </div>
     </div>
   </div>
@@ -72,12 +75,13 @@ import type { VueFlowNode, NodeMetadata } from '../core/interfaces/VueFlow'
 const props = defineProps<{
   isNewNode: boolean,
   node?: VueFlowNode,
-  onSubmit?: (node: VueFlowNode) => void,
+  onSave?: (node: VueFlowNode) => void,
+  onAdd?: (node: VueFlowNode) => void,
   onDelete?: () => void,
   isExpanded: boolean
 }>()
 
-const emit = defineEmits(['toggle', 'cancel'])
+const emit = defineEmits(['toggle', 'cancel', 'copy'])
 
 const editingFlowNode = ref<VueFlowNode>({
   id: '',
@@ -103,6 +107,7 @@ watch(
   (node) => {
     if (node) {
       editingFlowNode.value = { ...node }
+      console.log("editingFlowNode", editingFlowNode)
     }
   },
   { immediate: true }
@@ -132,7 +137,10 @@ const handleRemoveMetadata = (index: number) => {
 }
 
 const handleSubmit = () => {
-  props.onSubmit?.(editingFlowNode.value)
+  if(props.isNewNode)
+    props.onAdd?.(editingFlowNode.value)
+  else
+    props.onSave?.(editingFlowNode.value)
 }
 
 const handleCancel = () => {
@@ -141,6 +149,21 @@ const handleCancel = () => {
 
 const handleDelete = () => {
   props.onDelete?.()
+}
+
+const handleCopy = () => {
+  const copiedNode: VueFlowNode = {
+    ...editingFlowNode.value,
+    id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+    position: { 
+      x: editingFlowNode.value.position.x + 200,
+      y: editingFlowNode.value.position.y
+    }
+  }
+  console.log("editingFlowNode.value.position.x", editingFlowNode.value.position.x)
+  console.log("editingFlowNode", editingFlowNode)
+  console.log("copiedNode", copiedNode)
+  props.onAdd?.(copiedNode)
 }
 
 const handleDragStart = (event: DragEvent) => {

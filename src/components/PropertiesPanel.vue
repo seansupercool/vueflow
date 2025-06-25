@@ -9,7 +9,8 @@
         v-if="propertiesState === PropertiesState.NEW_NODE || propertiesState === PropertiesState.SELECT_NODE"
         :isNewNode="propertiesState === PropertiesState.NEW_NODE"
         :node="currentNode"
-        :onSubmit="handleNodeSubmit"
+        :onSave="handleNodeSave"
+        :onAdd="handleNodeAdd"
         :onDelete="handleNodeDelete"
         :isExpanded="true"
         @toggle="handleToggleToggle"
@@ -94,7 +95,7 @@ const handleToggleToggle = () => {
   // 由於現在只有一個 NodeItem，不需要處理展開/收起的狀態
 }
 
-const handleNodeSubmit = (nodeData: VueFlowNode) => {
+const handleNodeSave = (nodeData: VueFlowNode) => {
   if (props.propertiesState === PropertiesState.NEW_NODE) {
     emit('addNode', { ...nodeData, type: 'custom' })
   } else if (props.selectedNode) {
@@ -107,6 +108,13 @@ const handleNodeSubmit = (nodeData: VueFlowNode) => {
     emit('updateNode', updatedNode)
   }
   emit('close')
+}
+
+const handleNodeAdd = (nodeData: VueFlowNode) => {
+  emit('addNode', { ...nodeData, type: 'custom' })
+  if (props.propertiesState === PropertiesState.NEW_NODE) {
+    emit('close')
+  }
 }
 
 const handleNodeCancel = () => {

@@ -21,6 +21,8 @@ import type { VueFlowNode, VueFlowEdge } from './core/interfaces/VueFlow'
 import { PropertiesState } from './core/enums/VueFlow'
 import { downloadJson } from './utils/downloadJson'
 
+const { viewport, toFlowPosition } = useVueFlow()
+
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
 const { updateNode, setEdges,  onConnect, onNodesChange, onEdgesChange, project } = useVueFlow()
 
@@ -172,6 +174,7 @@ const handleEdgeUpdate = (updatedEdge: VueFlowEdge) => {
     setEdges(newEdges)
   }
   selectedEdge.value = null
+  propertiesState.value = PropertiesState.NONE
 }
 
 // 處理取消編輯連接線
@@ -187,6 +190,7 @@ const handleEdgeCancel = () => {
       strokeWidth: 1
     }
   }))
+  propertiesState.value = PropertiesState.NONE
 }
 
 onNodesChange((changes: NodeChange[]) => {
@@ -348,12 +352,14 @@ const handleAddNodeClick = () => {
 
 // 處理新增元件
 const handleAddNode = (nodeData: VueFlowNode) => {
+  console.log("nodeData", nodeData)
+  console.log("viewport", viewport)
+  console.log("viewport.x", viewport.value.x)
   // 設置新節點的位置在視圖中心
-  const viewport = { x: 0, y: 0, zoom: 1.5 }
-  const position = {
-    x: (window.innerWidth / 2 - 100) / viewport.zoom,
-    y: (window.innerHeight / 2 - 50) / viewport.zoom
-  }
+  // const viewport = { x: 0, y: 0, zoom: 1.5 }
+  const x: number = nodeData.position.x===0?viewport.value.x: nodeData.position.x;
+  const y: number = nodeData.position.y===0?viewport.value.y: nodeData.position.y;
+  const position = {x,y};
   
   const newNode: VueFlowNode = {
     ...nodeData,
@@ -379,6 +385,7 @@ const handleEdgeDelete = (edgeId: string) => {
       strokeWidth: 1
     }
   }))
+  propertiesState.value = PropertiesState.NONE
 }
 </script>
 
@@ -424,13 +431,13 @@ const handleEdgeDelete = (edgeId: string) => {
         <Background />
         <Controls />
         <MiniMap />
-        <template #edge-label="{ data }">
+        <!-- <template #edge-label="{ data }">
           <div class="edge-label">
             <div>{{ data?.metadata?.columnName }}</div>
             <div>{{ data?.metadata?.expressionType }}</div>
             <div>{{ data?.metadata?.entryText }}</div>
           </div>
-        </template>
+        </template> -->
       </VueFlow>
       <div class="absolute-group" style="bottom: 1rem; right: 1rem;" aria-label="匯入匯出按鈕群組">
         <input ref="fileInput" type="file" accept="application/json" style="display:none" @change="onFileChange" />

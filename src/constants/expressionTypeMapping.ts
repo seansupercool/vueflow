@@ -11,10 +11,10 @@ export type ExpressionType = typeof expressionTypeMapping[keyof typeof expressio
 
 // 用於下拉選單的選項
 export const expressionTypeOptions = [
-  { label: "等於", value: expressionTypeMapping.EQUALS },
-  { label: "不等於", value: expressionTypeMapping.NOT_EQUALS },
-  { label: "大於", value: expressionTypeMapping.GREATER_THAN },
-  { label: "小於", value: expressionTypeMapping.LESS_THAN },
-  { label: "包含", value: expressionTypeMapping.CONTAINS },
-  { label: "不包含", value: expressionTypeMapping.NOT_CONTAINS },
+  { label: "等於", value: expressionTypeMapping.EQUALS, symbol:'=' },
+  { label: "不等於", value: expressionTypeMapping.NOT_EQUALS, symbol:'!=' },
+  { label: "大於", value: expressionTypeMapping.GREATER_THAN, symbol:'>' },
+  { label: "小於", value: expressionTypeMapping.LESS_THAN, symbol:'<' },
+  { label: "包含", value: expressionTypeMapping.CONTAINS, symbol:'符合於' },
+  { label: "不包含", value: expressionTypeMapping.NOT_CONTAINS, symbol:'不符合於' },
 ] as const; 

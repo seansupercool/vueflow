@@ -39,6 +39,11 @@
   --color-info-rgb: 23, 162, 184;
   --color-info-dark: #138496;
   --color-info-light: #1ec8e3;
+
+  --color-copy: #3B82F6;               /* 藍色主色 - Tailwind blue-500 */
+  --color-copy-rgb: 59, 130, 246;      /* RGB 格式，適用於 rgba() */
+  --color-copy-dark: #1D4ED8;          /* 較深藍 - Tailwind blue-700 */
+  --color-copy-light: #93C5FD;         /* 淺藍 - Tailwind blue-300 */
 }
 
 // semantic color variables for this project
