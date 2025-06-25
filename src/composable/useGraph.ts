@@ -3,8 +3,9 @@ import { ref } from 'vue'
 import type { VueFlowNode, VueFlowEdge, VueFlowData } from '@/core/interfaces/VueFlow'
 import { initialVueFlowData } from '@/assets/data/initialMock'
 import type { Node, Edge } from '@vue-flow/core'
+import { expressionTypeOptions } from '@/constants/expressionTypeMapping'
 
-export const convertToVueFlowNode = (node: any): Node => ({
+export const convertToVueFlowNode = (node: VueFlowNode): Node => ({
   id: node.id,
   type: 'custom',
   position: node.position,
@@ -32,6 +33,11 @@ const graphData = ref<VueFlowData>({
   nodes: initialVueFlowData.nodes.map(convertToVueFlowNode),
   edges: initialVueFlowData.edges.map(convertToVueFlowEdge)
 })
+
+export function parseExpressionType(expressionType: string | number): string {
+  const found = expressionTypeOptions.find(opt => opt.value === String(expressionType))
+  return found ? found.symbol : ''
+}
 
 export function useGraph() {
   const addNode = (node: VueFlowNode) => {
