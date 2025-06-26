@@ -1,16 +1,18 @@
 <script setup lang="ts">
-import { BaseEdge, getSimpleBezierPath } from '@vue-flow/core'
+import { BaseEdge, getBezierPath } from '@vue-flow/core'
 import type { EdgeProps, MarkerType } from '@vue-flow/core'
 import type { VueFlowNode, VueFlowEdge } from '../core/interfaces/VueFlow'
 import {ColumnType} from '../core/enums/VueFlow'
 
 
 const props = defineProps<EdgeProps>()
-  const [edgePath] = getSimpleBezierPath({
+  const [edgePath] = getBezierPath({
   sourceX: props.sourceX,
   sourceY: props.sourceY,
+  sourcePosition: props.sourcePosition,
   targetX: props.targetX,
   targetY: props.targetY,
+  targetPosition: props.targetPosition,
 })
 </script>
 
@@ -23,13 +25,12 @@ const props = defineProps<EdgeProps>()
       :stroke="props.data?.color ?? '#0ea5e9'"
       stroke-width="3"
       fill="none"
-      stroke-dasharray="8 4"
     />
 
     <!-- 文字沿線顯示 -->
     <text>
       <textPath :href="`#${props.id}`" startOffset="50%" text-anchor="middle">
-        1111
+        "1111"
       </textPath>
     </text>
 

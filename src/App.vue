@@ -30,9 +30,6 @@ const { updateNode, setEdges,  onConnect, onNodesChange, onEdgesChange, project,
 const nodeTypes = {
   custom: markRaw(CustomNode)
 }
-const edgeTypes = {
-  custom: markRaw(CustomEdge)
-}
 
 // 修改狀態相關的變數
 const propertiesState = ref<PropertiesState>(PropertiesState.NONE)
@@ -442,7 +439,6 @@ const handleEdgeDelete = (edgeId: string) => {
         v-model:nodes="graphData.nodes"
         v-model:edges="graphData.edges"
         :node-types="nodeTypes"
-        :edge-types="edgeTypes"
         :default-viewport="{ x:  1500, y: 300, zoom: 0.5 }"
         :min-zoom="0.01"
         :max-zoom="4"
@@ -459,16 +455,6 @@ const handleEdgeDelete = (edgeId: string) => {
         <Background />
         <Controls />
         <MiniMap />
-        <template #edge-custom="props">
-    <CustomEdge v-bind="props" />
-  </template>
-        <!-- <template #edge-label="{ data }">
-          <div class="edge-label">
-            <div>{{ data?.metadata?.columnName }}</div>
-            <div>{{ data?.metadata?.expressionType }}</div>
-            <div>{{ data?.metadata?.entryText }}</div>
-          </div>
-        </template> -->
       </VueFlow>
       <div class="absolute-group" style="bottom: 1rem; right: 1rem;" aria-label="匯入匯出按鈕群組">
         <input ref="fileInput" type="file" accept="application/json" style="display:none" @change="onFileChange" />
