@@ -23,16 +23,21 @@ export const convertToVueFlowEdge = (edge: VueFlowEdge): Edge => ({
   animated: edge.animated,
   type: edge.type,
   style: edge.style,
-  label: edge.metadata.entryText,
+  label: `${parseExpressionType(edge.metadata.expressionType)} ${edge.metadata.entryText}`,
   data: {
     metadata: edge.metadata
   }
 })
 
 const graphData = ref<VueFlowData>({
-  nodes: initialVueFlowData.nodes.map(convertToVueFlowNode),
-  edges: initialVueFlowData.edges.map(convertToVueFlowEdge)
+  nodes: initialVueFlowData.nodes,
+  edges: initialVueFlowData.edges
 })
+
+// const graphData = ref<VueFlowData>({
+//   nodes: initialVueFlowData.nodes.map(convertToVueFlowNode),
+//   edges: initialVueFlowData.edges.map(convertToVueFlowEdge)
+// })
 
 export function parseExpressionType(expressionType: string | number): string {
   const found = expressionTypeOptions.find(opt => opt.value === String(expressionType))

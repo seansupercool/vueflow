@@ -7,20 +7,23 @@
         "y": -355.3196878733455
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "險種",
-          "desc": "此欄位代表「險種」的值",
-          "columnName": "INSURANCE_TYPE",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "INS_SYSTEM_CODE",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "INSURANCE_TYPE"
-        }
-      ]
+      "data": {
+        "label": "險種",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "險種",
+            "desc": "此欄位代表「險種」的值",
+            "columnName": "INSURANCE_TYPE",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "INS_SYSTEM_CODE",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "INSURANCE_TYPE"
+          }
+        ]
+      }
     },
     {
       "id": "node-1",
@@ -29,20 +32,23 @@
         "y": -101.31400105284283
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "有無併發症及共病",
-          "desc": "此欄位代表「有無併發症及共病」的值",
-          "columnName": "COMPLICATION_STATUS",
-          "dataType": "3",
-          "mandatory": true,
-          "codeId": "COMP_STATUS",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "COMPLICATION_STATUS"
-        }
-      ]
+      "data": {
+        "label": "有無併發症及共病",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "有無併發症及共病",
+            "desc": "此欄位代表「有無併發症及共病」的值",
+            "columnName": "COMPLICATION_STATUS",
+            "dataType": "3",
+            "mandatory": true,
+            "codeId": "COMP_STATUS",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "COMPLICATION_STATUS"
+          }
+        ]
+      }
     },
     {
       "id": "node-2",
@@ -51,20 +57,23 @@
         "y": 100.57865388016728
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "INSURANCE_PERIOD",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "INSURANCE_PERIOD",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-4",
@@ -73,20 +82,23 @@
         "y": 391.6341254392182
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果:",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果:",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果:",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-6",
@@ -95,20 +107,23 @@
         "y": 390.6341254392182
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "150"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "150"
+          }
+        ]
+      }
     },
     {
       "id": "node-8",
@@ -117,42 +132,45 @@
         "y": 389.6341254392182
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "145"
-        },
-        {
-          "index": 0,
-          "label": "投保上限(內)",
-          "desc": "",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "6000000"
-        },
-        {
-          "index": 0,
-          "label": "投保上限(內+外)",
-          "desc": "",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "6000000"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "145"
+          },
+          {
+            "index": 0,
+            "label": "投保上限(內)",
+            "desc": "",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "6000000"
+          },
+          {
+            "index": 0,
+            "label": "投保上限(內+外)",
+            "desc": "",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "6000000"
+          }
+        ]
+      }
     },
     {
       "id": "node-10",
@@ -161,20 +179,23 @@
         "y": 391.5091254392182
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "90"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "90"
+          }
+        ]
+      }
     },
     {
       "id": "node-12",
@@ -183,20 +204,23 @@
         "y": 390.0530004583146
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "35"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "35"
+          }
+        ]
+      }
     },
     {
       "id": "node-14",
@@ -205,20 +229,23 @@
         "y": 389.1341254392182
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "25"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "25"
+          }
+        ]
+      }
     },
     {
       "id": "node-15",
@@ -227,20 +254,23 @@
         "y": 34.09710574677855
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "併發症類型",
-          "desc": "此欄位代表「併發症類型」的值",
-          "columnName": "COMPLICATION_TYPE",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "COMP_TYPE",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "COMPLICATION_TYPE"
-        }
-      ]
+      "data": {
+        "label": "併發症類型",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "併發症類型",
+            "desc": "此欄位代表「併發症類型」的值",
+            "columnName": "COMPLICATION_TYPE",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "COMP_TYPE",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "COMPLICATION_TYPE"
+          }
+        ]
+      }
     },
     {
       "id": "node-16",
@@ -249,20 +279,23 @@
         "y": 279.6551214550845
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "INSURANCE_PERIOD",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "INSURANCE_PERIOD",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-18",
@@ -271,20 +304,23 @@
         "y": 440
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-20",
@@ -293,20 +329,23 @@
         "y": 438.7466586864174
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "185"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "185"
+          }
+        ]
+      }
     },
     {
       "id": "node-22",
@@ -315,20 +354,23 @@
         "y": 442
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "100"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "100"
+          }
+        ]
+      }
     },
     {
       "id": "node-23",
@@ -337,20 +379,23 @@
         "y": 281.9616377851937
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-25",
@@ -359,20 +404,23 @@
         "y": 450
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-27",
@@ -381,20 +429,23 @@
         "y": 444
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "70"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "70"
+          }
+        ]
+      }
     },
     {
       "id": "node-28",
@@ -403,20 +454,23 @@
         "y": 264.62062603610883
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-30",
@@ -425,20 +479,23 @@
         "y": 439.64609372820433
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-32",
@@ -447,20 +504,23 @@
         "y": 439.7339430617144
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "125"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "125"
+          }
+        ]
+      }
     },
     {
       "id": "node-33",
@@ -469,20 +529,23 @@
         "y": 277.29370881357846
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-35",
@@ -491,20 +554,23 @@
         "y": 441.39529948228335
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-37",
@@ -513,20 +579,23 @@
         "y": 440.21261620634505
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "100"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "100"
+          }
+        ]
+      }
     },
     {
       "id": "node-38",
@@ -535,20 +604,23 @@
         "y": 271.5950605683244
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-40",
@@ -557,20 +629,23 @@
         "y": 440.0572256893237
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-42",
@@ -579,20 +654,23 @@
         "y": 440.3350934476607
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "245"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "245"
+          }
+        ]
+      }
     },
     {
       "id": "node-44",
@@ -601,20 +679,23 @@
         "y": 441.38239818914985
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "115"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "115"
+          }
+        ]
+      }
     },
     {
       "id": "node-46",
@@ -623,20 +704,23 @@
         "y": 443.10039978684824
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "75"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "75"
+          }
+        ]
+      }
     },
     {
       "id": "node-47",
@@ -645,20 +729,23 @@
         "y": 60.01978980906354
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "共病類型",
-          "desc": "此欄位代表「共病類型」的值",
-          "columnName": "COMORBIDITY_TYPE",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "COMORBIDITY_TYPE"
-        }
-      ]
+      "data": {
+        "label": "共病類型",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "共病類型",
+            "desc": "此欄位代表「共病類型」的值",
+            "columnName": "COMORBIDITY_TYPE",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "COMORBIDITY_TYPE"
+          }
+        ]
+      }
     },
     {
       "id": "node-48",
@@ -667,20 +754,23 @@
         "y": 252.4147051795314
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-50",
@@ -689,20 +779,23 @@
         "y": 437.2166457892444
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-52",
@@ -711,20 +804,23 @@
         "y": 437.27346041161604
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "225"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "225"
+          }
+        ]
+      }
     },
     {
       "id": "node-54",
@@ -733,20 +829,23 @@
         "y": 437.1438335652121
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "110"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "110"
+          }
+        ]
+      }
     },
     {
       "id": "node-56",
@@ -755,20 +854,23 @@
         "y": 437.14383356521216
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "60"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "60"
+          }
+        ]
+      }
     },
     {
       "id": "node-57",
@@ -777,20 +879,23 @@
         "y": 255.1988288529097
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-59",
@@ -799,20 +904,23 @@
         "y": 438.34292067468147
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-61",
@@ -821,20 +929,23 @@
         "y": 437.5011822868242
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "190"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "190"
+          }
+        ]
+      }
     },
     {
       "id": "node-63",
@@ -843,20 +954,23 @@
         "y": 438.21517014122884
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "100"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "100"
+          }
+        ]
+      }
     },
     {
       "id": "node-65",
@@ -865,20 +979,23 @@
         "y": 438.23694536525375
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "35"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "35"
+          }
+        ]
+      }
     },
     {
       "id": "node-67",
@@ -887,20 +1004,23 @@
         "y": 437.14222262359846
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "25"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "25"
+          }
+        ]
+      }
     },
     {
       "id": "node-68",
@@ -909,20 +1029,23 @@
         "y": 250.21771640043707
       },
       "type": "custom",
-      "columnType": "C",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "投保年齡",
-          "desc": "此欄位代表「投保年齡」的值",
-          "columnName": "INSURANCE_AGE",
-          "dataType": "6",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "AGE_RANGE"
-        }
-      ]
+      "data": {
+        "label": "投保年齡",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "投保年齡",
+            "desc": "此欄位代表「投保年齡」的值",
+            "columnName": "INSURANCE_AGE",
+            "dataType": "6",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "AGE_RANGE"
+          }
+        ]
+      }
     },
     {
       "id": "node-70",
@@ -931,20 +1054,23 @@
         "y": 436.48499495706403
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-72",
@@ -953,20 +1079,23 @@
         "y": 436.3656826857167
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "PROC_CAT_CSR",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "155"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "PROC_CAT_CSR",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "155"
+          }
+        ]
+      }
     },
     {
       "id": "node-74",
@@ -975,20 +1104,23 @@
         "y": 243.88765480617772
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-76",
@@ -997,20 +1129,23 @@
         "y": 245.88765480617772
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     },
     {
       "id": "node-78",
@@ -1019,20 +1154,23 @@
         "y": 243.83754007681017
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "3",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "無標準"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "3",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "無標準"
+          }
+        ]
+      }
     },
     {
       "id": "node-80",
@@ -1041,20 +1179,23 @@
         "y": 241.83754007681014
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "2",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "0"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "2",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "0"
+          }
+        ]
+      }
     },
     {
       "id": "node-82",
@@ -1063,20 +1204,23 @@
         "y": 239.85424498659935
       },
       "type": "custom",
-      "columnType": "R",
-      "metadataList": [
-        {
-          "index": 0,
-          "label": "結果",
-          "desc": "此欄位代表「結果:」",
-          "columnName": "RESULT",
-          "dataType": "1",
-          "mandatory": true,
-          "codeId": "RULE_EXECUTE_RESULT",
-          "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-          "resultValue": "D"
-        }
-      ]
+      "data": {
+        "label": "結果",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "結果",
+            "desc": "此欄位代表「結果:」",
+            "columnName": "RESULT",
+            "dataType": "1",
+            "mandatory": true,
+            "codeId": "RULE_EXECUTE_RESULT",
+            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "resultValue": "D"
+          }
+        ]
+      }
     }
   ],
   "edges": [
@@ -1089,7 +1233,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "壽險"
@@ -1104,7 +1248,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "無併發症、無共病"
@@ -1119,7 +1263,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～19歲"
@@ -1134,7 +1278,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "20～29歲"
@@ -1149,7 +1293,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "30～39歲"
@@ -1164,7 +1308,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "40～49歲"
@@ -1179,7 +1323,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "50～64歲"
@@ -1194,7 +1338,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1209,7 +1353,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "有併發症"
@@ -1224,7 +1368,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "增值性視網膜病變"
@@ -1239,7 +1383,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～49歲"
@@ -1254,7 +1398,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "50～64歲"
@@ -1269,7 +1413,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1284,7 +1428,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "神經性病變"
@@ -1299,7 +1443,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～64歲"
@@ -1314,7 +1458,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1329,7 +1473,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "肢端壞疽"
@@ -1344,7 +1488,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～64歲"
@@ -1359,7 +1503,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1374,7 +1518,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "蜂窩組織炎及膿瘍"
@@ -1389,7 +1533,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～64歲"
@@ -1404,7 +1548,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1419,7 +1563,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "蛋白尿(2＋)以上"
@@ -1434,7 +1578,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～39歲"
@@ -1449,7 +1593,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "40～49歲"
@@ -1464,7 +1608,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "50～64歲"
@@ -1479,7 +1623,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1494,7 +1638,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "有共病"
@@ -1509,7 +1653,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "高血壓"
@@ -1524,7 +1668,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～39歲"
@@ -1539,7 +1683,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "40～49歲"
@@ -1554,7 +1698,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "50～64歲"
@@ -1569,7 +1713,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1584,7 +1728,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "高血脂"
@@ -1599,7 +1743,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～29歲"
@@ -1614,7 +1758,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "30～39歲"
@@ -1629,7 +1773,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "40～49歲"
@@ -1644,7 +1788,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "50～64歲"
@@ -1659,7 +1803,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1674,7 +1818,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "腦中風"
@@ -1689,7 +1833,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "～64歲"
@@ -1704,7 +1848,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "65歲～"
@@ -1719,7 +1863,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "重大疾病險"
@@ -1734,7 +1878,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "醫療險"
@@ -1749,7 +1893,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "長期照顧險"
@@ -1764,7 +1908,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "防癌險"
@@ -1779,7 +1923,7 @@
         "stroke": "#000"
       },
       "type": "default",
-      "metadata": {
+      "data": {
         "columnName": "PROD_CAT",
         "expressionType": "1",
         "entryText": "傷害險"

@@ -1,0 +1,26 @@
+@use '../_common.scss' as *;
+
+.custom-edge {
+  // padding: 12px;
+  // border-radius: 8px;
+  // background-color: #ffffff;
+  // border: 1px solid #ddd;
+  min-width: 150px;
+  // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  // transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  &.selected {
+    border-color: #d41b1b;
+    box-shadow: 0 0 0 2px rgba(38, 168, 98, 0.2);
+  }
+
+  .edge-content {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+  }
+} 

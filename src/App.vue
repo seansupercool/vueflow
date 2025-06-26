@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, watch, markRaw } from 'vue'
+import { ref, watch, markRaw, onMounted, onUnmounted } from 'vue'
 import {
   VueFlow,
   useVueFlow,
@@ -16,7 +16,8 @@ import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
 import PropertiesPanel from './components/PropertiesPanel.vue'
 import CustomNode from './components/CustomNode.vue'
-import { useGraph, convertToVueFlowNode, convertToVueFlowEdge } from './composable/useGraph'
+import CustomEdge from './components/CustomEdge.vue'
+import { useGraph, convertToVueFlowNode, convertToVueFlowEdge, parseExpressionType } from './composable/useGraph'
 import type { VueFlowNode, VueFlowEdge } from './core/interfaces/VueFlow'
 import { PropertiesState } from './core/enums/VueFlow'
 import { downloadJson } from './utils/downloadJson'
@@ -24,10 +25,13 @@ import { downloadJson } from './utils/downloadJson'
 const { viewport, toFlowPosition } = useVueFlow()
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
-const { updateNode, setEdges,  onConnect, onNodesChange, onEdgesChange, project } = useVueFlow()
+const { updateNode, setEdges,  onConnect, onNodesChange, onEdgesChange, project, getNodes, getEdges } = useVueFlow()
 
 const nodeTypes = {
   custom: markRaw(CustomNode)
+}
+const edgeTypes = {
+  custom: markRaw(CustomEdge)
 }
 
 // 修改狀態相關的變數
@@ -87,8 +91,27 @@ const onPaneClick = () => {
   }))
 }
 
+// 處理鍵盤刪除事件
+const handleKeyPress = (event: KeyboardEvent) => {
+  // 如果焦點在輸入框內，則不觸發刪除
+  const target = event.target as HTMLElement
+  if (target && (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable)) {
+    return
+  }
+
+  if (event.key === 'Delete' || event.key === 'Backspace') {
+      selectedNode.value = null
+      selectedEdge.value = null
+      propertiesState.value = PropertiesState.NONE
+  }
+}
+
+onMounted(() => window.addEventListener('keydown', handleKeyPress))
+onUnmounted(() => window.removeEventListener('keydown', handleKeyPress))
+
 // 處理新增連接
 const onConnectHandler = (params: Connection) => {
+  console.log("onConnectHandler")
   // 找到來源節點
   const sourceNode = graphData.value.nodes.find(n => n.id === params.source)
   const newEdge: VueFlowEdge = {
@@ -155,10 +178,9 @@ const handleEdgeUpdate = (updatedEdge: VueFlowEdge) => {
     // 創建新的邊緣數據
     const updatedEdgeData = {
       ...graphData.value.edges[edgeIndex],
-      label: updatedEdge.metadata.entryText,
+      label: `${parseExpressionType(updatedEdge.metadata.expressionType)} ${updatedEdge.metadata.entryText}`,
       data: {
         ...graphData.value.edges[edgeIndex].data,
-        label: updatedEdge.metadata.entryText,
         metadata: {
           columnName: updatedEdge.metadata.columnName,
           expressionType: updatedEdge.metadata.expressionType,
@@ -234,8 +256,11 @@ const onFileChange = (event: Event) => {
       const json = JSON.parse(result)
       console.log('🟢 json:', json)
       if (json.nodes && json.edges) {
-        graphData.value.nodes = json.nodes.map(convertToVueFlowNode)
-        graphData.value.edges = json.edges.map(convertToVueFlowEdge)
+        console.log(1)
+        graphData.value.nodes = json.nodes
+        console.log(2)
+        graphData.value.edges = json.edges
+        console.log(3)
       } else {
         alert('JSON 檔案格式錯誤，需包含 nodes 與 edges')
       }
@@ -249,6 +274,8 @@ const onFileChange = (event: Event) => {
 const getStructure = () => {
   console.log('🟢 nodes:', JSON.parse(JSON.stringify(graphData.value.nodes)))
   console.log('🟠 edges:', JSON.parse(JSON.stringify(graphData.value.edges)))
+  console.log('getNodes', getNodes)
+  console.log('getEdges', getEdges)
   downloadJson({ nodes: graphData.value.nodes, edges: graphData.value.edges }, 'structure.json')
 }
 
@@ -357,13 +384,13 @@ const handleAddNode = (nodeData: VueFlowNode) => {
   console.log("viewport.x", viewport.value.x)
   // 設置新節點的位置在視圖中心
   // const viewport = { x: 0, y: 0, zoom: 1.5 }
-  const x: number = nodeData.position.x===0?viewport.value.x: nodeData.position.x;
-  const y: number = nodeData.position.y===0?viewport.value.y: nodeData.position.y;
-  const position = {x,y};
+  // const x: number = nodeData.position.x===0?viewport.value.x/2: nodeData.position.x;
+  // const y: number = nodeData.position.y===0?viewport.value.y/2: nodeData.position.y;
+  // const position = {x,y};
   
   const newNode: VueFlowNode = {
     ...nodeData,
-    position,
+    // position,
     type: 'custom',
   }
   
@@ -415,6 +442,7 @@ const handleEdgeDelete = (edgeId: string) => {
         v-model:nodes="graphData.nodes"
         v-model:edges="graphData.edges"
         :node-types="nodeTypes"
+        :edge-types="edgeTypes"
         :default-viewport="{ x:  1500, y: 300, zoom: 0.5 }"
         :min-zoom="0.01"
         :max-zoom="4"
@@ -431,6 +459,9 @@ const handleEdgeDelete = (edgeId: string) => {
         <Background />
         <Controls />
         <MiniMap />
+        <template #edge-custom="props">
+    <CustomEdge v-bind="props" />
+  </template>
         <!-- <template #edge-label="{ data }">
           <div class="edge-label">
             <div>{{ data?.metadata?.columnName }}</div>

@@ -22,7 +22,7 @@ const props = defineProps<NodeProps<VueFlowNode>>()
     :class="{ 'selected': props.selected }"
   >
     <Handle type="target" :position="Position.Top" />
-    <div class="node-content" :class="{ 'result-node': props.data?.columnType === ColumnType.RESULT }">
+    <div class="node-content" :class="{ 'result-node': props.data.columnType === ColumnType.RESULT }">
       <div v-for="(item, index) in props.data.metadataList" :key="index" class="metadata-item">
         {{ item.label }} {{ props.data?.columnType === ColumnType.RESULT?":" + item.resultValue:"" }}
       </div>
