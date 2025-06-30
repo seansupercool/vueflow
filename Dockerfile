@@ -9,21 +9,15 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# 部署階段：用輕量級映像提供靜態檔案
-FROM node:20-alpine
+# 部署階段：用 nginx 提供靜態檔案
+FROM nginx:alpine
 
-WORKDIR /app
+# 複製打包好的 dist 到 nginx 的預設網站目錄下的 icp-dashboard 子目錄
+COPY --from=builder /app/dist /usr/share/nginx/html/icp-dashboard
 
-# 安裝 serve 套件（用來提供靜態檔案）
-RUN npm install -g serve
-
-# 複製 build 出來的檔案
-COPY --from=builder /app/dist ./dist
-
-# Cloud Run 預設 PORT 環境變數
-ENV PORT=8080
+# 複製自訂 nginx 配置（稍後需要你提供 nginx.conf）
+COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 8080
 
-# 啟動指令
-CMD ["serve", "-s", "dist", "-l", "8080"] 
+CMD ["nginx", "-g", "daemon off;"]
