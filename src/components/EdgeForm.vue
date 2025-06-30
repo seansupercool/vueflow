@@ -41,20 +41,20 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import type { GraphEdge } from '../core/interfaces/VueFlow'
+import type { VueFlowEdge } from '../core/interfaces/VueFlow'
 import { expressionTypeOptions } from '@/constants/expressionTypeMapping'
 
 const props = defineProps<{
-  edge: GraphEdge | null
+  edge: VueFlowEdge | null
 }>()
 
 const emit = defineEmits<{
-  (e: 'delete', edge: GraphEdge): void
-  (e: 'confirm', edge: GraphEdge): void
+  (e: 'delete', edge: VueFlowEdge): void
+  (e: 'confirm', edge: VueFlowEdge): void
   (e: 'cancel'): void
 }>()
 
-const edgeData = ref<GraphEdge>({
+const edgeData = ref<VueFlowEdge>({
   id: '',
   source: '',
   target: '',
@@ -62,6 +62,7 @@ const edgeData = ref<GraphEdge>({
   animated: false,
   style: {},
   metadata: {
+    label: '',
     columnName: '',
     expressionType: '',
     entryText: ''

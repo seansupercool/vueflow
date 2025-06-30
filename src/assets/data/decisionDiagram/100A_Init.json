@@ -1,12 +1,52 @@
 {
   "nodes": [
     {
-      "id": "node-0",
-      "position": {
-        "x": 464.5771452822362,
-        "y": -355.3196878733455
-      },
+      "id": "node_1750837428752_rtnqpojno",
       "type": "custom",
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": -385.7065173790546,
+        "y": 26.298171639480998,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [
+          {
+            "id": null,
+            "position": "bottom",
+            "nodeId": "node_1750837428752_rtnqpojno",
+            "type": "source",
+            "x": 72,
+            "y": 53.3984375,
+            "width": 6,
+            "height": 6
+          }
+        ],
+        "target": [
+          {
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750837428752_rtnqpojno",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
+          }
+        ]
+      },
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
+      "position": {
+        "x": -385.7065173790546,
+        "y": 26.298171639480998
+      },
       "data": {
         "label": "險種",
         "columnType": "C",
@@ -14,1920 +54,2887 @@
           {
             "index": 0,
             "label": "險種",
-            "desc": "此欄位代表「險種」的值",
-            "columnName": "INSURANCE_TYPE",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "INS_SYSTEM_CODE",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "INSURANCE_TYPE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-1",
-      "position": {
-        "x": -1414.2115873146372,
-        "y": -101.31400105284283
-      },
-      "type": "custom",
-      "data": {
-        "label": "有無併發症及共病",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "有無併發症及共病",
-            "desc": "此欄位代表「有無併發症及共病」的值",
-            "columnName": "COMPLICATION_STATUS",
-            "dataType": "3",
-            "mandatory": true,
-            "codeId": "COMP_STATUS",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "COMPLICATION_STATUS"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-2",
-      "position": {
-        "x": -3018.6140163862638,
-        "y": 100.57865388016728
-      },
-      "type": "custom",
-      "data": {
-        "label": "投保年齡",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "INSURANCE_PERIOD",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-4",
-      "position": {
-        "x": -3466.618374942711,
-        "y": 391.6341254392182
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果:",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果:",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-6",
-      "position": {
-        "x": -3306.243374942711,
-        "y": 390.6341254392182
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "150"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-8",
-      "position": {
-        "x": -3150.243374942711,
-        "y": 389.6341254392182
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "145"
-          },
-          {
-            "index": 0,
-            "label": "投保上限(內)",
             "desc": "",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "6000000"
-          },
+            "columnName": "ins_type",
+            "dataType": "1",
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
+            "resultValue": ""
+          }
+        ]
+      },
+      "events": {}
+    },
+    {
+      "id": "node_1750837446783_vfc38u08z",
+      "type": "custom",
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": -757.0655834674744,
+        "y": 488.2221833610799,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [],
+        "target": [
+          {
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750837446783_vfc38u08z",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
+          }
+        ]
+      },
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
+      "position": {
+        "x": -757.0655834674744,
+        "y": 488.2221833610799
+      },
+      "data": {
+        "label": "決策",
+        "columnType": "R",
+        "metadataList": [
           {
             "index": 0,
-            "label": "投保上限(內+外)",
+            "label": "決策",
             "desc": "",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "6000000"
+            "columnName": "decision",
+            "dataType": "1",
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
+            "resultValue": "D"
           }
         ]
-      }
+      },
+      "events": {}
     },
     {
-      "id": "node-10",
-      "position": {
-        "x": -2987.993374942711,
-        "y": 391.5091254392182
-      },
+      "id": "node_1750838140862_wtn546yiv",
       "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": -519.1750091071763,
+        "y": 185.67306703832955,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [
           {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "90"
+            "id": null,
+            "position": "bottom",
+            "nodeId": "node_1750838140862_wtn546yiv",
+            "type": "source",
+            "x": 72,
+            "y": 53.3984375,
+            "width": 6,
+            "height": 6
           }
-        ]
-      }
-    },
-    {
-      "id": "node-12",
-      "position": {
-        "x": -2826.871687471356,
-        "y": 390.0530004583146
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
+        ],
+        "target": [
           {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "35"
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750838140862_wtn546yiv",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
           }
         ]
-      }
-    },
-    {
-      "id": "node-14",
-      "position": {
-        "x": -2660.743374942711,
-        "y": 389.1341254392182
       },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "25"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-15",
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
       "position": {
-        "x": -1399.202084568839,
-        "y": 34.09710574677855
+        "x": -519.1750091071763,
+        "y": 185.67306703832955
       },
-      "type": "custom",
       "data": {
-        "label": "併發症類型",
+        "label": "現症既往症",
         "columnType": "C",
         "metadataList": [
           {
             "index": 0,
-            "label": "併發症類型",
-            "desc": "此欄位代表「併發症類型」的值",
-            "columnName": "COMPLICATION_TYPE",
+            "label": "現症既往症",
+            "desc": "",
+            "columnName": "CURRENT_PAST_ILLNESSES",
             "dataType": "1",
-            "mandatory": true,
-            "codeId": "COMP_TYPE",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "COMPLICATION_TYPE"
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
+            "resultValue": ""
           }
         ]
-      }
+      },
+      "events": {}
     },
     {
-      "id": "node-16",
-      "position": {
-        "x": -1941.2186620534449,
-        "y": 279.6551214550845
-      },
+      "id": "node_1750838181867_ur0n0kg97",
       "type": "custom",
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": -447.0345180922839,
+        "y": 342.96299007079983,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [
+          {
+            "id": null,
+            "position": "bottom",
+            "nodeId": "node_1750838181867_ur0n0kg97",
+            "type": "source",
+            "x": 72,
+            "y": 53.3984375,
+            "width": 6,
+            "height": 6
+          }
+        ],
+        "target": [
+          {
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750838181867_ur0n0kg97",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
+          }
+        ]
+      },
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
+      "position": {
+        "x": -447.0345180922839,
+        "y": 342.96299007079983
+      },
       "data": {
-        "label": "投保年齡",
+        "label": "療癒後經過時間",
         "columnType": "C",
         "metadataList": [
           {
             "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "INSURANCE_PERIOD",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-18",
-      "position": {
-        "x": -2100.5,
-        "y": 440
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
+            "label": "療癒後經過時間",
+            "desc": "",
+            "columnName": "TIME_AFTER_RECOVERY",
             "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
+            "resultValue": ""
           }
         ]
-      }
+      },
+      "events": {}
     },
     {
-      "id": "node-20",
-      "position": {
-        "x": -1938.3516482123405,
-        "y": 438.7466586864174
-      },
+      "id": "node_1750838208677_k8t32dvw5",
       "type": "custom",
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": -534.54921211035,
+        "y": 486.0613411003404,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [],
+        "target": [
+          {
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750838208677_k8t32dvw5",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
+          }
+        ]
+      },
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
+      "position": {
+        "x": -534.54921211035,
+        "y": 486.0613411003404
+      },
       "data": {
-        "label": "結果",
+        "label": "決策",
         "columnType": "R",
         "metadataList": [
           {
             "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "185"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-22",
-      "position": {
-        "x": -1781.25,
-        "y": 442
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "100"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-23",
-      "position": {
-        "x": -2390.7265922000433,
-        "y": 281.9616377851937
-      },
-      "type": "custom",
-      "data": {
-        "label": "投保年齡",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-25",
-      "position": {
-        "x": -2474.75,
-        "y": 450
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
+            "label": "決策",
+            "desc": "",
+            "columnName": "decision",
             "dataType": "1",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
+            "resultValue": "P"
           }
         ]
-      }
+      },
+      "events": {}
     },
     {
-      "id": "node-27",
-      "position": {
-        "x": -2273.5,
-        "y": 444
-      },
+      "id": "node_1750838244775_25xds1mk6",
       "type": "custom",
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": -339.4150970700674,
+        "y": 490.79186510131694,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [],
+        "target": [
+          {
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750838244775_25xds1mk6",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
+          }
+        ]
+      },
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
+      "position": {
+        "x": -339.4150970700674,
+        "y": 490.79186510131694
+      },
       "data": {
-        "label": "結果",
+        "label": "決策",
         "columnType": "R",
         "metadataList": [
           {
             "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "70"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-28",
-      "position": {
-        "x": -590.6722710357274,
-        "y": 264.62062603610883
-      },
-      "type": "custom",
-      "data": {
-        "label": "投保年齡",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-30",
-      "position": {
-        "x": -676.1671312505166,
-        "y": 439.64609372820433
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
+            "label": "決策",
+            "desc": "",
+            "columnName": "decision",
             "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-32",
-      "position": {
-        "x": -514.9576517324731,
-        "y": 439.7339430617144
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "125"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-33",
-      "position": {
-        "x": -1550.2233209721767,
-        "y": 277.29370881357846
-      },
-      "type": "custom",
-      "data": {
-        "label": "投保年齡",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-35",
-      "position": {
-        "x": -1623.7940068367675,
-        "y": 441.39529948228335
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-37",
-      "position": {
-        "x": -1469.3065980158053,
-        "y": 440.21261620634505
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "100"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-38",
-      "position": {
-        "x": -1088.2369616521096,
-        "y": 271.5950605683244
-      },
-      "type": "custom",
-      "data": {
-        "label": "投保年齡",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-40",
-      "position": {
-        "x": -1312.714968878126,
-        "y": 440.0572256893237
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-42",
-      "position": {
-        "x": -1160.8786727575261,
-        "y": 440.3350934476607
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "245"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-44",
-      "position": {
-        "x": -999.3826856888603,
-        "y": 441.38239818914985
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "115"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-46",
-      "position": {
-        "x": -841.9962236811234,
-        "y": 443.10039978684824
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "75"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-47",
-      "position": {
-        "x": 710.9208407637458,
-        "y": 60.01978980906354
-      },
-      "type": "custom",
-      "data": {
-        "label": "共病類型",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "共病類型",
-            "desc": "此欄位代表「共病類型」的值",
-            "columnName": "COMORBIDITY_TYPE",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "COMORBIDITY_TYPE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-48",
-      "position": {
-        "x": 716.2802458401227,
-        "y": 252.4147051795314
-      },
-      "type": "custom",
-      "data": {
-        "label": "投保年齡",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-50",
-      "position": {
-        "x": 951.3126514362642,
-        "y": 437.2166457892444
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-52",
-      "position": {
-        "x": 461.9301554328597,
-        "y": 437.27346041161604
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "225"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-54",
-      "position": {
-        "x": 628.3202040740172,
-        "y": 437.1438335652121
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "110"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-56",
-      "position": {
-        "x": 789.8164277551407,
-        "y": 437.14383356521216
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "60"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-57",
-      "position": {
-        "x": -10.82717755357892,
-        "y": 255.1988288529097
-      },
-      "type": "custom",
-      "data": {
-        "label": "投保年齡",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-59",
-      "position": {
-        "x": -340.71100769541283,
-        "y": 438.34292067468147
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-61",
-      "position": {
-        "x": -184.09525336215916,
-        "y": 437.5011822868242
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "190"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-63",
-      "position": {
-        "x": -26.568087384012955,
-        "y": 438.21517014122884
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "100"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-65",
-      "position": {
-        "x": 130.85629033721546,
-        "y": 438.23694536525375
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "35"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-67",
-      "position": {
-        "x": 288.0743900619423,
-        "y": 437.14222262359846
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "25"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-68",
-      "position": {
-        "x": 1200.6283392751145,
-        "y": 250.21771640043707
-      },
-      "type": "custom",
-      "data": {
-        "label": "投保年齡",
-        "columnType": "C",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "投保年齡",
-            "desc": "此欄位代表「投保年齡」的值",
-            "columnName": "INSURANCE_AGE",
-            "dataType": "6",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "AGE_RANGE"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-70",
-      "position": {
-        "x": 1302.3872316849038,
-        "y": 436.48499495706403
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-72",
-      "position": {
-        "x": 1132.5200603502483,
-        "y": 436.3656826857167
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "PROC_CAT_CSR",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "155"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-74",
-      "position": {
-        "x": 1477.3386873704853,
-        "y": 243.88765480617772
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-76",
-      "position": {
-        "x": 1665.405507009642,
-        "y": 245.88765480617772
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "D"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-78",
-      "position": {
-        "x": 1831.3553922802744,
-        "y": 243.83754007681017
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "3",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
-            "resultValue": "無標準"
-          }
-        ]
-      }
-    },
-    {
-      "id": "node-80",
-      "position": {
-        "x": 1999.3553922802746,
-        "y": 241.83754007681014
-      },
-      "type": "custom",
-      "data": {
-        "label": "結果",
-        "columnType": "R",
-        "metadataList": [
-          {
-            "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
-            "dataType": "2",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
             "resultValue": "0"
           }
         ]
-      }
+      },
+      "events": {}
     },
     {
-      "id": "node-82",
-      "position": {
-        "x": 2175.288102233087,
-        "y": 239.85424498659935
-      },
+      "id": "node_1750838275417_xhohv3k1l",
       "type": "custom",
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": -183.17244407910047,
+        "y": 188.03832903881784,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [
+          {
+            "id": null,
+            "position": "bottom",
+            "nodeId": "node_1750838275417_xhohv3k1l",
+            "type": "source",
+            "x": 72,
+            "y": 53.3984375,
+            "width": 6,
+            "height": 6
+          }
+        ],
+        "target": [
+          {
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750838275417_xhohv3k1l",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
+          }
+        ]
+      },
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
+      "position": {
+        "x": -183.17244407910047,
+        "y": 188.03832903881784
+      },
       "data": {
-        "label": "結果",
+        "label": "現症既往症",
+        "columnType": "C",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "現症既往症",
+            "desc": "",
+            "columnName": "CURRENT_PAST_ILLNESSES",
+            "dataType": "1",
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
+            "resultValue": ""
+          }
+        ]
+      },
+      "events": {}
+    },
+    {
+      "id": "node_1750838295674_wicbbs33s",
+      "type": "custom",
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": -164.3857090339351,
+        "y": 494.33975810204953,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [],
+        "target": [
+          {
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750838295674_wicbbs33s",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
+          }
+        ]
+      },
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
+      "position": {
+        "x": -164.3857090339351,
+        "y": 494.33975810204953
+      },
+      "data": {
+        "label": "決策",
         "columnType": "R",
         "metadataList": [
           {
             "index": 0,
-            "label": "結果",
-            "desc": "此欄位代表「結果:」",
-            "columnName": "RESULT",
+            "label": "決策",
+            "desc": "",
+            "columnName": "decision",
             "dataType": "1",
-            "mandatory": true,
-            "codeId": "RULE_EXECUTE_RESULT",
-            "codeUid": "a2f2f781-ba74-4301-8bad-446f23a23a27",
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
             "resultValue": "D"
           }
         ]
-      }
+      },
+      "events": {}
+    },
+    {
+      "id": "node_1750838331908_bnl5lf34m",
+      "type": "custom",
+      "dimensions": {
+        "width": 150,
+        "height": 56
+      },
+      "computedPosition": {
+        "x": 26.01788200537102,
+        "y": 490.791865101317,
+        "z": 0
+      },
+      "handleBounds": {
+        "source": [],
+        "target": [
+          {
+            "id": null,
+            "position": "top",
+            "nodeId": "node_1750838331908_bnl5lf34m",
+            "type": "target",
+            "x": 72,
+            "y": -3,
+            "width": 6,
+            "height": 6
+          }
+        ]
+      },
+      "selected": false,
+      "dragging": false,
+      "resizing": false,
+      "initialized": false,
+      "isParent": false,
+      "position": {
+        "x": 26.01788200537102,
+        "y": 490.791865101317
+      },
+      "data": {
+        "label": "決策",
+        "columnType": "R",
+        "metadataList": [
+          {
+            "index": 0,
+            "label": "決策",
+            "desc": "",
+            "columnName": "decision",
+            "dataType": "1",
+            "mandatory": false,
+            "codeId": "",
+            "codeUid": "",
+            "resultValue": "0"
+          }
+        ]
+      },
+      "events": {}
     }
   ],
   "edges": [
     {
-      "id": "e1",
-      "source": "node-0",
-      "target": "node-1",
+      "id": "e1750838157319",
+      "type": "default",
+      "source": "node_1750837428752_rtnqpojno",
+      "target": "node_1750838140862_wtn546yiv",
+      "data": {
+        "metadata": {
+          "columnName": "ins_type",
+          "expressionType": "1",
+          "entryText": "壽險"
+        }
+      },
+      "events": {},
+      "label": "= 壽險",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "壽險"
-      }
+      "sourceNode": {
+        "id": "node_1750837428752_rtnqpojno",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -385.7065173790546,
+          "y": 26.298171639480998,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750837428752_rtnqpojno",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750837428752_rtnqpojno",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -385.7065173790546,
+          "y": 26.298171639480998
+        },
+        "data": {
+          "label": "險種",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "險種",
+              "desc": "",
+              "columnName": "ins_type",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838140862_wtn546yiv",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -310.7065116428538,
+      "sourceY": 85.6966164031555,
+      "targetX": -444.1749599263407,
+      "targetY": 182.67307100430244
     },
     {
-      "id": "e2",
-      "source": "node-1",
-      "target": "node-2",
+      "id": "e1750838157319",
+      "type": "default",
+      "source": "node_1750837428752_rtnqpojno",
+      "target": "node_1750838140862_wtn546yiv",
+      "data": {
+        "metadata": {
+          "columnName": "ins_type",
+          "expressionType": "1",
+          "entryText": "壽險"
+        }
+      },
+      "events": {},
+      "label": "= 壽險",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "無併發症、無共病"
-      }
+      "sourceNode": {
+        "id": "node_1750837428752_rtnqpojno",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -385.7065173790546,
+          "y": 26.298171639480998,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750837428752_rtnqpojno",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750837428752_rtnqpojno",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -385.7065173790546,
+          "y": 26.298171639480998
+        },
+        "data": {
+          "label": "險種",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "險種",
+              "desc": "",
+              "columnName": "ins_type",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838140862_wtn546yiv",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -310.7065173790546,
+      "sourceY": 85.696609139481,
+      "targetX": -444.17500910717627,
+      "targetY": 182.67306703832955
     },
     {
-      "id": "e4",
-      "source": "node-2",
-      "target": "node-4",
+      "id": "e1750838166828",
+      "type": "default",
+      "source": "node_1750838140862_wtn546yiv",
+      "target": "node_1750837446783_vfc38u08z",
+      "data": {
+        "metadata": {
+          "label": "現症既往症",
+          "columnName": "CURRENT_PAST_ILLNESSES",
+          "expressionType": "等於",
+          "entryText": ""
+        }
+      },
+      "events": {},
+      "label": " ",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～19歲"
-      }
+      "sourceNode": {
+        "id": "node_1750838140862_wtn546yiv",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750837446783_vfc38u08z",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -757.0655834674744,
+          "y": 488.2221833610799,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750837446783_vfc38u08z",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -757.0655834674744,
+          "y": 488.2221833610799
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "D"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -444.17500910717627,
+      "sourceY": 245.07150453832955,
+      "targetX": -682.0655834674744,
+      "targetY": 485.2221833610799
     },
     {
-      "id": "e5",
-      "source": "node-2",
-      "target": "node-6",
+      "id": "e1750838166829",
+      "type": "default",
+      "source": "node_1750838140862_wtn546yiv",
+      "target": "node_1750837446783_vfc38u08z",
+      "data": {
+        "metadata": {
+          "columnName": "CURRENT_PAST_ILLNESSES",
+          "expressionType": "1",
+          "entryText": "現症"
+        }
+      },
+      "events": {},
+      "label": "= 現症",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "20～29歲"
-      }
+      "sourceNode": {
+        "id": "node_1750838140862_wtn546yiv",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750837446783_vfc38u08z",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -757.0655834674744,
+          "y": 488.2221833610799,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750837446783_vfc38u08z",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -757.0655834674744,
+          "y": 488.2221833610799
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "D"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -444.17500910717627,
+      "sourceY": 245.07150453832955,
+      "targetX": -682.0655834674744,
+      "targetY": 485.2221833610799
     },
     {
-      "id": "e8",
-      "source": "node-2",
-      "target": "node-8",
+      "id": "e1750838200090",
+      "type": "default",
+      "source": "node_1750838140862_wtn546yiv",
+      "target": "node_1750838181867_ur0n0kg97",
+      "data": {
+        "metadata": {
+          "columnName": "CURRENT_PAST_ILLNESSES",
+          "expressionType": "1",
+          "entryText": "既往症"
+        }
+      },
+      "events": {},
+      "label": "= 既往症",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "30～39歲"
-      }
+      "sourceNode": {
+        "id": "node_1750838140862_wtn546yiv",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838181867_ur0n0kg97",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983
+        },
+        "data": {
+          "label": "療癒後經過時間",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "療癒後經過時間",
+              "desc": "",
+              "columnName": "TIME_AFTER_RECOVERY",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -444.1749599263407,
+      "sourceY": 245.07152032022225,
+      "targetX": -372.03446891144836,
+      "targetY": 339.9629940367727
     },
     {
-      "id": "e10",
-      "source": "node-2",
-      "target": "node-10",
+      "id": "e1750838200090",
+      "type": "default",
+      "source": "node_1750838140862_wtn546yiv",
+      "target": "node_1750838181867_ur0n0kg97",
+      "data": {
+        "metadata": {
+          "columnName": "CURRENT_PAST_ILLNESSES",
+          "expressionType": "1",
+          "entryText": "既往症"
+        }
+      },
+      "events": {},
+      "label": "= 既往症",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "40～49歲"
-      }
+      "sourceNode": {
+        "id": "node_1750838140862_wtn546yiv",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838140862_wtn546yiv",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -519.1750091071763,
+          "y": 185.67306703832955
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838181867_ur0n0kg97",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983
+        },
+        "data": {
+          "label": "療癒後經過時間",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "療癒後經過時間",
+              "desc": "",
+              "columnName": "TIME_AFTER_RECOVERY",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -444.17500910717627,
+      "sourceY": 245.07150453832955,
+      "targetX": -372.0345180922839,
+      "targetY": 339.96299007079983
     },
     {
-      "id": "e12",
-      "source": "node-2",
-      "target": "node-12",
+      "id": "e1750838230559",
+      "type": "default",
+      "source": "node_1750838181867_ur0n0kg97",
+      "target": "node_1750838208677_k8t32dvw5",
+      "data": {
+        "metadata": {
+          "columnName": "TIME_AFTER_RECOVERY",
+          "expressionType": "4",
+          "entryText": "三個月"
+        }
+      },
+      "events": {},
+      "label": "< 三個月",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "50～64歲"
-      }
+      "sourceNode": {
+        "id": "node_1750838181867_ur0n0kg97",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983
+        },
+        "data": {
+          "label": "療癒後經過時間",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "療癒後經過時間",
+              "desc": "",
+              "columnName": "TIME_AFTER_RECOVERY",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838208677_k8t32dvw5",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -534.54921211035,
+          "y": 486.0613411003404,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838208677_k8t32dvw5",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -534.54921211035,
+          "y": 486.0613411003404
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "P"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -372.03446891144836,
+      "sourceY": 402.3614433526925,
+      "targetX": -453.63600792829385,
+      "targetY": 468.8697730633837,
+      "selected": false
     },
     {
-      "id": "e14",
-      "source": "node-2",
-      "target": "node-14",
+      "id": "e1750838230559",
+      "type": "default",
+      "source": "node_1750838181867_ur0n0kg97",
+      "target": "node_1750838208677_k8t32dvw5",
+      "data": {
+        "metadata": {
+          "columnName": "TIME_AFTER_RECOVERY",
+          "expressionType": "4",
+          "entryText": "三個月"
+        }
+      },
+      "events": {},
+      "label": "< 三個月",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
+      "sourceNode": {
+        "id": "node_1750838181867_ur0n0kg97",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983
+        },
+        "data": {
+          "label": "療癒後經過時間",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "療癒後經過時間",
+              "desc": "",
+              "columnName": "TIME_AFTER_RECOVERY",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838208677_k8t32dvw5",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -534.54921211035,
+          "y": 486.0613411003404,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838208677_k8t32dvw5",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -534.54921211035,
+          "y": 486.0613411003404
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "P"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -372.0345180922839,
+      "sourceY": 402.36142757079983,
+      "targetX": -459.54921211035,
+      "targetY": 483.0613411003404,
+      "selected": false
     },
     {
-      "id": "e15",
-      "source": "node-1",
-      "target": "node-15",
+      "id": "e1750838262830",
+      "type": "default",
+      "source": "node_1750838181867_ur0n0kg97",
+      "target": "node_1750838244775_25xds1mk6",
+      "data": {
+        "metadata": {
+          "columnName": "TIME_AFTER_RECOVERY",
+          "expressionType": "3",
+          "entryText": "三個月"
+        }
+      },
+      "events": {},
+      "label": "> 三個月",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "有併發症"
-      }
+      "sourceNode": {
+        "id": "node_1750838181867_ur0n0kg97",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983
+        },
+        "data": {
+          "label": "療癒後經過時間",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "療癒後經過時間",
+              "desc": "",
+              "columnName": "TIME_AFTER_RECOVERY",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838244775_25xds1mk6",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -339.4150970700674,
+          "y": 490.79186510131694,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838244775_25xds1mk6",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -339.4150970700674,
+          "y": 490.79186510131694
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "0"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -372.03446891144836,
+      "sourceY": 402.3614433526925,
+      "targetX": -257.319261887767,
+      "targetY": 480.696083065825
     },
     {
-      "id": "e16",
-      "source": "node-15",
-      "target": "node-16",
+      "id": "e1750838262830",
+      "type": "default",
+      "source": "node_1750838181867_ur0n0kg97",
+      "target": "node_1750838244775_25xds1mk6",
+      "data": {
+        "metadata": {
+          "columnName": "TIME_AFTER_RECOVERY",
+          "expressionType": "3",
+          "entryText": "三個月"
+        }
+      },
+      "events": {},
+      "label": "> 三個月",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "增值性視網膜病變"
-      }
+      "sourceNode": {
+        "id": "node_1750838181867_ur0n0kg97",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838181867_ur0n0kg97",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -447.0345180922839,
+          "y": 342.96299007079983
+        },
+        "data": {
+          "label": "療癒後經過時間",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "療癒後經過時間",
+              "desc": "",
+              "columnName": "TIME_AFTER_RECOVERY",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838244775_25xds1mk6",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -339.4150970700674,
+          "y": 490.79186510131694,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838244775_25xds1mk6",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -339.4150970700674,
+          "y": 490.79186510131694
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "0"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -372.0345180922839,
+      "sourceY": 402.36142757079983,
+      "targetX": -264.4150970700674,
+      "targetY": 487.79186510131694
     },
     {
-      "id": "e18",
-      "source": "node-16",
-      "target": "node-18",
+      "id": "e1750838280199",
+      "type": "default",
+      "source": "node_1750837428752_rtnqpojno",
+      "target": "node_1750838275417_xhohv3k1l",
+      "data": {
+        "metadata": {
+          "columnName": "ins_type",
+          "expressionType": "1",
+          "entryText": "醫療險"
+        }
+      },
+      "events": {},
+      "label": "= 醫療險",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～49歲"
-      }
+      "sourceNode": {
+        "id": "node_1750837428752_rtnqpojno",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -385.7065173790546,
+          "y": 26.298171639480998,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750837428752_rtnqpojno",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750837428752_rtnqpojno",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -385.7065173790546,
+          "y": 26.298171639480998
+        },
+        "data": {
+          "label": "險種",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "險種",
+              "desc": "",
+              "columnName": "ins_type",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838275417_xhohv3k1l",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -310.7065116428538,
+      "sourceY": 85.6966164031555,
+      "targetX": -108.1723948982649,
+      "targetY": 185.03829691374452,
+      "selected": false
     },
     {
-      "id": "e20",
-      "source": "node-16",
-      "target": "node-20",
+      "id": "e1750838280199",
+      "type": "default",
+      "source": "node_1750837428752_rtnqpojno",
+      "target": "node_1750838275417_xhohv3k1l",
+      "data": {
+        "metadata": {
+          "columnName": "ins_type",
+          "expressionType": "1",
+          "entryText": "醫療險"
+        }
+      },
+      "events": {},
+      "label": "= 醫療險",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "50～64歲"
-      }
+      "sourceNode": {
+        "id": "node_1750837428752_rtnqpojno",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -385.7065173790546,
+          "y": 26.298171639480998,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750837428752_rtnqpojno",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750837428752_rtnqpojno",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -385.7065173790546,
+          "y": 26.298171639480998
+        },
+        "data": {
+          "label": "險種",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "險種",
+              "desc": "",
+              "columnName": "ins_type",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838275417_xhohv3k1l",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -310.7065173790546,
+      "sourceY": 85.696609139481,
+      "targetX": -108.17244407910047,
+      "targetY": 185.03832903881784,
+      "selected": false
     },
     {
-      "id": "e22",
-      "source": "node-16",
-      "target": "node-22",
+      "id": "e1750838318937",
+      "type": "default",
+      "source": "node_1750838275417_xhohv3k1l",
+      "target": "node_1750838295674_wicbbs33s",
+      "data": {
+        "metadata": {
+          "columnName": "CURRENT_PAST_ILLNESSES",
+          "expressionType": "1",
+          "entryText": "現症"
+        }
+      },
+      "events": {},
+      "label": "= 現症",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
+      "sourceNode": {
+        "id": "node_1750838275417_xhohv3k1l",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838295674_wicbbs33s",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -164.3857090339351,
+          "y": 494.33975810204953,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838295674_wicbbs33s",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -164.3857090339351,
+          "y": 494.33975810204953
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "D"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -108.1723948982649,
+      "sourceY": 247.43676427518741,
+      "targetX": -85.8377668523671,
+      "targetY": 483.0613450663134,
+      "selected": false
     },
     {
-      "id": "e23",
-      "source": "node-15",
-      "target": "node-23",
+      "id": "e1750838318937",
+      "type": "default",
+      "source": "node_1750838275417_xhohv3k1l",
+      "target": "node_1750838295674_wicbbs33s",
+      "data": {
+        "metadata": {
+          "columnName": "CURRENT_PAST_ILLNESSES",
+          "expressionType": "1",
+          "entryText": "現症"
+        }
+      },
+      "events": {},
+      "label": "= 現症",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "神經性病變"
-      }
+      "sourceNode": {
+        "id": "node_1750838275417_xhohv3k1l",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838295674_wicbbs33s",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -164.3857090339351,
+          "y": 494.33975810204953,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838295674_wicbbs33s",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -164.3857090339351,
+          "y": 494.33975810204953
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "D"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -108.17244407910047,
+      "sourceY": 247.43676653881784,
+      "targetX": -89.38570903393509,
+      "targetY": 491.33975810204953,
+      "selected": false
     },
     {
-      "id": "e25",
-      "source": "node-23",
-      "target": "node-25",
+      "id": "e1750838350108",
+      "type": "default",
+      "source": "node_1750838275417_xhohv3k1l",
+      "target": "node_1750838331908_bnl5lf34m",
+      "data": {
+        "metadata": {
+          "columnName": "CURRENT_PAST_ILLNESSES",
+          "expressionType": "1",
+          "entryText": "既往症"
+        }
+      },
+      "events": {},
+      "label": "= 既往症",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～64歲"
-      }
+      "sourceNode": {
+        "id": "node_1750838275417_xhohv3k1l",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
+      },
+      "targetNode": {
+        "id": "node_1750838331908_bnl5lf34m",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": 26.01788200537102,
+          "y": 490.791865101317,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838331908_bnl5lf34m",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": 26.01788200537102,
+          "y": 490.791865101317
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "0"
+            }
+          ]
+        },
+        "events": {}
+      },
+      "sourceX": -108.1723948982649,
+      "sourceY": 247.43676427518741,
+      "targetX": 101.0179311862066,
+      "targetY": 487.7918690672899,
+      "selected": false
     },
     {
-      "id": "e27",
-      "source": "node-23",
-      "target": "node-27",
+      "id": "e1750838350108",
+      "type": "default",
+      "source": "node_1750838275417_xhohv3k1l",
+      "target": "node_1750838331908_bnl5lf34m",
+      "data": {
+        "metadata": {
+          "columnName": "CURRENT_PAST_ILLNESSES",
+          "expressionType": "1",
+          "entryText": "既往症"
+        }
+      },
+      "events": {},
+      "label": "= 既往症",
       "animated": false,
       "style": {
-        "stroke": "#000"
+        "stroke": "#000",
+        "strokeWidth": 1
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
-    },
-    {
-      "id": "e28",
-      "source": "node-15",
-      "target": "node-28",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
+      "sourceNode": {
+        "id": "node_1750838275417_xhohv3k1l",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [
+            {
+              "id": null,
+              "position": "bottom",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "source",
+              "x": 72,
+              "y": 53.3984375,
+              "width": 6,
+              "height": 6
+            }
+          ],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838275417_xhohv3k1l",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": -183.17244407910047,
+          "y": 188.03832903881784
+        },
+        "data": {
+          "label": "現症既往症",
+          "columnType": "C",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "現症既往症",
+              "desc": "",
+              "columnName": "CURRENT_PAST_ILLNESSES",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": ""
+            }
+          ]
+        },
+        "events": {}
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "肢端壞疽"
-      }
-    },
-    {
-      "id": "e30",
-      "source": "node-28",
-      "target": "node-30",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
+      "targetNode": {
+        "id": "node_1750838331908_bnl5lf34m",
+        "type": "custom",
+        "dimensions": {
+          "width": 150,
+          "height": 56
+        },
+        "computedPosition": {
+          "x": 26.01788200537102,
+          "y": 490.791865101317,
+          "z": 0
+        },
+        "handleBounds": {
+          "source": [],
+          "target": [
+            {
+              "id": null,
+              "position": "top",
+              "nodeId": "node_1750838331908_bnl5lf34m",
+              "type": "target",
+              "x": 72,
+              "y": -3,
+              "width": 6,
+              "height": 6
+            }
+          ]
+        },
+        "selected": false,
+        "dragging": false,
+        "resizing": false,
+        "initialized": false,
+        "isParent": false,
+        "position": {
+          "x": 26.01788200537102,
+          "y": 490.791865101317
+        },
+        "data": {
+          "label": "決策",
+          "columnType": "R",
+          "metadataList": [
+            {
+              "index": 0,
+              "label": "決策",
+              "desc": "",
+              "columnName": "decision",
+              "dataType": "1",
+              "mandatory": false,
+              "codeId": "",
+              "codeUid": "",
+              "resultValue": "0"
+            }
+          ]
+        },
+        "events": {}
       },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～64歲"
-      }
-    },
-    {
-      "id": "e31",
-      "source": "node-28",
-      "target": "node-32",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
-    },
-    {
-      "id": "e33",
-      "source": "node-15",
-      "target": "node-33",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "蜂窩組織炎及膿瘍"
-      }
-    },
-    {
-      "id": "e35",
-      "source": "node-33",
-      "target": "node-35",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～64歲"
-      }
-    },
-    {
-      "id": "e37",
-      "source": "node-33",
-      "target": "node-37",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
-    },
-    {
-      "id": "e38",
-      "source": "node-15",
-      "target": "node-38",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "蛋白尿(2＋)以上"
-      }
-    },
-    {
-      "id": "e40",
-      "source": "node-38",
-      "target": "node-40",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～39歲"
-      }
-    },
-    {
-      "id": "e42",
-      "source": "node-38",
-      "target": "node-42",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "40～49歲"
-      }
-    },
-    {
-      "id": "e44",
-      "source": "node-38",
-      "target": "node-44",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "50～64歲"
-      }
-    },
-    {
-      "id": "e46",
-      "source": "node-38",
-      "target": "node-46",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
-    },
-    {
-      "id": "e47",
-      "source": "node-1",
-      "target": "node-47",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "有共病"
-      }
-    },
-    {
-      "id": "e48",
-      "source": "node-47",
-      "target": "node-48",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "高血壓"
-      }
-    },
-    {
-      "id": "e49",
-      "source": "node-48",
-      "target": "node-50",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～39歲"
-      }
-    },
-    {
-      "id": "e51",
-      "source": "node-48",
-      "target": "node-52",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "40～49歲"
-      }
-    },
-    {
-      "id": "e53",
-      "source": "node-48",
-      "target": "node-54",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "50～64歲"
-      }
-    },
-    {
-      "id": "e55",
-      "source": "node-48",
-      "target": "node-56",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
-    },
-    {
-      "id": "e57",
-      "source": "node-47",
-      "target": "node-57",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "高血脂"
-      }
-    },
-    {
-      "id": "e58",
-      "source": "node-57",
-      "target": "node-59",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～29歲"
-      }
-    },
-    {
-      "id": "e60",
-      "source": "node-57",
-      "target": "node-61",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "30～39歲"
-      }
-    },
-    {
-      "id": "e62",
-      "source": "node-57",
-      "target": "node-63",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "40～49歲"
-      }
-    },
-    {
-      "id": "e64",
-      "source": "node-57",
-      "target": "node-65",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "50～64歲"
-      }
-    },
-    {
-      "id": "e66",
-      "source": "node-57",
-      "target": "node-67",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
-    },
-    {
-      "id": "e68",
-      "source": "node-47",
-      "target": "node-68",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "腦中風"
-      }
-    },
-    {
-      "id": "e69",
-      "source": "node-68",
-      "target": "node-70",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "～64歲"
-      }
-    },
-    {
-      "id": "e71",
-      "source": "node-68",
-      "target": "node-72",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "65歲～"
-      }
-    },
-    {
-      "id": "e73",
-      "source": "node-0",
-      "target": "node-74",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "重大疾病險"
-      }
-    },
-    {
-      "id": "e75",
-      "source": "node-0",
-      "target": "node-76",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "醫療險"
-      }
-    },
-    {
-      "id": "e77",
-      "source": "node-0",
-      "target": "node-78",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "長期照顧險"
-      }
-    },
-    {
-      "id": "e79",
-      "source": "node-0",
-      "target": "node-80",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "防癌險"
-      }
-    },
-    {
-      "id": "e81",
-      "source": "node-0",
-      "target": "node-82",
-      "animated": false,
-      "style": {
-        "stroke": "#000"
-      },
-      "type": "default",
-      "data": {
-        "columnName": "PROD_CAT",
-        "expressionType": "1",
-        "entryText": "傷害險"
-      }
+      "sourceX": -108.17244407910047,
+      "sourceY": 247.43676653881784,
+      "targetX": 101.01788200537102,
+      "targetY": 487.791865101317,
+      "selected": false
     }
   ]
 }

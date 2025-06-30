@@ -16,13 +16,12 @@ import { Controls } from '@vue-flow/controls'
 import { MiniMap } from '@vue-flow/minimap'
 import PropertiesPanel from './components/PropertiesPanel.vue'
 import CustomNode from './components/CustomNode.vue'
-import CustomEdge from './components/CustomEdge.vue'
-import { useGraph, convertToVueFlowNode, convertToVueFlowEdge, parseExpressionType } from './composable/useGraph'
+import { useGraph, parseExpressionType } from './composable/useGraph'
 import type { VueFlowNode, VueFlowEdge } from './core/interfaces/VueFlow'
 import { PropertiesState } from './core/enums/VueFlow'
 import { downloadJson } from './utils/downloadJson'
 
-const { viewport, toFlowPosition } = useVueFlow()
+const { viewport } = useVueFlow()
 
 const { graphData, addNode, addEdge, deleteNode, deleteEdge } = useGraph()
 const { updateNode, setEdges,  onConnect, onNodesChange, onEdgesChange, project, getNodes, getEdges } = useVueFlow()
@@ -212,29 +211,21 @@ const handleEdgeCancel = () => {
   propertiesState.value = PropertiesState.NONE
 }
 
-onNodesChange((changes: NodeChange[]) => {
-  graphData.value.nodes = applyNodeChanges(changes, graphData.value.nodes)
-})
+// watch(
+//   () => graphData.value.nodes,
+//   (val) => {
+//     // console.log('🟢 nodes updated:', val)
+//   },
+//   { deep: true },
+// )
 
-onEdgesChange((changes: EdgeChange[]) => {
-  graphData.value.edges = applyEdgeChanges(changes, graphData.value.edges)
-})
-
-watch(
-  () => graphData.value.nodes,
-  (val) => {
-    // console.log('🟢 nodes updated:', val)
-  },
-  { deep: true },
-)
-
-watch(
-  () => graphData.value.edges,
-  (val) => {
-    // console.log('🟠 edges updated:', val)
-  },
-  { deep: true },
-)
+// watch(
+//   () => graphData.value.edges,
+//   (val) => {
+//     // console.log('🟠 edges updated:', val)
+//   },
+//   { deep: true },
+// )
 
 const fileInput = ref<HTMLInputElement | null>(null)
 
@@ -439,7 +430,7 @@ const handleEdgeDelete = (edgeId: string) => {
         v-model:nodes="graphData.nodes"
         v-model:edges="graphData.edges"
         :node-types="nodeTypes"
-        :default-viewport="{ x:  1500, y: 300, zoom: 0.5 }"
+        :default-viewport="{ x:  900, y: 100, zoom: 0.8 }"
         :min-zoom="0.01"
         :max-zoom="4"
         :auto-connect="false"
