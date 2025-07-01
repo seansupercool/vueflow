@@ -6,7 +6,7 @@ export interface NodePosition {
   y: number;
 }
 
-export interface NodeMetadata {
+export interface DecisionNodeMetadata {
   index: number;
   label: string;
   desc: string;
@@ -18,13 +18,12 @@ export interface NodeMetadata {
   resultValue: string;
 }
 
-export interface VueFlowNode {
-  id: string;
-  position: NodePosition;
-  type: string;
+export interface DecisionNodeData {
   columnType: ColumnType;
-  metadataList: NodeMetadata[];
+  metadataList: DecisionNodeMetadata[];
 }
+
+export interface DecisionNode extends Node<DecisionNodeData> {}
 
 export interface EdgeMetadata {
   label: string;
@@ -38,12 +37,13 @@ export interface VueFlowEdge {
   source: string;
   target: string;
   animated: boolean;
-  style: Record<string, any>;
   type: string;
+  style?: object, 
+  label: string;
   metadata: EdgeMetadata;
 }
 
 export interface VueFlowData {
-  nodes: Node[];
+  nodes: DecisionNode[];
   edges: Edge[];
 }

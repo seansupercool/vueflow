@@ -8,7 +8,7 @@
       <NodeForm
         v-if="propertiesState === PropertiesState.NEW_NODE || propertiesState === PropertiesState.SELECT_NODE"
         :isNewNode="propertiesState === PropertiesState.NEW_NODE"
-        :node="currentNode"
+        :decisionNode="currentNode"
         :onSave="handleNodeSave"
         :onAdd="handleNodeAdd"
         :onDelete="handleNodeDelete"
@@ -29,12 +29,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import NodeForm from './NodeForm.vue'
-import type { VueFlowNode, VueFlowEdge } from '../core/interfaces/VueFlow'
+import type { DecisionNode, VueFlowEdge } from '../core/interfaces/VueFlow'
 import EdgeForm from './EdgeForm.vue'
 import { PropertiesState, ColumnType, MetaDataType } from '../core/enums/VueFlow'
 
 const props = defineProps<{
-  selectedNode: VueFlowNode | null
+  selectedNode: DecisionNode | null
   selectedEdge: VueFlowEdge | null
   propertiesState: PropertiesState
 }>()
@@ -42,8 +42,8 @@ const props = defineProps<{
 const emit = defineEmits<{
   (e: 'close'): void
   // Node Control Functions
-  (e: 'updateNode', node: VueFlowNode): void
-  (e: 'addNode', node: VueFlowNode): void
+  (e: 'updateNode', node: DecisionNode): void
+  (e: 'addNode', node: DecisionNode): void
   (e: 'deleteNode', nodeId: string): void
   (e: 'cancelNode'): void
   // Edge Control Functions
@@ -60,18 +60,20 @@ const currentNode = computed(() => {
       id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
       type: 'custom',
       position: { x: 0, y: 0 },
-      columnType: ColumnType.CONDITION,
-      metadataList: [{
-        index: 0,
-        label: '',
-        desc: '',
-        columnName: '',
-        dataType: MetaDataType.STRING,
-        mandatory: false,
-        codeId: '',
-        codeUid: '',
-        resultValue: ''
-      }]
+      data: {
+        columnType: ColumnType.CONDITION,
+        metadataList: [{
+          index: 0,
+          label: '',
+          desc: '',
+          columnName: '',
+          dataType: MetaDataType.STRING,
+          mandatory: false,
+          codeId: '',
+          codeUid: '',
+          resultValue: ''
+        }]
+      }
     }
   }
   return props.selectedNode || undefined
@@ -95,23 +97,22 @@ const handleToggleToggle = () => {
   // 由於現在只有一個 NodeItem，不需要處理展開/收起的狀態
 }
 
-const handleNodeSave = (nodeData: VueFlowNode) => {
+const handleNodeSave = (editDecisionNode: DecisionNode) => {
   if (props.propertiesState === PropertiesState.NEW_NODE) {
-    emit('addNode', { ...nodeData, type: 'custom' })
+    emit('addNode', { ...editDecisionNode, type: 'custom' })
   } else if (props.selectedNode) {
     // 更新現有節點
-    const updatedNode: VueFlowNode = {
+    const updatedNode: DecisionNode = {
       ...props.selectedNode,
-      ...nodeData,
-      metadataList: nodeData.metadataList
+      ...editDecisionNode
     }
     emit('updateNode', updatedNode)
   }
   emit('close')
 }
 
-const handleNodeAdd = (nodeData: VueFlowNode) => {
-  emit('addNode', { ...nodeData, type: 'custom' })
+const handleNodeAdd = (nodeData: DecisionNode) => {
+  emit('addNode', { ...nodeData })
   if (props.propertiesState === PropertiesState.NEW_NODE) {
     emit('close')
   }

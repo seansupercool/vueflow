@@ -1,6 +1,6 @@
 // composables/useGraph.ts
 import { ref } from 'vue'
-import type { VueFlowNode, VueFlowEdge, VueFlowData } from '@/core/interfaces/VueFlow'
+import type { VueFlowNode, VueFlowEdge, VueFlowData, DecisionNode } from '@/core/interfaces/VueFlow'
 import { initialVueFlowData } from '@/assets/data/initialMock'
 import type { Node, Edge } from '@vue-flow/core'
 import { expressionTypeOptions } from '@/constants/expressionTypeMapping'
@@ -45,8 +45,9 @@ export function parseExpressionType(expressionType: string | number): string {
 }
 
 export function useGraph() {
-  const addNode = (node: VueFlowNode) => {
-    graphData.value.nodes.push(convertToVueFlowNode(node))
+  const addNode = (node: DecisionNode) => {
+    graphData.value.nodes.push(node)
+    // graphData.value.nodes.push(convertToVueFlowNode(node))
   }
 
   const addEdge = (edge: VueFlowEdge) => {

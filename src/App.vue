@@ -3,10 +3,6 @@ import { ref, watch, markRaw, onMounted, onUnmounted } from 'vue'
 import {
   VueFlow,
   useVueFlow,
-  applyNodeChanges,
-  applyEdgeChanges,
-  type NodeChange,
-  type EdgeChange,
   type Connection,
   type EdgeMouseEvent,
   type NodeMouseEvent,
@@ -17,7 +13,7 @@ import { MiniMap } from '@vue-flow/minimap'
 import PropertiesPanel from './components/PropertiesPanel.vue'
 import CustomNode from './components/CustomNode.vue'
 import { useGraph, parseExpressionType } from './composable/useGraph'
-import type { VueFlowNode, VueFlowEdge } from './core/interfaces/VueFlow'
+import type { DecisionNode, DecisionNodeData, VueFlowEdge } from './core/interfaces/VueFlow'
 import { PropertiesState } from './core/enums/VueFlow'
 import { downloadJson } from './utils/downloadJson'
 
@@ -32,7 +28,7 @@ const nodeTypes = {
 
 // 修改狀態相關的變數
 const propertiesState = ref<PropertiesState>(PropertiesState.NONE)
-const selectedNode = ref<VueFlowNode | null>(null)
+const selectedNode = ref<DecisionNode | null>(null)
 const selectedEdge = ref<VueFlowEdge | null>(null)
 
 // 處理節點點擊
@@ -46,14 +42,16 @@ const onNodeClick = (event: NodeMouseEvent) => {
     selected: false
   }))
   // 從節點數據中提取必要的信息
-  const VueFlowNode: VueFlowNode = {
+  const decisionNode: DecisionNode = {
     id: node.id,
     type: node.type || 'custom',
     position: node.position,
-    columnType: node.data?.columnType || 'C',
-    metadataList: node.data?.metadataList
+    data: {
+      columnType: node.data?.columnType || 'C',
+      metadataList: node.data?.metadataList
+    }
   }
-  selectedNode.value = VueFlowNode
+  selectedNode.value = decisionNode
   selectedEdge.value = null
   propertiesState.value = PropertiesState.SELECT_NODE
   
@@ -288,22 +286,24 @@ const onDrop = (event: DragEvent) => {
       y: event.clientY,
     })
 
-    const newNode: VueFlowNode = {
+    const newNode: decisionNode = {
       id: `node-${Date.now()}`,
       type: 'custom',
       position,
-      columnType: nodeData.data.metadataList?.[0]?.columnType || 'C',
-      metadataList: [{
-        index: 0,
-        label: nodeData.data.label || '新節點',
-        desc: nodeData.data.metadataList?.[0]?.desc || '',
-        columnName: nodeData.data.metadataList?.[0]?.columnName || '',
-        dataType: nodeData.data.metadataList?.[0]?.dataType || 'STRING',
-        mandatory: nodeData.data.metadataList?.[0]?.mandatory || false,
-        codeId: nodeData.data.metadataList?.[0]?.codeId || '',
-        codeUid: nodeData.data.metadataList?.[0]?.codeUid || '',
-        resultValue: ''
-      }]
+      data: {
+        columnType: nodeData.data.metadataList?.[0]?.columnType || 'C',
+        metadataList: [{
+          index: 0,
+          label: nodeData.data.label || '新節點',
+          desc: nodeData.data.metadataList?.[0]?.desc || '',
+          columnName: nodeData.data.metadataList?.[0]?.columnName || '',
+          dataType: nodeData.data.metadataList?.[0]?.dataType || 'STRING',
+          mandatory: nodeData.data.metadataList?.[0]?.mandatory || false,
+          codeId: nodeData.data.metadataList?.[0]?.codeId || '',
+          codeUid: nodeData.data.metadataList?.[0]?.codeUid || '',
+          resultValue: ''
+        }]
+      }
     }
 
     addNode(newNode)
@@ -313,20 +313,17 @@ const onDrop = (event: DragEvent) => {
 }
 
 // 處理節點更新
-const handleNodeUpdate = (updatedNode: VueFlowNode) => {
-  const nodeIndex = graphData.value.nodes.findIndex(n => n.id === updatedNode.id)
+const handleNodeUpdate = (newDecisionNode: DecisionNode) => {
+  const nodeIndex = graphData.value.nodes.findIndex(n => n.id === newDecisionNode.id)
   if (nodeIndex !== -1) {
-    const updatedData = {
-      ...graphData.value.nodes[nodeIndex],
-      label: updatedNode.metadataList[0].label,
-      data: {
-        ...graphData.value.nodes[nodeIndex].data,
-        label: updatedNode.metadataList[0].label,
-        metadataList: updatedNode.metadataList
-      }
+    const oldDecisionNode: DecisionNode = graphData.value.nodes[nodeIndex];
+    // const decisionNodeData: DecisionNodeData = newDecisionNode.data;
+    const updateDecisionNode: DecisionNode = {
+      ...oldDecisionNode,
+      data: newDecisionNode.data
     }
     // 使用 updateNode 來更新節點
-    updateNode(updatedNode.id, updatedData)
+    updateNode(updateDecisionNode.id, updateDecisionNode)
   }
   
   // 清除所有節點的選中狀態

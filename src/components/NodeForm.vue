@@ -14,47 +14,47 @@
       <div class="tab-group">
         <div 
           v-for="type in Object.values(ColumnType)" 
-          v-show="(isNewNode || editingFlowNode.columnType === type)"
+          v-show="(isNewNode || editingFlowNode.data?.columnType === type)"
           :key="type"
-          :class="['tab-btn', { active: editingFlowNode?.columnType === type }]" 
-          @click="editingFlowNode.columnType = type"
+          :class="['tab-btn', { active: editingFlowNode.data?.columnType === type }]" 
+          @click="editingFlowNode.data && (editingFlowNode.data.columnType = type)"
         >
           {{ ColumnTypeLabel[type] }}元件
         </div>
       </div>
-      <div v-for="(metadata, index) in editingFlowNode.metadataList" :key="index" class="metadata-section">
-        <div class="metadata-header">
+      <template v-if="editingFlowNode.data">
+        <div v-for="(metadata, index) in editingFlowNode.data.metadataList" :key="index" class="metadata-section">
+          <div class="metadata-header">
+          </div>
+          <div class="form-group">
+            <label>欄位中文名稱：</label>
+            <input v-model="metadata.label" type="text" placeholder="請輸入顯示名稱">
+          </div>
+          <div class="form-group">
+            <label>欄位變數名：</label>
+            <input v-model="metadata.columnName" type="text" placeholder="請輸入欄位名">
+          </div>
+          <div class="form-group">
+            <label>資料格式：</label>
+            <select v-model="metadata.dataType" class="form-select">
+              <option v-for="type in Object.values(MetaDataType)" :key="type" :value="type">
+                {{ MetaDataTypeLabel[type] }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>詳細內容：</label>
+            <textarea v-model="metadata.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="2"></textarea>
+          </div>
+          <div v-if="editingFlowNode.data.columnType === ColumnType.RESULT" class="form-group">
+            <label>結果值：</label>
+            <input v-model="metadata.resultValue" type="text" placeholder="請輸入結果值">
+          </div>
         </div>
-        <div class="form-group">
-          <label>欄位中文名稱：</label>
-          <input v-model="metadata.label" type="text" placeholder="請輸入顯示名稱">
-        </div>
-        <div class="form-group">
-          <label>欄位變數名：</label>
-          <input v-model="metadata.columnName" type="text" placeholder="請輸入欄位名">
-        </div>
-        <div class="form-group">
-          <label>資料格式：</label>
-          <select v-model="metadata.dataType" class="form-select">
-            <option v-for="type in Object.values(MetaDataType)" :key="type" :value="type">
-              {{ MetaDataTypeLabel[type] }}
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>詳細內容：</label>
-          <textarea v-model="metadata.desc" class="form-textarea" placeholder="請輸入詳細內容" rows="2"></textarea>
-        </div>
-        <div v-if="editingFlowNode.columnType === ColumnType.RESULT" class="form-group">
-          <label>結果值：</label>
-          <input v-model="metadata.resultValue" type="text" placeholder="請輸入結果值">
-        </div>
-      </div>
-      <!-- <div v-if="editingFlowNode.columnType === ColumnType.RESULT" class="form-group"> -->
-        <div v-if="editingFlowNode.columnType === ColumnType.RESULT" class="btn btn-secondary" @click="handleAddMetadata">
+        <div v-if="editingFlowNode.data?.columnType === ColumnType.RESULT" class="btn btn-secondary" @click="handleAddMetadata">
           新增 Metadata
         </div>
-      <!-- </div> -->
+      </template>
       <div class="form-actions">
         <div style="flex:1"></div>
         <button @click="handleSubmit" class="btn submit-btn">確定</button>
@@ -70,52 +70,59 @@
 import '../styles/components/NodeForm.scss'
 import { ref, watch } from 'vue'
 import { MetaDataType, MetaDataTypeLabel, ColumnType, ColumnTypeLabel } from '../core/enums/VueFlow'
-import type { VueFlowNode, NodeMetadata } from '../core/interfaces/VueFlow'
+import type { DecisionNode, DecisionNodeMetadata } from '../core/interfaces/VueFlow'
 
 const props = defineProps<{
   isNewNode: boolean,
-  node?: VueFlowNode,
-  onSave?: (node: VueFlowNode) => void,
-  onAdd?: (node: VueFlowNode) => void,
+  decisionNode?: DecisionNode,
+  onSave?: (node: DecisionNode) => void,
+  onAdd?: (node: DecisionNode) => void,
   onDelete?: () => void,
   isExpanded: boolean
 }>()
 
 const emit = defineEmits(['toggle', 'cancel', 'copy'])
 
-const editingFlowNode = ref<VueFlowNode>({
+const editingFlowNode = ref<DecisionNode>({
   id: '',
   type: 'custom',
   position: { x: 0, y: 0 },
-  columnType: ColumnType.CONDITION,
-  metadataList: [{
-    index: 0,
-    label: '',
-    desc: '',
-    columnName: '',
-    dataType: MetaDataType.STRING,
-    mandatory: false,
-    codeId: '',
-    codeUid: '',
-    resultValue: ''
-  }]
+  data: {
+    columnType: ColumnType.CONDITION,
+    metadataList: [{
+      index: 0,
+      label: '',
+      desc: '',
+      columnName: '',
+      dataType: MetaDataType.STRING,
+      mandatory: false,
+      codeId: '',
+      codeUid: '',
+      resultValue: ''
+    }]}
 })
 
 // 監聽 nodeData 的變化
 watch(
-  () => props.node,
-  (node) => {
-    if (node) {
-      editingFlowNode.value = { ...node }
-      console.log("editingFlowNode", editingFlowNode)
+  () => props.decisionNode,
+  (decisionNode) => {
+    if (decisionNode) {
+      editingFlowNode.value = JSON.parse(JSON.stringify(decisionNode))
+      if (!editingFlowNode.value.data) {
+        editingFlowNode.value.data = {
+          columnType: ColumnType.CONDITION,
+          metadataList: [],
+        }
+      }
     }
   },
-  { immediate: true }
+  { immediate: true, deep: true },
 )
 
 const handleAddMetadata = () => {
-  const newMetadata: NodeMetadata = {
-    index: editingFlowNode.value.metadataList.length,
+  if (!editingFlowNode.value.data) return
+  const newMetadata: DecisionNodeMetadata = {
+    index: editingFlowNode.value.data.metadataList.length,
     label: '',
     desc: '',
     columnName: '',
@@ -125,15 +132,7 @@ const handleAddMetadata = () => {
     codeUid: '',
     resultValue: ''
   }
-  editingFlowNode.value.metadataList.push(newMetadata)
-}
-
-const handleRemoveMetadata = (index: number) => {
-  editingFlowNode.value.metadataList.splice(index, 1)
-  // 重新設置索引
-  editingFlowNode.value.metadataList.forEach((metadata, idx) => {
-    metadata.index = idx
-  })
+  editingFlowNode.value.data.metadataList.push(newMetadata)
 }
 
 const handleSubmit = () => {
@@ -152,39 +151,15 @@ const handleDelete = () => {
 }
 
 const handleCopy = () => {
-  const copiedNode: VueFlowNode = {
+  const copiedNode: DecisionNode = {
     ...editingFlowNode.value,
     id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+    type: 'custom',
     position: { 
       x: editingFlowNode.value.position.x + 200,
       y: editingFlowNode.value.position.y
     }
   }
-  console.log("editingFlowNode.value.position.x", editingFlowNode.value.position.x)
-  console.log("editingFlowNode", editingFlowNode)
-  console.log("copiedNode", copiedNode)
   props.onAdd?.(copiedNode)
-}
-
-const handleDragStart = (event: DragEvent) => {
-  if (!event.dataTransfer) return
-console.log("handleDragStart")
-  const nodeData = {
-    type: 'custom',
-    position: { x: 0, y: 0 },
-    data: {
-      label: editingFlowNode.value.metadataList[0].label || '新節點',
-      metadataList: editingFlowNode.value.metadataList
-    }
-  }
-
-  event.dataTransfer.setData('application/json', JSON.stringify(nodeData))
-  event.dataTransfer.effectAllowed = 'move'
-}
-
-const handleDragEnd = (event: DragEvent) => {
-  if (event.dataTransfer) {
-    event.dataTransfer.clearData()
-  }
 }
 </script>
