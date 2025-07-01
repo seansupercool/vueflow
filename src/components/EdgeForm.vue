@@ -1,19 +1,19 @@
 <template>
-  <div class="edge-form" v-if="edge">
+  <div class="edge-form" v-if="editingDecisionEdge.data">
     <div class="edge-form-content">
       <div class="form-group">
         <label>欄位名稱</label>
         <input 
           disabled
           type="text" 
-          v-model="edgeData.metadata.label" 
+          v-model="editingDecisionEdge.data.columnLabel" 
           class="form-input"
           placeholder="請輸入欄位名稱"
         />
       </div>
       <div class="form-group">
         <label>表達式類型</label>
-        <select v-model="edgeData.metadata.expressionType" class="form-select">
+        <select v-model="editingDecisionEdge.data.expressionType" class="form-select">
           <option value="">請選擇表達式類型</option>
           <option v-for="option in expressionTypeOptions" :key="option.value" :value="option.value">
             {{ option.label }}
@@ -24,7 +24,7 @@
         <label>條件</label>
         <input 
           type="text" 
-          v-model="edgeData.metadata.entryText" 
+          v-model="editingDecisionEdge.data.entryText" 
           class="form-input"
           placeholder="請輸入文字"
         />
@@ -41,56 +41,43 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import type { VueFlowEdge } from '../core/interfaces/VueFlow'
+import type { DecisionEdge } from '../core/interfaces/DecisionTree'
 import { expressionTypeOptions } from '@/constants/expressionTypeMapping'
 
 const props = defineProps<{
-  edge: VueFlowEdge | null
+  decisionEdge?: DecisionEdge
 }>()
 
 const emit = defineEmits<{
-  (e: 'delete', edge: VueFlowEdge): void
-  (e: 'confirm', edge: VueFlowEdge): void
+  (e: 'delete', decisionEdge: DecisionEdge): void
+  (e: 'confirm', decisionEdge: DecisionEdge): void
   (e: 'cancel'): void
 }>()
 
-const edgeData = ref<VueFlowEdge>({
+const editingDecisionEdge = ref<DecisionEdge>({
   id: '',
   source: '',
   target: '',
   type: 'default',
   animated: false,
   style: {},
-  metadata: {
-    label: '',
+  label: '',
+  data: {
     columnName: '',
     expressionType: '',
     entryText: ''
   }
 })
 
-watch(() => props.edge, (newEdge) => {
-  console.log("newEdge", newEdge)
-  if (newEdge) {
-    edgeData.value = { ...newEdge }
-    // 當邊被選取時，更新樣式
-    edgeData.value.style = {
-      ...edgeData.value.style,
-      stroke: '#ff0000',
-      strokeWidth: 2
-    }
-  } else {
-    // 當取消選取時，恢復預設樣式
-    edgeData.value.style = {
-      ...edgeData.value.style,
-      stroke: '#000',
-      strokeWidth: 1
-    }
+watch(() => props.decisionEdge, (decisionEdge) => {
+  console.log("watch newEdge 12345", decisionEdge)
+  if (decisionEdge) {
+    editingDecisionEdge.value = JSON.parse(JSON.stringify(decisionEdge))
   }
 }, { immediate: true })
 
 const handleSubmit = () => {
-  emit('confirm', edgeData.value)
+  emit('confirm', editingDecisionEdge.value)
 }
 
 // 當表單關閉時，取消選取
@@ -99,7 +86,7 @@ const handleCancel = () => {
 }
 
 const handleDelete = () => {
-  emit('delete', edgeData.value)
+  emit('delete', editingDecisionEdge.value)
 }
 </script>
 

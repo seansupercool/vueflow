@@ -1,9 +1,8 @@
-import type { VueFlowData } from '@/core/interfaces/VueFlow'
 import type { StaticCodeList } from '@/core/interfaces/StaticCode'
 import initData from '@/assets/data/decisionDiagram/100A_Init.json'
 import codes from '@/assets/data/decisionDiagram/codes.json'
 
-export const initialVueFlowData: VueFlowData = JSON.parse(
+export const initialVueFlowData = JSON.parse(
   JSON.stringify(initData)
 )
 

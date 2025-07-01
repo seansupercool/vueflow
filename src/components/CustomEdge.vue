@@ -1,54 +1,28 @@
 <script setup lang="ts">
-import { BaseEdge, getBezierPath } from '@vue-flow/core'
-import type { EdgeProps, MarkerType } from '@vue-flow/core'
-import type { VueFlowNode, VueFlowEdge } from '../core/interfaces/VueFlow'
-import {ColumnType} from '../core/enums/VueFlow'
+import { defineProps } from 'vue'
+import type { EdgeProps } from '@vue-flow/core'
 
+interface CustomEdgeProps extends EdgeProps {
+  path: string
+  bounds: { x: number; y: number; width: number; height: number }
+}
 
-const props = defineProps<EdgeProps>()
-  const [edgePath] = getBezierPath({
-  sourceX: props.sourceX,
-  sourceY: props.sourceY,
-  sourcePosition: props.sourcePosition,
-  targetX: props.targetX,
-  targetY: props.targetY,
-  targetPosition: props.targetPosition,
-})
+const props = defineProps<CustomEdgeProps>()
+
+const viewBox = `${props.bounds.x} ${props.bounds.y} ${props.bounds.width} ${props.bounds.height}`
 </script>
 
 <template>
-  <g>
-    <!-- 主線 -->
+  <svg
+    :viewBox="viewBox"
+    xmlns="http://www.w3.org/2000/svg"
+    style="overflow: visible;"
+  >
     <path
-      :d="edgePath"
-      class="vue-flow__edge-path"
-      :stroke="props.data?.color ?? '#0ea5e9'"
-      stroke-width="3"
+      :d="props.path"
       fill="none"
+      :stroke="props.selected ? 'red' : '#222'"
+      stroke-width="3"
     />
-
-    <!-- 文字沿線顯示 -->
-    <text>
-      <textPath :href="`#${props.id}`" startOffset="50%" text-anchor="middle">
-        "1111"
-      </textPath>
-    </text>
-
-    <!-- 自訂箭頭，跟 markerEnd 二擇一 -->
-    <marker
-      :id="`${props.id}-arrow`"
-      viewBox="0 0 10 10"
-      refX="10"
-      refY="5"
-      markerWidth="6"
-      markerHeight="6"
-      orient="auto"
-    >
-      <path d="M 0 0 L 10 5 L 0 10 z" :fill="props.data?.color ?? '#0ea5e9'" />
-    </marker>
-  </g>
+  </svg>
 </template>
-
-<style lang="scss">
-@use '../styles/components/CustomEdge.scss';
-</style>

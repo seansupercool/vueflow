@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import type { NodeProps } from '@vue-flow/core'
 import { Handle, Position } from '@vue-flow/core'
-import type { VueFlowNode } from '../core/interfaces/VueFlow'
+import type { DecisionNodeData } from '../core/interfaces/DecisionTree'
 import {ColumnType} from '../core/enums/VueFlow'
 
 
-const props = defineProps<NodeProps<VueFlowNode>>()
+const props = defineProps<NodeProps<DecisionNodeData>>()
 
 // 移除本地的 isSelected ref
 // const isSelected = ref(false)
@@ -16,7 +16,7 @@ const props = defineProps<NodeProps<VueFlowNode>>()
 // }
 </script>
 
-<template>
+<template v-if="props.data">
   <div 
     class="custom-node" 
     :class="{ 'selected': props.selected }"

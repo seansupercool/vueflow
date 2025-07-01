@@ -70,7 +70,7 @@
 import '../styles/components/NodeForm.scss'
 import { ref, watch } from 'vue'
 import { MetaDataType, MetaDataTypeLabel, ColumnType, ColumnTypeLabel } from '../core/enums/VueFlow'
-import type { DecisionNode, DecisionNodeMetadata } from '../core/interfaces/VueFlow'
+import type { DecisionNode, DecisionNodeMetadata } from '../core/interfaces/DecisionTree'
 
 const props = defineProps<{
   isNewNode: boolean,

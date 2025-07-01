@@ -229,138 +229,98 @@
   "edges": [
     {
       "id": "e1750838157319",
-      "type": "default",
+      "type": "custom",
       "source": "node_1750837428752_rtnqpojno",
       "target": "node_1750838140862_wtn546yiv",
       "data": {
+        "columnLabel": "險種",
         "columnName": "ins_type",
         "expressionType": "1",
         "entryText": "壽險"
-      },
-      "label": "= 壽險",
-      "animated": false,
-      "style": {
-        "stroke": "#000",
-        "strokeWidth": 1
       }
     },
     {
       "id": "e1750838166829",
-      "type": "default",
+      "type": "custom",
       "source": "node_1750838140862_wtn546yiv",
       "target": "node_1750837446783_vfc38u08z",
       "data": {
+        "columnLabel": "現症既往症",
         "columnName": "CURRENT_PAST_ILLNESSES",
         "expressionType": "1",
         "entryText": "現症"
-      },
-      "label": "= 現症",
-      "animated": false,
-      "style": {
-        "stroke": "#000",
-        "strokeWidth": 1
       }
     },
     {
       "id": "e1750838200090",
-      "type": "default",
+      "type": "custom",
       "source": "node_1750838140862_wtn546yiv",
       "target": "node_1750838181867_ur0n0kg97",
       "data": {
+        "columnLabel": "現症既往症",
         "columnName": "CURRENT_PAST_ILLNESSES",
         "expressionType": "1",
         "entryText": "既往症"
-      },
-      "label": "= 既往症",
-      "animated": false,
-      "style": {
-        "stroke": "#000",
-        "strokeWidth": 1
       }
     },
     {
       "id": "e1750838230559",
-      "type": "default",
+      "type": "custom",
       "source": "node_1750838181867_ur0n0kg97",
       "target": "node_1750838208677_k8t32dvw5",
       "data": {
+        "columnLabel": "療癒後經過時間",
         "columnName": "TIME_AFTER_RECOVERY",
         "expressionType": "4",
         "entryText": "三個月"
-      },
-      "label": "< 三個月",
-      "animated": false,
-      "style": {
-        "stroke": "#000",
-        "strokeWidth": 1
       }
     },
     {
       "id": "e1750838262830",
-      "type": "default",
+      "type": "custom",
       "source": "node_1750838181867_ur0n0kg97",
       "target": "node_1750838244775_25xds1mk6",
       "data": {
+        "columnLabel": "療癒後經過時間",
         "columnName": "TIME_AFTER_RECOVERY",
         "expressionType": "3",
         "entryText": "三個月"
-      },
-      "label": "> 三個月",
-      "animated": false,
-      "style": {
-        "stroke": "#000",
-        "strokeWidth": 1
       }
     },
     {
       "id": "e1750838280199",
-      "type": "default",
+      "type": "custom",
       "source": "node_1750837428752_rtnqpojno",
       "target": "node_1750838275417_xhohv3k1l",
       "data": {
+        "columnLabel": "險種",
         "columnName": "ins_type",
         "expressionType": "1",
         "entryText": "醫療險"
-      },
-      "label": "= 醫療險",
-      "animated": false,
-      "style": {
-        "stroke": "#000",
-        "strokeWidth": 1
       }
     },
     {
       "id": "e1750838318937",
-      "type": "default",
+      "type": "custom",
       "source": "node_1750838275417_xhohv3k1l",
       "target": "node_1750838295674_wicbbs33s",
       "data": {
+        "columnLabel": "現症既往症",
         "columnName": "CURRENT_PAST_ILLNESSES",
         "expressionType": "1",
         "entryText": "現症"
-      },
-      "label": "= 現症",
-      "animated": false,
-      "style": {
-        "stroke": "#000",
-        "strokeWidth": 1
       }
     },
     {
       "id": "e1750838350108",
-      "type": "default",
+      "type": "custom",
       "source": "node_1750838275417_xhohv3k1l",
       "target": "node_1750838331908_bnl5lf34m",
       "data": {
+        "columnLabel": "現症既往症",
         "columnName": "CURRENT_PAST_ILLNESSES",
         "expressionType": "1",
         "entryText": "既往症"
-      },
-      "label": "= 既往症",
-      "animated": false,
-      "style": {
-        "stroke": "#000",
-        "strokeWidth": 1
       }
     }
   ]

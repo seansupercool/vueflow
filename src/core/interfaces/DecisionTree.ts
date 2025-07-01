@@ -1,11 +1,6 @@
 import type { Node, Edge } from '@vue-flow/core'
 import { MetaDataType, ColumnType } from '../enums/VueFlow'
 
-export interface NodePosition {
-  x: number;
-  y: number;
-}
-
 export interface DecisionNodeMetadata {
   index: number;
   label: string;
@@ -23,27 +18,17 @@ export interface DecisionNodeData {
   metadataList: DecisionNodeMetadata[];
 }
 
-export interface DecisionNode extends Node<DecisionNodeData> {}
+export interface DecisionNode extends Node<DecisionNodeData> {
+  id: string;
+  position: { x: number; y: number };
+}
 
-export interface EdgeMetadata {
-  label: string;
+export interface DecisionEdgeData {
   columnName: string;
+  columnLabel: string;
   expressionType: string;
   entryText: string;
+  selected?: boolean;
 }
 
-export interface VueFlowEdge {
-  id: string;
-  source: string;
-  target: string;
-  animated: boolean;
-  type: string;
-  style?: object, 
-  label: string;
-  metadata: EdgeMetadata;
-}
-
-export interface VueFlowData {
-  nodes: DecisionNode[];
-  edges: Edge[];
-}
+export type DecisionEdge = Edge<DecisionEdgeData>

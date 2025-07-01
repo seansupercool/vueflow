@@ -17,7 +17,8 @@
         @cancel="handleNodeCancel"
       />
       <EdgeForm
-        :edge="selectedEdge"
+        v-if="propertiesState === PropertiesState.NEW_EDGE || propertiesState === PropertiesState.SELECT_EDGE"
+        :decisionEdge="currentEdge"
         @delete="handleEdgeDelete"
         @confirm="handleEdgeConfirm"
         @cancel="handleEdgeCancel"
@@ -29,25 +30,25 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import NodeForm from './NodeForm.vue'
-import type { DecisionNode, VueFlowEdge } from '../core/interfaces/VueFlow'
+import type { DecisionNode, DecisionEdge } from '../core/interfaces/DecisionTree'
 import EdgeForm from './EdgeForm.vue'
 import { PropertiesState, ColumnType, MetaDataType } from '../core/enums/VueFlow'
 
 const props = defineProps<{
   selectedNode: DecisionNode | null
-  selectedEdge: VueFlowEdge | null
+  selectedEdge: DecisionEdge | null
   propertiesState: PropertiesState
 }>()
 
 const emit = defineEmits<{
   (e: 'close'): void
   // Node Control Functions
-  (e: 'updateNode', node: DecisionNode): void
-  (e: 'addNode', node: DecisionNode): void
+  (e: 'updateNode', decisionNode: DecisionNode): void
+  (e: 'addNode', decisionNode: DecisionNode): void
   (e: 'deleteNode', nodeId: string): void
   (e: 'cancelNode'): void
   // Edge Control Functions
-  (e: 'updateEdge', edge: VueFlowEdge): void
+  (e: 'updateEdge', decisionEdge: DecisionEdge): void
   (e: 'deleteEdge', edgeId: string): void
   (e: 'cancelEdge'): void
 }>()
@@ -78,6 +79,12 @@ const currentNode = computed(() => {
   }
   return props.selectedNode || undefined
 })
+
+const currentEdge = computed(() => {
+  console.log("currentEdge", props.selectedEdge)
+  return props.selectedEdge || undefined
+})
+
 const title = computed(() => {
   switch (props.propertiesState) {
     case PropertiesState.NEW_NODE:
@@ -99,7 +106,7 @@ const handleToggleToggle = () => {
 
 const handleNodeSave = (editDecisionNode: DecisionNode) => {
   if (props.propertiesState === PropertiesState.NEW_NODE) {
-    emit('addNode', { ...editDecisionNode, type: 'custom' })
+    emit('addNode', editDecisionNode)
   } else if (props.selectedNode) {
     // 更新現有節點
     const updatedNode: DecisionNode = {
@@ -112,7 +119,7 @@ const handleNodeSave = (editDecisionNode: DecisionNode) => {
 }
 
 const handleNodeAdd = (nodeData: DecisionNode) => {
-  emit('addNode', { ...nodeData })
+  emit('addNode', nodeData)
   if (props.propertiesState === PropertiesState.NEW_NODE) {
     emit('close')
   }
@@ -133,7 +140,7 @@ const handleNodeDelete = () => {
 }
 
 // Edge Control Functions
-const handleEdgeConfirm = (edgeData: VueFlowEdge) => {
+const handleEdgeConfirm = (edgeData: DecisionEdge) => {
   emit('updateEdge', edgeData)
 }
 
