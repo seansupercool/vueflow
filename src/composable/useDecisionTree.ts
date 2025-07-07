@@ -41,6 +41,36 @@ export function useDecisionTree() {
     }))
   }
   
+  /**
+   * 將目前的 decisionNodes 和 decisionEdges 轉成 decisionDiagram json 格式
+   * 只保留 100A_Init.json 需要的欄位
+   */
+  const toDecisionDiagramJson = () => {
+    const nodes = decisionNodes.value.map(node => ({
+      id: node.id,
+      type: node.type,
+      position: node.position,
+      data: {
+        label: node.data?.metadataList?.[0]?.label ?? '',
+        columnType: node.data?.columnType ?? '',
+        metadataList: node.data?.metadataList ?? []
+      }
+    }))
+    const edges = decisionEdges.value.map(edge => ({
+      id: edge.id,
+      type: edge.type,
+      source: edge.source,
+      target: edge.target,
+      label: edge.label,
+      data: {
+        columnLabel: edge.data?.columnLabel ?? '',
+        columnName: edge.data?.columnName ?? '',
+        expressionType: edge.data?.expressionType ?? '',
+        entryText: edge.data?.entryText ?? ''
+      }
+    }))
+    return { nodes, edges }
+  }
 
   return {
     decisionNodes,
@@ -49,6 +79,7 @@ export function useDecisionTree() {
     deleteNode,
     addEdge,
     deleteEdge,
-    clearSelectionEdge
+    clearSelectionEdge,
+    toDecisionDiagramJson
   }
 }
