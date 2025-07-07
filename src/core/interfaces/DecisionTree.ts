@@ -24,8 +24,8 @@ export interface DecisionNode extends Node<DecisionNodeData> {
 }
 
 export interface DecisionEdgeData {
-  columnName: string;
   columnLabel: string;
+  columnName: string;
   expressionType: string;
   entryText: string;
   selected?: boolean;

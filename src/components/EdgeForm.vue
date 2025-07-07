@@ -32,8 +32,8 @@
       <div class="form-actions">
         <div style="flex:1"></div>
         <button class="btn submit-btn" @click="handleSubmit">確定</button>
-        <button class="btn cancel-btn" @click="handleCancel">取消</button>
         <button class="btn delete-btn" @click="handleDelete">刪除</button>
+        <button class="btn cancel-btn" @click="handleCancel">取消</button>
       </div>
     </div>
   </div>
@@ -63,6 +63,7 @@ const editingDecisionEdge = ref<DecisionEdge>({
   style: {},
   label: '',
   data: {
+    columnLabel: '',
     columnName: '',
     expressionType: '',
     entryText: ''
@@ -70,7 +71,7 @@ const editingDecisionEdge = ref<DecisionEdge>({
 })
 
 watch(() => props.decisionEdge, (decisionEdge) => {
-  console.log("watch newEdge 12345", decisionEdge)
+  console.log("decisionEdge", decisionEdge)
   if (decisionEdge) {
     editingDecisionEdge.value = JSON.parse(JSON.stringify(decisionEdge))
   }

@@ -9,11 +9,10 @@
         v-if="propertiesState === PropertiesState.NEW_NODE || propertiesState === PropertiesState.SELECT_NODE"
         :isNewNode="propertiesState === PropertiesState.NEW_NODE"
         :decisionNode="currentNode"
-        :onSave="handleNodeSave"
-        :onAdd="handleNodeAdd"
-        :onDelete="handleNodeDelete"
         :isExpanded="true"
-        @toggle="handleToggleToggle"
+        @confirm="handleNodeSave"
+        @add="handleNodeAdd"
+        @delete="handleNodeDelete"
         @cancel="handleNodeCancel"
       />
       <EdgeForm
@@ -28,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import NodeForm from './NodeForm.vue'
 import type { DecisionNode, DecisionEdge } from '../core/interfaces/DecisionTree'
 import EdgeForm from './EdgeForm.vue'
@@ -53,9 +52,35 @@ const emit = defineEmits<{
   (e: 'cancelEdge'): void
 }>()
 
+const newNodeData = ref<DecisionNode | null>(null)
+watch(() => props.propertiesState, (newVal) => {
+  if (newVal === PropertiesState.NEW_NODE) {
+    newNodeData.value = {
+      id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
+      type: 'custom',
+      position: { x: 0, y: 0 },
+      data: {
+        columnType: ColumnType.CONDITION,
+        metadataList: [{
+          index: 0,
+          label: '',
+          desc: '',
+          columnName: '',
+          dataType: MetaDataType.STRING,
+          mandatory: false,
+          codeId: '',
+          codeUid: '',
+          resultValue: ''
+        }]
+      }
+    }
+  } else {
+    newNodeData.value = null
+  }
+})
+
 // 計算當前顯示的節點數據
 const currentNode = computed(() => {
-  console.log("currentNode", props.selectedNode)
   if (props.propertiesState === PropertiesState.NEW_NODE) {
     return {
       id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -99,10 +124,6 @@ const title = computed(() => {
       return '元件設定'
   }
 })
-
-const handleToggleToggle = () => {
-  // 由於現在只有一個 NodeItem，不需要處理展開/收起的狀態
-}
 
 const handleNodeSave = (editDecisionNode: DecisionNode) => {
   if (props.propertiesState === PropertiesState.NEW_NODE) {

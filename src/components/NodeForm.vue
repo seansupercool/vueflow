@@ -14,7 +14,6 @@
       <div class="tab-group">
         <div 
           v-for="type in Object.values(ColumnType)" 
-          v-show="(isNewNode || editingFlowNode.data?.columnType === type)"
           :key="type"
           :class="['tab-btn', { active: editingFlowNode.data?.columnType === type }]" 
           @click="editingFlowNode.data && (editingFlowNode.data.columnType = type)"
@@ -52,7 +51,7 @@
           </div>
         </div>
         <div v-if="editingFlowNode.data?.columnType === ColumnType.RESULT" class="btn btn-secondary" @click="handleAddMetadata">
-          新增 Metadata
+          新增下一筆結果
         </div>
       </template>
       <div class="form-actions">
@@ -75,13 +74,15 @@ import type { DecisionNode, DecisionNodeMetadata } from '../core/interfaces/Deci
 const props = defineProps<{
   isNewNode: boolean,
   decisionNode?: DecisionNode,
-  onSave?: (node: DecisionNode) => void,
-  onAdd?: (node: DecisionNode) => void,
-  onDelete?: () => void,
   isExpanded: boolean
 }>()
-
-const emit = defineEmits(['toggle', 'cancel', 'copy'])
+const emit = defineEmits<{
+  (e: 'confirm', node: DecisionNode): void
+  (e: 'add', node: DecisionNode): void
+  (e: 'delete', node: DecisionNode): void
+  (e: 'cancel'): void
+}>()
+const copiedPosition = ref<{ x: number, y: number }>({ x: 0, y: 0 })
 
 const editingFlowNode = ref<DecisionNode>({
   id: '',
@@ -106,6 +107,7 @@ const editingFlowNode = ref<DecisionNode>({
 watch(
   () => props.decisionNode,
   (decisionNode) => {
+    console.log("decisionNode", decisionNode)
     if (decisionNode) {
       editingFlowNode.value = JSON.parse(JSON.stringify(decisionNode))
       if (!editingFlowNode.value.data) {
@@ -114,6 +116,10 @@ watch(
           metadataList: [],
         }
       }
+    }
+    copiedPosition.value = {
+      x: decisionNode?.position.x ?? 0,
+      y: decisionNode?.position.y ?? 0
     }
   },
   { immediate: true, deep: true },
@@ -137,9 +143,9 @@ const handleAddMetadata = () => {
 
 const handleSubmit = () => {
   if(props.isNewNode)
-    props.onAdd?.(editingFlowNode.value)
+    emit('add', editingFlowNode.value)
   else
-    props.onSave?.(editingFlowNode.value)
+    emit('confirm', editingFlowNode.value)
 }
 
 const handleCancel = () => {
@@ -147,19 +153,24 @@ const handleCancel = () => {
 }
 
 const handleDelete = () => {
-  props.onDelete?.()
+  emit('delete', editingFlowNode.value)
 }
 
 const handleCopy = () => {
+  copiedPosition.value = {
+    x: copiedPosition.value.x + 200,
+    y: copiedPosition.value.y
+  }
   const copiedNode: DecisionNode = {
-    ...editingFlowNode.value,
+    // ...editingFlowNode.value,
     id: `node_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
     type: 'custom',
-    position: { 
-      x: editingFlowNode.value.position.x + 200,
-      y: editingFlowNode.value.position.y
+    position: copiedPosition.value,
+    data: {
+      columnType: editingFlowNode.value.data?.columnType ?? ColumnType.CONDITION,
+      metadataList: editingFlowNode.value.data?.metadataList ?? []
     }
   }
-  props.onAdd?.(copiedNode)
+  emit('add', JSON.parse(JSON.stringify(copiedNode)))
 }
 </script>

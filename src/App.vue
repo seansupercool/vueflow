@@ -17,8 +17,8 @@ import type { DecisionNode, DecisionEdge } from './core/interfaces/DecisionTree'
 import { ColumnType, PropertiesState } from './core/enums/VueFlow'
 import { downloadJson } from './utils/downloadJson'
 
-const { decisionNodes, decisionEdges, addNode, deleteNode, addEdge, deleteEdge, clearSelectionEdge } = useDecisionTree()
-const { project, getNodes, getEdges, addNodes, addEdges, setNodes, setEdges } = useVueFlow()
+const { decisionNodes, decisionEdges, addNode, deleteNode, addEdge, deleteEdge, clearSelectionEdge, toDecisionDiagramJson } = useDecisionTree()
+const { project, getNodes, getEdges, addNodes, addEdges, setNodes, setEdges, updateNode } = useVueFlow()
 
 const nodeTypes = {
   custom: markRaw(CustomNode)
@@ -40,8 +40,19 @@ const onNodeClick = (event: NodeMouseEvent) => {
 
 // 處理點擊連接線
 const onEdgeClick = ({ edge }: EdgeMouseEvent) => {
+  console.log("onEdgeClick", edge)
+  clearSelectionEdge()
+  const updateEdge = {
+    ...edge,
+    style: selectionEdgeStyle,
+  }
   selectedNode.value = null
-  selectedEdge.value = edge as DecisionEdge
+  selectedEdge.value = updateEdge as DecisionEdge
+  const updateDecisionEdges = decisionEdges.value.map(originEdge => 
+  originEdge.id === updateEdge.id ? updateEdge : originEdge
+  )
+  setEdges(updateDecisionEdges)
+  
   propertiesState.value = PropertiesState.SELECT_EDGE;
 }
 
@@ -92,43 +103,21 @@ const onConnectHandler = (params: Connection) => {
     }
   }
   addEdges([newEdge])
-  selectedEdge.value = newEdge
   selectedNode.value = null
+  selectedEdge.value = newEdge as DecisionEdge
   propertiesState.value = PropertiesState.NEW_EDGE
 }
 
 // 處理連接線更新
 const handleEdgeUpdate = (decisionEdge: DecisionEdge) => {
   console.log('🟢 updatedEdge:', decisionEdge)
+  decisionEdge.label = `${parseExpressionType(decisionEdge.data?.expressionType || '')} ${decisionEdge.data?.entryText}`
+  console.log("decisionEdges", decisionEdges)
   // 更新邊緣數據
   const updateDecisionEdges = decisionEdges.value.map(edge => 
     edge.id === decisionEdge.id ? decisionEdge : edge
   )
   setEdges(updateDecisionEdges)
-  // const edgeIndex = decisionEdges.value.findIndex(e => e.id === updatedEdge.id)
-  // if (edgeIndex !== -1) {
-  //   // 創建新的邊緣數據
-  //   const updatedEdgeData = {
-  //     ...graphData.value.edges[edgeIndex],
-  //     label: `${parseExpressionType(updatedEdge.metadata.expressionType)} ${updatedEdge.metadata.entryText}`,
-  //     data: {
-  //       ...graphData.value.edges[edgeIndex].data,
-  //       metadata: {
-  //         columnName: updatedEdge.metadata.columnName,
-  //         expressionType: updatedEdge.metadata.expressionType,
-  //         entryText: updatedEdge.metadata.entryText
-  //       }
-  //     }
-  //   }
-    
-  //   // 更新邊緣數據
-  //   const newEdges = graphData.value.edges.map(edge => 
-  //     edge.id === updatedEdge.id ? updatedEdgeData : edge
-  //   )
-  //   setEdges(newEdges)
-  // }
-  // selectedEdge.value = null
-  // propertiesState.value = PropertiesState.NONE
 }
 
 // 處理取消編輯連接線
@@ -140,22 +129,6 @@ const handleEdgeCancel = () => {
   propertiesState.value = PropertiesState.NONE
 }
 
-// watch(
-//   () => graphData.value.nodes,
-//   (val) => {
-//     // console.log('🟢 nodes updated:', val)
-//   },
-//   { deep: true },
-// )
-
-// watch(
-//   () => graphData.value.edges,
-//   (val) => {
-//     // console.log('🟠 edges updated:', val)
-//   },
-//   { deep: true },
-// )
-
 const fileInput = ref<HTMLInputElement | null>(null)
 
 const setStructure = () => {
@@ -163,75 +136,63 @@ const setStructure = () => {
 }
 
 const onFileChange = (event: Event) => {
-  // const input = event.target as HTMLInputElement
-  // if (!input.files || input.files.length === 0) return
-  // const file = input.files[0]
-  // const reader = new FileReader()
-  // reader.onload = (e) => {
-  //   try {
-  //     const result = e.target?.result as string
-  //     const json = JSON.parse(result)
-  //     console.log('🟢 json:', json)
-  //     if (json.nodes && json.edges) {
-  //       console.log(1)
-  //       graphData.value.nodes = json.nodes
-  //       console.log(2)
-  //       graphData.value.edges = json.edges
-  //       console.log(3)
-  //     } else {
-  //       alert('JSON 檔案格式錯誤，需包含 nodes 與 edges')
-  //     }
-  //   } catch (err) {
-  //     alert('解析 JSON 檔案失敗')
-  //   }
-  // }
-  // reader.readAsText(file)
+  const input = event.target as HTMLInputElement
+  if (!input.files || input.files.length === 0) return
+  const file = input.files[0]
+  const reader = new FileReader()
+  reader.onload = (e) => {
+    try {
+      const result = e.target?.result as string
+      const json = JSON.parse(result)
+      if (json.nodes && json.edges) {
+        decisionNodes.value = json.nodes
+        decisionEdges.value = json.edges
+      } else {
+        alert('JSON 檔案格式錯誤，需包含 nodes 與 edges')
+      }
+    } catch (err) {
+      alert('解析 JSON 檔案失敗')
+    }
+  }
+  reader.readAsText(file)
 }
 
 const getStructure = () => {
-  console.log("getNodes", getNodes)
-  console.log('getEdges', getEdges)
-  // console.log('🟢 nodes:', JSON.parse(JSON.stringify(graphData.value.nodes)))
-  // console.log('🟠 edges:', JSON.parse(JSON.stringify(graphData.value.edges)))
-  // console.log('getNodes', getNodes)
-  // console.log('getEdges', getEdges)
-  // downloadJson({ nodes: graphData.value.nodes, edges: graphData.value.edges }, 'structure.json')
+  toDecisionDiagramJson()
+  downloadJson(toDecisionDiagramJson(), 'structure.json')
 }
 
-// 處理節點更新
+// 處理節點更新 finish
 const handleNodeUpdate = (newDecisionNode: DecisionNode) => {
-  // const nodeIndex = graphData.value.nodes.findIndex(n => n.id === newDecisionNode.id)
-  // if (nodeIndex !== -1) {
-  //   const oldDecisionNode: DecisionNode = graphData.value.nodes[nodeIndex];
-  //   // const decisionNodeData: DecisionNodeData = newDecisionNode.data;
-  //   const updateDecisionNode: DecisionNode = {
-  //     ...oldDecisionNode,
-  //     data: newDecisionNode.data
-  //   }
-  //   // 使用 updateNode 來更新節點
-  //   updateNode(updateDecisionNode.id, updateDecisionNode)
-  // }
-  
-  // // 清除所有節點的選中狀態
-  // graphData.value.nodes = graphData.value.nodes.map(n => ({
-  //   ...n,
-  //   selected: false
-  // }))
+  console.log("handleNodeUpdate", newDecisionNode)
+  updateNode(newDecisionNode.id, (node) => {
+    node.selected = false // 單獨改 selected
+    node.data = {
+      ...node.data,
+      ...newDecisionNode.data
+    }
+    return node
+  })
+  selectedNode.value = null
+  propertiesState.value = PropertiesState.NONE
 }
 
-// 處理節點刪除
+// 處理節點刪除 finish
 const handleNodeDelete = (nodeId: string) => {
   decisionNodes.value = decisionNodes.value.filter((node) => node.id !== nodeId)
+  selectedNode.value = null
+  propertiesState.value = PropertiesState.NONE
 }
 
 const handleCloseNodeForm = () => {
-  // propertiesState.value = PropertiesState.NONE
-  // selectedNode.value = null
-  // // 清除所有節點的選中狀態
-  // graphData.value.nodes = graphData.value.nodes.map(n => ({
-  //   ...n,
-  //   selected: false
-  // }))
+  if (selectedNode.value?.id) {
+    updateNode(selectedNode.value?.id, (node) => {
+      node.selected = false
+      return node
+    })
+  }
+  selectedNode.value = null
+  propertiesState.value = PropertiesState.NONE
 }
 
 // 處理點擊新增按鈕
@@ -243,9 +204,7 @@ const handleAddNodeClick = () => {
 
 // 處理新增元件
 const handleAddNode = (decisionNode: DecisionNode) => {
-  decisionNode.selected = false
   addNodes([decisionNode])
-  propertiesState.value = PropertiesState.NONE
 }
 
 const handleEdgeDelete = (edgeId: string) => {
