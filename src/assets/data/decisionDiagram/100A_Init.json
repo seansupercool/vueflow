@@ -20,6 +20,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": ""
           }
         ]
@@ -45,6 +46,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": "D"
           }
         ]
@@ -70,6 +72,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": ""
           }
         ]
@@ -95,6 +98,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": ""
           }
         ]
@@ -120,6 +124,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": "P"
           }
         ]
@@ -145,6 +150,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": "0"
           }
         ]
@@ -170,6 +176,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": ""
           }
         ]
@@ -195,6 +202,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": "D"
           }
         ]
@@ -220,6 +228,7 @@
             "mandatory": false,
             "codeId": "",
             "codeUid": "",
+            "codeName": "",
             "resultValue": "0"
           }
         ]

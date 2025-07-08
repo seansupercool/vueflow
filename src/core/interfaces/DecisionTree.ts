@@ -10,6 +10,7 @@ export interface DecisionNodeMetadata {
   mandatory: boolean;
   codeId: string;
   codeUid: string;
+  codeName: string;
   resultValue: string;
 }
 

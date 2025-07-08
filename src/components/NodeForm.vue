@@ -99,6 +99,7 @@ const editingFlowNode = ref<DecisionNode>({
       mandatory: false,
       codeId: '',
       codeUid: '',
+      codeName: '',
       resultValue: ''
     }]}
 })
@@ -136,6 +137,7 @@ const handleAddMetadata = () => {
     mandatory: false,
     codeId: '',
     codeUid: '',
+    codeName: '',
     resultValue: ''
   }
   editingFlowNode.value.data.metadataList.push(newMetadata)

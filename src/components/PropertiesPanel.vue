@@ -70,6 +70,7 @@ watch(() => props.propertiesState, (newVal) => {
           mandatory: false,
           codeId: '',
           codeUid: '',
+          codeName: '',
           resultValue: ''
         }]
       }
@@ -97,6 +98,7 @@ const currentNode = computed(() => {
           mandatory: false,
           codeId: '',
           codeUid: '',
+          codeName: '',
           resultValue: ''
         }]
       }
