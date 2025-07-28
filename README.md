@@ -1,40 +1,80 @@
-# vueflow-ts-demo
+# VueFlow 決策樹編輯器
 
-This template should help get you started developing with Vue 3 in Vite.
+這是一個基於 Vue 3 + TypeScript + VueFlow 的決策樹流程圖編輯器。
 
-## Recommended IDE Setup
+## 專案結構
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+```
+src/
+├── pages/           # 頁面組件
+│   ├── HomePage.vue     # 首頁
+│   ├── VueFlowPage.vue  # VueFlow 編輯器頁面
+│   ├── TiptapPage.vue   # Tiptap 文字編輯器頁面
+│   └── EditorJsPage.vue # Editor.js 區塊編輯器頁面
+├── router/          # 路由設定
+│   └── index.ts
+├── components/      # 可重用組件
+├── composable/      # 組合式函數
+├── core/           # 核心類型和枚舉
+├── constants/      # 常數
+├── utils/          # 工具函數
+├── styles/         # 樣式檔案
+├── types/          # TypeScript 類型定義
+└── assets/         # 靜態資源
+```
 
-## Type Support for `.vue` Imports in TS
+## 路由設定
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- `/` - 首頁，顯示歡迎訊息和導航按鈕
+- `/vueflow` - VueFlow 編輯器頁面，包含完整的決策樹編輯功能
+- `/tiptap` - Tiptap 文字編輯器頁面，支援豐富的文字格式化功能
+- `/editorjs` - Editor.js 區塊編輯器頁面，支援結構化內容編輯
 
-## Customize configuration
+## 功能特色
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### VueFlow 編輯器
+- 視覺化決策樹編輯
+- 節點和邊的屬性編輯
+- JSON 格式的匯入/匯出功能
+- 響應式設計
 
-## Project Setup
+### Tiptap 文字編輯器
+- 文字格式化（粗體、斜體、底線等）
+- 文字顏色和背景色設定
+- 表格功能
+- 連結和圖片插入
+- 多種格式匯出（純文字、HTML、JSON）
 
-```sh
+### Editor.js 區塊編輯器
+- 區塊式內容編輯
+- 多種內容類型（標題、段落、列表、引用等）
+- 表格和圖片支援
+- 連結預覽和嵌入內容
+- 結構化 JSON 資料匯出
+
+## 開發
+
+```bash
+# 安裝依賴
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# 啟動開發伺服器
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# 建置專案
 npm run build
+
+# 類型檢查
+npm run type-check
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## 技術棧
 
-```sh
-npm run lint
-```
-# vueflow
+- Vue 3
+- TypeScript
+- Vue Router 4
+- VueFlow
+- Tiptap
+- Editor.js
+- SCSS
+- Vite
