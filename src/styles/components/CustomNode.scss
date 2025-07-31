@@ -1,11 +1,14 @@
 @use '../_common.scss' as *;
 
 .custom-node {
-  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
   background-color: #ffffff;
   border: 1px solid #ddd;
-  min-width: 150px;
+  width: 180px;
+  height: 60px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
 
@@ -19,20 +22,18 @@
   }
 
   .node-content {
-    text-align: center;
-    font-size: 14px;
-    color: #333;
-
-    &.result-node {
-      color: #dc3545;
-    }
-
-    .metadata-item {
-      padding: 4px 0;
-
+    font-size: 28px;
+      font-weight: 500;
+      width: 180px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
       &:last-child {
         border-bottom: none;
       }
+
+    &.result-node {
+      color: #dc3545;
     }
   }
 } 
