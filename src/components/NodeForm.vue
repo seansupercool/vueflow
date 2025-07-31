@@ -50,7 +50,7 @@
             <input v-model="metadata.resultValue" type="text" placeholder="請輸入結果值">
           </div>
         </div>
-        <div v-if="editingFlowNode.data?.columnType === ColumnType.RESULT" class="btn btn-secondary" @click="handleAddMetadata">
+        <div v-if="editingFlowNode.data?.columnType === ColumnType.RESULT" class="btn node-control" @click="handleAddMetadata">
           新增下一筆結果
         </div>
       </template>

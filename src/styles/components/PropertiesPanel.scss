@@ -253,6 +253,7 @@
     cursor: pointer;
     font-weight: 500;
     transition: all 0.2s ease;
+    margin-right: 2px;
 
     &:hover {
       transform: translateY(-1px);
@@ -293,5 +294,14 @@
     &:hover {
       background-color: var(--color-copy-dark);
     }
+  }
+}
+
+.node-control {
+  background-color: var(--color-primary-light);
+  color: white;
+
+  &:hover {
+    background-color: var(--color-primary-dark);
   }
 }

@@ -12,11 +12,17 @@ export default defineConfigWithVueTs(
   {
     name: 'app/files-to-lint',
     files: ['**/*.{ts,mts,tsx,vue}'],
+    ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
   },
 
-  globalIgnores(['**/dist/**', '**/dist-ssr/**', '**/coverage/**']),
+  {
+    languageOptions: {
+      ecmaVersion: 2022, // 確保你自己的 config 使用合法 ecmaVersion
+    },
+  },
 
-  pluginVue.configs['flat/essential'],
+  pluginVue.configs['flat/essential'] as any,  // <== 這裡加上 any
   vueTsConfigs.recommended,
-  skipFormatting,
+  skipFormatting as any,
 )
+

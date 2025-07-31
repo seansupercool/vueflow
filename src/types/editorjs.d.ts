@@ -1,34 +1,66 @@
-declare module '@editorjs/marker' {
-  const Marker: unknown
-  export default Marker
+// EditorJS 工具類型定義
+ 
+declare module '@editorjs/header' {
+  const Header: any
+  export default Header
 }
 
+ 
+declare module '@editorjs/list' {
+  const List: any
+  export default List
+}
+
+ 
+declare module '@editorjs/quote' {
+  const Quote: any
+  export default Quote
+}
+
+ 
 declare module '@editorjs/checklist' {
-  const Checklist: unknown
+  const Checklist: any
   export default Checklist
 }
 
+ 
+declare module '@editorjs/delimiter' {
+  const Delimiter: any
+  export default Delimiter
+}
+
+ 
+declare module '@editorjs/table' {
+  const Table: any
+  export default Table
+}
+
+ 
+declare module '@editorjs/image' {
+  const Image: any
+  export default Image
+}
+
+ 
 declare module '@editorjs/link' {
-  const LinkTool: unknown
+  const LinkTool: any
   export default LinkTool
 }
 
+ 
 declare module '@editorjs/embed' {
-  const Embed: unknown
+  const Embed: any
   export default Embed
 }
 
+ 
+declare module '@editorjs/paragraph' {
+  const Paragraph: any
+  export default Paragraph
+}
+
+ 
 declare module '@editorjs/raw' {
-  const Raw: unknown
+  const Raw: any
   export default Raw
-}
-
-declare module 'editorjs-text-color-plugin' {
-  const TextColorPlugin: unknown
-  export default TextColorPlugin
-}
-
-declare module 'editorjs-underline' {
-  const Underline: unknown
-  export default Underline
 } 

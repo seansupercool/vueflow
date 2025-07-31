@@ -4,7 +4,6 @@ import EditorJS from '@editorjs/editorjs'
 import Header from '@editorjs/header'
 import List from '@editorjs/list'
 import Quote from '@editorjs/quote'
-import Marker from '@editorjs/marker'
 import Checklist from '@editorjs/checklist'
 import Delimiter from '@editorjs/delimiter'
 import Table from '@editorjs/table'
@@ -13,8 +12,13 @@ import LinkTool from '@editorjs/link'
 import Embed from '@editorjs/embed'
 import Paragraph from '@editorjs/paragraph'
 import Raw from '@editorjs/raw'
-import TextColorPlugin from 'editorjs-text-color-plugin'
 // import Underline from 'editorjs-underline' // 改用 window.Underline
+
+// 定義類型
+interface ChecklistItem {
+  text: string
+  checked: boolean
+}
 
 const editorRef = ref<HTMLDivElement>()
 const editor = ref<EditorJS>()
@@ -72,7 +76,7 @@ const saveData = async () => {
       a.click()
       URL.revokeObjectURL(url)
       alert('內容已匯出為 JSON 檔案！')
-    } catch (error) {
+    } catch {
       alert('儲存失敗，請檢查控制台')
     }
   }
@@ -93,14 +97,14 @@ const exportHtml = async () => {
             break
           case 'list':
             html += `<${block.data.style === 'ordered' ? 'ol' : 'ul'}>`
-            block.data.items.forEach(item => {
+            block.data.items.forEach((item: string) => {
               html += `<li>${item}</li>`
             })
             html += `</${block.data.style === 'ordered' ? 'ol' : 'ul'}>\n`
             break
           case 'checklist':
             html += '<ul>'
-            block.data.items.forEach(item => {
+            block.data.items.forEach((item: ChecklistItem) => {
               html += `<li><input type='checkbox' ${item.checked ? 'checked' : ''}/> ${item.text}</li>`
             })
             html += '</ul>\n'
@@ -113,9 +117,9 @@ const exportHtml = async () => {
             break
           case 'table':
             html += '<table>'
-            block.data.content.forEach(row => {
+            block.data.content.forEach((row: string[]) => {
               html += '<tr>'
-              row.forEach(cell => {
+              row.forEach((cell: string) => {
                 html += `<td>${cell}</td>`
               })
               html += '</tr>'
@@ -146,7 +150,7 @@ const exportHtml = async () => {
       a.click()
       URL.revokeObjectURL(url)
       alert('內容已匯出為 HTML 檔案！')
-    } catch (error) {
+    } catch {
       alert('匯出 HTML 失敗，請檢查控制台')
     }
   }
@@ -164,12 +168,12 @@ const exportText = async () => {
             text += block.data.text + '\n'
             break
           case 'list':
-            block.data.items.forEach(item => {
+            block.data.items.forEach((item: string) => {
               text += '- ' + item + '\n'
             })
             break
           case 'checklist':
-            block.data.items.forEach(item => {
+            block.data.items.forEach((item: ChecklistItem) => {
               text += (item.checked ? '[x] ' : '[ ] ') + item.text + '\n'
             })
             break
@@ -177,7 +181,7 @@ const exportText = async () => {
             text += '"' + block.data.text + '" ' + (block.data.caption || '') + '\n'
             break
           case 'table':
-            block.data.content.forEach(row => {
+            block.data.content.forEach((row: string[]) => {
               text += row.join(' | ') + '\n'
             })
             break
@@ -205,7 +209,7 @@ const exportText = async () => {
       a.click()
       URL.revokeObjectURL(url)
       alert('內容已匯出為純文字檔案！')
-    } catch (error) {
+    } catch {
       alert('匯出純文字失敗，請檢查控制台')
     }
   }
@@ -216,7 +220,7 @@ const loadData = async () => {
     try {
       await editor.value.render(initialData)
       alert('已載入範例內容！')
-    } catch (error) {
+    } catch {
       alert('載入失敗，請檢查控制台')
     }
   }
@@ -227,7 +231,7 @@ const clearData = async () => {
     try {
       await editor.value.clear()
       alert('內容已清空！')
-    } catch (error) {
+    } catch {
       alert('清空失敗，請檢查控制台')
     }
   }
@@ -239,7 +243,7 @@ const getData = async () => {
       const data = await editor.value.save()
       console.log('目前內容:', data)
       alert('內容已輸出到控制台，請按 F12 查看')
-    } catch (error) {
+    } catch {
       alert('取得資料失敗，請檢查控制台')
     }
   }
@@ -284,7 +288,7 @@ onMounted(() => {
         },
         delimiter: Delimiter,
         table: {
-          class: Table,
+          class: Table as any,
           inlineToolbar: true,
           config: {
             rows: 2,
